@@ -1158,6 +1158,12 @@ In order to create a work extension the following steps should be followed:
 ## Resource Guide
 {: .govuk-heading-l #resource-guide}
 
+### Delegated Users
+{: .govuk-heading-m}
+
+All POST and PUT endpoints across the API's will contain two properties, internal_user_identifier and internal_user_name. These fields are currently placeholders but in Phase 2 these properties will be stored and link the action to a specific user rather than an organisation.  
+{: .govuk-body}
+
 ### Reporting API
 {: .govuk-heading-m}
 

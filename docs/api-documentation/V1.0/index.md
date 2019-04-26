@@ -1298,6 +1298,12 @@ It's important to clarify the technical relationship between a work and a permit
 There is also a concept of a work record's active permit, that is simply the most recently added permit on that works record. In essence, a work is a representation of all the permits, reinstatements, FPNs, inspections etc. that have been added to a particular location.
 {: .govuk-body}
 
+### Delegated Users
+{: .govuk-heading-m}
+
+All POST and PUT endpoints will contain two properties, internal_user_identifier and internal_user_name. These fields are currently placeholders but in Phase 2 these properties will be stored and link the action to a specific user rather than an organisation.  
+{: .govuk-body}
+
 #### Create work endpoint
 {: .govuk-heading-s}
 

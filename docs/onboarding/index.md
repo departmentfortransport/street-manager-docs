@@ -37,8 +37,10 @@ title: Onboarding
 {: .govuk-heading-l #introduction}
 
 Many thanks for signing up to be part of Private Beta – we are excited to be working closely with you on Street Manager.
+{: .govuk-body}
 
 Your Private Beta Manager is Esme Moore, who will be your primary contact for all things related to Private Beta. (See the Communication channels section for more details)
+{: .govuk-body}
 
 In this Onboarding Induction Pack, you will find details about the scope and timelines of Street Manager, your roles and responsibilities, important information about communication channels, FAQ and what information we plan to produce and have available to you during this phase.
 {: .govuk-body}
@@ -52,12 +54,14 @@ In early 2017, the DfT began to investigate whether or not the current system fo
 street works was fit for purpose in terms of the technology it uses, the needs of the user
 community and the rising demand for up to date and accurate data about road works. People
 were reporting frustrations about:
+{: .govuk-body}
 
 * the timeliness and accuracy of data
 * a lack of visibility of the data across different local authority areas
 * high costs
 * the need for updates to reflect current needs and
 * inconsistent systems and data.
+{: .govuk-body}
 
 To address the gap, the DfT worked with users from local authorities and utility companies
 to design and develop a new digital service - Street Manager - that would enable a single
@@ -76,6 +80,8 @@ the benefits of the new service.
 
 In line with Government Digital Service (GDS) guidelines, the Street Manager project is being
 conducted in an agile way, meaning that we are following an iterative development approach.
+{: .govuk-body}
+
 We build the basics of the product first and then, based on regular user testing feedback, we
 enhance as we go. It provides the ability to adapt the product to meet changing requirements
 all the time. This means that you as users get to access the new system earlier on but also
@@ -116,11 +122,13 @@ running since November 2018. These users have been using real life examples to t
 Street Manager and help us to develop the various services. We have carried out 14 onsite
 visits during the pilot phase to observe pilot users. Since the start of the pilot in November,
 over 380 Slack messages have been exchanged. Our pilot users have:
+{: .govuk-body}
 
 * Created 720 work permits
 * Raised 750 permit applications
 * Granted 405 permits and refused 73 applications
 * Commented on 79 permits
+{: .govuk-body}
 
 We are very grateful to Thames Water, Cadent, Transport for London, Hertfordshire and
 UK Power Networks for their contribution so far.
@@ -139,13 +147,16 @@ UK Power Networks for their contribution so far.
 {: .govuk-heading-l #move-to-production}
 
 All private beta users will begin in the SANDBOX ENVIRONMENT. You may dual-key and/or to test with dummy data.
+{: .govuk-body}
 
 When you are ready, you can request access to the PRE-PRODUCTION & PRODUCTION ENVIRONMENT. Instead of dummy email
 addresses like those that were provided for SANDBOX, we will be using your users’ email addresses as the login username. Please
 avoid using dummy data within PRE-PRODUCTION and treat it as if it was the live system.
+{: .govuk-body}
 
 2 weeks’ notice will be required when you would like to move onto PRE-PRODUCTION/PRODUCTION. We will also need to ensure that
 you are paired up with a works promoter and local highway authority (LHA) within your geographical area accordingly.
+{: .govuk-body}
 
 Important: If you dual-key in EToN and the PRODUCTION, there will be duplicate records in the live system and must be avoided.
 {: .govuk-body}
@@ -162,8 +173,10 @@ This contact should be the primary person that we can contact about your
 organisation’s use of Street Manager and has sufficient authority to make decisions
 around when to transition from the SANDBOX environment to PREPRODUCTION/
 PRODUCTION, and who the users will be taking part in Private Beta.
+{: .govuk-body}
 
 Responsibilities include but not limited to the following:
+{: .govuk-body}
 * Ensure that we are provided with details for your organisation for onboarding
 and testing/transition approach.
 * Agree with Street Manager’s terms of use. These will be sent to you when
@@ -182,6 +195,7 @@ your organisation’s users of changes and new functionality.
 {: .govuk-heading-m}
 
 In addition to the responsibilities above:
+{: .govuk-body}
 * Plan API integration for your existing System with Street Manager using the
 available API documentation.
 * Request API access to PRE-PRODUCTION/PRODUCTION ENVIRONMENT (when
@@ -195,6 +209,7 @@ changes).
 {: .govuk-heading-m}
 
 Responsibilities include but not limited to the following:
+{: .govuk-body}
 * Continuously provide feedback
   * This phase is all about your opinion and impressions of the product.
 We want to ensure that MVP+ is fit for use and provides an overall
@@ -272,8 +287,10 @@ You will have access to the DfT Slack workspace. Slack is a hub of various chann
 and direct messages where discussions can take place according to topic. Different
 conversations can become interwoven within a channel, so it is most useful for
 shorter conversations or collaboration in near real-time.
+{: .govuk-body}
 
 Exclusive channels that we will add you to on 1st May:
+{: .govuk-body}
 * privatebetaUI – if you access Street Manager through the web browser
 * privatebetaAPI
 Public channels that you may be interested in:
@@ -281,13 +298,14 @@ Public channels that you may be interested in:
 announcements
 * #api – an open API focused channel including members who are also not
 involved in Private Beta
+{: .govuk-body}
 
 
 ### Slack tips:
 {: .govuk-heading-m}
-• Add @here to your message to notify active (green status) members of a
+* Add @here to your message to notify active (green status) members of a
 channel
-• Add @channel to notify all members of a channel
+* Add @channel to notify all members of a channel
 {: .govuk-body}
 
 ### Queries, MVP+ feature feedback and report defects
@@ -296,13 +314,16 @@ channel
 We will be providing you with the ability to open new queries, provide MVP+ feature
 feedback and report defects (bugs). More information on how you do this will be
 provided when you begin the Private Beta phase.
+{: .govuk-body}
 
 We will respond to your queries as soon as possible with urgent issues taking
 priority.
+{: .govuk-body}
 
 MVP+ feature feedback and non-critical defect reports will be reviewed and added to
 the Private Beta roadmap. Please see the Private Beta roadmap section below for
 more details on what will happen with these items.
+{: .govuk-body}
 
 Adding or removing users from SANDBOX or PRE-PRODUCTION/PRODUCTION can also be
 requested through this process as and when required.
@@ -334,6 +355,7 @@ me by with a direct message in Slack (Esme Moore).
 
 We will be keeping track of known issues and workarounds and access to this will be
 provided to you in the next few weeks.
+{: .govuk-body}
 
 Your input to helping us identify important and missing information is key to us. We
 will be actively working on tracking known limitations and workarounds of Street

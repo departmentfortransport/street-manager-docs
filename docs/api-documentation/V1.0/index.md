@@ -18,7 +18,7 @@ Version 1.0 Draft
   <li><a class="govuk-link" href="#onboarding">Onboarding</a></li>
   <li><a class="govuk-link" href="#environments">Environments</a></li>
   <li><a class="govuk-link" href="#technical-overview">Technical Overview</a></li>
-  <li><a class="govuk-link" href="#versioning">Versioning</a></li>
+  <li><a class="govuk-link" href="#versioningandreleasemanagement">Versioning and Release Management</a></li>
   <li><a class="govuk-link" href="#testing">Testing</a></li>
   <li><a class="govuk-link" href="#security">Security</a></li>
   <li><a class="govuk-link" href="#sequencing">Sequencing</a></li>
@@ -307,39 +307,37 @@ updated works.
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
-## Versioning
-{: .govuk-heading-l #versioning}
+## Versioning and Release Management
+{: .govuk-heading-l #versioningandreleasemanagement}
 
-*Note: API versioning will only be used for updates which change existing API functions, potentially breaking existing integration and will only be introduced after private beta.*
+During Private Beta and beyond, the Street Manager services will remain under continual active development.  Therefore, a process must be established which allows low-friction development to continue at pace, whilst providing the option for web frontend users and API integrators to focus on a higher-stability version of the services.
 {: .govuk-body}
 
-### Iteration and change
+This section aims to describe the approach taken by the Street Manager team in order to meet both of those requirements.  The approach is based upon existing GDS [best practices](https://gdstechnology.blog.gov.uk/2016/07/26/considering-our-approach-to-api-iteration/) and will undergo continual refinement over time, based on feedback from the consumers of the service environments as well as observations by the Street Manager project team.  
+{: .govuk-body}
+
+
+### API Versioning Approach
 {: .govuk-heading-m}
 
-<ol class="govuk-list govuk-list--bullet">
-  <li>API updates to be released at fixed intervals -- potentially every 3 or 6 months (TBD)</li>
-  <li>Only the newly released version, and one version previous to it, will be supported</li>
-  <li>API is versioned via request URL path</li>
-  <li>So you don't need to upgrade immediately, but you can only be one version out</li>
-  <li>Release notes will be published for each release</li>
-</ol>
+The Street Manager API services will be versioned via the URL path, for example <code>api.sandbox.domain.com/v1/works/.../</code> versus <code>api.sandbox.domain.com/v2/works/.../</code>.  Initially, the Private Beta will focus on the <code>v1</code> major version of the codebase, with new major versions being introduced at a later date.
+{: .govuk-body}
 
-### API Versioning
-{: .govuk-heading-m}
 
-<ol class="govuk-list govuk-list--bullet">
-  <li>Versioning will be controlled via the URL path.</li>
-  <li>Versioning structure is TBC and will be researched during the pilot.</li>
-</ol>
 
 ### Release Management
 {: .govuk-heading-m}
 
-<ol class="govuk-list govuk-list--bullet">
-  <li>API users will be notified of changes/updates prior to them being released (e.g. via DfT email, newsletter and GitHub).</li>
-  <li>Releases / versions will consider the prevention of breaking change, with backwards compatibility being supported where appropriate.</li>
-  <li>Sandpit / pre-production environments will be made available to support new releases.</li>
-</ol>
+As described in the section above, initially only <code>v1</code> of the Street Manager API services will be available within the environments.  Minor version updates will be released into <code>v1</code> every two weeks - these updates may include existing feature enhancements, entirely new feature additions, as well as issue hotfixes.  Although regular releases will continue throughout Private Beta, the Street Manager development team will strive to avoid breaking changes at all times.
+{: .govuk-body}
+
+It should however be noted that during Private Beta development, there remains the potential that breaking changes may occasionally be required in order to release corrective hotfixes deemed to be service critical.  In such situations, the project team will notify potentially affected participant organistations in advance of the release and provide support with a view to minimising disruption.  
+{: .govuk-body}
+
+
+When the first participant organisations are approaching Production readiness, <code>v1</code> will be 'locked down' to ensure only non-breaking hotfixes and additive enhancements are permitted into the codebase.  At this point in time, a <code>v2</code> version will be published alongside <code>v1</code> in the SANDBOX and PRE-PRODUCTION environments alongside updated Swagger JSON definitions - this is aimed at parties interested in tracking Street Manager development more closely. Similiar to <code>v1</code>, updates will be released into <code>v2</code> every two weeks, and whilst the Street Manager development team will strive to avoid them, the occasional breaking change may be required in order to release critical fixes.
+{: .govuk-body}
+
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 

@@ -16,8 +16,9 @@ Version 1.0 Draft
 <ol class="govuk-list govuk-list--number">
   <li><a class="govuk-link" href="#introduction">Introduction</a></li>
   <li><a class="govuk-link" href="#onboarding">Onboarding</a></li>
+  <li><a class="govuk-link" href="#environments">Environments</a></li>
   <li><a class="govuk-link" href="#technical-overview">Technical Overview</a></li>
-  <li><a class="govuk-link" href="#versioning">Versioning</a></li>
+  <li><a class="govuk-link" href="#versioningandreleasemanagement">Versioning and Release Management</a></li>
   <li><a class="govuk-link" href="#testing">Testing</a></li>
   <li><a class="govuk-link" href="#security">Security</a></li>
   <li><a class="govuk-link" href="#sequencing">Sequencing</a></li>
@@ -60,7 +61,7 @@ Version 0.2
   <li>Details added for Polling endpoint planned for Reporting API, see <em>Technical Overview</em></li>
   <li>Plans added for Notifications, see <em>Technical Overview</em></li>
   <li>Details added for User account roles and permissions, see <em>Security</em></li>
-  <li>Additional features added to Works API
+  <li>Additional features added to Work API
     <ul>
       <li>Works history</li>
       <li>Works comments</li>
@@ -101,8 +102,57 @@ join the API pilot and access to the sandbox environment.
 ### Organisation registration and access to production system
 {: .govuk-heading-m}
 
-TBC
+See the general <a href="/street-manager-docs/onboarding/">Onboarding</a> section of the documentation for more details on how to register your organisation with Street Manager and join the service.
 {: .govuk-body}
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+## Environments
+{: .govuk-heading-l #environments}
+
+The Street Manager service provides three separate isolated application service environments.  Each of these environments contains a full stack deployment of Street Manager and are designated for specific purposes, as outlined below.
+{: .govuk-body}
+
+
+![Service environments](images/service-environments-1.png)
+
+
+### SANDBOX environment
+{: .govuk-heading-m}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>SANDBOX environment is primarily intended as an integration testing environment for API integrators and an initial orientation environment for organisations intending to use the Street Manager web frontend.</li>
+  <li>Each Private Beta participant organisation will be provided with credentials as part of the initial onboarding process. These credentials will be equally valid for both the Street Manager web frontend service as well as the Street Manager API services.</li>
+  <li>Organisations who are not a recognised Street Works Authority (do not have a SWA code, Contractor/Vendors etc.) may test using accounts for associated Street Works Authority organisations.</li>
+  <li>Organisations intending to use only the Street Manager web frontend can leverage SANDBOX environment to test end-to-end permit journeys and familiarise their staff with the service.</li>
+  <li>API integration developers can leverage the SANDBOX environment to access the latest Swagger documentation for the available API endpoints, as well as test their API clients against the Street Manager API services from their CI integration environment.</li>
+  <li>SANDBOX is development-grade, therefore a) is subject to higher-velocity changes and releases; b) is not guaranteed to be highly-available nor highly-performant; c) may be subject to occasional resets of the underlying databases.</li>
+  <li>Users must agree not to submit sensitive nor personally identifiable data into the SANDBOX environment under any circumstances – only use of ‘dummy’ data is permitted.</li>
+</ol>
+
+
+### PRE-PRODUCTION environment
+{: .govuk-heading-m}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>PRE-PRODUCTION is a stable, fully-scaled production-grade environment.   Primary purpose is to allow both web frontend and API integrators to validate end-to-end service operations and procedures against a stable version of the Street Manager services.</li>
+  <li>Participant organisations must engage with the Street Manager project team to request access to this environment; access and credentials will be provided once it is agreed that the organisation has carried out sufficient preparation in SANDBOX and has reached a stage of PRE-PRODUCTION readiness.</li>
+  <li>Where necessary, organisations are permitted to dual-key real production street works data within the PRE-PRODUCTION environment.</li>
+  <li>PRE-PRODUCTION will also act as a ‘holding area’ to allow organisations to align with their local ecosystem partners prior to entering production-readiness.  That is, a Highway Authority may enter PRE-PRODUCTION a period of time before their local area promoters reach PRE-PRODUCTION readiness (or vice-versa).  The Highway Authority will not be able to enter PRODUCTION readiness until their local area promoter partners join them in PRE-PRODUCTION readiness and collaborate to comprehensively validate the end-to-end service operation procedures.</li>
+  <li>Organisations are permitted to leverage PRE-PRODUCTION for additional assurance activities such as focussed end-user testing and non-functional (performance/availability) testing – however, the Street Manager team must be engaged and in agreement around testing scope, volumes and dates before any such activities are approved.</li>
+</ol>
+
+
+### PRODUCTION environment
+{: .govuk-heading-m}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>The PRODUCTION environment is an identical replica of the PRE-PRODUCTION environment.  The environment is for LIVE use only – neither functional nor non-functional testing shall be permitted within the live environment.</li>
+  <li>Once an organisation has reached production-readiness – and have aligned with their local area ecosystem partners in that production-readiness – the organisations must engage with the Street Manager team to request access to the PRODUCTION environment.  At this stage the team will work with the organisation and its local area ecosystem partners to facilitate a transition into the PRODUCTION environment.</li>
+  <li>In some cases, local area ecosystem alignment may not be possible within reasonable timeframes due to external factors.  In these cases, dual-keying may be necessary between the organisation, their existing EToN system, and the Street Manager Service.</li>
+</ol>
+
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -116,13 +166,13 @@ Street Manager exposes a number of APIs to allow external applications
 to retrieve and submit data.
 {: .govuk-body}
 
-#### Works API
+#### Work API
 {: .govuk-heading-s}
 
 *This API is exposed externally.*
 {: .govuk-body}
 
-The street manager works API allows promoters and highway authority
+The street manager work API allows promoters and highway authority
 users to carry out a number of key workflows relevant to their
 organization and role. We will cover each in detail but at a high level
 they are:
@@ -215,7 +265,7 @@ can extract data from the service.
 **Individual work data**
 {: .govuk-body}
 
-The Works API provides endpoints which give the full detail available
+The Work API provides endpoints which give the full detail available
 for individual Works and Permits. Use these endpoints to retrieve
 details such as timings, comments, history and changes.
 {: .govuk-body}
@@ -257,39 +307,37 @@ updated works.
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
-## Versioning
-{: .govuk-heading-l #versioning}
+## Versioning and Release Management
+{: .govuk-heading-l #versioningandreleasemanagement}
 
-*Note: API versioning will only be used for updates which change existing API functions, potentially breaking existing integration and will only be introduced after private beta.*
+During Private Beta and beyond, the Street Manager services will remain under continual active development.  Therefore, a process must be established which allows low-friction development to continue at pace, whilst providing the option for web frontend users and API integrators to focus on a higher-stability version of the services.
 {: .govuk-body}
 
-### Iteration and change
+This section aims to describe the approach taken by the Street Manager team in order to meet both of those requirements.  The approach is based upon existing GDS [best practices](https://gdstechnology.blog.gov.uk/2016/07/26/considering-our-approach-to-api-iteration/) and will undergo continual refinement over time, based on feedback from the consumers of the service environments as well as observations by the Street Manager project team.
+{: .govuk-body}
+
+
+### API Versioning Approach
 {: .govuk-heading-m}
 
-<ol class="govuk-list govuk-list--bullet">
-  <li>API updates to be released at fixed intervals -- potentially every 3 or 6 months (TBD)</li>
-  <li>Only the newly released version, and one version previous to it, will be supported</li>
-  <li>API is versioned via request URL path</li>
-  <li>So you don't need to upgrade immediately, but you can only be one version out</li>
-  <li>Release notes will be published for each release</li>
-</ol>
+The Street Manager API services will be versioned via the URL path, for example <code>api.sandbox.domain.com/v1/works/.../</code> versus <code>api.sandbox.domain.com/v2/works/.../</code>.  Initially, the Private Beta will focus on the <code>v1</code> major version of the codebase, with new major versions being introduced at a later date.
+{: .govuk-body}
 
-### API Versioning
-{: .govuk-heading-m}
 
-<ol class="govuk-list govuk-list--bullet">
-  <li>Versioning will be controlled via the URL path.</li>
-  <li>Versioning structure is TBC and will be researched during the pilot.</li>
-</ol>
 
 ### Release Management
 {: .govuk-heading-m}
 
-<ol class="govuk-list govuk-list--bullet">
-  <li>API users will be notified of changes/updates prior to them being released (e.g. via DfT email, newsletter and GitHub).</li>
-  <li>Releases / versions will consider the prevention of breaking change, with backwards compatibility being supported where appropriate.</li>
-  <li>Sandpit / pre-production environments will be made available to support new releases.</li>
-</ol>
+As described in the section above, initially only <code>v1</code> of the Street Manager API services will be available within the environments.  Minor version updates will be released into <code>v1</code> every two weeks - these updates may include existing feature enhancements, entirely new feature additions, as well as issue hotfixes.  Although regular releases will continue throughout Private Beta, the Street Manager development team will strive to avoid breaking changes at all times.
+{: .govuk-body}
+
+It should however be noted that during Private Beta development, there remains the potential that breaking changes may occasionally be required in order to release corrective hotfixes deemed to be service critical.  In such situations, the project team will notify potentially affected participant organistations in advance of the release and provide support with a view to minimising disruption.
+{: .govuk-body}
+
+
+When the first participant organisations are approaching Production readiness, <code>v1</code> will be 'locked down' to ensure only non-breaking hotfixes and additive enhancements are permitted into the codebase.  At this point in time, a <code>v2</code> version will be published alongside <code>v1</code> in the SANDBOX and PRE-PRODUCTION environments alongside updated Swagger JSON definitions - this is aimed at parties interested in tracking Street Manager development more closely. Similiar to <code>v1</code>, updates will be released into <code>v2</code> every two weeks, and whilst the Street Manager development team will strive to avoid them, the occasional breaking change may be required in order to release critical fixes.
+{: .govuk-body}
+
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -412,11 +460,11 @@ companies, need to use separate user accounts for each organisation.*
 The table below shows the current permissions per endpoint.
 {: .govuk-body}
 
-#### Works API
+#### Work API
 {: .govuk-heading-s}
 
 <table class="govuk-table">
-  <caption class="govuk-table__caption">Authorisation per endpoint for Works API</caption>
+  <caption class="govuk-table__caption">Authorisation per endpoint for Work API</caption>
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th class="govuk-table__header">Endpoint</th>
@@ -680,7 +728,7 @@ sequence from the stage they are available:
   <li>Make alteration</li>
 </ol>
 
-Whilst the above focuses much on data manipulation via the Works API, here is an example of some data retrieval calls that may be performed alongside these actions via the reporting API.
+Whilst the above focuses much on data manipulation via the Work API, here is an example of some data retrieval calls that may be performed alongside these actions via the reporting API.
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -1209,7 +1257,7 @@ Query params:
 
 <code>GET /fixed-penalty-notices</code>
 
-Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the works API. FPNs can be filtered by status. The status of an FPN are:
+Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the work API. FPNs can be filtered by status. The status of an FPN are:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -1230,7 +1278,7 @@ Retrieves a list of works which have had changes within a defined time period. T
 external integrators to provide a start and end date or the number of previous minutes to poll Street Manager for changes and use the results to retrieve further information from the works or reporting API.
 {: .govuk-body}
 
-### **Works API**
+### **Work API**
 {: .govuk-heading-m}
 
 #### Work records and permits
@@ -1240,6 +1288,12 @@ It's important to clarify the technical relationship between a work and a permit
 {: .govuk-body}
 
 There is also a concept of a work record's active permit, that is simply the most recently added permit on that works record. In essence, a work is a representation of all the permits, reinstatements, FPNs, inspections etc. that have been added to a particular location.
+{: .govuk-body}
+
+### Delegated Users
+{: .govuk-heading-s}
+
+All POST and PUT endpoints will contain two properties, internal_user_identifier and internal_user_name, these are intended to allow external systems to pass their internal users identifiers to Street Manager so that they are recorded against actions performed via the API (e.g. displaying the internal users name against a Street Manager comment). These properties are currently placeholders but in Phase 2 they will be stored and link the action to a specific user rather than an organisation.
 {: .govuk-body}
 
 #### Create work endpoint

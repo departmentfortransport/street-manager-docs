@@ -94,7 +94,7 @@ In line with feedback from users, we have reduced the public beta phase to five 
 ## Progress so far
 {: .govuk-heading-l #progress-so-far}
 
-We have had 15 users from 5 organisations involved in the pilot group, which has been running since November 2018. These users have primarily been focussed on the web frontend and have been using real life examples to test Street Manager to help us to develop the various services. We have carried out 14 onsite visits during the pilot phase to observe pilot users. Since the start of the pilot in November, over 380 Slack messages have been exchanged. Our pilot users have:
+We have had 15 users from 5 organisations involved in the pilot group, which has been running since November 2018. These users primarily focussed on the web frontend and have been using real life examples to test Street Manager to help us to develop the various services. We have carried out 14 onsite visits during the pilot phase to observe pilot users. Since the start of the pilot in November, over 380 Slack messages have been exchanged. Our pilot users have:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -152,7 +152,6 @@ Responsibilities include but are not limited to the following:
   <li>Monitor the Street Manager roadmap and news to inform your organisation’s users of changes and new functionality.</li>
 </ol>
 
-
 ### Organisation responsible party with API integration
 {: .govuk-heading-m}
 
@@ -164,7 +163,6 @@ In addition to the responsibilities above:
   <li>Request API access to PRE-PRODUCTION/PRODUCTION ENVIRONMENT (when ready to use Street Manager for live work use).</li>
   <li>Monitor the Street Manager roadmap and API updates to plan your organisation’s API integration (ongoing, to handle new functionality and changes).</li>
 </ol>
-
 
 ### Street Manager Private Beta participants
 {: .govuk-heading-m}
@@ -225,6 +223,7 @@ Release notices and other announcements will be made available in a centralised 
 
 ### Slack
 {: .govuk-heading-m}
+
 You will have access to the DfT Slack workspace. Slack is a hub of various channels and direct messages where discussions can take place according to topic. Different conversations can become interwoven within a channel, so it is most useful for shorter conversations or collaboration in near real-time.
 {: .govuk-body}
 
@@ -300,8 +299,7 @@ The MVP+ scope will be made available to you and will be updated on a regular ba
 ## API documentation
 {: .govuk-heading-l #api-documentation}
 
-Please find the latest API documentation here:
-[https://departmentfortransport.github.io/street-manager-docs/api-documentation/](https://departmentfortransport.github.io/street-manager-docs/api-documentation/)
+Please find the latest API documentation here: [https://departmentfortransport.github.io/street-manager-docs/api-documentation/](https://departmentfortransport.github.io/street-manager-docs/api-documentation/).
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">

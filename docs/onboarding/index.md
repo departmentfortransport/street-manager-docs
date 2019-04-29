@@ -91,7 +91,7 @@ In line with feedback from users, we have reduced the public beta phase to five 
 ## Progress so far
 {: .govuk-heading-l #progress-so-far}
 
-We have had 15 users from 5 organisations involved in the pilot group, which has been running since November 2018. These users have been using real life examples to test Street Manager and help us to develop the various services. We have carried out 14 onsite visits during the pilot phase to observe pilot users. Since the start of the pilot in November, over 380 Slack messages have been exchanged. Our pilot users have:
+We have had 15 users from 5 organisations involved in the pilot group, which has been running since November 2018. These users have primarily been focussed on the web frontend and have been using real life examples to test Street Manager to help us to develop the various services. We have carried out 14 onsite visits during the pilot phase to observe pilot users. Since the start of the pilot in November, over 380 Slack messages have been exchanged. Our pilot users have:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -125,7 +125,7 @@ When you are ready, you can request access to the PRE-PRODUCTION and PRODUCTION 
 Two weeks’ notice will be required when you would like to move onto PRE-PRODUCTION/PRODUCTION. We will also need to ensure that you are paired up with a works promoter and local highway authority (LHA) within your geographical area accordingly.
 {: .govuk-body}
 
-Important: If you dual-key in EToN and the PRODUCTION, there will be duplicate records in the live system and must be avoided.
+Important: If you dual-key in EToN and the PRODUCTION, there will be duplicate records in the live system which may cause side affects in other services such duplicate works in [roadworks.org](https://roadworks.org). If this is necessary you should make other organisations aware so they can prevent this.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -145,7 +145,6 @@ Responsibilities include but are not limited to the following:
 <ol class="govuk-list govuk-list--bullet">
   <li>Ensure that we are provided with details for your organisation for onboarding and testing/transition approach.</li>
   <li>Agree with Street Manager’s terms of use. These will be sent to you when they are ready, targetted for the end of May.</li>
-  <li>[Agree to charging model for Street Manager and provide details for invoicing/payment (details TBC).]</li>
   <li>Request access to PRE-PRODUCTION/PRODUCTION (when ready to use Street Manager for live work use).</li>
   <li>Monitor the Street Manager roadmap and news to inform your organisation’s users of changes and new functionality.</li>
 </ol>
@@ -218,7 +217,7 @@ As new functionality is released, we will provide new test scenarios to be compl
 ### News and release notices
 {: .govuk-heading-m}
 
-Release notices and other announcements will be made available in a centralised place. Release notes will be published every two weeks as each development sprint is completed and the system is updated. It will include details about new functionality, defects that have been fixed and new test scenarios.
+Release notices and other announcements will be made available in a centralised place. Release notices will be published every two weeks as each development sprint is completed and the system is updated. It will include details about new functionality, defects that have been fixed and new test scenarios.
 {: .govuk-body}
 
 ### Slack

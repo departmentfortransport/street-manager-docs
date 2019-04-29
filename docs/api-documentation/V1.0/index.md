@@ -15,6 +15,7 @@ Version 1.0 Draft
 
 <ul class="govuk-list govuk-list--number">
   <li><a class="govuk-link" href="#introduction">Introduction</a></li>
+  <li><a class="govuk-link" href="#swagger-documentation">Swagger Documentation</a></li>
   <li><a class="govuk-link" href="#onboarding">Onboarding</a></li>
   <li><a class="govuk-link" href="#environments">Environments</a></li>
   <li><a class="govuk-link" href="#technical-overview">Technical Overview</a></li>
@@ -51,6 +52,32 @@ For additional details, please see the following documents:
   <li><a href="/street-manager-docs/onboarding/">Onboarding</a>, for details on how to start using Street Manager with-in your organisation</li>
 </ol>
 
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+## Swagger Documentation
+{: .govuk-heading-l #swagger-documentation}
+
+The Swagger JSON files for each API are available below:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><a href="json/work-swagger.json/">Work API</a></li>
+  <li><a href="json/reporting-swagger.json/">Reporting API</a></li>
+  <li><a href="json/lookup-swagger.json/">Street lookup API</a></li>
+  <li><a href="json/geojson-swagger.json/">GeoJSON API</a></li>
+</ol>
+
+**Please be aware of the following:**
+{: .govuk-body}
+
+If you attempt to validate the above swagger files using the online tool <a href="https://editor.swagger.io"> https://editor.swagger.io </a> or `swagger-cli`, you may see schema errors. Please note we are aware of this issue and it will not stop you from being able to generate mock server/clients. We aim to fix this in a future version.
+{: .govuk-body}
+
+Swagger UI does not display all description text for enumerations and child elements, instead check each of the swagger.json files above for full description text.
+{: .govuk-body}
+
+In the Work API several request definitions contain `internal_user_identifier` and `internal_user_name`. Please see <a class="govuk-link" href="#delegated-users">Works API - Delegated Users section</a> for details.
+{: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
@@ -1268,7 +1295,7 @@ There is also a concept of a work record's active permit, that is simply the mos
 {: .govuk-body}
 
 ### Delegated Users
-{: .govuk-heading-s}
+{: .govuk-heading-s #delegated-users}
 
 All POST and PUT endpoints will contain two properties, internal_user_identifier and internal_user_name, these are intended to allow external systems to pass their internal users identifiers to Street Manager so that they are recorded against actions performed via the API (e.g. displaying the internal users name against a Street Manager comment). These properties are currently placeholders but in Phase 2 they will be stored and link the action to a specific user rather than an organisation.
 {: .govuk-body}

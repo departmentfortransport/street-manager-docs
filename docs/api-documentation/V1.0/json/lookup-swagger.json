@@ -1,0 +1,198 @@
+{
+	"basePath": "/",
+	"consumes": [
+		"application/json"
+	],
+	"definitions": {
+		"PrimaryNoticeAuthority": {
+			"properties": {
+				"swa_code": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"location_description": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"swa_code",
+				"name",
+				"location_description"
+			],
+			"type": "object"
+		},
+		"InterestAuthority": {
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"location_description": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"name",
+				"location_description"
+			],
+			"type": "object"
+		},
+		"AdditionalSpecialDesignationsResponse": {
+			"properties": {
+				"street_special_desig_code": {
+					"type": "string"
+				},
+				"special_desig_location_text": {
+					"type": "string"
+				},
+				"special_desig_description": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"street_special_desig_code",
+				"special_desig_location_text",
+				"special_desig_description"
+			],
+			"type": "object"
+		},
+		"StreetResponse": {
+			"properties": {
+				"usrn": {
+					"type": "number",
+					"format": "double"
+				},
+				"street_descriptor": {
+					"type": "string"
+				},
+				"area": {
+					"type": "string"
+				},
+				"town": {
+					"type": "string"
+				},
+				"authority": {
+					"type": "string"
+				},
+				"authority_swa_code": {
+					"type": "string"
+				},
+				"road_category": {
+					"type": "number",
+					"format": "double"
+				},
+				"traffic_sensitive": {
+					"type": "boolean"
+				},
+				"primary_notice_authorities": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/PrimaryNoticeAuthority"
+					}
+				},
+				"interest_authorities": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/InterestAuthority"
+					}
+				},
+				"additional_special_designations_response": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/AdditionalSpecialDesignationsResponse"
+					}
+				}
+			},
+			"required": [
+				"usrn",
+				"street_descriptor",
+				"area",
+				"town",
+				"authority",
+				"authority_swa_code",
+				"road_category",
+				"traffic_sensitive",
+				"primary_notice_authorities",
+				"interest_authorities",
+				"additional_special_designations_response"
+			],
+			"type": "object"
+		}
+	},
+	"info": {
+		"title": "street-lookup-api",
+		"version": "1.0.0",
+		"description": "See API specification Resource Guide > Street Lookup API for more information on endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
+		"license": {
+			"name": "MIT"
+		}
+	},
+	"paths": {
+		"/nsg/streets": {
+			"get": {
+				"operationId": "GetStreets",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "NSG Street data",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/StreetResponse"
+							}
+						}
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"description": "See API specification Resource Guide > Street Lookup API > Get streets endpoint for more information",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "easting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "northing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					}
+				]
+			}
+		}
+	},
+	"produces": [
+		"application/json"
+	],
+	"swagger": "2.0",
+	"securityDefinitions": {
+		"token": {
+			"type": "apiKey",
+			"name": "token",
+			"in": "header",
+			"scopes": {
+				"Planner": "Planner",
+				"HighwayAuthority": "HighwayAuthority"
+			}
+		}
+	},
+	"schemes": [
+		"https"
+	]
+}

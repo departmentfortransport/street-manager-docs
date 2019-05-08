@@ -1162,16 +1162,14 @@ users to retrieve the following:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li>Permits</li>
-  <li>Inspections</li>
+  <li><a class="govuk-link" href="#get-permits">Permits</a></li>
+  <li><a class="govuk-link" href="#get-inspections">Inspections</a></li>
   <li>Comments</li>
-  <li>Fixed penalty notices</li>
-  <li>Sites</li>
+  <li><a class="govuk-link" href="#get-fpns">Fixed penalty notices</a></li>
+  <li><a class="govuk-link" href="#get-site-endpoint">Sites</a></li>
   <li>Workstreams</li>
-  <li>Work updates (polling endpoint)</li>
-  <li>Inspections</li>
-  <li>Workstreams</li>
-  <li>Polling</li>
+  <li><a class="govuk-link" href="#polling">Work updates (polling endpoint)</a></li>
+  <li><a class="govuk-link" href="#get-inspections">Inspections</a></li>
 </ol>
 
 #### Pagination
@@ -1272,6 +1270,15 @@ Retrieves a list of FPNs that have been added to any works record. FPNs are issu
 
 Retrieves a list of works which have had changes within a defined time period. This allows
 external integrators to provide a start and end date or the number of previous minutes to poll Street Manager for changes and use the results to retrieve further information from the works or reporting API.
+{: .govuk-body}
+
+#### Polling-search
+{: .govuk-heading-s}
+
+<code>POST /permits/search</code>
+
+Retrieves further information for the works provided in the request. This allows
+external integrators to retrieve additional information for the works returned by the <code>GET /works/updates</code> endpoint.
 {: .govuk-body}
 
 ### **Work API**

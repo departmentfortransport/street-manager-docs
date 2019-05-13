@@ -1620,12 +1620,20 @@ This endpoint takes min and max easting and northing values to select all works 
 ### Street Lookup API
 {: .govuk-heading-m}
 
-#### Get streets endpoint
+#### Get streets endpoint (coordinates)
 {: .govuk-heading-s}
 
 <code>GET /nsg/streets</code>
 
 Returns NSG data based on a coordinate pair point. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest.
+{: .govuk-body}
+
+#### Get streets endpoint (USRN)
+{: .govuk-heading-s}
+
+<code>GET /nsg/streets/{usrn}</code>
+
+Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">

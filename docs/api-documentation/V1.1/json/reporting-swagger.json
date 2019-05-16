@@ -4,6 +4,33 @@
 		"application/json"
 	],
 	"definitions": {
+		"WorkCategory": {
+			"enum": [
+				"minor",
+				"standard",
+				"major",
+				"immediate_urgent",
+				"immediate_emergency",
+				"paa"
+			],
+			"type": "string"
+		},
+		"TrafficManagementType": {
+			"enum": [
+				"road_closure",
+				"contra_flow",
+				"lane_closure",
+				"multi_way_signals",
+				"two_way_signals",
+				"convoy_workings",
+				"stop_go_boards",
+				"priority_working",
+				"give_and_take",
+				"some_carriageway_incursion",
+				"no_carriageway_incursion"
+			],
+			"type": "string"
+		},
 		"PermitStatus": {
 			"enum": [
 				"submitted",
@@ -33,6 +60,21 @@
 				"work_reference_number": {
 					"type": "string"
 				},
+				"permit_reference_number": {
+					"type": "string"
+				},
+				"promoter_swa_code": {
+					"type": "string"
+				},
+				"promoter_organisation": {
+					"type": "string"
+				},
+				"highway_authority": {
+					"type": "string"
+				},
+				"works_coordinates": {
+					"type": "object"
+				},
 				"location_description": {
 					"type": "string"
 				},
@@ -41,6 +83,19 @@
 				},
 				"area": {
 					"type": "string"
+				},
+				"work_category": {
+					"$ref": "#/definitions/WorkCategory"
+				},
+				"description_of_work": {
+					"type": "string"
+				},
+				"traffic_management_type": {
+					"$ref": "#/definitions/TrafficManagementType"
+				},
+				"assessment_status": {
+					"$ref": "#/definitions/PermitStatus",
+					"x-nullable": true
 				},
 				"proposed_start_date": {
 					"type": "string",
@@ -66,18 +121,31 @@
 				"deadline_date": {
 					"type": "string",
 					"format": "date-time"
+				},
+				"date_created": {
+					"type": "string",
+					"format": "date-time"
 				}
 			},
 			"required": [
 				"cursor",
 				"work_reference_number",
+				"permit_reference_number",
+				"promoter_swa_code",
+				"promoter_organisation",
+				"highway_authority",
+				"works_coordinates",
 				"location_description",
 				"street",
 				"area",
+				"work_category",
+				"description_of_work",
+				"traffic_management_type",
 				"proposed_start_date",
 				"proposed_end_date",
 				"status",
-				"deadline_date"
+				"deadline_date",
+				"date_created"
 			],
 			"type": "object"
 		},
@@ -190,6 +258,19 @@
 				"applications",
 				"permits"
 			],
+			"type": "object"
+		},
+		"PermitSearchRequest": {
+			"properties": {
+				"work_reference_numbers": {
+					"type": "array",
+					"items": {
+						"type": "string"
+					},
+					"description": "Array values must be unique\nMust not contain null or undefined values\nArray max length 1000\nWork reference numbers have a max length 24 characters",
+					"x-nullable": true
+				}
+			},
 			"type": "object"
 		},
 		"InspectionResponseType": {
@@ -529,7 +610,8 @@
 					"format": "double"
 				},
 				"organisation_id": {
-					"type": "string"
+					"type": "number",
+					"format": "double"
 				},
 				"prefix": {
 					"type": "string"
@@ -543,6 +625,9 @@
 				},
 				"status": {
 					"$ref": "#/definitions/WorkstreamStatus"
+				},
+				"swa_code": {
+					"type": "string"
 				}
 			},
 			"required": [
@@ -551,7 +636,8 @@
 				"organisation_id",
 				"prefix",
 				"name",
-				"status"
+				"status",
+				"swa_code"
 			],
 			"type": "object"
 		},
@@ -726,6 +812,43 @@
 				]
 			}
 		},
+		"/permits/search": {
+			"post": {
+				"operationId": "GetPermitSummaries",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Available",
+						"schema": {
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/PermitSummaryResponse"
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/PermitSearchRequest"
+						}
+					}
+				]
+			}
+		},
 		"/inspections": {
 			"get": {
 				"operationId": "GetInspections",
@@ -762,6 +885,20 @@
 					},
 					{
 						"in": "query",
+						"name": "start_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "end_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
 						"name": "before",
 						"required": false,
 						"type": "string"
@@ -769,12 +906,6 @@
 					{
 						"in": "query",
 						"name": "after",
-						"required": false,
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "query",
 						"required": false,
 						"type": "string"
 					},
@@ -839,6 +970,20 @@
 						"items": {
 							"$ref": "#/definitions/InspectionResponseType"
 						}
+					},
+					{
+						"in": "query",
+						"name": "start_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "end_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
 					}
 				]
 			}

@@ -102,6 +102,10 @@
 					"items": {
 						"$ref": "#/definitions/AdditionalSpecialDesignationsResponse"
 					}
+				},
+				"street_line": {
+					"type": "string",
+					"x-nullable": true
 				}
 			},
 			"required": [
@@ -169,6 +173,43 @@
 					{
 						"in": "query",
 						"name": "northing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					}
+				]
+			}
+		},
+		"/nsg/streets/{usrn}": {
+			"get": {
+				"operationId": "GetStreetsByUsrn",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "NSG Street data",
+						"schema": {
+							"$ref": "#/definitions/StreetResponse"
+						}
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"description": "See API specification Resource Guide > Street Lookup API > Get streets endpoint for more information",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "usrn",
 						"required": true,
 						"format": "double",
 						"type": "number"

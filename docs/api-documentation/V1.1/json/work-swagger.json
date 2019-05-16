@@ -286,6 +286,10 @@
 				"contractor_contact_details": {
 					"type": "string"
 				},
+				"secondary_contact_email": {
+					"type": "string",
+					"x-nullable": true
+				},
 				"proposed_start_time": {
 					"type": "string",
 					"format": "date-time",
@@ -492,6 +496,10 @@
 				},
 				"final_reinstatement": {
 					"type": "boolean"
+				},
+				"workstream_id": {
+					"type": "number",
+					"format": "double"
 				}
 			},
 			"required": [
@@ -536,7 +544,8 @@
 				"work_type",
 				"sliding_end_date_candidate",
 				"validity_period_end_date",
-				"final_reinstatement"
+				"final_reinstatement",
+				"workstream_id"
 			],
 			"type": "object"
 		},
@@ -565,7 +574,8 @@
 				},
 				"promoter_contact_details": {
 					"type": "string",
-					"description": "Max length 100 characters"
+					"description": "DEPRECATED: Max length 100 characters",
+					"x-nullable": true
 				},
 				"approved_contractor": {
 					"type": "string",
@@ -574,6 +584,11 @@
 				"contractor_contact_details": {
 					"type": "string",
 					"description": "Max length 100 characters"
+				},
+				"secondary_contact_email": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
 				},
 				"proposed_start_date": {
 					"type": "string",
@@ -720,7 +735,6 @@
 				}
 			},
 			"required": [
-				"promoter_contact_details",
 				"approved_contractor",
 				"contractor_contact_details",
 				"proposed_start_date",
@@ -1191,7 +1205,8 @@
 				},
 				"promoter_organisation": {
 					"type": "string",
-					"description": "Max length 100 characters"
+					"description": "DEPRECATED: Max length 100 characters",
+					"x-nullable": true
 				},
 				"promoter_swa_code": {
 					"type": "string",
@@ -1199,7 +1214,8 @@
 				},
 				"promoter_contact_details": {
 					"type": "string",
-					"description": "Max length 100 characters"
+					"description": "DEPRECATED: Max length 100 characters",
+					"x-nullable": true
 				},
 				"approved_contractor": {
 					"type": "string",
@@ -1208,6 +1224,11 @@
 				"contractor_contact_details": {
 					"type": "string",
 					"description": "Max length 100 characters"
+				},
+				"secondary_contact_email": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
 				},
 				"proposed_start_date": {
 					"type": "string",
@@ -1391,9 +1412,7 @@
 			},
 			"required": [
 				"work_reference_number",
-				"promoter_organisation",
 				"promoter_swa_code",
-				"promoter_contact_details",
 				"approved_contractor",
 				"contractor_contact_details",
 				"proposed_start_date",
@@ -1512,258 +1531,6 @@
 			"required": [
 				"inspection_units",
 				"final_reinstatement"
-			],
-			"type": "object"
-		},
-		"DefectFixedOnsite": {
-			"enum": [
-				"yes_by_inspector",
-				"yes_by_onsite_members",
-				"no"
-			],
-			"type": "string"
-		},
-		"InspectionResponse": {
-			"properties": {
-				"inspection_reference_number": {
-					"type": "string"
-				},
-				"permit_id": {
-					"type": "number",
-					"format": "double"
-				},
-				"inspection_type": {
-					"$ref": "#/definitions/InspectionType"
-				},
-				"inspection_start_date": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"inspection_category": {
-					"$ref": "#/definitions/InspectionCategory"
-				},
-				"inspection_outcome": {
-					"$ref": "#/definitions/InspectionOutcome"
-				},
-				"defect_details": {
-					"type": "string",
-					"x-nullable": true
-				},
-				"unable_to_complete_details": {
-					"type": "string",
-					"x-nullable": true
-				},
-				"was_call_logged": {
-					"type": "boolean",
-					"x-nullable": true
-				},
-				"call_logged_to": {
-					"type": "string",
-					"x-nullable": true
-				},
-				"call_logged_summary": {
-					"type": "string",
-					"x-nullable": true
-				},
-				"defect_fixed_on_site": {
-					"$ref": "#/definitions/DefectFixedOnsite",
-					"x-nullable": true
-				},
-				"additional_failure_comments": {
-					"type": "string",
-					"x-nullable": true
-				},
-				"date_created": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"date_modified": {
-					"type": "string",
-					"format": "date-time"
-				},
-				"files": {
-					"type": "array",
-					"items": {
-						"$ref": "#/definitions/FileSummaryResponse"
-					},
-					"x-nullable": true
-				},
-				"work_reference_number": {
-					"type": "string"
-				},
-				"reinspection_date": {
-					"type": "string",
-					"format": "date-time",
-					"x-nullable": true
-				},
-				"reinspection_date_time": {
-					"type": "string",
-					"format": "date-time",
-					"x-nullable": true
-				},
-				"username": {
-					"type": "string"
-				},
-				"promoter_organisation": {
-					"type": "string"
-				},
-				"highway_authority": {
-					"type": "string"
-				}
-			},
-			"required": [
-				"inspection_reference_number",
-				"permit_id",
-				"inspection_type",
-				"inspection_start_date",
-				"inspection_category",
-				"inspection_outcome",
-				"date_created",
-				"date_modified",
-				"work_reference_number",
-				"username",
-				"promoter_organisation",
-				"highway_authority"
-			],
-			"type": "object"
-		},
-		"InspectionCreateResponse": {
-			"properties": {
-				"inspection_reference_number": {
-					"type": "string"
-				}
-			},
-			"required": [
-				"inspection_reference_number"
-			],
-			"type": "object"
-		},
-		"InspectionCreateRequest": {
-			"properties": {
-				"internal_user_identifier": {
-					"type": "string",
-					"description": "Max length 100 characters",
-					"x-nullable": true
-				},
-				"internal_user_name": {
-					"type": "string",
-					"description": "Max length 50 characters",
-					"x-nullable": true
-				},
-				"inspection_type": {
-					"$ref": "#/definitions/InspectionType"
-				},
-				"inspection_start_date": {
-					"type": "string",
-					"format": "date-time",
-					"description": "inspection_start_date must be in the past"
-				},
-				"inspection_category": {
-					"$ref": "#/definitions/InspectionCategory",
-					"description": "See business rule ref. 3.2 - Inspection category"
-				},
-				"inspection_outcome": {
-					"$ref": "#/definitions/InspectionOutcome",
-					"description": "See business rule ref. 3.3 - Inspection outcome"
-				},
-				"defect_details": {
-					"type": "string",
-					"description": "Required if inspection_outcome = failed_low or failed_high\nMax length 500 characters",
-					"x-nullable": true
-				},
-				"unable_to_complete_details": {
-					"type": "string",
-					"description": "Required if inspection_outcome = unable_to_complete_inspection\nMax length 500 characters",
-					"x-nullable": true
-				},
-				"was_call_logged": {
-					"type": "boolean",
-					"description": "Required if inspection_outcome = failed_low or failed_high and inspection_type = slg",
-					"x-nullable": true
-				},
-				"call_logged_to": {
-					"type": "string",
-					"description": "Required if was_call_logged = true\nMax length 100 characters",
-					"x-nullable": true
-				},
-				"call_logged_summary": {
-					"type": "string",
-					"description": "Required if was_call_logged = true\nMax length 500 characters",
-					"x-nullable": true
-				},
-				"defect_fixed_on_site": {
-					"$ref": "#/definitions/DefectFixedOnsite",
-					"description": "Required if inspection_outcome = failed_low or failed_high and inspection_type = slg",
-					"x-nullable": true
-				},
-				"additional_failure_comments": {
-					"type": "string",
-					"description": "Required if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required\nMax length 500 characters",
-					"x-nullable": true
-				},
-				"inspection_evidence": {
-					"type": "boolean",
-					"description": "Required if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required",
-					"x-nullable": true
-				},
-				"file_ids": {
-					"type": "array",
-					"items": {
-						"type": "number",
-						"format": "double"
-					},
-					"description": "Required if inspection_evidence = true\nArray values must be unique\nMust not contain null or undefined values\nA file_id can only be associated with one section of Street Manager\nSee API specification Resource Guide > Works API > File upload for more information",
-					"x-nullable": true
-				},
-				"reinspection_date": {
-					"type": "string",
-					"format": "date-time",
-					"description": "Optional if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required\nDate must occur today or a date in the future",
-					"x-nullable": true
-				},
-				"reinspection_date_time": {
-					"type": "string",
-					"format": "date-time",
-					"description": "Optional if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required\nThe date for reinspection_date_time must match the date for reinspection_date\nTime must occur today or a date in the future",
-					"x-nullable": true
-				},
-				"username": {
-					"type": "string",
-					"description": "Max length 50 characters\nShould be populated with the user creating the inspection"
-				}
-			},
-			"required": [
-				"inspection_type",
-				"inspection_start_date",
-				"inspection_category",
-				"inspection_outcome",
-				"username"
-			],
-			"type": "object"
-		},
-		"AuthenticationResponse": {
-			"properties": {
-				"idToken": {
-					"type": "string"
-				}
-			},
-			"required": [
-				"idToken"
-			],
-			"type": "object"
-		},
-		"AuthenticationRequest": {
-			"properties": {
-				"emailAddress": {
-					"type": "string"
-				},
-				"password": {
-					"type": "string"
-				}
-			},
-			"required": [
-				"emailAddress",
-				"password"
 			],
 			"type": "object"
 		},
@@ -2040,6 +1807,258 @@
 			],
 			"type": "object"
 		},
+		"DefectFixedOnsite": {
+			"enum": [
+				"yes_by_inspector",
+				"yes_by_onsite_members",
+				"no"
+			],
+			"type": "string"
+		},
+		"InspectionResponse": {
+			"properties": {
+				"inspection_reference_number": {
+					"type": "string"
+				},
+				"permit_id": {
+					"type": "number",
+					"format": "double"
+				},
+				"inspection_type": {
+					"$ref": "#/definitions/InspectionType"
+				},
+				"inspection_start_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"inspection_category": {
+					"$ref": "#/definitions/InspectionCategory"
+				},
+				"inspection_outcome": {
+					"$ref": "#/definitions/InspectionOutcome"
+				},
+				"defect_details": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"unable_to_complete_details": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"was_call_logged": {
+					"type": "boolean",
+					"x-nullable": true
+				},
+				"call_logged_to": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"call_logged_summary": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"defect_fixed_on_site": {
+					"$ref": "#/definitions/DefectFixedOnsite",
+					"x-nullable": true
+				},
+				"additional_failure_comments": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"date_created": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"date_modified": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"files": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/FileSummaryResponse"
+					},
+					"x-nullable": true
+				},
+				"work_reference_number": {
+					"type": "string"
+				},
+				"reinspection_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"reinspection_date_time": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"username": {
+					"type": "string"
+				},
+				"promoter_organisation": {
+					"type": "string"
+				},
+				"highway_authority": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"inspection_reference_number",
+				"permit_id",
+				"inspection_type",
+				"inspection_start_date",
+				"inspection_category",
+				"inspection_outcome",
+				"date_created",
+				"date_modified",
+				"work_reference_number",
+				"username",
+				"promoter_organisation",
+				"highway_authority"
+			],
+			"type": "object"
+		},
+		"InspectionCreateResponse": {
+			"properties": {
+				"inspection_reference_number": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"inspection_reference_number"
+			],
+			"type": "object"
+		},
+		"InspectionCreateRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"inspection_type": {
+					"$ref": "#/definitions/InspectionType"
+				},
+				"inspection_start_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "inspection_start_date must be in the past"
+				},
+				"inspection_category": {
+					"$ref": "#/definitions/InspectionCategory",
+					"description": "See business rule ref. 3.2 - Inspection category"
+				},
+				"inspection_outcome": {
+					"$ref": "#/definitions/InspectionOutcome",
+					"description": "See business rule ref. 3.3 - Inspection outcome"
+				},
+				"defect_details": {
+					"type": "string",
+					"description": "Required if inspection_outcome = failed_low or failed_high\nMax length 500 characters",
+					"x-nullable": true
+				},
+				"unable_to_complete_details": {
+					"type": "string",
+					"description": "Required if inspection_outcome = unable_to_complete_inspection\nMax length 500 characters",
+					"x-nullable": true
+				},
+				"was_call_logged": {
+					"type": "boolean",
+					"description": "Required if inspection_outcome = failed_low or failed_high and inspection_type = slg",
+					"x-nullable": true
+				},
+				"call_logged_to": {
+					"type": "string",
+					"description": "Required if was_call_logged = true\nMax length 100 characters",
+					"x-nullable": true
+				},
+				"call_logged_summary": {
+					"type": "string",
+					"description": "Required if was_call_logged = true\nMax length 500 characters",
+					"x-nullable": true
+				},
+				"defect_fixed_on_site": {
+					"$ref": "#/definitions/DefectFixedOnsite",
+					"description": "Required if inspection_outcome = failed_low or failed_high and inspection_type = slg",
+					"x-nullable": true
+				},
+				"additional_failure_comments": {
+					"type": "string",
+					"description": "Required if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required\nMax length 500 characters",
+					"x-nullable": true
+				},
+				"inspection_evidence": {
+					"type": "boolean",
+					"description": "Required if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required",
+					"x-nullable": true
+				},
+				"file_ids": {
+					"type": "array",
+					"items": {
+						"type": "number",
+						"format": "double"
+					},
+					"description": "Required if inspection_evidence = true\nArray values must be unique\nMust not contain null or undefined values\nA file_id can only be associated with one section of Street Manager\nSee API specification Resource Guide > Works API > File upload for more information",
+					"x-nullable": true
+				},
+				"reinspection_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "Optional if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required\nDate must occur today or a date in the future",
+					"x-nullable": true
+				},
+				"reinspection_date_time": {
+					"type": "string",
+					"format": "date-time",
+					"description": "Optional if inspection_outcome = failed_low, failed_high, withdraw_defect or further_inspections_required\nThe date for reinspection_date_time must match the date for reinspection_date\nTime must occur today or a date in the future",
+					"x-nullable": true
+				},
+				"username": {
+					"type": "string",
+					"description": "Max length 50 characters\nShould be populated with the user creating the inspection"
+				}
+			},
+			"required": [
+				"inspection_type",
+				"inspection_start_date",
+				"inspection_category",
+				"inspection_outcome",
+				"username"
+			],
+			"type": "object"
+		},
+		"AuthenticationResponse": {
+			"properties": {
+				"idToken": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"idToken"
+			],
+			"type": "object"
+		},
+		"AuthenticationRequest": {
+			"properties": {
+				"emailAddress": {
+					"type": "string"
+				},
+				"password": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"emailAddress",
+				"password"
+			],
+			"type": "object"
+		},
 		"FPNResponse": {
 			"properties": {
 				"fpn_reference_number": {
@@ -2271,7 +2290,8 @@
 				},
 				"promoter_contact_details": {
 					"type": "string",
-					"description": "Max length 100 characters"
+					"description": "DEPRECATED: Max length 100 characters",
+					"x-nullable": true
 				},
 				"approved_contractor": {
 					"type": "string",
@@ -2280,6 +2300,11 @@
 				"contractor_contact_details": {
 					"type": "string",
 					"description": "Max length 100 characters"
+				},
+				"secondary_contact_email": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
 				},
 				"proposed_start_date": {
 					"type": "string",
@@ -2423,7 +2448,6 @@
 				}
 			},
 			"required": [
-				"promoter_contact_details",
 				"approved_contractor",
 				"contractor_contact_details",
 				"proposed_start_date",
@@ -3027,6 +3051,133 @@
 				]
 			}
 		},
+		"/works/{workReferenceNumber}/sites": {
+			"post": {
+				"operationId": "CreateSite",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"201": {
+						"description": "Created",
+						"schema": {
+							"$ref": "#/definitions/SiteCreateResponse"
+						}
+					}
+				},
+				"description": "See business rules section 4 - Reinstatements and sites",
+				"security": [
+					{
+						"token": [
+							"Planner"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ReinstatementCreateRequest"
+						}
+					}
+				]
+			}
+		},
+		"/works/{workReferenceNumber}/sites/{siteId}": {
+			"get": {
+				"operationId": "GetSite",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/SiteResponse"
+						}
+					}
+				},
+				"description": "See business rules section 4 - Reinstatements and sites",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "siteId",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					}
+				]
+			}
+		},
+		"/works/{workReferenceNumber}/sites/{siteId}/reinstatements": {
+			"post": {
+				"operationId": "CreateReinstatement",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"201": {
+						"description": "Created",
+						"schema": {
+							"$ref": "#/definitions/ReinstatementCreateResponse"
+						}
+					}
+				},
+				"description": "See business rules section 4 - Reinstatements and sites",
+				"security": [
+					{
+						"token": [
+							"Planner"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "siteId",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ReinstatementCreateRequest"
+						}
+					}
+				]
+			}
+		},
 		"/works/{workReferenceNumber}/inspections/{inspectionReferenceNumber}": {
 			"get": {
 				"operationId": "GetInspection",
@@ -3262,133 +3413,6 @@
 						"required": true,
 						"format": "double",
 						"type": "number"
-					}
-				]
-			}
-		},
-		"/works/{workReferenceNumber}/sites": {
-			"post": {
-				"operationId": "CreateSite",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"201": {
-						"description": "Created",
-						"schema": {
-							"$ref": "#/definitions/SiteCreateResponse"
-						}
-					}
-				},
-				"description": "See business rules section 4 - Reinstatements and sites",
-				"security": [
-					{
-						"token": [
-							"Planner"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "workReferenceNumber",
-						"required": true,
-						"type": "string"
-					},
-					{
-						"in": "body",
-						"name": "body",
-						"required": true,
-						"schema": {
-							"$ref": "#/definitions/ReinstatementCreateRequest"
-						}
-					}
-				]
-			}
-		},
-		"/works/{workReferenceNumber}/sites/{siteId}": {
-			"get": {
-				"operationId": "GetSite",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"$ref": "#/definitions/SiteResponse"
-						}
-					}
-				},
-				"description": "See business rules section 4 - Reinstatements and sites",
-				"security": [
-					{
-						"token": [
-							"Planner",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "workReferenceNumber",
-						"required": true,
-						"type": "string"
-					},
-					{
-						"in": "path",
-						"name": "siteId",
-						"required": true,
-						"format": "double",
-						"type": "number"
-					}
-				]
-			}
-		},
-		"/works/{workReferenceNumber}/sites/{siteId}/reinstatements": {
-			"post": {
-				"operationId": "CreateReinstatement",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"201": {
-						"description": "Created",
-						"schema": {
-							"$ref": "#/definitions/ReinstatementCreateResponse"
-						}
-					}
-				},
-				"description": "See business rules section 4 - Reinstatements and sites",
-				"security": [
-					{
-						"token": [
-							"Planner"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "path",
-						"name": "workReferenceNumber",
-						"required": true,
-						"type": "string"
-					},
-					{
-						"in": "path",
-						"name": "siteId",
-						"required": true,
-						"format": "double",
-						"type": "number"
-					},
-					{
-						"in": "body",
-						"name": "body",
-						"required": true,
-						"schema": {
-							"$ref": "#/definitions/ReinstatementCreateRequest"
-						}
 					}
 				]
 			}

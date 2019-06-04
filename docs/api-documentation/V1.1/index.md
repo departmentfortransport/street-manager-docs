@@ -1324,6 +1324,11 @@ workstream. The workstream_prefix must match the prefix of a workstream
 associated with the user's organisation.
 {: .govuk-body}
 
+NSG related fields are optional. If not provided; street_name, area_name and road_category will be inferred from NSG data relating to the provided USRN. Use Street Lookup API endpoint /nsg/streets or /nsg/usrn to lookup this information.
+
+permit_asds for the provided USRN can be found at Street Lookup API endpoint /nsg/usrn
+{: .govuk-body}
+
 #### Create permit endpoint
 {: .govuk-heading-s}
 

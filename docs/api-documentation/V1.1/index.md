@@ -310,6 +310,28 @@ As described in the section above, initially only <code>v1</code> of the Street 
 It should however be noted that during Private Beta development, there remains the potential that breaking changes may occasionally be required in order to release corrective hotfixes deemed to be service critical.  In such situations, the project team will notify potentially affected participant organistations in advance of the release and provide support with a view to minimising disruption.
 {: .govuk-body}
 
+The following are examples of what we consider to be breaking and non-breaking changes.
+{: .govuk-body}
+
+#### What is a breaking change
+{: .govuk-heading-s}
+
+<ol class="govuk-list govuk-list--bullet">
+<li>Adding new mandatory field to existing endpoint request object</li>
+<li>Removing/renaming enum value for field in existing endpoint request object</li>
+<li>Removing/renaming existing field in endpoint response object</li>
+<li>Adding new required endpoint to use an existing flow (e.g. submitting a permit)</li>
+</ol>
+
+#### What is a non-breaking change
+{: .govuk-heading-s}
+
+<ol class="govuk-list govuk-list--bullet">
+<li>Adding a new optional field to existing endpoint request object</li>
+<li>Adding new enum values for field in existing endpoint request object</li>
+<li>Adding new data to response objects (accepting risk that this breaks some formal contract JSON deserialisers)</li>
+<li>Adding a new endpoint to support new functionality or an enhancement to existing functionality</li>
+</ol>
 
 When the first participant organisations are approaching Production readiness, <code>v1</code> will be 'locked down' to ensure only non-breaking hotfixes and additive enhancements are permitted into the codebase.  At this point in time, a <code>v2</code> version will be published alongside <code>v1</code> in the SANDBOX and PRE-PRODUCTION environments alongside updated Swagger JSON definitions - this is aimed at parties interested in tracking Street Manager development more closely. Similiar to <code>v1</code>, updates will be released into <code>v2</code> every two weeks, and whilst the Street Manager development team will strive to avoid them, the occasional breaking change may be required in order to release critical fixes.
 {: .govuk-body}
@@ -1748,12 +1770,29 @@ The Open data API will allow non street works authority users, such as Mobile Ap
 The following is a list of significant changes by version of this document.
 {: .govuk-body}
 
-Version 1.1:
+Version 1.1 (30/5/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li>Added Polling-search endpoint, see <em>Resource guide</em> for Reporting API</li>
-  <li>Added Get streets endpoint by USRN endpoint, see <em>Resource guide</em> for Street Lookup API</li>
+<!-- 16/05/19 -->
+<li>An optional parameter, workstream_prefix, has been added to POST /work and POST /works/{work reference number}/permits endpoints, to allow API users to specify workstream for permit (if not set will default to "000"), see API Documentation Resource guide for details</li>
+<li>API user can now request further information on the updates Permits by calling the POST /permits/search with a list of work reference numbers returned by the GET /works/updates end point, see API Documentation Resource guide for details</li>
+<li>The street lookup information can now be returned using a USRN rather than coordinates. The GET streets/{usrn} endpoint will return a single street for the supplied USRN, see API Documentation Resource guide for details</li>
+<!-- 30/5/2019 -->
+Updated Work API with non-breaking changes:
+
+<li>If the user does not supply a work_reference_number as part of the request body to POST /works then it will be auto-generated with the following format:<br/>
+<br/>
+<code><2 letter swa_org_prefix><3-letter workstream prefix><8 digit random number></code><br/>
+<br/>
+The generated work_reference_number is returned in the response.
+<br/><br/>
+More detail is available in the V1.1 API documentation Resource Guide for the Create work endpoint.</li>
+
+<li>Updated Reporting API, added new sorting options for GET /permits to allow sorting by start/end/status
+Added new optional filter parameters for GET /fixed-penalty-notices to allow filtering by date
+Added new fields to GET /inspections response, returning Highway Authority and Promoter Organisation</li>
+
 </ol>
 
 Version 1.0 (30/4/2019):

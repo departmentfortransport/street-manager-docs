@@ -18,6 +18,7 @@ Version 1.1
   <li><a class="govuk-link" href="#swagger-documentation">Swagger Documentation</a></li>
   <li><a class="govuk-link" href="#onboarding">Onboarding</a></li>
   <li><a class="govuk-link" href="#environments">Environments</a></li>
+  <li><a class="govuk-link" href="#timing">Timing</a></li>
   <li><a class="govuk-link" href="#technical-overview">Technical Overview</a></li>
   <li><a class="govuk-link" href="#versioningandreleasemanagement">Versioning and Release Management</a></li>
   <li><a class="govuk-link" href="#testing">Testing</a></li>
@@ -143,6 +144,15 @@ The Street Manager service provides three separate isolated application service 
   <li>Once an organisation has reached production-readiness – and have aligned with their local area ecosystem partners in that production-readiness – the organisations must engage with the Street Manager team to request access to the PRODUCTION environment.  At this stage the team will work with the organisation and its local area ecosystem partners to facilitate a transition into the PRODUCTION environment.</li>
   <li>In some cases, local area ecosystem alignment may not be possible within reasonable timeframes due to external factors.  In these cases, dual-keying may be necessary between the organisation, their existing EToN system, and the Street Manager Service.</li>
 </ol>
+
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+## Timing
+{: .govuk-heading-l #timing}
+
+All Street Manager environments use standard [NTP Pool](https://www.ntppool.org/en/) servers to synchronise their system clocks, ensuring they keep accurate and consistent time. To learn more about how Street Manager uses time and defines rules like working day, see the [Business rules](/street-manager-docs/business-rules/).
+{: .govuk-body}
 
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">

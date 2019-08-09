@@ -250,6 +250,26 @@
 			],
 			"type": "string"
 		},
+		"LaneRentalAssessmentOutcome": {
+			"enum": [
+				"chargeable",
+				"potentially_chargeable",
+				"charges_waived",
+				"exempt",
+				"charges_not_applicable"
+			],
+			"type": "string"
+		},
+		"LaneRentalAsssessmentChargeBand": {
+			"enum": [
+				"charge_band_1",
+				"charge_band_2",
+				"charge_band_3",
+				"charge_band_4",
+				"charge_band_5"
+			],
+			"type": "string"
+		},
 		"WorkCategory": {
 			"enum": [
 				"minor",
@@ -540,6 +560,27 @@
 				},
 				"close_footway": {
 					"$ref": "#/definitions/CloseFootway"
+				},
+				"lane_rental_assessment_outcome": {
+					"$ref": "#/definitions/LaneRentalAssessmentOutcome",
+					"x-nullable": true
+				},
+				"lane_rental_assessment_additional_details": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"lane_rental_assessment_charge_band": {
+					"$ref": "#/definitions/LaneRentalAsssessmentChargeBand",
+					"x-nullable": true
+				},
+				"lane_rental_assessment_chargeable_days": {
+					"type": "number",
+					"format": "double",
+					"x-nullable": true
+				},
+				"lane_rental_assessment_charges_agreed": {
+					"type": "boolean",
+					"x-nullable": true
 				}
 			},
 			"required": [
@@ -843,6 +884,47 @@
 			},
 			"required": [
 				"permit_status"
+			],
+			"type": "object"
+		},
+		"PermitLaneRentalAssessmentUpdateRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"outcome": {
+					"$ref": "#/definitions/LaneRentalAssessmentOutcome"
+				},
+				"additional_details": {
+					"type": "string",
+					"description": "Max length 500 characters",
+					"x-nullable": true
+				},
+				"charge_band": {
+					"$ref": "#/definitions/LaneRentalAsssessmentChargeBand",
+					"x-nullable": true
+				},
+				"chargeable_days": {
+					"type": "number",
+					"format": "double",
+					"description": "Whole number between 1 and 10000",
+					"x-nullable": true
+				},
+				"charges_agreed": {
+					"type": "boolean",
+					"description": "Required if outcome = 'chargeable'",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"outcome"
 			],
 			"type": "object"
 		},
@@ -1520,6 +1602,28 @@
 			],
 			"type": "object"
 		},
+		"WorkStartRevertRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"revert_reason": {
+					"type": "string",
+					"description": "revert_reason max length 100 characters\nPermit must be in progress\nWork must be planned\nWork must not have any reinstatements"
+				}
+			},
+			"required": [
+				"revert_reason"
+			],
+			"type": "object"
+		},
 		"WorkStopUpdateRequest": {
 			"properties": {
 				"internal_user_identifier": {
@@ -2154,11 +2258,19 @@
 				},
 				"organisationReference": {
 					"type": "string"
+				},
+				"accessToken": {
+					"type": "string"
+				},
+				"refreshToken": {
+					"type": "string"
 				}
 			},
 			"required": [
 				"idToken",
-				"organisationReference"
+				"organisationReference",
+				"accessToken",
+				"refreshToken"
 			],
 			"type": "object"
 		},
@@ -2997,6 +3109,49 @@
 				]
 			}
 		},
+		"/works/{workReferenceNumber}/permits/{permitReferenceNumber}/lane-rental-assessments": {
+			"put": {
+				"operationId": "UpdatePermitLaneRentalAssessment",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No Content"
+					}
+				},
+				"description": "See business rule ref. 18.1 - Adding a lane rental assessment to a permit",
+				"security": [
+					{
+						"token": [
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "permitReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/PermitLaneRentalAssessmentUpdateRequest"
+						}
+					}
+				]
+			}
+		},
 		"/permits/category": {
 			"get": {
 				"operationId": "GetWorkCategory",
@@ -3172,6 +3327,44 @@
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/WorkStartUpdateRequest"
+						}
+					}
+				]
+			}
+		},
+		"/works/{workReferenceNumber}/revert-start": {
+			"put": {
+				"operationId": "RevertActualStartDate",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": ""
+					}
+				},
+				"description": "See business rule ref. 11.5 - Revert work start",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/WorkStartRevertRequest"
 						}
 					}
 				]

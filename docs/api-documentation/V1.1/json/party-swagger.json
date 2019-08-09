@@ -394,7 +394,8 @@
 						"token": [
 							"Planner",
 							"HighwayAuthority",
-							"Admin"
+							"Admin",
+							"Contractor"
 						]
 					}
 				],
@@ -437,7 +438,8 @@
 					{
 						"token": [
 							"Planner",
-							"Admin"
+							"Admin",
+							"Contractor"
 						]
 					}
 				],
@@ -552,7 +554,8 @@
 						"token": [
 							"Admin",
 							"Planner",
-							"HighwayAuthority"
+							"HighwayAuthority",
+							"Contractor"
 						]
 					}
 				],

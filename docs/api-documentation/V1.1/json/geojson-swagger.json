@@ -137,7 +137,8 @@
 					{
 						"token": [
 							"Planner",
-							"HighwayAuthority"
+							"HighwayAuthority",
+							"Contractor"
 						]
 					}
 				],
@@ -182,6 +183,12 @@
 						"name": "end_date",
 						"required": false,
 						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "work_reference_number",
+						"required": false,
 						"type": "string"
 					}
 				]

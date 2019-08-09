@@ -114,6 +114,16 @@
 					"type": "string",
 					"format": "date-time"
 				},
+				"proposed_start_time": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"proposed_end_time": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
 				"actual_start_date": {
 					"type": "string",
 					"format": "date-time",
@@ -555,6 +565,16 @@
 				"proposed_end_date": {
 					"type": "string",
 					"format": "date-time"
+				},
+				"proposed_start_time": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"proposed_end_time": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
 				},
 				"work_category": {
 					"$ref": "#/definitions/WorkCategory"

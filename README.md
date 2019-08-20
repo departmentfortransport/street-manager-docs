@@ -40,3 +40,16 @@ cd docs
 bundle install
 bundle exec jekyll serve # runs on http://127.0.0.1:4000/street-manager-docs/
 ```
+
+## Run in devcontainer
+
+Requires:
+- [Docker](https://www.docker.com/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+- [Visual Studio Code Remote - Containers extension](https://code.visualstudio.com/docs/remote/containers)
+
+1. Open folder
+2. Click bottom left corner and select "Remote-Containers: Open Folder in Container" (requires extension)
+3. Wait for container to be built
+4. Run task to launch Jekyll via `Terminal -> Run Task -> Jeykll`
+5. Browse to http://localhost:4000

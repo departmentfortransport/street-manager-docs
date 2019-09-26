@@ -326,43 +326,6 @@
 				"contractor_organisation_references"
 			],
 			"type": "object"
-		},
-		"TokenRefreshResponse": {
-			"properties": {
-				"id_token": {
-					"type": "string"
-				},
-				"access_token": {
-					"type": "string"
-				}
-			},
-			"required": [
-				"id_token",
-				"access_token"
-			],
-			"type": "object"
-		},
-		"TokenRefereshRequest": {
-			"properties": {
-				"refresh_token": {
-					"type": "string"
-				}
-			},
-			"required": [
-				"refresh_token"
-			],
-			"type": "object"
-		},
-		"LogoutRequest": {
-			"properties": {
-				"access_token": {
-					"type": "string"
-				}
-			},
-			"required": [
-				"access_token"
-			],
-			"type": "object"
 		}
 	},
 	"info": {
@@ -748,57 +711,6 @@
 						"name": "contractorOrganisationReference",
 						"required": true,
 						"type": "string"
-					}
-				]
-			}
-		},
-		"/refresh": {
-			"post": {
-				"operationId": "Refresh",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"$ref": "#/definitions/TokenRefreshResponse"
-						}
-					}
-				},
-				"security": [],
-				"parameters": [
-					{
-						"in": "body",
-						"name": "body",
-						"required": true,
-						"schema": {
-							"$ref": "#/definitions/TokenRefereshRequest"
-						}
-					}
-				]
-			}
-		},
-		"/logout": {
-			"post": {
-				"operationId": "Logout",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"204": {
-						"description": "No content"
-					}
-				},
-				"security": [],
-				"parameters": [
-					{
-						"in": "body",
-						"name": "body",
-						"required": true,
-						"schema": {
-							"$ref": "#/definitions/LogoutRequest"
-						}
 					}
 				]
 			}

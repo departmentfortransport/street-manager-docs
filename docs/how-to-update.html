@@ -60,6 +60,8 @@ title: How to update
         You can clone the repository to your own machine, make changes there and preview them before pushing them back up for review and merging.
     </p>
 
+    <h3 class="govuk-heading-s">Local development environment</h3>
+
     <p class="govuk-body govuk-!-font-weight-bold">Requires:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li><a href="https://www.ruby-lang.org/en/downloads/">Ruby 2.1.0 or higher</a></li>
@@ -70,6 +72,23 @@ title: How to update
         cd docs
         bundle install
         bundle exec jekyll serve # runs on http://localhost:4000/street-manager-docs/
+    </pre>
+
+    <h3 class="govuk-heading-s">Local development container</h3>
+
+    <p class="govuk-body govuk-!-font-weight-bold">Requires:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="https://www.docker.com/">Docker</a></li>
+      <li><a href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+      <li><a href="https://code.visualstudio.com/docs/remote/containers">Visual Studio Code Remote - Containers extension</a></li>
+    </ul>
+
+    <pre>
+      1. Open folder in Visual Studio Code
+      2. Click bottom left corner and select "Remote-Containers: Open Folder in Container" (requires extension)
+      3. Wait for container to be built
+      4. Run task to launch Jekyll via `Terminal -> Run Task -> Jeykll`
+      5. Browse to http://localhost:4000
     </pre>
 
   </div>

@@ -1,6 +1,6 @@
 ---
 layout: default
-title: API specification V1.0
+title: API specification V1.1
 ---
 # API specification
 {: .govuk-heading-xl}
@@ -66,7 +66,6 @@ The Swagger JSON files for each API are available below:
   <li><a href="json/reporting-swagger.json">Reporting API</a></li>
   <li><a href="json/lookup-swagger.json">Street lookup API</a></li>
   <li><a href="json/geojson-swagger.json">GeoJSON API</a></li>
-  <li><a href="json/party-swagger.json">Party API</a></li>
 </ol>
 
 **Please be aware of the following:**
@@ -289,14 +288,6 @@ Notifications cannot offer guaranteed delivery (network issues, service
 downtime etc.) so to reconcile for missed Notifications you can use the
 Polling API endpoint to validate you have received notifications for all
 updated works.
-{: .govuk-body}
-
-**Contractors**
-{: .govuk-body}
-
-Contractors can use the Reporting API to extract data from the service both as
-JSON and CSV format. These endpoints allow you to extract most Work
-information efficiently for the organisation you are working on behalf of. swa_code parameters are available on the endpoints which can be used by contractors to provide the swa code of the promoter they are working on behalf of.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -654,7 +645,7 @@ is enforced in addition to the user's role.
 
 Json Web Token (JWT) is an open standard for exchanging information
 securely. The entities of Street Manager exchange information using JWTs
-and resources of the Street Manager API require that a JWT ID token be provided
+and resources of the Street Manager API require that a JWT be provided
 as part of the request.
 {: .govuk-body}
 
@@ -663,13 +654,10 @@ manager will attempt to validate the JWT as part of its authentication and
 authorisation function.
 {: .govuk-body}
 
-The ID token expires 1 hour after it was generated, if an expired JWT is used in a
+The token expires 1 hour after it was generated, if an expired JWT is used in a
 request, an error with the HTTP status `401` will be returned.  In this scenario
-a new token will need to be generated using the <code>/party/refresh</code>
-endpoint by supplying a Refresh token.
-
-To invalidate all JWT tokens associated with a user, the Access token should be provided
-to the <code>/party/logout</code> endpoint.
+a new token will need to be generated using the <code>/work/authenticate</code>
+endpoint.
 {: .govuk-body}
 
 ### Resource
@@ -678,10 +666,10 @@ to the <code>/party/logout</code> endpoint.
 <code>POST /authenticate</code>
 
 The authenticate endpoint takes a case sensitive username (email
-address) and password, returning JWT ID, Access and Referesh tokens if successful.
-**The JWT ID and Access tokens are valid for one hour, meanwhile the Refresh token
-is valid for 1 day.** Once the ID token has been acquired it canbe added to all
-protected resource requests made via swagger using the Authorize button.
+address) and password, returning a JWT token if successful. **The JWT
+token is valid for one hour.** Once the token has been acquired it can
+be added to all protected resource requests made via swagger using the
+Authorize button.
 {: .govuk-body}
 
 ![authorise](images/authorise.png)
@@ -706,7 +694,7 @@ error responses as it will help narrow down where an issue is occurring.
 <code>{ "message": "Authentication failed", "error": { "status": 401 } }</code>
 
 Authentication fails when the token provided in the request is invalid.
-The ID token may have expired or the value set as the token was incorrect.
+The token may have expired or the value set as the token was incorrect.
 You may also see this error when calling the POST /authenticate endpoint
 with invalid credentials i.e. wrong username or password.
 {: .govuk-body}
@@ -1283,13 +1271,6 @@ Query params:
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>start_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
   <li><strong>end_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
-  <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
-  <li><strong>is_traffic_sensitive</strong>: When true this will return permits where a traffic sensitive ASD has been selected</li>
-  <li><strong>is_high_impact_traffic_management</strong>: When true this will return permits with a traffic management type of road closure, contra-flow, lane closure, convoy workings, multi-way signals or two-way signals</li>
-  <li><strong>has_no_final_registration</strong>: When true this will return permits that have not yet submitted their final reinstatement</li>
-  <li><strong>has_excavation</strong>: When true this will return permits that have carried out an excavation</li>
-  <li><strong>is_early_start</strong>: When true this will return permits that have been flagged as an early start</li>
-  <li><strong>is_deemed</strong>: When true this will return permits that have been automatically deemed</li>
 </ol>
 
 #### Get inspections
@@ -1302,7 +1283,6 @@ Query params:
   <li><strong>inspection_response_type</strong>: inspection or reinspection</li>
   <li><strong>sort_column</strong>: The property of the inspection to order results by</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
-  <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
 </ol>
 
 #### Get FPNs
@@ -1310,7 +1290,17 @@ Query params:
 
 <code>GET /fixed-penalty-notices</code>
 
-Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the work API. FPNs can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
+Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the work API. FPNs can be filtered by status. The status of an FPN are:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><strong>issued</strong>: Issued by the HA</li>
+  <li><strong>accepted</strong>: Accepted by the promoter</li>
+  <li><strong>paid</strong>: Confirmed as paid by the HA</li>
+  <li><strong>paid_discounted</strong>: Confirmed as paid by the HA with a discount</li>
+  <li><strong>disputed</strong>: Disputed by the promoter</li>
+  <li><strong>withdrawn</strong>: Withdrawn by the HA</li>
+</ol>
 
 #### Get alterations
 {: .govuk-heading-s}
@@ -1327,12 +1317,6 @@ Query params:
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>start_date_created</strong>: Date range filtering based on the date_created property</li>
   <li><strong>end_date_created</strong>: Date range filtering based on the date_created property</li>
-  <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
-  <li><strong>is_traffic_sensitive</strong>: When true this will return permit alterations where a traffic sensitive ASD has been selected</li>
-  <li><strong>is_high_impact_traffic_management</strong>: When true this will return permit alterations with a traffic management type of road closure, contra-flow, lane closure, convoy workings, multi-way signals or two-way signals</li>
-  <li><strong>is_duration_extension</strong>: When true this will return permit alterations that raised a duration extension</li>
-  <li><strong>is_early_start</strong>: When true this will return permit alterations that have been flagged as an early start</li>
-  <li><strong>is_deemed</strong>: When true this will return permit alterations that have been automatically deemed</li>
 </ol>
 
 #### Polling
@@ -1348,9 +1332,6 @@ In order to retrieve all updates since last usage, the start date could be set t
 {: .govuk-body}
 
 Updates for a particular user can be excluded by populating the optional <code>exclude_events_from</code> field with their username.
-{: .govuk-body}
-
-Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
 {: .govuk-body}
 
 #### Polling-search
@@ -1379,9 +1360,6 @@ Chargeable activities include:
   <li>Change in work category</li>
 </ol>
 
-{: .govuk-body}
-
-Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
 {: .govuk-body}
 
 ### **Work API**
@@ -1736,14 +1714,6 @@ This alteration endpoint returns both the original and the proposed changes of a
 This endpoint takes min and max easting and northing values to select all works within a bounding box. The works selected can be optionally filtered using the start and end date params.
 {: .govuk-body}
 
-#### Get activities endpoint
-{: .govuk-heading-s}
-
-<code>GET /activities</code>
-
-This endpoint takes min and max easting and northing values to select all activities within a bounding box. The activities selected can be optionally filtered using the start and end date params.
-{: .govuk-body}
-
 ### Street Lookup API
 {: .govuk-heading-m}
 
@@ -1840,26 +1810,6 @@ Deletes link between contractor and organisation removing the ability of the con
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-#### Refresh tokens
-{: .govuk-heading-s}
-
-<code>POST /refresh</code>
-
-Accepts the user's Refresh JWT token and returns new ID and Access JWT tokens that are valid for 1 hour.
-{: .govuk-body}
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-#### Logout
-{: .govuk-heading-s}
-
-<code>POST /logout</code>
-
-Accepts the user's Access JWT token and invalidates all JWTs associated with a user.
-{: .govuk-body}
-
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
 ## Roadmap
 {: .govuk-heading-l #roadmap}
 
@@ -1952,7 +1902,7 @@ The Open data API will allow non street works authority users, such as Mobile Ap
 The following is a list of significant changes by version of this document.
 {: .govuk-body}
 
-Version 1.1 (07/08/2019):
+Version 1.1 (25/5/2019):
 {: .govuk-body .govuk-!-font-weight-bold}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -1975,10 +1925,6 @@ More detail is available in the V1.1 API documentation Resource Guide for the Cr
 Added new optional filter parameters for GET /fixed-penalty-notices to allow filtering by date
 Added new fields to GET /inspections response, returning Highway Authority and Promoter Organisation</li>
 
-<!-- 07/08/19 -->
-<li>`New optional boolean properties have been added to the Reporting API `GET /permits` and `GET /alterations` endpoints for filtering results</li>
-
-<li>`access_token` and `refresh_token` properties have been added to the response of `POST /authenticate`. The `refresh_token` can be provided to the new Party API `POST /refresh` endpoint to retrieve a refreshed `id_token` and `access_token`. The `access_token` can be provided to the Party API `POST /logout` endpoint to invalidate all tokens associated with a user.</li>
 </ol>
 
 Version 1.0 (30/4/2019):

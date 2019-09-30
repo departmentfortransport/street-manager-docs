@@ -511,6 +511,9 @@
 					"type": "boolean",
 					"x-nullable": true
 				},
+				"is_early_start": {
+					"type": "boolean"
+				},
 				"early_start_pre_approval": {
 					"type": "boolean",
 					"x-nullable": true
@@ -630,6 +633,7 @@
 				"application_type",
 				"location_types",
 				"permit_asds",
+				"is_early_start",
 				"work_type",
 				"sliding_end_date_candidate",
 				"validity_period_end_date",
@@ -1020,6 +1024,43 @@
 			],
 			"type": "string"
 		},
+		"ForwardPlanStatus": {
+			"enum": [
+				"raised",
+				"cancelled",
+				"closed"
+			],
+			"type": "string"
+		},
+		"ForwardPlanSummaryResponse": {
+			"properties": {
+				"work_reference_number": {
+					"type": "string"
+				},
+				"forward_plan_reference_number": {
+					"type": "string"
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"forward_plan_status": {
+					"$ref": "#/definitions/ForwardPlanStatus"
+				}
+			},
+			"required": [
+				"work_reference_number",
+				"forward_plan_reference_number",
+				"start_date",
+				"end_date",
+				"forward_plan_status"
+			],
+			"type": "object"
+		},
 		"PermitSummaryResponse": {
 			"properties": {
 				"permit_reference_number": {
@@ -1059,6 +1100,65 @@
 			],
 			"type": "object"
 		},
+		"AuditEvent": {
+			"enum": [
+				"historic_action",
+				"inspection_passed",
+				"inspection_failed",
+				"inspection_unable_to_carry_out",
+				"inspection_further_required",
+				"inspection_withdraw_defect",
+				"activity_submitted",
+				"activity_edited",
+				"activity_cancelled",
+				"fpn_submitted",
+				"fpn_accepted",
+				"fpn_paid",
+				"fpn_disputed",
+				"fpn_withdrawn",
+				"permit_granted",
+				"permit_refused",
+				"permit_cancelled",
+				"permit_revoked",
+				"permit_deemed",
+				"paa_granted",
+				"paa_refused",
+				"paa_cancelled",
+				"paa_revoked",
+				"alteration_submitted",
+				"alteration_refused",
+				"alteration_granted",
+				"alteration_granted_with_duration_challenge",
+				"alteration_deemed",
+				"alteration_cancelled",
+				"lane_rental_assessed",
+				"reinstatement_submitted",
+				"file_uploaded",
+				"comment_submitted",
+				"work_start_logged",
+				"work_stop_logged",
+				"work_start_reverted",
+				"work_stop_reverted",
+				"forward_plan_submitted",
+				"forward_plan_cancelled",
+				"user_removed",
+				"user_invited",
+				"inspection_units_logged",
+				"excavation_carried_out",
+				"permit_submitted",
+				"paa_submitted",
+				"forward_plan_edited",
+				"permit_discount_updated",
+				"paa_discount_updated",
+				"paa_deemed",
+				"organisation_contract_added",
+				"organisation_contract_removed",
+				"organisation_updated",
+				"workstream_created",
+				"workstream_updated"
+			],
+			"type": "string"
+		},
 		"WorkHistoryResponse": {
 			"properties": {
 				"action_date": {
@@ -1074,9 +1174,8 @@
 				"username": {
 					"type": "string"
 				},
-				"isComment": {
-					"type": "boolean",
-					"x-nullable": true
+				"event": {
+					"$ref": "#/definitions/AuditEvent"
 				},
 				"object_reference": {
 					"type": "string",
@@ -1087,7 +1186,8 @@
 				"action_date",
 				"topic",
 				"details",
-				"username"
+				"username",
+				"event"
 			],
 			"type": "object"
 		},
@@ -1201,12 +1301,10 @@
 					"x-nullable": true
 				},
 				"inspection_type": {
-					"$ref": "#/definitions/InspectionType",
-					"x-nullable": true
+					"$ref": "#/definitions/InspectionType"
 				},
 				"inspection_category": {
-					"$ref": "#/definitions/InspectionCategory",
-					"x-nullable": true
+					"$ref": "#/definitions/InspectionCategory"
 				},
 				"inspection_outcome": {
 					"$ref": "#/definitions/InspectionOutcome",
@@ -1220,7 +1318,9 @@
 			},
 			"required": [
 				"inspection_date",
-				"inspection_response_type"
+				"inspection_response_type",
+				"inspection_type",
+				"inspection_category"
 			],
 			"type": "object"
 		},
@@ -1336,6 +1436,10 @@
 				},
 				"active_permit": {
 					"$ref": "#/definitions/PermitResponse",
+					"x-nullable": true
+				},
+				"forward_plan": {
+					"$ref": "#/definitions/ForwardPlanSummaryResponse",
 					"x-nullable": true
 				},
 				"permits": {
@@ -2117,6 +2221,44 @@
 			],
 			"type": "string"
 		},
+		"SiteDetails": {
+			"properties": {
+				"site_id": {
+					"type": "number",
+					"format": "double"
+				},
+				"site_description": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"site_id",
+				"site_description"
+			],
+			"type": "object"
+		},
+		"FailureReasonDetailsResponse": {
+			"properties": {
+				"failure_reason": {
+					"$ref": "#/definitions/FailureReason"
+				},
+				"sites": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/SiteDetails"
+					},
+					"x-nullable": true
+				},
+				"details": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"failure_reason",
+				"details"
+			],
+			"type": "object"
+		},
 		"DefectFixedOnsite": {
 			"enum": [
 				"yes_by_inspector",
@@ -2151,10 +2293,10 @@
 					"type": "string",
 					"x-nullable": true
 				},
-				"failure_reasons": {
+				"failure_reason_details": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/FailureReason"
+						"$ref": "#/definitions/FailureReasonDetailsResponse"
 					},
 					"x-nullable": true
 				},
@@ -2218,6 +2360,10 @@
 				},
 				"highway_authority": {
 					"type": "string"
+				},
+				"inspector_name": {
+					"type": "string",
+					"x-nullable": true
 				}
 			},
 			"required": [
@@ -2244,6 +2390,31 @@
 			},
 			"required": [
 				"inspection_reference_number"
+			],
+			"type": "object"
+		},
+		"FailureReasonDetails": {
+			"properties": {
+				"failure_reason": {
+					"$ref": "#/definitions/FailureReason"
+				},
+				"site_ids": {
+					"type": "array",
+					"items": {
+						"type": "number",
+						"format": "double"
+					},
+					"description": "Required if work has a reinstatement",
+					"x-nullable": true
+				},
+				"details": {
+					"type": "string",
+					"description": "Max length 500 characters"
+				}
+			},
+			"required": [
+				"failure_reason",
+				"details"
 			],
 			"type": "object"
 		},
@@ -2275,15 +2446,10 @@
 					"$ref": "#/definitions/InspectionOutcome",
 					"description": "See business rule ref. 3.3 - Inspection outcome"
 				},
-				"defect_details": {
-					"type": "string",
-					"description": "Required if inspection_outcome = failed_low or failed_high\nMax length 500 characters",
-					"x-nullable": true
-				},
-				"failure_reasons": {
+				"failure_reason_details": {
 					"type": "array",
 					"items": {
-						"$ref": "#/definitions/FailureReason"
+						"$ref": "#/definitions/FailureReasonDetails"
 					},
 					"description": "See business rule ref. 3.4 - Inspection failure reasons",
 					"x-nullable": true
@@ -2343,9 +2509,24 @@
 					"description": "The date for reinspection_date_time must match the date for reinspection_date\nTime must occur today or a date in the future",
 					"x-nullable": true
 				},
+				"reinspection_type": {
+					"$ref": "#/definitions/InspectionType",
+					"description": "Defaulted to inspection_type value if this and/or reinspection_category are not provided and reinspection_date is provided",
+					"x-nullable": true
+				},
+				"reinspection_category": {
+					"$ref": "#/definitions/InspectionCategory",
+					"description": "See business rule ref. 3.2 - Inspection category\nDefaulted to inspection_category value if this and/or reinspection_type are not provided and reinspection_date is provided",
+					"x-nullable": true
+				},
 				"username": {
 					"type": "string",
 					"description": "Max length 50 characters\nShould be populated with the user creating the inspection"
+				},
+				"inspector_name": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
 				}
 			},
 			"required": [
@@ -2360,24 +2541,26 @@
 		"AuthenticationResponse": {
 			"properties": {
 				"idToken": {
-					"type": "string"
+					"type": "string",
+					"x-nullable": true
 				},
 				"organisationReference": {
-					"type": "string"
+					"type": "string",
+					"x-nullable": true
 				},
 				"accessToken": {
-					"type": "string"
+					"type": "string",
+					"x-nullable": true
 				},
 				"refreshToken": {
-					"type": "string"
+					"type": "string",
+					"x-nullable": true
+				},
+				"sessionToken": {
+					"type": "string",
+					"x-nullable": true
 				}
 			},
-			"required": [
-				"idToken",
-				"organisationReference",
-				"accessToken",
-				"refreshToken"
-			],
 			"type": "object"
 		},
 		"AuthenticationRequest": {
@@ -2397,12 +2580,12 @@
 		},
 		"InitialAuthenticationResponse": {
 			"properties": {
-				"token": {
+				"sessionToken": {
 					"type": "string"
 				}
 			},
 			"required": [
-				"token"
+				"sessionToken"
 			],
 			"type": "object"
 		},
@@ -3404,6 +3587,184 @@
 				"end_date",
 				"works_location_description",
 				"description_of_work"
+			],
+			"type": "object"
+		},
+		"ForwardPlanResponse": {
+			"properties": {
+				"work_reference_number": {
+					"type": "string"
+				},
+				"forward_plan_reference_number": {
+					"type": "string"
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"forward_plan_status": {
+					"$ref": "#/definitions/ForwardPlanStatus"
+				},
+				"promoter_organisation": {
+					"type": "string"
+				},
+				"promoter_swa_code": {
+					"type": "string"
+				},
+				"promoter_contact_details": {
+					"type": "string"
+				},
+				"highway_authority": {
+					"type": "string"
+				},
+				"highway_authority_swa_code": {
+					"type": "string"
+				},
+				"workstream_id": {
+					"type": "number",
+					"format": "double"
+				},
+				"works_coordinates": {
+					"type": "object"
+				},
+				"street_name": {
+					"type": "string"
+				},
+				"area_name": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"usrn": {
+					"type": "number",
+					"format": "double"
+				},
+				"road_category": {
+					"type": "number",
+					"format": "double"
+				},
+				"date_created": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"works_location_description": {
+					"type": "string"
+				},
+				"description_of_work": {
+					"type": "string"
+				},
+				"project_reference_number": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"traffic_management_type": {
+					"$ref": "#/definitions/TrafficManagementType",
+					"x-nullable": true
+				},
+				"additional_info": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"forward_plan_asds": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/PermitASD"
+					},
+					"x-nullable": true
+				},
+				"cancelled_reason": {
+					"type": "string",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"work_reference_number",
+				"forward_plan_reference_number",
+				"start_date",
+				"end_date",
+				"forward_plan_status",
+				"promoter_organisation",
+				"promoter_swa_code",
+				"promoter_contact_details",
+				"highway_authority",
+				"highway_authority_swa_code",
+				"workstream_id",
+				"works_coordinates",
+				"street_name",
+				"usrn",
+				"road_category",
+				"date_created",
+				"works_location_description",
+				"description_of_work"
+			],
+			"type": "object"
+		},
+		"ForwardPlanUpdateRequest": {
+			"properties": {
+				"works_coordinates": {
+					"type": "object",
+					"description": "Must be a GeoJSON geometry (using British National Grid easting and northing coordinate pairs) and must be a point, line string or polygon"
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time",
+					"description": "end_date must be on or after start_date"
+				},
+				"works_location_description": {
+					"type": "string",
+					"description": "Max length 500 characters"
+				},
+				"description_of_work": {
+					"type": "string",
+					"description": "Max length 500 characters"
+				},
+				"project_reference_number": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"traffic_management_type": {
+					"$ref": "#/definitions/TrafficManagementType",
+					"x-nullable": true
+				},
+				"additional_info": {
+					"type": "string",
+					"description": "Max length 500 characters",
+					"x-nullable": true
+				},
+				"forward_plan_asds": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/PermitASD"
+					},
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"works_coordinates",
+				"start_date",
+				"end_date",
+				"works_location_description",
+				"description_of_work"
+			],
+			"type": "object"
+		},
+		"ForwardPlanCancelRequest": {
+			"properties": {
+				"cancelled_reason": {
+					"type": "string",
+					"description": "Max length 500 characters"
+				}
+			},
+			"required": [
+				"cancelled_reason"
 			],
 			"type": "object"
 		}
@@ -5019,6 +5380,130 @@
 						"required": true,
 						"schema": {
 							"$ref": "#/definitions/ForwardPlanCreateRequest"
+						}
+					}
+				]
+			}
+		},
+		"/works/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}": {
+			"get": {
+				"operationId": "GetForwardPlan",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/ForwardPlanResponse"
+						}
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "forwardPlanReferenceNumber",
+						"required": true,
+						"type": "string"
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateForwardPlan",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": ""
+					}
+				},
+				"description": "See business rules section 22 - Forward plans",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "forwardPlanReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ForwardPlanUpdateRequest"
+						}
+					}
+				]
+			}
+		},
+		"/works/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}/cancel": {
+			"put": {
+				"operationId": "CancelForwardPlan",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": ""
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "workReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "forwardPlanReferenceNumber",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/ForwardPlanCancelRequest"
 						}
 					}
 				]

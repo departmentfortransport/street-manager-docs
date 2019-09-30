@@ -100,6 +100,16 @@
 			],
 			"type": "object"
 		},
+		"LaneRentalAssessmentOutcome": {
+			"enum": [
+				"chargeable",
+				"potentially_chargeable",
+				"charges_waived",
+				"exempt",
+				"charges_not_applicable"
+			],
+			"type": "string"
+		},
 		"PermitSummaryResponse": {
 			"properties": {
 				"cursor": {
@@ -229,6 +239,16 @@
 				},
 				"is_lane_rental": {
 					"type": "boolean"
+				},
+				"lane_rental_assessment_outcome": {
+					"$ref": "#/definitions/LaneRentalAssessmentOutcome",
+					"x-nullable": true
+				},
+				"lane_rental_charges_not_agreed": {
+					"type": "boolean"
+				},
+				"lane_rental_charges_potentially_apply": {
+					"type": "boolean"
 				}
 			},
 			"required": [
@@ -261,7 +281,9 @@
 				"excavation_carried_out",
 				"is_early_start",
 				"is_high_impact_traffic_management",
-				"is_lane_rental"
+				"is_lane_rental",
+				"lane_rental_charges_not_agreed",
+				"lane_rental_charges_potentially_apply"
 			],
 			"type": "object"
 		},
@@ -457,12 +479,10 @@
 					"x-nullable": true
 				},
 				"inspection_type": {
-					"$ref": "#/definitions/InspectionType",
-					"x-nullable": true
+					"$ref": "#/definitions/InspectionType"
 				},
 				"inspection_category": {
-					"$ref": "#/definitions/InspectionCategory",
-					"x-nullable": true
+					"$ref": "#/definitions/InspectionCategory"
 				},
 				"inspection_outcome": {
 					"$ref": "#/definitions/InspectionOutcome",
@@ -488,6 +508,8 @@
 				"location_description",
 				"street",
 				"area",
+				"inspection_type",
+				"inspection_category",
 				"highway_authority",
 				"promoter_organisation"
 			],
@@ -593,6 +615,85 @@
 			],
 			"type": "object"
 		},
+		"ForwardPlanStatus": {
+			"enum": [
+				"raised",
+				"cancelled",
+				"closed"
+			],
+			"type": "string"
+		},
+		"ForwardPlanSummaryResponse": {
+			"properties": {
+				"cursor": {
+					"type": "string"
+				},
+				"work_reference_number": {
+					"type": "string"
+				},
+				"forward_plan_reference_number": {
+					"type": "string"
+				},
+				"promoter_organisation": {
+					"type": "string"
+				},
+				"highway_authority": {
+					"type": "string"
+				},
+				"location_description": {
+					"type": "string"
+				},
+				"street": {
+					"type": "string"
+				},
+				"area": {
+					"type": "string"
+				},
+				"proposed_start_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"proposed_end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"forward_plan_status": {
+					"$ref": "#/definitions/ForwardPlanStatus"
+				}
+			},
+			"required": [
+				"cursor",
+				"work_reference_number",
+				"forward_plan_reference_number",
+				"promoter_organisation",
+				"highway_authority",
+				"location_description",
+				"street",
+				"area",
+				"proposed_start_date",
+				"proposed_end_date",
+				"forward_plan_status"
+			],
+			"type": "object"
+		},
+		"ForwardPlanReportingResponse": {
+			"properties": {
+				"pagination": {
+					"$ref": "#/definitions/PaginationResponse"
+				},
+				"rows": {
+					"type": "array",
+					"items": {
+						"$ref": "#/definitions/ForwardPlanSummaryResponse"
+					}
+				}
+			},
+			"required": [
+				"pagination",
+				"rows"
+			],
+			"type": "object"
+		},
 		"AlterationStatus": {
 			"enum": [
 				"submitted",
@@ -684,6 +785,16 @@
 				"status_changed_date": {
 					"type": "string",
 					"format": "date-time"
+				},
+				"lane_rental_assessment_outcome": {
+					"$ref": "#/definitions/LaneRentalAssessmentOutcome",
+					"x-nullable": true
+				},
+				"lane_rental_charges_not_agreed": {
+					"type": "boolean"
+				},
+				"lane_rental_charges_potentially_apply": {
+					"type": "boolean"
 				}
 			},
 			"required": [
@@ -704,7 +815,9 @@
 				"alteration_type",
 				"date_created",
 				"deadline_date",
-				"status_changed_date"
+				"status_changed_date",
+				"lane_rental_charges_not_agreed",
+				"lane_rental_charges_potentially_apply"
 			],
 			"type": "object"
 		},
@@ -1049,6 +1162,16 @@
 					},
 					{
 						"in": "query",
+						"name": "lane_rental_assessment_outcome",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/LaneRentalAssessmentOutcome"
+						}
+					},
+					{
+						"in": "query",
 						"name": "active_permit_only",
 						"required": false,
 						"type": "boolean"
@@ -1103,6 +1226,13 @@
 						"in": "query",
 						"name": "sort_column",
 						"required": false,
+						"enum": [
+							"date_created",
+							"deadline_date",
+							"end_date",
+							"permit_status",
+							"start_date"
+						],
 						"type": "string"
 					},
 					{
@@ -1156,6 +1286,18 @@
 						"name": "swa_code",
 						"required": false,
 						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "lane_rental_charges_not_agreed",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "lane_rental_charges_potentially_apply",
+						"required": false,
+						"type": "boolean"
 					}
 				]
 			}
@@ -1333,6 +1475,12 @@
 					{
 						"in": "query",
 						"name": "swa_code",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "query",
 						"required": false,
 						"type": "string"
 					}
@@ -1689,6 +1837,165 @@
 				]
 			}
 		},
+		"/forward-plans": {
+			"get": {
+				"operationId": "GetForwardPlans",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/ForwardPlanReportingResponse",
+							"type": "array",
+							"items": {
+								"$ref": "#/definitions/ForwardPlanSummaryResponse"
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Reporting API > Get ForwardPlans for more information",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "forward_plan_status",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/ForwardPlanStatus"
+						}
+					},
+					{
+						"in": "query",
+						"name": "proposed_start_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "proposed_end_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "before",
+						"required": false,
+						"type": "integer"
+					},
+					{
+						"in": "query",
+						"name": "after",
+						"required": false,
+						"type": "integer"
+					},
+					{
+						"in": "query",
+						"name": "query",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "sort_column",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "sort_direction",
+						"required": false,
+						"enum": [
+							"asc",
+							"desc"
+						],
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "swa_code",
+						"required": false,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/forward-plans/csv": {
+			"get": {
+				"operationId": "GetForwardPlansAsCSV",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"content": {
+							"text/csv": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					},
+					"204": {
+						"description": "No content"
+					}
+				},
+				"description": "See API specification Resource Guide > Reporting API > CSV for more information",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "forward_plan_status",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/ForwardPlanStatus"
+						}
+					},
+					{
+						"in": "query",
+						"name": "proposed_start_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "proposed_end_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "swa_code",
+						"required": false,
+						"type": "string"
+					}
+				]
+			}
+		},
 		"/alterations": {
 			"get": {
 				"operationId": "GetAlterations",
@@ -1755,6 +2062,16 @@
 						"collectionFormat": "multi",
 						"items": {
 							"$ref": "#/definitions/WorkCategory"
+						}
+					},
+					{
+						"in": "query",
+						"name": "lane_rental_assessment_outcome",
+						"required": false,
+						"type": "array",
+						"collectionFormat": "multi",
+						"items": {
+							"$ref": "#/definitions/LaneRentalAssessmentOutcome"
 						}
 					},
 					{
@@ -1832,6 +2149,24 @@
 					{
 						"in": "query",
 						"name": "swa_code",
+						"required": false,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "lane_rental_charges_not_agreed",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "lane_rental_charges_potentially_apply",
+						"required": false,
+						"type": "boolean"
+					},
+					{
+						"in": "query",
+						"name": "query",
 						"required": false,
 						"type": "string"
 					}

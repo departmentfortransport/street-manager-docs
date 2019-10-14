@@ -1485,7 +1485,7 @@ Query params:
   <li><strong>work_status</strong>: The work status i.e. planned, completed</li>
   <li><strong>work_category</strong>: The work category i.e. minor, standard</li>
   <li><strong>lane_rental_assessment_outcome</strong>: The outcome of the lane rental assessment (if exists) i.e. chargeable, exempt</li>
-  <li><strong>query</strong>: The work reference number associated with the permit (partial match)</li>
+  <li><strong>query</strong>: The work reference number, permit reference number or street associated with the permit (partial match)</li>
   <li><strong>sort_column</strong>: The property of the permit to order results by</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>start_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
@@ -1545,6 +1545,24 @@ Query params:
   <li><strong>is_deemed</strong>: When true this will return permit alterations that have been automatically deemed</li>
   <li><strong>lane_rental_charges_not_agreed</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" and charges have not been agreed</li>
   <li><strong>lane_rental_charges_potentially_apply</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" or "potentially chargeable", or the work is taking place on a lane rental applicable road</li>
+</ol>
+
+#### Get forward plans
+{: .govuk-heading-s}
+
+<code>GET /forward-plans</code>
+
+Query params:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><strong>forward_plan_status</strong>: The forward plan status i.e. raised, closed</li>
+  <li><strong>sort_column</strong>: The property of the forward plan to order results by</li>
+  <li><strong>sort_direction</strong>: Ascending/descending</li>
+  <li><strong>proposed_start_date</strong>: Date range filtering based on the proposed forward plan dates</li>
+  <li><strong>proposed_end_date</strong>: Date range filtering based on the proposed forward plan dates</li>
+  <li><strong>query</strong>: Search field for work reference number, permit reference number or street (partial match)</li>
+  <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
 </ol>
 
 #### Polling
@@ -2318,7 +2336,7 @@ Update Work API with the following changes:
 Update Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-<li>Update the <code>GET /forward-plans</code> endpoint to accept the following query parameters: <code>status</code>, of type <code>ForwardPlanStatus</code> array; <code>start_date</code> of type DateTime; <code>end_date</code> of type DateTime; <code>query</code> of type string, which will search by street name or forward plan reference number</li>
+<li>Update the <code>GET /forward-plans</code> endpoint to accept the following query parameters: <code>forward_plan_status</code>, of type <code>ForwardPlanStatus</code> array; <code>start_date</code> of type DateTime; <code>end_date</code> of type DateTime; <code>query</code> of type string, which will search by street name or forward plan reference number</li>
 </ol>
 
 Update Street Lookup API with the following changes:

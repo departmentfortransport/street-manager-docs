@@ -1508,24 +1508,6 @@ Query params:
   <li><strong>lane_rental_charges_potentially_apply</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" or "potentially chargeable", or the work is taking place on a lane rental applicable road</li>
 </ol>
 
-#### Get forward plans
-{: .govuk-heading-s}
-
-<code>GET /forward-plans</code>
-
-Query params:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li><strong>forward_plan_status</strong>: The forward plan status i.e. raised, closed</li>
-  <li><strong>sort_column</strong>: The property of the forward plan to order results by</li>
-  <li><strong>sort_direction</strong>: Ascending/descending</li>
-  <li><strong>proposed_start_date</strong>: Date range filtering based on the proposed forward plan dates</li>
-  <li><strong>proposed_end_date</strong>: Date range filtering based on the proposed forward plan dates</li>
-  <li><strong>query</strong>: Search field for work reference number, permit reference number or street (partial match)</li>
-  <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
-</ol>
-
 #### Polling
 {: .govuk-heading-s}
 

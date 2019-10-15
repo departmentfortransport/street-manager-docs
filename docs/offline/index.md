@@ -29,7 +29,7 @@ Outages will be announced on the <a class="govuk-link" href="https://streetmanag
 {: .govuk-heading-s}
 
 <p class="govuk-body">
-Works should and will continue regardless of the service availability. If the outage will be short you can wait for the service to come back online, otherwise you can manually record your actions using the forms provided below and send them directly to the responsible parties.
+  Works should and will continue regardless of the service availability. If the outage will be short you can wait for the service to come back online, otherwise you can manually record your actions using the forms provided below and send them directly to the responsible parties.
 </p>
 
 ## For external systems that integrate with the service how should I recover

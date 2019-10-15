@@ -49,7 +49,6 @@ See the API documentation for details on how to recover from an outage.
 </p>
 
 <ul class="govuk-list govuk-list--bullet">
-<li><a class="govuk-link" href="{{ site.baseurl }}/assets/files/offline/offline-guidance.pdf">Offline guidance</a></li>
   <li><a class="govuk-link" href="{{ site.baseurl }}/assets/files/offline/PERMIT-APPLICATION-INCLUDING-RESPONSES.pdf">Permit form</a></li>
   <li><a class="govuk-link" href="{{ site.baseurl }}/assets/files/offline/SM-InpectionForm-v2-AB.pdf">Inspection form</a></li>
 </ul>

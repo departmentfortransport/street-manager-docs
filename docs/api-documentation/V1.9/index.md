@@ -72,6 +72,7 @@ The Swagger JSON files for each API are available below:
   <li><a href="json/lookup-swagger.json">Street Lookup API JSON</a></li>
   <li><a href="json/geojson-swagger.json">GeoJSON API JSON</a></li>
   <li><a href="json/party-swagger.json">Party API JSON</a></li>
+  <li><a href="json/data-export-swagger.json">Data Export API JSON</a></li>
 </ol>
 
 You can see the Swagger definitions rendered as HTML on the SANDBOX environment:
@@ -212,15 +213,6 @@ The Street Manager GeoJson API exposes works and events spatial data to
 authenticated users for use with mapping queries. See the resource guide for details.
 {: .govuk-body}
 
-#### Data Export API
-{: .govuk-heading-s}
-
-*This API is not yet available.*
-{: .govuk-body}
-
-Street Manager will support an API for Open Data users, see the Roadmap section for details.
-{: .govuk-body}
-
 #### Reporting API
 {: .govuk-heading-s}
 
@@ -230,6 +222,12 @@ retrieve data with configurable filtering, sorting and paging. This is
 the backbone of our dashboard and list functionality. This API should be
 used as a primary API to retrieve large volumes of data about your
 works.
+{: .govuk-body}
+
+#### Data Export API
+{: .govuk-heading-s}
+
+The Data Export API will allow non street works authority users, such as Mobile Application developers, to retrieve information about works.
 {: .govuk-body}
 
 ### Getting data from Street Manager
@@ -2297,12 +2295,6 @@ The Work API will be updated to allow submission of notices to noticing Highway 
 {: .govuk-heading-s}
 
 The Work API will be updated to include endpoints for correcting errors in submitted data against works.
-{: .govuk-body}
-
-### Data Export API
-{: .govuk-heading-s}
-
-The Data Export API will allow non street works authority users, such as Mobile Application developers, to retrieve information about works. See the Technical Overview for details.
 {: .govuk-body}
 
 ## Versions

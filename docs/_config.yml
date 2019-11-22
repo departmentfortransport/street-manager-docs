@@ -1,1 +1,3 @@
 baseurl: /street-manager-docs
+collections:
+  - articles

@@ -1,0 +1,11 @@
+---
+layout: default
+title: Index
+---
+<h1 class="govuk-heading-xl">Articles</h1>
+
+{% for article in site.articles %}
+  <h2 class="govuk-heading-s">
+    <a class="govuk-link" href="{{ article.url | relative_url }}">{{ article.title | escape }}</a>
+  </h2>
+{% endfor %}

@@ -1,0 +1,25 @@
+backend:
+  name: github
+  repo: departmentfortransport/street-manager-docs
+  branch: add-netlify-cms # Branch to update (optional; defaults to master)
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+# This line should *not* be indented
+media_folder: "docs/assets/images/cms" # Media files will be stored in the repo under assets/images
+
+collections:
+  - name: "article" # Used in routes, e.g., /admin/collections/blog
+    label: "Article" # Used in the UI
+    folder: "docs/_articles" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    slug: "{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "article"}
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Type", name: "type", widget: "hidden", default: "article"}
+      - {label: "Published", name: "published", widget: "hidden", default: "true"}
+      - {label: "Status", name: "status", widget: "hidden", default: "publish"}
+      - {label: "Body", name: "body", widget: "markdown"}

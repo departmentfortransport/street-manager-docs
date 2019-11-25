@@ -6,7 +6,7 @@ type: article
 published: true
 status: publish
 ---
-
+# How to add an article
 
 
 
@@ -54,3 +54,14 @@ Below is an uploaded image:
 ![govuk crest](/docs/assets/images/cms/govuk-crest.png "govuk crest uploaded")
 
 Images will appear on separate lines.
+
+_Note:_ You can use switch from "Rich Text" to "Markdown" mode to see the raw [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) created by the editor, this allows you to manually add special classes to elements or raw HTML from the [govuk design-system](https://design-system.service.gov.uk/).
+
+Example:
+
+```
+This is a lead paragraph
+{: .govuk-body-l}
+```
+This is a lead paragraph
+{: .govuk-body-l}

@@ -27,6 +27,10 @@ Notes for updating the API documentation:
 
 This repository contains a folder `/docs` which is intended to be served as a [Jekyll](https://jekyllrb.com/docs/github-pages/) static HTML site for serving the documentation via [GitHub pages](https://departmentfortransport.github.io/street-manager-docs/). See [here](https://help.github.com/en/articles/configuring-a-publishing-source-for-github-pages) for details on setting up the repository.
 
+### Netlify CMS
+
+This repository has been setup so it can be hosted on [Netlify](https://www.netlify.com/) and use [Netlify CMS](https://www.netlifycms.org/). This allows authorised users to edit specific pages using CMS controls.
+
 ### Run locally
 
 You can clone and run the site locally to verify changes before pushing them.

@@ -17,7 +17,7 @@ status: publish
 7. Ask someone to review your changes by going to the [/admin](/admin) page to view the unpublished article and setting the status using the control in the top right to ready
 8. When your article is ready, click the "Publish" button in the top right, once finished this will add your article to [/articles](/articles) list and available to link on the main site
 
-_Notes:_ 
+_Notes:_
 
 * Your content must still be linked from a main page before users can easily see it
 * Existing content must be converted to simple markdown before it can be edited using the Rich Text editor
@@ -29,11 +29,11 @@ _Notes:_
 
 Below are examples of the content produced by the controls markdown, use this to see how things will appear if you use the Rich Text editor.
 
-# Example Header 1
+# Example H1
+
+## Example H2
 
 This is a block of text
-
-## Example Header 2
 
 This is an example bullet list
 

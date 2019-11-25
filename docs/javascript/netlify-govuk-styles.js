@@ -13,7 +13,9 @@ $('.govuk-main-wrapper ul').addClass('govuk-list govuk-list--bullet');
 
 $('.govuk-main-wrapper blockquote').addClass('govuk-inset-text');
 
-// correct cms uploaded image url
+// correct cms uploaded image
 $('.govuk-main-wrapper img').each(function() {
   $(this).attr('src', $(this).attr('src').replace('/docs', '/street-manager-docs'));
+  $(this).css('max-height','100%');
+  $(this).css('max-width','100%');
 });

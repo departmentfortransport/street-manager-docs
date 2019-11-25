@@ -8,5 +8,7 @@ $('.govuk-main-wrapper h4').addClass('govuk-heading-s');
 $('.govuk-main-wrapper p').addClass('govuk-body');
 $('.govuk-main-wrapper a').addClass('govuk-link');
 
-$('.govuk-main-wrapper ol').addClass('govuk-list');
+$('.govuk-main-wrapper ol').addClass('govuk-list govuk-list--number');
 $('.govuk-main-wrapper ul').addClass('govuk-list govuk-list--bullet');
+
+$('.govuk-main-wrapper blockquote').addClass('govuk-inset-text');

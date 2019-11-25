@@ -23,6 +23,8 @@ _Notes:_
 * Existing content must be converted to simple markdown before it can be edited using the Rich Text editor
 * You can upload images to your articles using the "+" button on the Rich Text editor
 
+![Editor controls](/docs/assets/images/cms/how-to-add-an-article-image.png "Editor controls")
+
 ## Content examples
 
 Below are examples of the content produced by the controls markdown, use this to see how things will appear if you use the Rich Text editor.

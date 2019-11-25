@@ -8,8 +8,6 @@ status: publish
 ---
 # How to add an article
 
-
-
 Below are examples of the content produced by the controls markdown, use this to see how things will appear if you use the Rich Text editor.
 
 # Example Header 1
@@ -57,11 +55,54 @@ Images will appear on separate lines.
 
 _Note:_ You can use switch from "Rich Text" to "Markdown" mode to see the raw [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) created by the editor, this allows you to manually add special classes to elements or raw HTML from the [govuk design-system](https://design-system.service.gov.uk/).
 
-Example:
+Example - Lead paragraph:
 
 ```
-This is a lead paragraph
+This is a lead paragraph created by manually adding a special class
 {: .govuk-body-l}
 ```
-This is a lead paragraph
+
+This is a lead paragraph created by manually adding a special class
 {: .govuk-body-l}
+
+Example - Summary list:
+
+```
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Sarah Philips
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      5 January 1978
+    </dd>
+  </div>
+</dl>
+```
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Sarah Philips
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      5 January 1978
+    </dd>
+  </div>
+</dl>

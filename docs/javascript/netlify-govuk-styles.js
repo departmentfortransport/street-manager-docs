@@ -15,5 +15,5 @@ $('.govuk-main-wrapper blockquote').addClass('govuk-inset-text');
 
 // correct cms uploaded image url
 $('.govuk-main-wrapper img').each(function() {
-  $(this).attr('src') = $(this).attr('src').replace|('/docs', '/street-manager-docs');
+  $(this).attr('src', $(this).attr('src').replace('/docs', '/street-manager-docs'));
 });

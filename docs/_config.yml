@@ -1,3 +1,5 @@
-baseurl:
+baseurl: /street-manager-docs
 collections:
   - articles
+include:
+  - _redirects # netlify redirects file

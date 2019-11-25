@@ -17,7 +17,11 @@ status: publish
 7. Ask someone to review your changes by going to the [/admin](/admin) page to view the unpublished article and setting the status using the control in the top right to ready
 8. When your article is ready, click the "Publish" button in the top right, once finished this will add your article to [/articles](/articles) list and available to link on the main site
 
-_Note:_ Existing content must be converted to simple markdown before it can be edited using the Rich Text editor.
+_Notes:_ 
+
+* Your content must still be linked from a main page before users can easily see it
+* Existing content must be converted to simple markdown before it can be edited using the Rich Text editor
+* You can upload images to your articles using the "+" button on the Rich Text editor
 
 ## Content examples
 

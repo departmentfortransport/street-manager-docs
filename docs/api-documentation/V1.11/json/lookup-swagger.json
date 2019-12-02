@@ -165,11 +165,11 @@
 					}
 				},
 				"street_line": {
-					"type": "string",
+					"type": "object",
 					"x-nullable": true
 				},
 				"street_centre_point": {
-					"type": "string",
+					"type": "object",
 					"x-nullable": true
 				}
 			},
@@ -207,7 +207,7 @@
 					"type": "string"
 				},
 				"street_centre_point": {
-					"type": "string"
+					"type": "object"
 				}
 			},
 			"required": [

@@ -2464,6 +2464,12 @@ Work API will be updated with the following changes:
   <li>BREAKING CHANGE: <code>site_id</code> and <code>permit_id</code> response fields have removed. These have been replaced with <code>site_number</code> and <code>permit_reference_number</code> respectively. The biggest impact of this change to when fetching the details of a site, the existing <code>GET /works/{workReferenceNumber}/sites/{siteId}</code> endpoint has been replaced with <code>GET /works/{workReferenceNumber}/sites/{siteNumber}</code></li>
 </ol>
 
+Lookup API will be updated with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>BREAKING CHANGE: <code>street_line</code> and <code>street_centre_point</code> attributes on StreetResponse and StreetSummaryResponse used to be defined as strings. Now they are GeoJSON objects.</li>
+</ol>
+
 Updated Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">

@@ -57,7 +57,7 @@ status: publish
 </td>
 <td data-celllook="4369">
 <p><span data-contrast="auto"><span data-ccp-parastyle="Normal (Web)">Conditions set the parameters for working by regulating the date, time, road occupation, traffic management etc. that can be applied to any&nbsp;</span></span><span data-contrast="auto"><span data-ccp-parastyle="Normal (Web)">works.They</span></span><span data-contrast="auto"><span data-ccp-parastyle="Normal (Web)">&nbsp;can be requested by a highway authority and/or applied to the permit by a works promoter in agreement with the HA. </span></span><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true}">&nbsp;</span></p>
-<p><span data-contrast="auto"><span data-ccp-parastyle="Normal (Web)">More information is available here: </span></span><a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/413643/statutory-guidance.pdf"><span data-contrast="none"><span data-ccp-charstyle="Hyperlink">https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/413643/statutory-guidance.pdf</span></span></a><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true}">&nbsp;</span></p>
+<p><span data-contrast="auto"><span data-ccp-parastyle="Normal (Web)">More information is available here: </span></span><a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/413643/statutory-guidance.pdf"><span data-contrast="none"><span data-ccp-charstyle="Hyperlink">statutory-guidance.pdf</span></span></a><span data-ccp-props="{&quot;134233117&quot;:true,&quot;134233118&quot;:true}">&nbsp;</span></p>
 </td>
 </tr>
 <tr>

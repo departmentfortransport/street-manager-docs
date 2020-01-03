@@ -127,3 +127,32 @@ This is a lead paragraph created by manually adding a special class
     </dd>
   </div>
 </dl>
+
+**Example** - Table:
+
+<table class="govuk-table">
+  <caption class="govuk-table__caption">Caption explaining your table</caption>
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Name</th>
+      <th scope="col" class="govuk-table__header">Reference</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">John Smith</td>
+      <td class="govuk-table__cell">12345</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Jane Bloggs</td>
+      <td class="govuk-table__cell">54321</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">Adam Ant</td>
+      <td class="govuk-table__cell">11111</td>
+    </tr>
+  </tbody>
+</table>
+
+This is a table added using raw HTML based on [design system examples](https://design-system.service.gov.uk/components/table/).
+{: .govuk-body-l}

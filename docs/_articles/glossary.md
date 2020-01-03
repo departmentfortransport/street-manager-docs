@@ -6,7 +6,7 @@ type: article
 published: 'true'
 status: publish
 ---
-<br /><br />
+# Glossary
 
 <table class="govuk-table">
 <caption class="govuk-table__caption">Glossary</caption>

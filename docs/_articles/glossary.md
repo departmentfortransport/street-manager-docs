@@ -8,16 +8,15 @@ status: publish
 ---
 <br /><br />
 
-<table style="font-weight: 400;" data-tablestyle="MsoNormalTable" data-tablelook="1184">
-<tbody>
-<tr>
-<td data-celllook="4369">
-<p><strong><span data-contrast="auto">Term</span></strong><span data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}">&nbsp;</span></p>
-</td>
-<td data-celllook="4369">
-<p><strong><span data-contrast="auto">Definition</span></strong><span data-ccp-props="{&quot;335551550&quot;:2,&quot;335551620&quot;:2}">&nbsp;</span></p>
-</td>
+<table class="govuk-table">
+<caption class="govuk-table__caption">Glossary</caption>
+<thead class="govuk-table__head">
+<tr class="govuk-table__row">
+<td class="govuk-table__header">Term</td>
+<td class="govuk-table__header">Definition</td>
 </tr>
+</thead>
+<tbody class="govuk-table__body">
 <tr>
 <td data-celllook="4369">
 <p><span data-contrast="auto">Additional Street Data</span><span data-ccp-props="{}">&nbsp;</span></p>
@@ -1453,54 +1452,3 @@ status: publish
 </tr>
 </tbody>
 </table>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<style>
-/*body {
-	font-size: 14px;
-}
-.divTable{
-	display: table;
-	width: 50%;
-        border: 0.5px solid #ccc;
-}
-.divTableRow {
-	display: table-row;
-}
-.divTableCell, .divTableHead {
-	border: 0.5px solid #cccccc;
-	display: table-cell;
-	padding: 10px 10px;
-}
-.divTableHeading {
-	background-color: #EEE;
-	display: table-header-group;
-	font-weight: bold;
-	font-size: 14px;
-}
-.divTableFoot {
-	background-color: #EEE;
-	display: table-footer-group;
-	font-weight: bold;
-}
-.divTableBody {
-	display: table-row-group;
-	font-size: 14px;
-        line-height: 1.6;
-}*/
-</style>

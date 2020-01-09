@@ -18,14 +18,17 @@ status: publish
 ## Table of contents
 
 1. [General rules and validation](#1--general-rules-and-validation)<br />
-  1.1 [Numbers](#1-numbers)<br />
-  1.2 [Dates and times](#1-datetime)<br />
-  1.3 [Coordinates](#1-coordinates)<br />
-  1.3 [Text character limits](#1-charlimits)<br />
-1. [Workstreams](#2-workstreams)<br />
-1. [Submissions and applications](#3-submissions-and-applications)<br />
-  3.1 [Forward plans](#3-forwardplans)<br />
-  3.2 [PAAs](#3-paa)<br />
+1.1 [Numbers](#1-numbers)<br />
+1.2 [Dates and times](#1-datetime)
+   * Date and time format
+   * Working day
+
+1.3 [Coordinates](#1-coordinates)<br />
+1.3 <a href="#1-charlimits">Text character limits</a><br />
+1. <a href="#2-workstreams">Workstreams</a><br />
+1. <a href="#3-submissions-and-applications">Submissions and applications</a><br />
+3.1 <a href="#3-forwardplans">Forward plans</a><br />
+3.2 [PAAs](#3-paa)<br />
 1. [Changes](#changes)<br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
@@ -292,20 +295,30 @@ _(Previously section 1.12 in Business rules v0.1 draft)_
 
 ## Changes to applications and permits
 
-**<span id="4-pa">4.x. Change request reference number</span>**
+### 4.x. Change request reference number
 
 x
 
-**<span id="4-pa">4.x. Change request types</span>**
+
+### 4.x. Change request types
 
 x
 
-**<span id="4-pa">4.x. Editing application pre-assessment</span>**
+_(Previously section 5.1 in Business rules v0.1 draft)_ 
+
+
+#### 4.x. Editing application pre-assessment
+
+* How many can have active?
 
 _(Previously section 26 in Business rules v0.1 draft)_ 
 
 
-**<span id="4-pa">4.x. Modified application</span>**
+#### One for each change request type
+
+Include assessment if applicable in each
+
+
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 

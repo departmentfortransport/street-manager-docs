@@ -6,6 +6,14 @@ type: article
 published: 'true'
 status: publish
 ---
+# Glossary
+Version 0.1.0 draft
+
+[Change history](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)<br /><br />
+
+<!-- COPY AND PASTE BELOW THIS LINE -->
+
+
 | Term                       | Definition                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 |----------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Additional Street Data     | Additional Street Data (“ASD”) refers to extra information about a street that may affect works. This is part of the National Street Gazetteer (NSG) database, and includes things such as road centre lines, ownership details, level of reinstatement required, height, weight and width restrictions and direction of travel. This includes designations which identifies highly trafficked highways so that promoters know they must give greater advanced warning of proposed works or activities. Depending on circumstances, a designation may apply to the carriageway only, to a footway or pedestrian area only, or to any part of a length of street. Designations may only apply to certain times of day, days of the week, or days of the year. |

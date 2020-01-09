@@ -16,6 +16,10 @@ status: publish
 |:--------|:-----|:-------|:-----|:---------------|:---------------|
 | 0.1.0   | xx/01/20 | Glossary version released | n/a | n/a | n/a |
 
-<!--| 0.1.1   | 01/01/20 | Add | Example |  | Means y |
+<!-- EXAMPLE TABLE CONTENT
+
+| 0.1.1   | 01/01/20 | Add | Example |  | Means y |
 | 0.1.1   | 01/01/20 | Update | Example | Means x | Means y |
-| 0.1.1   | 01/01/20 | Remove | Example | Means x |  |-->
+| 0.1.1   | 01/01/20 | Remove | Example | Means x |  |
+
+-->

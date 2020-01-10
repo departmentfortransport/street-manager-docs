@@ -6,7 +6,9 @@ type: article
 published: 'true'
 status: publish
 ---
+<!-- ==================================================== -->
 # Business rules
+<!-- ==================================================== -->
 
 <span class="govuk-body-l" style="float:left">Version 1.13</span>
 
@@ -15,7 +17,9 @@ status: publish
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
+<!-- ==================================================== -->
 ## Table of contents
+<!-- ==================================================== -->
 
 1. [General rules and validation](#1--general-rules-and-validation)<br />
   1.1 [Numbers](#1-numbers)<br />
@@ -32,8 +36,9 @@ status: publish
 
 
 
-
+<!-- ==================================================== -->
 ## 1.  General rules and validation
+<!-- ==================================================== -->
 
 ### 1.1. Numbers
 
@@ -51,7 +56,7 @@ All dates and times must match the ISO 8601 standard date format.
 See GOV.UK guidance for date-times <https://www.gov.uk/government/publications/open-standards-for-government/date-times-and-time-stamps-standard>
 
 
-**1.2.2 Working day**
+#### 1.2.2 Working day
 
 See the [Street Manager glossary](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for the definition of a working day.
 
@@ -59,7 +64,7 @@ _(Previously section 1.6 in Business rules v0.1 draft)_
 
 
 
-**1.2.2 Calendar day**
+#### 1.2.2 Calendar day
 
 Street Manager calculates calendar days based on a 24 hour clock. So for example the Street Manager system would consider the time period Monday 01:00 to Tuesday 23:00 as 2 calendar days.
 
@@ -70,7 +75,7 @@ _(Previously section 1.7 in Business rules v0.1 draft)_
 
 
 
-**1.2.3 Calendar month**
+#### 1.2.3 Calendar month
 
 For the purpose of deeming and early start, a calendar month is calculated as 28 calendar days.
 
@@ -81,7 +86,7 @@ _(Previously section 1.13 in Business rules v0.1 draft)_
 
 
 
-**<span id="1-coordinates">1.3. Coordinates</span>**
+### 1.3. Coordinates
 
 Coordinates must be a GeoJSON geometry (using British National Grid, easting and northing pairs).
 
@@ -479,15 +484,21 @@ _(Previously section 4.3 in Business rules v0.1 draft)_
 
 ## Activities and events
 
-**<span id="4-pa">4.x. Activity reference number</span>**
+### 4.x. Activity reference number
 
-x
+* The activity reference number is generated in the following format: ARN- {SWA number} - {numerical suffix}
+    * **SWA number** - The four-digit portion of the organisation's SWA code i.e. the SWA code without the two-character prefix.
+    * **Numerical suffix** - A minimum of three numbers starting from 001 for the first activity by the organisation and counts up consecutively for each additional activity (i.e. -001, -002, -003 etc).
 
-**<span id="4-pa">4.x. Activity types</span>**
+<br />
+
+
+### 4.x. Activity types
 
 x
 
 _(Previously section 1.14 in Business rules v0.1 draft)_
+
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 

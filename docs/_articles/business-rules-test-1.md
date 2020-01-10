@@ -92,7 +92,7 @@ Coordinates must be a GeoJSON geometry (using British National Grid, easting and
 
 <br />
 
-**<span id="1-usrn">1.4. USRN</span>**
+### 1.4. USRN
 
 USRN must be a value between 100001 and 99999999.
 
@@ -107,13 +107,13 @@ _(Previously section 16.3 in Business rules v0.1 draft)_
 
 <br />
 
-**<span id="1-charlimits">1.3. Text character limits</span>**
+### 1.3. Text character limits
 
-**1.3.1. Username field**
+#### 1.3.1. Username field
 
 The max length for username fields is 50 characters.
 
-**1.3.2. Single-line text fields**
+#### 1.3.2. Single-line text fields
 
 Max length is 100 characters.
 
@@ -142,7 +142,7 @@ These include:
 * Contact details
 * Street special designation code
 
-**1.3.3 Multi-line text areas**
+#### 1.3.3 Multi-line text areas
 
 Text areas for large comment fields are limited to the max length of 1500 characters.
 
@@ -168,7 +168,12 @@ All other text areas are limited to 500 characters. These include:
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 
+
+
+
+<!-- ==================================================== -->
 ## 2. Workstreams
+<!-- ==================================================== -->
 
 Before users start raising works in Street Manager, their organisation must set up their workstreams. These were previously known as ‘operational districts’.
 
@@ -180,7 +185,11 @@ _(Previously section 15 & 15.1 in Business rules v0.1 draft)_
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
+
+
+<!-- ==================================================== -->
 ## 3. Works submissions and applications
+<!-- ==================================================== -->
 
 ### 3.1. Works reference number (WRN)
 
@@ -198,7 +207,7 @@ _(Previously section 1.1 in Business rules v0.1 draft)_
 
 <br />
 
-**<span id="3-forwardplans">3.2. Forward plans</span>**
+### 3.2. Forward plans
 
 * It is only possible to add forward plans for a start date in the present or future, and with an end date in the future.
 * Forward plans can be progressed to PAA, edited or cancelled while in the ‘Raised’ status. 
@@ -215,7 +224,7 @@ _(Previously section 22 in Business rules v0.1 draft)_
 
 
 
-**<span id="3-pa">3.3. PAA & Permit applications (PA)</span>**
+### 3.3. PAA & Permit applications (PA)
 
 <br />
 
@@ -328,36 +337,52 @@ _(Previously section 1.12 in Business rules v0.1 draft)_
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
+
+
+
+
+<!-- ==================================================== -->
 ## Changes to applications and permits
+<!-- ==================================================== -->
 
-**<span id="4-pa">4.x. Change request reference number</span>**
-
-x
-
-**<span id="4-pa">4.x. Change request types</span>**
+### 4.x. Change request reference number
 
 x
 
-**<span id="4-pa">4.x. Editing application pre-assessment</span>**
+### 4.x. Change request types
+
+x
+
+### 4.x. Editing application pre-assessment
 
 _(Previously section 26 in Business rules v0.1 draft)_ 
 
 
-**<span id="4-pa">4.x. Modified application</span>**
+### 4.x. Modified application
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
-## Revoking a permit
 
-
-
-**<span id="3-assesspa">3.x. Permit application assessment</span>**
+### 3.x. Permit application assessment
 * x
 
 
+
+<!-- ==================================================== -->
+## Revoking a permit
+<!-- ==================================================== -->
+
+
+
+
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
+
+
+<!-- ==================================================== -->
 ## View and manage records
+<!-- ==================================================== -->
 
 List pages, search and filtering
 
@@ -382,7 +407,11 @@ Topic
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
+
+<!-- ==================================================== -->
 ## Deliver and execute works
+<!-- ==================================================== -->
+
 
 Log works start
 
@@ -405,12 +434,12 @@ Validity period
 
 
 
-
+<!-- ==================================================== -->
 ## Sites and Reinstatements
+<!-- ==================================================== -->
 
 
-
-**<span id="4-pa">4.x. Reinstatement types</span>**
+### 4.x. Reinstatement types
 
 x
 
@@ -420,13 +449,13 @@ _(Previously section 4.7 in Business rules v0.1 draft)_
 
 
 
-**<span id="4-pa">4.x. Site number</span>**
+### 4.x. Site number
 
 * A new site will be added automatically when 'Add a reinstatement' is selected on the 'works record' level.
 
 
 
-**<span id="4-pa">4.x. Add a reinstatement</span>**
+### 4.x. Add a reinstatement
 
 * To add a reinstatement, the latest permit must be in 'In progress or 'Closed' status and require excavation.
 * Reinstatement date must be:
@@ -445,7 +474,7 @@ _(Previously section 4.2, 4.3, 4.5 & 4.6 in Business rules v0.1 draft)_
 
 
 
-**<span id="4-pa">4.x. Making interim site permanent</span>**
+### 4.x. Making interim site permanent
 
 x
 
@@ -457,14 +486,14 @@ _(Previously section 4.4 in Business rules v0.1 draft)_
 
 
 
-**<span id="4-pa">4.x. Reinstatement end date?? right term?</span>**
+### 4.x. Reinstatement end date?? right term?
 
 x
 
 _(Previously section 4.1 in Business rules v0.1 draft)_
 
 
-**<span id="4-pa">4.x. Register final site</span>**
+### 4.x. Register final site
 
 * Final site may be registered by marking 'Are you registering the final site?' as Yes when adding a reinstatement.
 * Alternatively, select 'Change' on the works record level against 'Final site registered'.
@@ -481,8 +510,9 @@ _(Previously section 4.3 in Business rules v0.1 draft)_
 
 
 
-
+<!-- ==================================================== -->
 ## Activities and events
+<!-- ==================================================== -->
 
 ### 4.x. Activity reference number
 
@@ -505,34 +535,38 @@ _(Previously section 1.14 in Business rules v0.1 draft)_
 
 
 
-## Inspections and non-compliance
 
-**<span id="4-pa">4.x. Inspection reference number</span>**
+
+<!-- ==================================================== -->
+## Inspections and non-compliance
+<!-- ==================================================== -->
+
+### 4.x. Inspection reference number
 
 x
 
 _(Previously section 3.1 in Business rules v0.1 draft)_ 
 
-**<span id="4-pa">4.x. Inspection types and categories</span>**
+### 4.x. Inspection types and categories
 
 x
 
 _(Previously section 3.2 in Business rules v0.1 draft)_ 
 
-**<span id="4-pa">4.x. Inspection outcomes</span>**
+### 4.x. Inspection outcomes
 
 x
 
 _(Previously section 3.3 in Business rules v0.1 draft)_ 
 
-**<span id="4-pa">4.x. Inspection failure categories</span>**
+### 4.x. Inspection failure categories
 
 x
 
 _(Previously section 3.4 in Business rules v0.1 draft)_ 
 
 
-**<span id="4-pa">4.x. Inspection scheduling</span>**
+### 4.x. Inspection scheduling
 
 x
 
@@ -544,15 +578,21 @@ _(Previously section 3.6 in Business rules v0.1 draft)_
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
-## Fixed penalty notice (FPN)
 
-**<span id="4-pa">4.x. FPN reference number</span>**
+
+
+
+<!-- ==================================================== -->
+## Fixed penalty notice (FPN)
+<!-- ==================================================== -->
+
+### 4.x. FPN reference number
 
 x
 
 _(Previously section 2.2 in Business rules v0.1 draft)_ 
 
-**<span id="3-pa">3.3. FPN statuses</span>**
+### 3.3. FPN statuses
 
 < insert diagram >
 
@@ -572,7 +612,14 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
+
+
+
+
+
+<!-- ==================================================== -->
 ## Fee reporting
+<!-- ==================================================== -->
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -583,8 +630,9 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 
 
 
-
+<!-- ==================================================== -->
 ## Changes
+<!-- ==================================================== -->
 
 | Section | Change comment |
 |:--------|:---------------|
@@ -604,7 +652,9 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 
 
 
-
+<!-- ==================================================== -->
+<!-- ==========DO NOT DELETE ANYTHING BELOW THIS========= -->
+<!-- ==================================================== -->
 
 
 

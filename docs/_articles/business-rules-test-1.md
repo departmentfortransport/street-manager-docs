@@ -38,23 +38,29 @@ status: publish
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.2. [Works types](#342-works-types)<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.3. [Works categories](#343-works-categories)<br />
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.4. [Works activity types](#344-works-activity-types)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.5. [Adding PAA & PA](#344-adding-paa--pa)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.6. [Early start](#345-early-start)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.7. [PAA & PA assessment decision options](#346-paa--pa-assessment-decision-options)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.8. [PAA & PA response periods](#)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.9. [Cancelling PAA & PA](#)<br />
-      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.10. [PAA & PA statuses](#)<br />
-4. [Changing permit applications](#changes)<br />
-  x.x [Change request reference number](#)<br />
-  x.x [Change request types](#)<br />
-  x.x [Adding change requests](#)<br />
-  x.x [Change request assessment decision options](#)<br />
-  x.x [Change request response period](#)<br />
-  x.x [Cancelling change requests](#)<br />
-  x.x [Change request statuses](#)<br />
-5. [Revoking a PA](#)<br />
-6. [Delivering and executing works](#)<br />
-7. [Viewing and managing records](#)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.5. [Adding PAA & PA](#345-adding-paa--pa)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.6. [Early start](#346-early-start)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.7. [PAA & PA assessment decision options](#347-paa--pa-assessment-decision-options)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.8. [PAA & PA response periods](#348-paa--pa-response-periods)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.9. [Cancelling PAA & PA](#349-cancelling-paa--pa)<br />
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.3.10. [PAA & PA statuses](#3410-paa--pa-statuses)<br />
+4. [Change requests (CR)](#4-change-requests-cr)<br />
+  4.1. [Change request reference number](#41-change-request-reference-number)<br />
+  4.2. [Change request types](#42-change-request-types)<br />
+  4.3. [Adding change requests](#43-adding-change-requests)<br />
+  4.4. [Change request assessment decision options](#44-change-request-assessment-decision-options)<br />
+  4.5. [Change request response period](#45-change-request-response-period)<br />
+  4.6. [Cancelling change requests](#46-cancelling-change-requests)<br />
+  4.7. [Change request statuses](#47-change-request-statuses)<br />
+5. [Revoking a PA](#5-revoking-a-pa)<br />
+6. [Delivering and executing works](#6-delivering-and-executing-works)<br />
+  6.1. [Logging works start](#61-logging-works-start)<br />
+  6.2. [Reverting works start](#62-reverting-works-start)<br />
+  6.3. [Logging works stop](#63-logging-works-stop)<br />
+  6.4. [Reverting works stop](#64-reverting-works-stop)<br />
+  6.5. [Validity periods](#65-validity-periods)<br />
+  6.6. [Changing the number of inspection units](#66-changing-the-number-of-inspection-units)<br />
+7. [Viewing and managing records](#7-viewing-and-managing-records)<br />
 8. [Sites and reinstatements](#)<br />
   x.x [Sites and site numbers](#)<br />
   x.x [Reinstatement types](#)<br />
@@ -74,16 +80,16 @@ status: publish
   x.x [FPN statuses](#)<br />
 12. [Lane rental](#)<br />
 13. [Fee reporting](#)<br />
-  x.x []()<br />
-  x.x []()<br />
-  x.x []()<br />
-  x.x []()<br />
+  x.x [](#)<br />
+  x.x [](#)<br />
+  x.x [](#)<br />
+  x.x [](#)<br />
 <!-- 14. [Changes](#changes)<br /> 
 
 
-X. []()<br />
-  x.x []()<br />
-      x.x.x. []()<br /> -->
+X. [](#)<br />
+  x.x [](#)<br />
+      x.x.x. [](#)<br /> -->
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 

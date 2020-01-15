@@ -357,6 +357,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 * HA may change the assessment decision to grant or refuse on PAs that have a status of 'modification requested' and no change requests awaiting assessment.
 
+_(Previously section 25.3 in Business rules v0.1 draft)_ 
 
 
 #### 3.4.8. PAA & PA response periods
@@ -486,7 +487,7 @@ _(Previously section 5.2, 5.3, 5.4 & 5.6 in Business rules v0.1 draft)_
 * Note: Currently, granting or refusing a change request created as a response to 'modification request' will not grant or refuse the the related PA or affect it in any way. The PA will need to be assessed separately (changes to this are coming soon).
 
 
-_(Previously section 5.1, 5.4 & 5.5 in Business rules v0.1 draft)_ 
+_(Previously section 5.1, 5.4, 5.5 & 25.3 in Business rules v0.1 draft)_ 
 
 
 

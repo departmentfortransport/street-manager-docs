@@ -238,7 +238,8 @@ _(Previously section 1.1 in Business rules v0.1 draft)_
 
 ### 3.2. Works statuses
 
-< insert diagram >
+<div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Works%20statuses.jpg" alt="Street Manager - Works statuses" width="100%" />
+A diagram of works statuses</div>
 
 
 <br />
@@ -251,7 +252,7 @@ _(Previously section 1.1 in Business rules v0.1 draft)_
 * All forward plan details can be edited with the exception of certain details, namely the workstream, the highway authority and the USRN.
 * When progressed to a PAA, the forward plan's status automatically gets set to 'Progressed'. 
 
-<div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Forward%20plan%20statuses.jpg" alt="Street Manager Forward plan statuses" width="100%" />
+<div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Forward%20plan%20statuses.jpg" alt="Street Manager - Forward plan statuses" width="100%" />
 A diagram of forward plan statuses</div>
 
 _(Previously section 22 in Business rules v0.1 draft)_  

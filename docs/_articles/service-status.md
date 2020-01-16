@@ -6,4 +6,6 @@ type: article
 published: 'true'
 status: publish
 ---
+# Service Status
+
 This is a placeholder for a Service Status page, holding details on service outages.

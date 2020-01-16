@@ -298,7 +298,8 @@ _(Previously section 1.3 in Business rules v0.1 draft)_
 
 See the [NRSWA \(link from SM Glossary\)](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for definitions and duration for each works category.
 
-< Insert diagram >
+<div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Works%20category%20logic.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Works%20category%20logic.jpg" alt="Street Manager - Works category logic" width="100%" /></a>
+A diagram of Works category logic</div>
 
 _(Previously section 1.4 in Business rules v0.1 draft)_  
 
@@ -845,7 +846,8 @@ _(Previously section 4.3 in Business rules v0.1 draft)_
 
 ### 9.2. Activity statuses
 
-< insert diagram >
+<div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Activity%20statuses.jpg" alt="Street Manager - Activity statuses" width="100%" />
+A diagram of activity statuses</div>
 
 _(Previously section 23.2 in Business rules v0.1 draft)_ 
 
@@ -967,7 +969,10 @@ _(Previously section 2.2 in Business rules v0.1 draft)_
     * **Paid** - HA acknowledge that the promoter payment (no discount) has been received. (if applicable)
     * **Paid (Discounted)** - HA acknowledge that the promoter payment (with discount) has been received. (if applicable)
 
-< insert diagram >
+
+<div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20FPN%20statuses.jpg" alt="Street Manager - FPN statuses" width="100%" />
+A diagram of FPN statuses</div>
+
 
 _(Previously section 2.1 in Business rules v0.1 draft)_ 
 

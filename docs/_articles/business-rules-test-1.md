@@ -721,6 +721,7 @@ _(Previously section 16 in Business rules v0.1 draft)_
     * PAAs to progress
     * Forward plans
     * Registered reinstatements
+    * Section 81s
 * Search by works reference number, permit reference number or road/street
     * Partial search compatible - Street Manager will return results that contain the search term and does not need the full reference or street.
 * Search and filtering functionality may be used in combination.

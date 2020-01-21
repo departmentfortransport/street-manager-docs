@@ -1132,12 +1132,24 @@ A diagram of S81 statuses</div>
 ## 15. Historic works (work in progress)
 <!-- ==================================================== -->
 
+* A new historical works record may be initiated by the adding of an inspection or FPN for works recorded outside of Street Manager.
+* PAs may be created on an existing historical works record.
+    * Workstream to be set when creating the first PA.
 * 
+
+
+<!-- ==================================================== -->
+## 16. Non-notifiable works (work in progress)
+<!-- ==================================================== -->
+
+* PAs may be created on an existing non-notifiable works record.
+    * Workstream to be set when creating the first PA.
+
 
 
 
 <!-- ==================================================== -->
-## 16. HS2 (work in progress)
+## 17. HS2 (work in progress)
 <!-- ==================================================== -->
 
 * HS2 functionality will only be available to HAs marked as HS2-applicable.

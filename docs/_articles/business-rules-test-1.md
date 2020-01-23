@@ -784,7 +784,7 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
     * Forward plans
     * Fixed penalty notices (FPN)
     * Inspections
-    * Registered reinstatements (coming soon)
+    * Registered reinstatements
     * Comments (coming soon)
     * Section 81s (coming soon)
 

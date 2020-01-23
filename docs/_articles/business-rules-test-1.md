@@ -1130,7 +1130,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
 
 ### 14.3. Managing section 81s
 
-* The following can be added to a section 81 record:
+* The following can be added to a section 81 works record:
     * Scheduled inspections
     * Inspections
     * FPNs
@@ -1140,7 +1140,7 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
     * Forward plans
     * PAA/PAs
     * Reinstatements
-* 
+
 * See works statuses for more details on how works records are differentiated.
 
 
@@ -1169,9 +1169,15 @@ A diagram of S81 statuses</div>
 
 ### 15.2. Managing historical works
 
-* PAs may be created on an existing historical works record.
-    * Workstream to be specified when creating the first PA and may be different to what was previously set in EToN.
-    * The historical works reference number will not change as a result of adding a new PA or selecting a different workstream.
+* The following can be added to a historical works record:
+    * PAA/PAs
+    * Scheduled inspections
+    * Inspections
+    * FPNs
+    * Files
+    * Comments
+* Workstream must be specified when creating the first PA and may be different to what was previously set in EToN.
+    * The historical works reference number will not change as a result of adding a new PA.
 
 
 
@@ -1183,17 +1189,30 @@ A diagram of S81 statuses</div>
 
 ### 16.1. Non-notifiable works reference number
 
-* The historic works reference number is generated in the following format: {WRN}-xxxxx-{numerical suffix}
-    * **WRN** - See the works reference number section for more details.
-    * **Numerical suffix** - A minimum of two numbers starting from 01 for the first FPN created on the works record and counts up consecutively for each additional FPN (i.e. -01, -02, -03 etc).
+* The WRN will be generated in the same way as the WRN for a PAA/PA. See 'Works reference number (WRN)' section for more information.
+    * Workstream and promoter works reference must be specified.
 
+### 16.2. Adding records for non-notifiable works
 
-### 16.2. Managing non-notifiable works
-
-* PAs may be created on an existing non-notifiable works record.
-    * Workstream to be specified when creating the first PA and may be different to what was previously set in EToN.
-    * The non-notifiable works reference number will not change.
+* The following records may be created for non-notifiable works:
+    * Reinstatement
+* In addition to the reinstatement record, a new non-notifiable works record will be automatically created.
 * See works statuses for more details on how works records are differentiated.
+
+
+
+### 16.3. Managing non-notifiable works
+
+* The following can be added to a non-notifiable works record:
+    * PAA/PAs
+    * Number of inspection units
+    * Reinstatements
+    * Scheduled inspections
+    * Inspections
+    * FPNs
+    * Files
+    * Comments
+
 
 
 

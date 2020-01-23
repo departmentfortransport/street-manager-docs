@@ -1162,6 +1162,7 @@ A diagram of S81 statuses</div>
     * FPN
 * In addition to the inspection or FPN record, a new historical works record will be automatically created and assigned to workstream '000'.
     * The works reference number in Street Manager will be set to the 'historical permit reference number' entered in the process of adding an inspection or FPN for historical works.
+* Details on the historical works must be provided including which promoter organisation the works is associated with.
 * See works statuses for more details on how works records are differentiated.
 
 
@@ -1171,6 +1172,8 @@ A diagram of S81 statuses</div>
 * PAs may be created on an existing historical works record.
     * Workstream to be specified when creating the first PA and may be different to what was previously set in EToN.
     * The historical works reference number will not change as a result of adding a new PA or selecting a different workstream.
+
+
 
 
 

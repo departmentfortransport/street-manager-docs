@@ -16,7 +16,7 @@ Street Manager has a number of list pages designed to display key information ab
 
 ![list screen filtered](/docs/assets/images/cms/list-report-filtered.png "list screen filtered")
 
-Each list page has an option at the bottom of the screen to export your results as CSV, allowing you define your report and then export the data set.
+Each list page has an option at the bottom of the screen to export your results as CSV, allowing you define your report and then export the data set to use in external tools. Exported CSVs include additional columns of information not displayed in the list page.
 
 ## UI - Export CSV
 

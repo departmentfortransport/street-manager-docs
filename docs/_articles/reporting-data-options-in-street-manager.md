@@ -14,7 +14,7 @@ Street Manager offers a number of ways your organisation can retrieve data to do
 
 Street Manager has a number of list pages designed to display key information about your organisations works. These lists have complex filtering options which allow you to request specific sets of the information for reporting purposes. The filter options are persisted in the page URL, so you can bookmark the page in your browser to save pre-defined reports and share with others.
 
-
+![list screen filtered](/docs/assets/images/cms/list-report-filtered.png "list screen filtered")
 
 Each list page has an option at the bottom of the screen to export your results as CSV, allowing you define your report and then export the data set.
 

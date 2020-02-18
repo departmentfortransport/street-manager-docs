@@ -114,7 +114,10 @@ The Street Manager service provides two separate isolated application service en
 
 
 ### SANDBOX environment
-{: .govuk-heading-m}
+{: .govuk-heading-m  #sandbox-env}
+
+API URL: https://api.sandbox.stwrks-dev.net
+{: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
   <li>SANDBOX environment is primarily intended as an integration testing environment for API integrators and an initial orientation environment for organisations intending to use the Street Manager web frontend.</li>
@@ -129,7 +132,10 @@ The Street Manager service provides two separate isolated application service en
 
 
 ### PRODUCTION environment
-{: .govuk-heading-m}
+{: .govuk-heading-m #production-env}
+
+API URL: https://api.manage-roadworks.service.gov.uk
+{: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
   <li>The PRODUCTION environment is <b>for LIVE use and LIVE data only</b> – neither functional nor non-functional testing is permitted against the live environment.</li>

@@ -1,11 +1,11 @@
 ---
 layout: default
-title: API specification V1.15
+title: API specification V1.17
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.15
+Version 1.17
 {: .govuk-body-l}
 
 As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of V1 for the API will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for details on previous versions.
@@ -114,7 +114,10 @@ The Street Manager service provides two separate isolated application service en
 
 
 ### SANDBOX environment
-{: .govuk-heading-m}
+{: .govuk-heading-m  #sandbox-env}
+
+API URL: https://api.sandbox.stwrks-dev.net
+{: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
   <li>SANDBOX environment is primarily intended as an integration testing environment for API integrators and an initial orientation environment for organisations intending to use the Street Manager web frontend.</li>
@@ -129,7 +132,10 @@ The Street Manager service provides two separate isolated application service en
 
 
 ### PRODUCTION environment
-{: .govuk-heading-m}
+{: .govuk-heading-m #production-env}
+
+API URL: https://api.manage-roadworks.service.gov.uk
+{: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
   <li>The PRODUCTION environment is <b>for LIVE use and LIVE data only</b> – neither functional nor non-functional testing is permitted against the live environment.</li>
@@ -1587,7 +1593,15 @@ Query params:
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>start_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
   <li><strong>end_date</strong>: Date range filtering by actual dates if available, otherwise filter permits by proposed dates</li>
+  <li><strong>work_start_date_from</strong>: Date filtering by actual start date if available, otherwise filter permits by proposed start date</li>
+  <li><strong>work_start_date_to</strong>: Date filtering by actual start date if available, otherwise filter permits by proposed start date</li>
+  <li><strong>work_end_date_from</strong>: Date filtering by actual end date if available, otherwise filter permits by proposed end date</li>
+  <li><strong>work_end_date_to</strong>: Date filtering by actual end date if available, otherwise filter permits by proposed end date</li>
   <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
+  <li><strong>hs2_works_only</strong>: Optional parameter to be used by only eligible promoters, HA's and contractors. This will return all HS2 works.</li>
+  <li><strong>consultation_works_only</strong>: Optional parameter to be used by only eligible promoters, HA's and contractors. When true, this will return all HS2 consultation works.</li>
+  <li><strong>consent_works_only</strong>: Optional parameter to be used by only eligible promoters, HA's and contractors. When true, this will return all HS2 consent works</li>
+  <li><strong>unacknowledged_by_ha_only</strong>: Optional parameter to be used by only eligible promoters, HA's and contractors. When true, this will return all HS2 applications that have not yet been acknowledged by a HA.</li>
   <li><strong>is_traffic_sensitive</strong>: When true this will return permits where a traffic sensitive ASD has been selected</li>
   <li><strong>is_high_impact_traffic_management</strong>: When true this will return permits with a traffic management type of road closure, contra-flow, lane closure, convoy workings, multi-way signals or two-way signals</li>
   <li><strong>has_no_final_registration</strong>: When true this will return permits that have not yet submitted their final reinstatement</li>
@@ -1667,6 +1681,10 @@ Query params:
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>proposed_start_date</strong>: Date range filtering based on the proposed forward plan dates</li>
   <li><strong>proposed_end_date</strong>: Date range filtering based on the proposed forward plan dates</li>
+  <li><strong>work_start_date_from</strong>: Date filtering based on the proposed forward plan start date</li>
+  <li><strong>work_start_date_to</strong>: Date filtering based on the proposed forward plan start date</li>
+  <li><strong>work_end_date_from</strong>: Date filtering based on the proposed forward plan end date</li>
+  <li><strong>work_end_date_to</strong>: Date filtering based on the proposed forward plan end date</li>
   <li><strong>query</strong>: Search field for work reference number, permit reference number or street (partial match)</li>
   <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
 </ol>
@@ -1736,10 +1754,10 @@ Contractors are required to provide optional swa_code parameter in order to stat
 
 <code>GET /csv-exports</code>
 
-Retrieves a list of CSV exports which are associated with the authenticated user's organisation.
+Retrieves a list of CSV exports which were generated by the authenticated user.
 {: .govuk-body}
 
-Contractors are able to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
+Contractors are able to provide optional <code>swa_code</code> parameter in order to state which promoter they are working on behalf of.
 {: .govuk-body}
 
 ### **Work API**
@@ -2053,7 +2071,28 @@ Deletes a file from the system. Users can only delete files which their organisa
 The history endpoint returns audit events associated with that works record such as when a permit is assessed, a comment is added etc.
 {: .govuk-body}
 
-Audit events in the history response will include an object_reference. Where further information is required about what has changed this object_reference can be used to find more details on the object.
+Audit events in the history response will include a <code>topic</code> property to indicate what type of object triggered this audit. The <code>topic</code> property may conatin one of following:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><strong>Application</strong>: A permit action prior to assessment</li>
+  <li><strong>Permit</strong>: A permit action once it has been granted</li>
+  <li><strong>PAA</strong>: A permit action when it has a work_category of paa</li>
+  <li><strong>ChangeRequest</strong>: A permit alteration action</li>
+  <li><strong>FPN</strong>: A fixed penalty notice action</li>
+  <li><strong>Reinstatement</strong>: A site or reinstatement action</li>
+  <li><strong>Inspection</strong>: An inspection action</li>
+  <li><strong>ScheduledInspection</strong>: A scheduled inspection action</li>
+  <li><strong>Work</strong>: A work record action i.e. uploading a file</li>
+  <li><strong>ForwardPlan</strong>: A forward plan action</li>
+  <li><strong>Comment</strong>: Logging a comment</li>
+  <li><strong>Section81</strong>: A section 81 action</li>
+</ol>
+
+Note that the <code>topic</code> property is subject to change. A more reliable option is the <code>event</code> enum property that details what specific action trigger the audit. See the <code>AuditEvent</code> enum in the Work API Swagger definition for a full list of possible events in Street Manager.
+{: .govuk-body}
+
+Audit events in the history response will also include an object_reference. Where further information is required about what has changed this object_reference can be used to find more details on the object.
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -2506,6 +2545,33 @@ The Data Export API will be updated to export other data, including forward plan
 
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
+
+Version 1.16 (20/02/2020):
+{: .govuk-heading-s}
+
+Work API has been updated with the following changes:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+    <li>The <code>topic</code> property on <code>WorkHistoryResponse</code> has been updated with new values specific to permit alterations and permit applications. The content of the <code>details</code> property has also been updated for muliple audit events. This will affect the <code>GET /works/{workReferenceNumber}</code> and <code>GET /works/{workReferenceNumber}/history</code> endpoints.</li>
+</ol>
+
+Reporting API has been updated with the following changes:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+    <li><code>GET /permits</code> and <code>GET /forward-plans</code> endpoints have been updated to include explicit date range filtering for start and end dates</li>
+    <li><code>GET /permits</code> endpoint has been updated to accept the following optional boolean parameters: <code>hs2_works_only</code>, <code>consultation_works_only</code>, <code>consent_works_only</code>, <code>unacknowledged_by_ha_only</code></li>
+    <li><code>GET /csv-exports</code> has been updated to only return the CSV Exports that were generated by the requester</li>
+</ol>
+
+Data Export API has been updated with the following changes:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+    <li><code>POST /permits/csv</code> and <code>POST /forward-plans/csv</code> endpoints have been updated to include explicit date range filtering for start and end dates</li>
+    <li><code>POST /permits/csv</code> endpoint has been updated to accept the following optional boolean parameters: <code>hs2_works_only</code>, <code>consultation_works_only</code>, <code>consent_works_only</code>, <code>unacknowledged_by_ha_only</code></li>
+</ol>
 
 Version 1.15 (06/02/2020):
 {: .govuk-heading-s}

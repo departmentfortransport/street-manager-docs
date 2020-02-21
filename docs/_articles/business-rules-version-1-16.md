@@ -27,6 +27,7 @@ status: publish
 ## Table of contents
 <!-- ==================================================== -->
 - [Changes](#changes)<br />
+- [Glossary](#glossary)<br />
 
 1. [General rules and validation](#1--general-rules-and-validation)<br />
   1.1. [Numbers](#11-numbers)<br />
@@ -788,9 +789,8 @@ _(Previously section 17.2 in Business rules v0.1 draft)_
 
 ### 7.6. Exporting records
 
-* Exports requested will be placed into a queue and available for download from the organisation's CSV Exports page.
-    * The export page is limited show files from the user's organisation or, in the case of contractor users, the assumed organisation.
-    * All users in the organisation may view and download all files from the CSV Exports page.
+* Exports requested will be placed into a queue and available for download from the user's CSV Exports page.
+    * The export page is limited to show exports requested the user or, in the case of contractor users, requested by the user for the assumed organisation.
     * Each user may have one (1) export in the 'queued' status. Subsequent export requests will be rejected.
     * The export file statuses are as follows:
 
@@ -829,7 +829,7 @@ A diagram of export file process</div>
     * The maximum number of USRNs per geographical area is 10,000.
 * The maximum number of geographical areas is 100.
 * The geographical area name is derived from the csv file name (without the extension).
-* The area name and list of USRNs may be changed by uploading a replacement csv file.
+<!-- * The area name and list of USRNs may be changed by uploading a replacement csv file. -->
 
 <!--
 ### 7.7.2. Viewing geographical areas
@@ -1339,7 +1339,8 @@ A diagram of S81 statuses</div>
 
 
 
-
+<br /><br /><br />
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" /><br /><br />
 
 <!-- ==================================================== -->
 ## Changes
@@ -1347,8 +1348,10 @@ A diagram of S81 statuses</div>
 
 | Section | Change comment |
 |:--------|:---------------|
-| 7.6. Exporting records | Updated to include more rules about the CSV Export page including a flow diagram, and export functionality now on CR & S81 lists |
-| 17.    | All HS2 sections are new |
+| 7.6. Exporting records | Updated to include updated rules about the CSV Export page (e.g. export page is limited to the user's exports only)  including a flow diagram, and export functionality added on change request & S81 lists.  |
+| 17. HS2 | All HS2 sections are new |
+| Glossary | Incorporated the glossary into the business rules page rather than a separate page |
+| Header | Added link to the user roles & permissions table PDF |
 
 
 
@@ -1392,3 +1395,231 @@ em {
   font-size: 12px;
 }
 </style>
+
+
+
+
+<br /><br /><br />
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" /><br /><br />
+
+# Glossary
+
+## External Glossaries
+
+Useful resources containing Street-works-related glossary sections below:
+* New Roads and Street Works Act (NRSWA): <br /><https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/43578/street-works-code-of-practice.pdf><br /><br />
+* GeoPlace glossary: <br /><https://www.geoplace.co.uk/helpdesk/faqs/glossary>
+
+<br /><br />
+
+## Street Manager Glossary
+
+
+
+
+
+
+
+
+
+<!-- ==================================================== -->
+<!-- To convert from Word doc to HTML, use https://wordhtml.com/ -> click Delete attributes.
+Copy glossary table and paste the HTML below.
+
+**** PASTE BELOW THIS SECTION **** 
+CAREFUL NOT TO DELETE 
+EXTERNAL GLOSSARIES SECTION 
+AT BOTTOM!!!!!!! -->
+<!-- ==================================================== -->
+
+
+<table>
+<tbody>
+<tr>
+<td>
+<p><strong>Term</strong></p>
+</td>
+<td>
+<p><strong>Definition</strong></p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Activity</p>
+</td>
+<td>
+<p>A record of a public event or highway license.</p>
+<p>Note: this is different to &ldquo;Works activity&rdquo; that is defined separately in this glossary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Change Request (CR)</p>
+</td>
+<td>
+<p>An application to amend (or a historical record of an amendment of) an existing PAA or Permit Application (PA).</p>
+<p>Related to what was previously known as &ldquo;Works Data Alteration&rdquo;</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Designations</p>
+</td>
+<td>
+<p>Should be interpreted to mean Special Designations (except where otherwise qualified).</p>
+<p>See the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">GeoPlace glossary</a> for the definition of Special Designation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Failed &mdash; high</p>
+</td>
+<td>
+<p>A failed outcome of any inspection with higher risk inadequacies or defects causing danger. See the <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/4386/codeofpracticeforinspections.pdf">Code of Practice for Inspections</a> for more information.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Failed &mdash; low</p>
+</td>
+<td>
+<p>A failed outcome of any inspection with higher risk inadequacies or defects are not causing danger. See the <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/4386/codeofpracticeforinspections.pdf">Code of Practice for Inspections</a> for more information.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Final site registered</p>
+</td>
+<td>
+<p>An indicator to advise when no more sites will be registered for the latest PA.</p>
+<p>Related to what was previously known as &lsquo;full registration&rsquo;.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Forward plan</p>
+</td>
+<td>
+<p>A record containing information on a promoter&rsquo;s potential major road or street works that has been planned as part of their long-term programme.</p>
+<p>Previously known as &lsquo;forward planning information&rsquo;.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Geographic area</p>
+</td>
+<td>
+<p>An area within a HA organisation used to divide works and records geographically for HA users (such as permit officers or inspectors).</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Highway Authority (HA)</p>
+</td>
+<td>
+<p>As defined in sections 1 and 329 of the&nbsp;<a href="http://www.legislation.gov.uk/ukpga/1980/66/contents">Highways Act</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Historic / Historical works</p>
+</td>
+<td>
+<p>Works recorded and completed outside of Street Manager e.g. works recorded in EToN.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Modification requested</p>
+</td>
+<td>
+<p>HA has requested for changes to be made on a PA.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Minimum notice period</p>
+</td>
+<td>
+<p>The minimum period of notice to be given to the Highway Authority for street works. See the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">NRSWA</a> for more information.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>PAA</p>
+</td>
+<td>
+<p>Provisional Advance Authorisation. The early provisional approval of activities in the highway.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Primary notice authority</p>
+</td>
+<td>
+<p>The Highway Authority responsible for the coordination of Street Works on the specified street or part street. In the case of Private Streets this is the Local Highway Authority whose area covers the Private Street.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Promoter&nbsp;/ Works&nbsp;promoter&nbsp;/&nbsp;Promoter&nbsp;organisation&nbsp;</p>
+</td>
+<td>
+<p>Any organisation undertaking works on the Highway under a Statutory Undertakers Licence or a Highway Authorities Licence and working within the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">NRSWA</a> / <a href="http://www.legislation.gov.uk/ukpga/2004/18/contents">Traffic Management Act</a>&nbsp;(TMA) legislative framework.&nbsp;</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Response period</p>
+</td>
+<td>
+<p>The maximum period that a Highway Authority has to respond to an application prior to the application deeming.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Working day</p>
+</td>
+<td>
+<p>As defined in the Glossary of the <a href="https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-version-1-16.html#external-glossaries">NRSWA</a>.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Works activity</p>
+</td>
+<td>
+<p>The reason for undertaking the works.</p>
+<p>Note: this is different to &ldquo;Activity&rdquo; that is defined separately in this glossary.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Works record</p>
+</td>
+<td>
+<p>A repository of notifications (such as PAA/PAs, reinstatements, inspections and FPNs) and file attachments associated with a particular works.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Works stop</p>
+</td>
+<td>
+<p>Notification used to indicate that the promoter is no longer occupying the highway. Serves the purposes of both the works clear and works closed notice described in the legislation.</p>
+</td>
+</tr>
+<tr>
+<td>
+<p>Workstream</p>
+</td>
+<td>
+<p>An area within a promoter or HA organisation used to divide works and records for planner users.</p>
+<p>Related to what were previously known as &lsquo;operational districts&rsquo;.</p>
+</td>
+</tr>
+</tbody>
+</table>
+
+

@@ -2452,7 +2452,7 @@ The Data Export API will be updated to export other data, including forward plan
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Version 1.14 (23/01/2019):
+Version 1.14 (23/01/2020):
 {: .govuk-heading-s}
 
 Work API has been updated with the following changes:
@@ -2470,7 +2470,7 @@ Party API has been updated with the following changes:
   <li>Added <code>PUT /users/{email} </code> endpoint to allow updating of users names </li>
 </ol>
 
-Version 1.13 (08/01/2019):
+Version 1.13 (08/01/2020):
 {: .govuk-heading-s}
 
 Work API has been updated with the following changes:

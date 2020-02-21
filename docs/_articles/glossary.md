@@ -7,7 +7,8 @@ published: 'true'
 status: publish
 ---
 # Glossary
-<span class="govuk-body-l" style="float:left">Version 0.1.0 draft</span>
+<span class="govuk-body-l" style="float:left">Version 0.1.0 RETIRED
+</span>
 
 <span style="float:right">[Change history >](https://departmentfortransport.github.io/street-manager-docs/articles/glossary-change-history.html)</span>
 
@@ -15,6 +16,9 @@ status: publish
 
 
 <br /><br /><br />
+
+GLOSSARY CONSOLIDATED WITH BUSINESS RULES. Please see the latest business rules for the latest glossary.
+
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -26,18 +30,6 @@ status: publish
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
 ## Street Manager Glossary
-
-<!-- ---------------------------------------------------------
---------------------------------------------------------------
-To convert from Word doc to HTML, use https://wordhtml.com/ -> click Clean.
-Copy glossary table and paste the HTML below.
-
-**** PASTE BELOW THIS SECTION **** 
-CAREFUL NOT TO DELETE 
-EXTERNAL GLOSSARIES SECTION 
-AT BOTTOM!!!!!!!
--------------------------------------------------------------
---------------------------------------------------------- -->
 
 <table>
 <tbody>

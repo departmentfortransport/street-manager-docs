@@ -15,6 +15,7 @@ status: publish
 | Version | Date | Action | Term | Previous definition | New definition |
 |:--------|:-----|:-------|:-----|:---------------|:---------------|
 | 0.1.0   | 06/02/2020 | Glossary released | n/a | n/a | n/a |
+| 0.1.0   | 20/02/2020 | Standalone glossary retired and consolidated with latest business rules | n/a | n/a | n/a |
 
 <!-- EXAMPLE TABLE CONTENT FORMAT BELOW
 

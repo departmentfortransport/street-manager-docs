@@ -2792,8 +2792,8 @@ Reporting API has been updated with the following changes:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><code>GET works/updates</code> endpoint has been updated to return the <code>event_type</code> and <code>object_type</code> properties. For more information, see
-  audit events in the history response, in the documentation 'History' section.</li>
+  <li><code>GET works/updates</code> endpoint has been updated to return the <code>event_type</code> and <code>object_type</code> properties. Returns updates for new events, for more information, see
+  audit events in the documentation 'History' section.</li>
   <li><code>GET /alterations</code> endpoint now accepts the following <code>sort_column</code> values: <code>date_created</code>, <code>proposed_start_date</code>, <code>proposed_end_date</code> and <code>status_changed_date</code></li>
   <li><code>GET permits/csv</code> endpoint now accepts the additional value <code>is_duration_challenged</code></li>
 </ol>

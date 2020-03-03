@@ -445,7 +445,7 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 
 #### 3.4.9. Cancelling PAA & PA
 
-* PAA applications and planned PA may be cancelled if in 'submitted' (pre-assessment), 'granted' or 'modification requested' statuses and works start has not been logged.
+* PAA applications and planned PA may be cancelled if in 'submitted' (pre-assessment) or 'granted' statuses and works start has not been logged.
 * Immediate PA may be cancelled whilst works is 'in progress' (immediate works are automatically placed into in progress upon creation).
 * Immediate PA may not be cancelled if
     * works stop has been logged
@@ -615,9 +615,9 @@ _(Previously section 6.1 in Business rules v0.1 draft)_
 ### 6.1. Logging works start
 
 * To log a works start
-    * PA must be in 'submitted', 'granted' or 'modification requested' status,
+    * PA must be in 'granted' status,
     * date and time must be provided, and
-    * works cannot be started in the future.
+    * works cannot be started in the future or before the proposed start.
 
 _(Previously section 11.1 in Business rules v0.1 draft)_ 
 
@@ -888,7 +888,8 @@ _(Previously section 4.7 in Business rules v0.1 draft)_
     * on or before the actual end date if works stop has been logged
 * To update a site with a new reinstatement, select 'Add another reinstatement' on the 'site record' level.
 * This functionality may be used to correct a mistake on the previous reinstatement.
-  + Note: if a mistake is made where the Reinstatement state 'Interim' is selected instead of 'permanent' as a new PA would be required to rectify this mistake. See the business rules regarding making an interim site permanent for more information.
+* A reinstatement can be interim or permanent.
+  + Note: if a mistake is made where the Reinstatement state 'Interim' is selected instead of 'permanent', a new PA would be required to rectify this mistake. See the business rules regarding making an interim site permanent for more information.
 
 
 _(Previously section 4.2, 4.3, 4.5 & 4.6 in Business rules v0.1 draft)_
@@ -1352,10 +1353,14 @@ A diagram of S81 statuses</div>
 
 | Section | Change comment |
 |:--------|:---------------|
-| 1.4. USRN | Added sign post to API documentation |
-| Glossary | Added entry for Environmental health notified |
-| 6.1. Logging works start | Updated the logic to reflect the loosening of works start logic to enable easier transition to Street Manager |
-| 3.4.9. Cancelling PAA & PA | Updated cancel logic to include Modification Requested status |
+| 7.6. Exporting records | Updated to include updated rules about the CSV Export page (e.g. export page is limited to the user's exports only)  including a flow diagram, and export functionality added on change request & S81 lists.  |
+| 17. HS2 | All HS2 sections are new |
+| Glossary | Incorporated the glossary into the business rules page rather than a separate page |
+| Header | Added link to the user roles & permissions table PDF |
+| 4.2. Change request types | Updated to include new CR type 'Modified permit' - a response to modification requested, and the rules related. |
+| 4.4. Change request assessment decision options | Removed "Note: Currently, granting or refusing a change request created as a response to ‘modification request’ will not grant or refuse the the related PA or affect it in any way. The PA will need to be assessed separately (changes to this are coming soon)." |
+
+
 
 
 
@@ -1425,7 +1430,7 @@ Useful resources containing Street-works-related glossary sections below:
 
 
 <!-- ==================================================== -->
-<!-- Use the word doc from SharePoint. To convert from Word doc to HTML, use https://wordhtml.com/ -> click Delete attributes.
+<!-- To convert from Word doc to HTML, use https://wordhtml.com/ -> click Delete attributes.
 Copy glossary table and paste the HTML below.
 
 **** PASTE BELOW THIS SECTION **** 

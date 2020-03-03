@@ -2793,37 +2793,30 @@ The following Reporting API endpoints have been updated with a new <code>geograp
   <li><code>GET /fixed-penalty-notices</code></li>
 </ol>
 
-The following Data Export API endpoints have also been updated with the new <code>geographical_area_reference_number</code> property:
+The Data Export API has been updated with the following changes:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><code>POST /permits/csv</code></li>
-  <li><code>POST /alterations/csv</code></li>
-  <li><code>POST /forward-plans/csv</code></li>
-  <li><code>POST /reinstatements/csv</code></li>
-  <li><code>POST /section-81s/csv</code></li>
-  <li><code>POST /inspections/csv</code></li>
-  <li><code>POST /fixed-penalty-notices/csv</code></li>
-</ol>
-
-Also the Data Export API has been updated with the following changes:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
+  <li><code>POST /permits/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+  <li><code>POST /alterations/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+  <li><code>POST /forward-plans/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+  <li><code>POST /reinstatements/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+  <li><code>POST /section-81s/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+  <li><code>POST /inspections/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
+  <li><code>POST /fixed-penalty-notices/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
   <li>Updated the <code>GET /work-data</code> endpoint to allow previously generated CSVs to be retrieved.</li>
+  <li>Updated the <code>GET /work-data</code> updated to include the following additional fields in generated CSVs:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>Highway authority swa code</code></li>
+      <li><code>Works category reference</code></li>
+      <li><code>Traffic management type reference</code></li>
+      <li><code>Assessment status reference</code></li>
+      <li><code>Permit status reference</code></li>
+      <li><code>Work status reference</code></li>
+    </ol>
+  </li>
   <li>New <code>GET /activity-data</code> endpoint added to retrieve data of activities across all organisations which have been added, changed, or deleted within the last hour in CSV format.</li>
-</ol>
-
-Works data export CSV scheduled job updated to include the following additional fields in generated CSVs:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li><code>Highway authority swa code</code></li>
-  <li><code>Works category reference</code></li>
-  <li><code>Traffic management type reference</code></li>
-  <li><code>Assessment status reference</code></li>
-  <li><code>Permit status reference</code></li>
-  <li><code>Work status reference</code></li>
+  <li>New <code>POST /comments/csv</code> endpoint added to trigger generation of Comment CSV file</li>
 </ol>
 
 Reporting API has been updated with the following changes:
@@ -2832,12 +2825,6 @@ Reporting API has been updated with the following changes:
 <ol class="govuk-list govuk-list--bullet">
   <li><code>GET works/updates</code> endpoint has been updated to return the to return the <code>event_type</code> and <code>object_type</code> properties</li>
   <li><code>GET /alterations</code> endpoint now accepts the following <code>sort_column</code> values: <code>date_created</code>, <code>proposed_start_date</code>, <code>proposed_end_date</code> and <code>status_changed_date</code></li>
-</ol>
-
-Data Export API updated with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li><code>POST /comments/csv</code> endpoint added to trigger generation of Comment CSV file</li>
 </ol>
 
 Version 1.16 (20/02/2020):

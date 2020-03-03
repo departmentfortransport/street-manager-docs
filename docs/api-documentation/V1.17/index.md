@@ -2166,7 +2166,7 @@ Deletes a file from the system. Users can only delete files which their organisa
 The history endpoint returns audit events associated with that works record such as when a permit is assessed, a comment is added etc.
 {: .govuk-body}
 
-Audit events in the history response will include a <code>topic</code> property to indicate what type of object triggered this audit. The <code>topic</code> property may conatin one of following:
+Audit events in the history response will include a <code>topic</code> property to indicate what type of object triggered this audit. The <code>topic</code> property may contain one of following:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -2732,6 +2732,8 @@ Updated Work API with the following changes:
   <li>Updated the `object_reference` of audits relating to the <code>event_type</code> of reinstatement_submitted. This will now return the site number that can be used as the resource identifier in <code>GET /works/{workReferenceNumber}/sites/{siteNumber}</code>. This change was applied to the <code>GET /works/{workReferenceNumber}</code> and <code>GET /works/{workReferenceNumber}/history</code> endpoints.</li>
   <li>Planned permits no longer need to be granted by HA before works can be started</li>
   <li>Planned permits can be assessed at any stage, provided they haven't been assessed or cancelled</li>
+  <li>Updated the <code>PUT /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assessment</code> endpoint to now accept the additional values <code>reasonable_period_end_date</code> and <code>is_duration_challenged</code></li>
+  <li>The <code>PermitResponse</code> has been updated to return <code>is_duration_challenged</code>
 </ol>
 
 Updated Party API with the following changes:
@@ -2758,6 +2760,12 @@ The Data Export API has been updated with the following changes:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
+  <li><code>POST /permits/csv</code>has been updated with the following new properties:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>geographical_area_reference_number</code></li>
+      <li><code>is_duration_challenged</code></li>
+    </ol>
+  </li>
   <li><code>POST /permits/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
   <li><code>POST /alterations/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
   <li><code>POST /forward-plans/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
@@ -2766,7 +2774,7 @@ The Data Export API has been updated with the following changes:
   <li><code>POST /inspections/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
   <li><code>POST /fixed-penalty-notices/csv</code>has been updated with the new <code>geographical_area_reference_number</code> property</li>
   <li>Updated the <code>GET /work-data</code> endpoint to allow previously generated CSVs to be retrieved.</li>
-  <li>Updated the <code>GET /work-data</code> updated to include the following additional fields in generated CSVs:
+  <li>Updated the <code>GET /work-data</code> endpoint to include the following additional fields in generated CSVs:
     <ol class="govuk-list govuk-list--bullet">
       <li><code>Highway authority swa code</code></li>
       <li><code>Works category reference</code></li>
@@ -2784,8 +2792,10 @@ Reporting API has been updated with the following changes:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><code>GET works/updates</code> endpoint has been updated to return the to return the <code>event_type</code> and <code>object_type</code> properties</li>
+  <li><code>GET works/updates</code> endpoint has been updated to return the <code>event_type</code> and <code>object_type</code> properties. For more information, see
+  audit events in the history response, in the documentation 'History' section.</li>
   <li><code>GET /alterations</code> endpoint now accepts the following <code>sort_column</code> values: <code>date_created</code>, <code>proposed_start_date</code>, <code>proposed_end_date</code> and <code>status_changed_date</code></li>
+  <li><code>GET permits/csv</code> endpoint now accepts the additional value <code>is_duration_challenged</code></li>
 </ol>
 
 Version 1.16 (20/02/2020):

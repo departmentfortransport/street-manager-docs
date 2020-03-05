@@ -977,17 +977,32 @@ To invalidate all JWT tokens associated with a user, the Access token should be 
 to the <code>/party/logout</code> endpoint.
 {: .govuk-body}
 
+See the [integration guide](#authentication-best-practises) for best practises on authentication.
+{: .govuk-body}
+
 ### Resource
 {: .govuk-heading-m}
 
 <code>POST /authenticate</code>
 
 The authenticate endpoint takes a case sensitive username (email
-address) and password, returning JWT ID, Access and Referesh tokens if successful.
+address) and password, returning JWT ID, Access and Refresh tokens if successful.
 **The JWT ID and Access tokens are valid for one hour, meanwhile the Refresh token
 is valid for 1 day.** Once the ID token has been acquired it can be added to all
 protected resource requests made via swagger using the Authorize button.
 {: .govuk-body}
+
+Example response:
+{: .govuk-body .govuk-!-font-weight-bold}
+<code>
+{<br/>
+&nbsp;&nbsp;"idToken": "...",                // Token to be included in header for authentication<br/>
+&nbsp;&nbsp;"organisationReference": "XXXX", // SWA code or organisation reference for user<br/>
+&nbsp;&nbsp;"accessToken": "...",            // Token used to logout a user invalidating existing tokens<br/>
+&nbsp;&nbsp;"refreshToken": "..."            // Token used to re-authenticate a user, has long expiry time<br/>
+}
+</code>
+
 
 ![authorise](images/authorise.png)
 

@@ -1441,9 +1441,6 @@ Useful resources containing Street-works-related glossary sections below:
 Copy glossary table and paste the HTML below.
 
 **** PASTE BELOW THIS SECTION **** 
-CAREFUL NOT TO DELETE 
-EXTERNAL GLOSSARIES SECTION 
-AT BOTTOM!!!!!!! -->
 <!-- ==================================================== -->
 
 

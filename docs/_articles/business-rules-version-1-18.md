@@ -688,7 +688,7 @@ _(Previously section 13 in Business rules v0.1 draft)_
 ### 6.6. Changing the number of inspection units
 
 * The number of inspection units will be added when the first reinstatement is submitted and may be changed at any point thereafter on the works record level.
-     * The number of inspection units is defaulted to 1 (one) and may be changed to 0 (zero) if subsumed/combined.
+     * The number of inspection units is defaulted to 1 (one) and may be changed to 0 (zero) if the site(s) subsumed/combined.
 
 
 _(Previously section 11.4 in Business rules v0.1 draft)_ 
@@ -1369,8 +1369,8 @@ A diagram of S81 statuses</div>
 | 3.4.7. PAA & PA assessment decision options | Add "Modification requested PAs will not deem as the action is with the promoter." |
 | 3.4.8. PAA & PA response periods | Added modified PA |
 | 6.5. Validity periods | Added that validity period is not applicable for HS2 works |
-| 6.6. Changing the number of inspection units | Added that units may be set to 0 |
-| 8.3. Adding reinstatements |  Added that site measurements or number of holes may be set to 0; and link content updated to  "Update reinstatement" |
+| 6.6. Changing the number of inspection units | Added that units may be set to 0|
+| 8.3. Adding reinstatements | Added that site measurements or number of holes may be set to 0; and link content updated to  "Update reinstatement" |
 
 
 

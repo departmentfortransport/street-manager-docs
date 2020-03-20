@@ -2766,8 +2766,9 @@ Updated Street Lookup API with the following changes:
 Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>Fixed defect on the <code>POST 
+  <li>Fixed defect on the <code>POST
 ​/works​/{workReferenceNumber}​/permits​/{permitReferenceNumber}​/alterations</code> endpoint to allow Highway Authorities to impose changes on a permit that contains files and/or ASDs</li>
+  <li>Altered FPN audit message from displaying "FPN details submitted" to "FPN issued"</li>
 </ol>
 
 Version 1.18 (19/03/2020):

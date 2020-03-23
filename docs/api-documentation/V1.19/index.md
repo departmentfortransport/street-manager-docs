@@ -2772,9 +2772,11 @@ Updated Street Lookup API with the following changes:
 Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>Fixed defect on the <code>POST 
+  <li>Fixed defect on the <code>POST
 ​/works​/{workReferenceNumber}​/permits​/{permitReferenceNumber}​/alterations</code> endpoint to allow Highway Authorities to impose changes on a permit that contains files and/or ASDs</li>
-   <li>Updated authentication error message when attempting to authenticate with a user who has had their account disabled using <code>POST /authenticate</code> endpoint</li>
+  <li>Updated authentication error message when attempting to authenticate with a user who has had their account disabled using <code>POST /authenticate</code> endpoint</li>
+  <li>Upated validation for the works_coordinates field on the <code>POST /section-81-works/section-81s</code> endpoint to allow Polygons and Line Strings to be provided when creating Section 81 works.
+  A centroid will be calculated and stored where a Polygon or Line String is provided.</li>
 </ol>
 
 Version 1.18 (19/03/2020):

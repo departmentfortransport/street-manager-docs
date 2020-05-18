@@ -2804,6 +2804,9 @@ Updated Works API with the following changes:
   <li>
     The <code>InspectionResponse</code> and <code>InspectionSummaryResponse</code> response models have been updated to make the <code>inspection_category</code> property optional.
   </li>
+  <li>
+    The definitions for <code>ASDCode</code> and <code>ASDPeriodicityCode</code> models have been updated to clarify that the enum values should be submitted as numbers instead of strings. <strong>Note that, in a future release, we will be adding validation against providing strings.</strong> The API will continue to accept both for the time being, but we strongly encourage submitting these values as numbers instead of strings if you aren't already doing so.
+  </li>
 </ol>
 
 Updated Reporting API with the following changes:

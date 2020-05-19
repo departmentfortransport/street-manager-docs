@@ -2807,6 +2807,17 @@ Updated Works API with the following changes:
   <li>
     The definitions for <code>ASDCode</code> and <code>ASDPeriodicityCode</code> models have been updated to clarify that the enum values should be submitted as numbers instead of strings. <strong>Note that, in a future release, we will be adding validation against providing strings.</strong> The API will continue to accept both for the time being, but we strongly encourage submitting these values as numbers instead of strings if you aren't already doing so.
   </li>
+  <li>
+    <code>PermitASD</code> interface, which is used in a number of work and permit request and response models, will be updated to include new optional date properties <code>special_desig_start_date</code> and <code>special_desig_end_date</code>. These fields will be stored against the work and returned on the appropriate responses where avilable. Affected models include:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>ForwardPlanCreateRequest</code></li>
+      <li><code>ForwardPlanResponse</code></li>
+      <li><code>ForwardPlanUpdateRequest</code></li>
+      <li><code>PermitRequest</code></li>
+      <li><code>PermitResponse</code></li>
+      <li><code>WorkCreateRequest</code></li>
+    </ol>
+  </li>
 </ol>
 
 Updated Reporting API with the following changes:

@@ -298,6 +298,9 @@ an HTTPS endpoint capable of receiving POST requests from the
 Notification service containing the update event data as JSON.
 {: .govuk-body}
 
+You can see the event data format in the <a href="/street-manager-docs/api-documentation/json/event-notifier-message.json">Event Notifier Message JSON Schema</a>.
+{: .govuk-body}
+
 Notifications cannot offer guaranteed delivery (network issues, service
 downtime etc.) so to reconcile for missed Notifications you can use the
 Polling API endpoint to validate you have received notifications for all

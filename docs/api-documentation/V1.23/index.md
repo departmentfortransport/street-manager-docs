@@ -2808,7 +2808,7 @@ Updated Works API with the following changes:
     The definitions for <code>ASDCode</code> and <code>ASDPeriodicityCode</code> models have been updated to clarify that the enum values should be submitted as numbers instead of strings. <strong>Note that, in a future release, we will be adding validation against providing strings.</strong> The API will continue to accept both for the time being, but we strongly encourage submitting these values as numbers instead of strings if you aren't already doing so.
   </li>
   <li>
-    <code>PermitASD</code> interface, which is used in a number of work and permit request and response models, will be updated to include new optional date properties <code>special_desig_start_date</code> and <code>special_desig_end_date</code>. These fields will be stored against the work and returned on the appropriate responses where avilable. Affected models include:
+    <code>PermitASD</code> interface, which is used in a number of work and permit request and response models, will be updated to include new optional date properties <code>special_desig_start_date</code> and <code>special_desig_end_date</code>. These fields will be stored against the work and returned on the appropriate responses where available. Affected models include:
     <ol class="govuk-list govuk-list--bullet">
       <li><code>ForwardPlanCreateRequest</code></li>
       <li><code>ForwardPlanResponse</code></li>
@@ -2817,6 +2817,7 @@ Updated Works API with the following changes:
       <li><code>PermitResponse</code></li>
       <li><code>WorkCreateRequest</code></li>
     </ol>
+    While these fields are optional and requests will succeed without providing them, the Work API does compare the ASDs submitted in the request with ASDs returned by the Street Lookup API for the given USRN. This is to determine whether an ASD was provided. In order for the ASD to be correctly flagged as provided, where these properties were returned by the street lookup API, these fields will need to match the Lookup API response.
   </li>
 </ol>
 

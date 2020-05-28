@@ -2805,6 +2805,12 @@ Updated Street Lookup API with the following changes:
   </li>
 </ol>
 
+The following changes will be made to the Works API in a future release:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>New optional <code>is_covid_19_response</code> property will be added to <code>WorkCreateRequest</code>, <code>PermitCreateRequest</code> and <code>PermitResponse</code> objects. This will allow a permit to be marked as a response to Covid-19. If this property is not provided in the request it will default to false.</li>
+</ol>
+
 Version 1.23 (14/05/2020):
 {: .govuk-heading-s}
 

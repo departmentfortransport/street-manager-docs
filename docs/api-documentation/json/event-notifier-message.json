@@ -1,0 +1,124 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://departmentfortransport.github.io/street-manager-docs/api-documentation/json/event-notifier-message.json",
+  "title": "Event Notifier Message",
+  "description": "A notification message a subscriber will receive when subscribed to a topic",
+  "type": "object",
+  "properties": {
+    "event_reference": {
+      "description": "The unique reference for this event",
+      "type": "integer"
+    },
+    "event_type": {
+      "description": "The type of event",
+      "type": "string",
+      "enum": ["work-start", "work-end"]
+    },
+    "object_data": {
+      "description": "The data of the object reference",
+      "type": "object",
+      "if": { "object_type": "PERMIT" },
+      "then": {
+        "properties": {
+          "work_reference_number": {
+            "type": "string"
+          },
+          "permit_reference_number": {
+            "type": "string"
+          },
+          "promoter_swa_code": {
+            "type": "string"
+          },
+          "promoter_organisation": {
+            "type": "string"
+          },
+          "highway_authority": {
+            "type": "string"
+          },
+          "works_location_coordinates": {
+            "type": "string"
+          },
+          "street_name": {
+            "type": "string"
+          },
+          "area_name": {
+            "type": "string"
+          },
+          "work_category": {
+            "type": "string"
+          },
+          "traffic_management_type": {
+            "type": "string"
+          },
+          "proposed_start_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "proposed_end_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "proposed_start_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "proposed_end_time": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actual_start_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "actual_end_date": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "work_status": {
+            "type": "string"
+          },
+          "usrn": {
+            "type": "string"
+          },
+          "highway_authority_swa_code": {
+            "type": "string"
+          },
+          "work_category_ref": {
+            "type": "string"
+          },
+          "traffic_management_type_ref": {
+            "type": "string"
+          },
+          "work_status_ref": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "work_reference_number", "permit_reference_number", "promoter_swa_code", "promoter_organisation",
+          "highway_authority", "works_location_coordinates", "street_name", "work_category", "traffic_management_type",
+          "proposed_start_date", "proposed_end_date", "work_status", "usrn", "highway_authority_swa_code",
+          "work_category_ref", "traffic_management_type_ref", "work_status_ref"
+        ]
+      }
+    },
+    "event_time": {
+      "description": "The time the event occurred and was submitted in Street Manager",
+      "type": "string",
+      "format": "date-time"
+    },
+    "object_type": {
+      "description": "The type of object",
+      "type": "string",
+      "enum": ["PERMIT"]
+    },
+    "object_reference": {
+      "description": "The reference number of the object",
+      "type": "string"
+    },
+    "version": {
+      "description": "The JSON schema version",
+      "type": "integer"
+    }
+  },
+  "required": [ "event_reference", "event_type", "object_data", "event_time", "object_type", "object_reference", "version" ]
+}

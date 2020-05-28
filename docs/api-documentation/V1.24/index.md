@@ -2715,7 +2715,7 @@ You can <a href="mailto:streetmanager@dft.gov.uk">contact us</a> for more detail
 ### Use the ISO 8601 standard for datetime values in hourly generated extracts
 {: .govuk-heading-s}
 
-Currently the hourly generated CSV files exposed through the Data Export API use localised date and time strings for datetime values. This will be updated to use the ISO 8601 notitation, in-line with the Works API responses, removing ambiguity regarding timezones. The target API version for this update is V1.25.
+Currently, the hourly generated CSV files exposed through the Data Export API use localised date and time strings for datetime values. This will be updated to use the ISO 8601 notitation, in line with the Works API responses, removing ambiguity regarding timezones. The target API version for this update is V1.25.
 {: .govuk-body}
 
 ### Reporting API enhancements for search and filtering

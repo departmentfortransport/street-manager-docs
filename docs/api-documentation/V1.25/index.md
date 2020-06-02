@@ -2788,6 +2788,15 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 1.25 (18/06/2020):
+{: .govuk-heading-s}
+
+Updated Works API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>New optional <code>is_covid_19_response</code> property added to <code>WorkCreateRequest</code>, <code>PermitCreateRequest</code> and <code>PermitResponse</code> objects. Allows a permit to be marked as a response to Covid-19. If this property is not provided in the request it will default to false.</li>
+</ol>
+
 Version 1.24 (28/05/2020):
 {: .govuk-heading-s}
 

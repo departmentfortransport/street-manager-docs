@@ -2,8 +2,7 @@
 Street Manager is offering near real-time notification of events which occur in the service.
 
 ## Approach
-A publisher/subscriber model will be used utilising Amazon's [Simple Notification Service]
-(https://aws.amazon.com/sns/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc)
+A publisher/subscriber model will be used utilising Amazon's [Simple Notification Service](https://aws.amazon.com/sns/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc)
 
 Users subscribing to the service will be required to host a POST endpoint capable of recieving
 HTTP requests from [Amazon's source IP range](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html).

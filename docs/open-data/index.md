@@ -1,21 +1,34 @@
+---
+layout: default
+title: Open Data Overview
+---
 # Open Data Overview
+{: .govuk-heading-xl}
 Street Manager is offering near real-time notification of events which occur in the service.
+{: .govuk-body}
 
 ## Approach
+{: .govuk-heading-l}
 A publisher/subscriber model using Amazon's [Simple Notification Service](https://aws.amazon.com/sns/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc)
 sending notifications to subscribers when an applicable event occurs in Street Manager.
+{: .govuk-body}
 
 Users subscribing to the service will be required to host a POST endpoint capable of recieving
 HTTP requests from [Amazon's source IP range](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html).
+{: .govuk-body}
 
 Once this host endpoint is configured a verification message will be sent to subscribers containing a confirmation link.
 This link must be called by the subscriber in order to confirm their subscription.
+{: .govuk-body}
 
 Once the subscriber is verified any event will trigger a POST request to the specified subscriber endpoint with the
 notification specification represented below.
+{: .govuk-body}
 
 ## Sample data
+{: .govuk-heading-l}
 ### Confirmation message format
+{: .govuk-heading-m}
 ```
 {
   "Type": "SubscriptionConfirmation",
@@ -32,6 +45,7 @@ notification specification represented below.
 ```
 
 ### Permit notification message format
+{: .govuk-heading-m}
 ```
 {
   "event_reference": 529770,

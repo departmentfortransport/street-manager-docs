@@ -25,6 +25,8 @@ Once the subscriber is verified any event will trigger a POST request to the spe
 notification specification represented below.
 {: .govuk-body}
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/5ObhfGEQUu0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
 ## Sample data
 {: .govuk-heading-l}
 ### Confirmation message format

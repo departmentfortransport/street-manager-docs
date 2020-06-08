@@ -55,7 +55,7 @@ data notification.
 ## Sample data
 {: .govuk-heading-m}
 ### Confirmation message format
-{: .govuk-heading-m}
+{: .govuk-heading-s}
 ```
 {
   "Type": "SubscriptionConfirmation",
@@ -111,6 +111,7 @@ data notification.
 ```
 
 ## Onboarding approach
+{: .govuk-heading-s}
 This section outlines the proposed onboarding approach which is to be confirmed.
 {: .govuk-body}
 

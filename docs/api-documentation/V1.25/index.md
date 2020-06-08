@@ -2795,6 +2795,48 @@ Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>New optional <code>is_covid_19_response</code> property added to <code>WorkCreateRequest</code>, <code>PermitCreateRequest</code> and <code>PermitResponse</code> objects. Allows a permit to be marked as a response to Covid-19. If this property is not provided in the request it will default to false.</li>
+  <li>
+    Added the following comment topics to the <code>CommentTopicEnum</code> used in the <code>POST /works/{workReferenceNumber}/comments</code> endpoint:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>FORWARD_PLAN</code></li>
+      <li><code>CHANGE_REQUEST</code></li>
+      <li><code>IMPOSED_VARIATION</code></li>
+      <li><code>DURATION_CHALLENGE</code></li>
+      <li><code>SECTION_81</code></li>
+    </ol>
+
+    These values can also now be returned in the <code>topic</code> field of the <code>WorkHistoryResponse</code>.
+  </li>
+</ol>
+
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    Added the following comment topics to the <code>CommentTopicEnum</code> used in the <code>GET /comments</code> endpoint:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>FORWARD_PLAN</code></li>
+      <li><code>CHANGE_REQUEST</code></li>
+      <li><code>IMPOSED_VARIATION</code></li>
+      <li><code>DURATION_CHALLENGE</code></li>
+      <li><code>SECTION_81</code></li>
+    </ol>
+  </li>
+</ol>
+
+Updated Data Export API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    Added the following comment topics to the <code>CommentTopicEnum</code> used in the <code>POST /comments/csv</code> endpoint:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>FORWARD_PLAN</code></li>
+      <li><code>CHANGE_REQUEST</code></li>
+      <li><code>IMPOSED_VARIATION</code></li>
+      <li><code>DURATION_CHALLENGE</code></li>
+      <li><code>SECTION_81</code></li>
+    </ol>
+  </li>
 </ol>
 
 Version 1.24 (28/05/2020):

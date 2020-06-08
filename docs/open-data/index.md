@@ -35,7 +35,7 @@ data notification.
 {: .govuk-body}
 
 ### Events currently available
-{: .govuk-heading-m}
+{: .govuk-heading-s}
 
 Work start
 {: .govuk-body}
@@ -44,7 +44,7 @@ Work stop
 {: .govuk-body}
 
 ### Events to be available
-{: .govuk-heading-m}
+{: .govuk-heading-s}
 
 Work start reverted
 {: .govuk-body}
@@ -115,3 +115,15 @@ Activity planned
   "version": 1
 }
 ```
+
+## Onboarding approach
+This section outlines the proposed onboarding approach which is to be confirmed.
+<ol class="govuk-list govuk-list--number">
+  <li>Configure a POST endpoint which is accessible by AWS's Simple Notification Service (SNS)</li>
+  <li>Contact DFT using data.gov.uk landing page to register interest in Open Data, supplying address of POST endpoint</li>
+  <li>Accept applicable terms and conditions</li>
+  <li>DFT adds a new subscriber to the relevant topics</li>
+  <li>Subscriber makes a GET request to the <code>SubscribeURL</code> in the confirmation message from SNS</li>
+  <li>Subscriber verify message contents using the signature before processing</li>
+  <li>Subscriber processess messages</li>
+<ol>

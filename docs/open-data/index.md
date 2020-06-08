@@ -37,26 +37,20 @@ data notification.
 ### Events currently available
 {: .govuk-heading-s}
 
-Work start
-{: .govuk-body}
-
-Work stop
-{: .govuk-body}
+<ul class="govuk-list">
+  <li>Work start</li>
+  <li>Work stop</li>
+<ul>
 
 ### Events to be available
 {: .govuk-heading-s}
 
-Work start reverted
-{: .govuk-body}
-
-Work stop reverted
-{: .govuk-body}
-
-Work planned
-{: .govuk-body}
-
-Activity planned
-{: .govuk-body}
+<ul class="govuk-list">
+  <li>Work start reverted</li>
+  <li>Work stop reverted</li>
+  <li>Work planned</li>
+  <li>Activity planned</li>
+<ul>
 
 ## Sample data
 {: .govuk-heading-m}
@@ -118,6 +112,8 @@ Activity planned
 
 ## Onboarding approach
 This section outlines the proposed onboarding approach which is to be confirmed.
+{: .govuk-body}
+
 <ol class="govuk-list govuk-list--number">
   <li>Configure a POST endpoint which is accessible by AWS's Simple Notification Service (SNS)</li>
   <li>Contact DFT using data.gov.uk landing page to register interest in Open Data, supplying address of POST endpoint</li>

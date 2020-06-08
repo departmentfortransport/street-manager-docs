@@ -40,7 +40,7 @@ data notification.
 <ul class="govuk-list">
   <li>Work start</li>
   <li>Work stop</li>
-<ul>
+</ul>
 
 ### Events to be available
 {: .govuk-heading-s}
@@ -50,7 +50,7 @@ data notification.
   <li>Work stop reverted</li>
   <li>Work planned</li>
   <li>Activity planned</li>
-<ul>
+</ul>
 
 ## Sample data
 {: .govuk-heading-m}
@@ -122,4 +122,4 @@ This section outlines the proposed onboarding approach which is to be confirmed.
   <li>Subscriber makes a GET request to the <code>SubscribeURL</code> in the confirmation message from SNS</li>
   <li>Subscriber verify message contents using the signature before processing</li>
   <li>Subscriber processess messages</li>
-<ol>
+</ol>

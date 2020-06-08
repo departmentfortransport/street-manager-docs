@@ -8,7 +8,7 @@ Street Manager is offering near real-time notification of events which occur in 
 {: .govuk-body}
 
 ## Approach
-{: .govuk-heading-l}
+{: .govuk-heading-m}
 A publisher/subscriber model using Amazon's [Simple Notification Service](https://aws.amazon.com/sns/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc)
 sending notifications to subscribers when an applicable event occurs in Street Manager.
 {: .govuk-body}
@@ -27,8 +27,39 @@ notification specification represented below.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5ObhfGEQUu0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+## Events available
+{: .govuk-heading-m}
+
+The open data offering operates using an event driven model, this section describes the events which trigger an open
+data notification.
+{: .govuk-body}
+
+### Events currently available
+{: .govuk-heading-m}
+
+Work start
+{: .govuk-body}
+
+Work stop
+{: .govuk-body}
+
+### Events to be available
+{: .govuk-heading-m}
+
+Work start reverted
+{: .govuk-body}
+
+Work stop reverted
+{: .govuk-body}
+
+Work planned
+{: .govuk-body}
+
+Activity planned
+{: .govuk-body}
+
 ## Sample data
-{: .govuk-heading-l}
+{: .govuk-heading-m}
 ### Confirmation message format
 {: .govuk-heading-m}
 ```

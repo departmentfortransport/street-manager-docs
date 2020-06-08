@@ -72,7 +72,7 @@ data notification.
 ```
 
 ### Permit notification message format
-{: .govuk-heading-m}
+{: .govuk-heading-s}
 ```
 {
   "event_reference": 529770,
@@ -111,7 +111,7 @@ data notification.
 ```
 
 ## Onboarding approach
-{: .govuk-heading-s}
+{: .govuk-heading-m}
 This section outlines the proposed onboarding approach which is to be confirmed.
 {: .govuk-body}
 

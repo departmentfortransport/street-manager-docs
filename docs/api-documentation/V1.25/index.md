@@ -2788,8 +2788,8 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Version 1.25 (18/06/2020):
-{: .govuk-heading-s}
+Version 1.25 - Stable (18/06/2020):
+{: .govuk-heading-m}
 
 Updated Works API with the following changes:
 {: .govuk-body}
@@ -2807,6 +2807,8 @@ Updated Works API with the following changes:
 
     These values can also now be returned in the <code>topic</code> field of the <code>WorkHistoryResponse</code>.
   </li>
+  <li>Implemented new optional <code>is_internal</code> property added to <code>POST /works/{workReferenceNumber}/comments</code> endpoint allowing a comment to be marked as internal.</li>
+  <li>Implemented new endpoint <code>PUT /works/{workReferenceNumber}/comments/{commentReferenceNumber}/read</code> available to mark comments as read</li>
 </ol>
 
 Updated Reporting API with the following changes:
@@ -2820,6 +2822,15 @@ Updated Reporting API with the following changes:
       <li><code>IMPOSED_VARIATION</code></li>
       <li><code>DURATION_CHALLENGE</code></li>
       <li><code>SECTION_81</code></li>
+    </ol>
+  </li>
+  <li>Response from <code>GET /comments</code> endpoint updated to include the following properties:</li>
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>comment_reference_number</code></li>
+      <li><code>is_internal</code> (boolean)</li>
+      <li><code>is_read</code> (boolean)</li>
+      <li><code>read_by</code> (optional string - should be the user's email address)</li>
+      <li><code>read_on_date</code> (optional date)</li>
     </ol>
   </li>
 </ol>

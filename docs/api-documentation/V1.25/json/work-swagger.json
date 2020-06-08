@@ -42,7 +42,7 @@
 				"condition"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ReasonForRefusal": {
 			"enum": [
@@ -159,7 +159,7 @@
 				"name"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ASDCode": {
 			"enum": [
@@ -258,7 +258,7 @@
 				"street_special_desig_code"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"AlterationStatus": {
 			"enum": [
@@ -313,7 +313,7 @@
 				"alteration_type"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"WorkType": {
 			"enum": [
@@ -769,6 +769,10 @@
 				"is_duration_challenged": {
 					"type": "boolean",
 					"x-nullable": true
+				},
+				"is_covid_19_response": {
+					"type": "boolean",
+					"x-nullable": true
 				}
 			},
 			"required": [
@@ -821,7 +825,7 @@
 				"ever_modification_requested"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"PermitCreateResponse": {
 			"properties": {
@@ -833,7 +837,7 @@
 				"permit_reference_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"PermitCreateRequest": {
 			"properties": {
@@ -1055,6 +1059,10 @@
 					"type": "array",
 					"description": "Array Max length 2 items\nArray values must be valid email addresses\nArray values max length 100 characters",
 					"x-nullable": true
+				},
+				"is_covid_19_response": {
+					"type": "boolean",
+					"x-nullable": true
 				}
 			},
 			"required": [
@@ -1077,7 +1085,7 @@
 				"close_footway"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"PermitStatusUpdateRequest": {
 			"properties": {
@@ -1105,7 +1113,7 @@
 				"permit_status"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"PermitAssessmentUpdateRequest": {
 			"properties": {
@@ -1167,7 +1175,7 @@
 				"assessment_status"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"PermitDiscountUpdateRequest": {
 			"properties": {
@@ -1196,7 +1204,7 @@
 				"assessment_discount"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"PermitLaneRentalAssessmentUpdateRequest": {
 			"properties": {
@@ -1238,7 +1246,7 @@
 				"outcome"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"HS2AcknowledgementRequest": {
 			"properties": {
@@ -1261,7 +1269,7 @@
 				"hs2_acknowledged"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"DurationCalculationResponse": {
 			"properties": {
@@ -1279,7 +1287,7 @@
 				"working_days"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"WorkCategoryResponse": {
 			"properties": {
@@ -1304,7 +1312,7 @@
 				"is_early_start"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ForwardPlanStatus": {
 			"enum": [
@@ -1342,7 +1350,7 @@
 				"forward_plan_status"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"PermitSummaryResponse": {
 			"properties": {
@@ -1382,7 +1390,7 @@
 				"work_category"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"AuditEvent": {
 			"enum": [
@@ -1525,7 +1533,7 @@
 				"update_id"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ReinstatementStatus": {
 			"enum": [
@@ -1600,7 +1608,7 @@
 				"reinstatement_type"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"InspectionResponseType": {
 			"enum": [
@@ -1685,7 +1693,7 @@
 				"inspection_type"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"OffenceCode": {
 			"enum": [
@@ -1730,7 +1738,7 @@
 				"fpn_status"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"Section81Severity": {
 			"enum": [
@@ -1778,7 +1786,7 @@
 				"section_81_status"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"FileResponse": {
 			"properties": {
@@ -1812,7 +1820,7 @@
 				"organisation_name"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"WorkResponse": {
 			"properties": {
@@ -1962,7 +1970,7 @@
 				"history"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"WorkCreateResponse": {
 			"properties": {
@@ -1978,7 +1986,7 @@
 				"permit_reference_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"WorkCreateRequest": {
 			"properties": {
@@ -2238,6 +2246,10 @@
 					"type": "string",
 					"description": "Max length 100 characters",
 					"x-nullable": true
+				},
+				"is_covid_19_response": {
+					"type": "boolean",
+					"x-nullable": true
 				}
 			},
 			"required": [
@@ -2264,7 +2276,7 @@
 				"works_location_description"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"WorkStartUpdateRequest": {
 			"properties": {
@@ -2288,7 +2300,7 @@
 				"actual_start_date"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"WorkStartRevertRequest": {
 			"properties": {
@@ -2311,7 +2323,7 @@
 				"revert_reason"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"WorkStopUpdateRequest": {
 			"properties": {
@@ -2335,7 +2347,7 @@
 				"actual_stop_date"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"WorkStopRevertRequest": {
 			"properties": {
@@ -2358,7 +2370,7 @@
 				"revert_reason"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"SiteCreateResponse": {
 			"properties": {
@@ -2371,7 +2383,7 @@
 				"site_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"SiteCreateRequest": {
 			"properties": {
@@ -2478,7 +2490,7 @@
 				"reinstatement_type"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ReinstatementResponse": {
 			"properties": {
@@ -2566,7 +2578,7 @@
 				"reinstatement_evidence"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"SiteResponse": {
 			"properties": {
@@ -2644,7 +2656,7 @@
 				"reinstatements"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ReinstatementCreateRequest": {
 			"properties": {
@@ -2747,7 +2759,7 @@
 				"reinstatement_evidence"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"FailureReason": {
 			"enum": [
@@ -2804,7 +2816,7 @@
 				"site_description"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"FailureReasonDetailsResponse": {
 			"properties": {
@@ -2831,7 +2843,7 @@
 				"details"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"DefectFixedOnsite": {
 			"enum": [
@@ -2958,7 +2970,7 @@
 				"highway_authority"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"InspectionCreateResponse": {
 			"properties": {
@@ -2970,7 +2982,7 @@
 				"inspection_reference_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"FailureReasonDetails": {
 			"properties": {
@@ -2996,7 +3008,7 @@
 				"details"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"InspectionCreateRequest": {
 			"properties": {
@@ -3127,7 +3139,7 @@
 				"username"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ScheduledInspectionCreateRequest": {
 			"properties": {
@@ -3166,7 +3178,7 @@
 				"scheduled_inspection_date"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"AuthenticationResponse": {
 			"properties": {
@@ -3192,7 +3204,7 @@
 				}
 			},
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"AuthenticationRequest": {
 			"properties": {
@@ -3208,7 +3220,7 @@
 				"password"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"InitialAuthenticationResponse": {
 			"properties": {
@@ -3220,7 +3232,7 @@
 				"sessionToken"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"FPNResponse": {
 			"properties": {
@@ -3289,7 +3301,7 @@
 				"ha_organisation"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"FPNCreateResponse": {
 			"properties": {
@@ -3301,7 +3313,7 @@
 				"fpn_reference_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"FPNCreateRequest": {
 			"properties": {
@@ -3363,7 +3375,7 @@
 				"officer_contact_details"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"FPNStatusUpdateRequest": {
 			"properties": {
@@ -3390,7 +3402,7 @@
 				"fpn_status"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"CommentTopic": {
 			"enum": [
@@ -3433,7 +3445,7 @@
 				"topic"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"PermitAlterationCreateResponse": {
 			"properties": {
@@ -3445,7 +3457,7 @@
 				"permit_alteration_reference_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"PermitAlterationCreateRequest": {
 			"properties": {
@@ -3665,7 +3677,7 @@
 				"permit_alteration_reason"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"PermitAlterationStatusUpdateRequest": {
 			"properties": {
@@ -3705,7 +3717,7 @@
 				"alteration_status"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"PermitAlterationResponse": {
 			"properties": {
@@ -3760,7 +3772,7 @@
 				"proposed"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"AddFileToWorkRequest": {
 			"properties": {
@@ -3787,7 +3799,7 @@
 				"file_ids"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ActivityCreateResponse": {
 			"properties": {
@@ -3799,7 +3811,7 @@
 				"activity_reference_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ActivityActivityType": {
 			"enum": [
@@ -3938,7 +3950,7 @@
 				"collaborative_working"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ActivityResponse": {
 			"properties": {
@@ -4052,7 +4064,7 @@
 				"highway_authority_swa_code"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ActivityCancelRequest": {
 			"properties": {
@@ -4073,7 +4085,7 @@
 				}
 			},
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ActivityUpdateRequest": {
 			"properties": {
@@ -4165,7 +4177,7 @@
 				"collaborative_working"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ForwardPlanCreateResponse": {
 			"properties": {
@@ -4181,7 +4193,7 @@
 				"forward_plan_reference_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ForwardPlanCreateRequest": {
 			"properties": {
@@ -4294,7 +4306,7 @@
 				"works_location_description"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ForwardPlanResponse": {
 			"properties": {
@@ -4411,7 +4423,7 @@
 				"description_of_work"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ForwardPlanUpdateRequest": {
 			"properties": {
@@ -4477,7 +4489,7 @@
 				"description_of_work"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"ForwardPlanCancelRequest": {
 			"properties": {
@@ -4500,7 +4512,7 @@
 				"cancelled_reason"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"Section81CreateResponse": {
 			"properties": {
@@ -4516,7 +4528,7 @@
 				"section_81_reference_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"Section81Type": {
 			"enum": [
@@ -4651,7 +4663,7 @@
 				"additional_details"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"Section81WorkType": {
 			"enum": [
@@ -4796,7 +4808,7 @@
 				"status_changed_date"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"Section81StatusUpdateRequest": {
 			"properties": {
@@ -4828,7 +4840,7 @@
 				"section_81_status"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"InspectionUnitsUpdateRequest": {
 			"properties": {
@@ -4852,7 +4864,7 @@
 				"inspection_units"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"FinalReinstatementUpdateRequest": {
 			"properties": {
@@ -4875,7 +4887,7 @@
 				"final_reinstatement"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"HistoricFPNCreateResponse": {
 			"properties": {
@@ -4891,7 +4903,7 @@
 				"fpn_reference_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"HistoricFPNCreateRequest": {
 			"properties": {
@@ -5018,7 +5030,7 @@
 				"officer_contact_details"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"NonNotifiableSiteCreateResponse": {
 			"properties": {
@@ -5035,7 +5047,7 @@
 				"site_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"NonNotifiableSiteCreateRequest": {
 			"properties": {
@@ -5172,7 +5184,7 @@
 				"number_of_holes"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"HistoricInspectionCreateResponse": {
 			"properties": {
@@ -5188,7 +5200,7 @@
 				"inspection_reference_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"HistoricFailureReasonDetails": {
 			"properties": {
@@ -5210,7 +5222,7 @@
 				"details"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"HistoricInspectionCreateRequest": {
 			"properties": {
@@ -5411,7 +5423,7 @@
 				"username"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"GeographicalAreaCreateResponse": {
 			"properties": {
@@ -5428,7 +5440,7 @@
 				"geographical_area_reference_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"SampleInspectionTargetCreateResponse": {
 			"properties": {
@@ -5440,7 +5452,7 @@
 				"sample_inspection_target_reference_number"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		},
 		"SampleInspectionTargetCreateRequest": {
 			"properties": {
@@ -5499,7 +5511,7 @@
 				"promoter_org_ref"
 			],
 			"type": "object",
-			"additionalProperties": true
+			"additionalProperties": false
 		}
 	},
 	"info": {

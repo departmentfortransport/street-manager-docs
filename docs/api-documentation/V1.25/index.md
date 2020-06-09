@@ -2715,12 +2715,6 @@ Street Manager is in public beta. This means it is still in active development a
 You can <a href="mailto:streetmanager@dft.gov.uk">contact us</a> for more detail about these features, or to suggest something else you’d like Street Manager to offer.
 {: .govuk-body}
 
-### Use the ISO 8601 standard for datetime values in hourly generated extracts
-{: .govuk-heading-s}
-
-Currently, the hourly generated CSV files exposed through the Data Export API use localised date and time strings for datetime values. This will be updated to use the ISO 8601 notitation, in line with the Works API responses, removing ambiguity regarding timezones. The target API version for this update is V1.25.
-{: .govuk-body}
-
 ### Reporting API enhancements for search and filtering
 {: .govuk-heading-s}
 
@@ -2836,6 +2830,9 @@ Updated Data Export API with the following changes:
       <li><code>DURATION_CHALLENGE</code></li>
       <li><code>SECTION_81</code></li>
     </ol>
+  </li>
+  <li>
+    The hourly generated CSV files exposed through the <code>GET /work-data</code> and <code>GET /activity-data</code> endpoints now use the ISO 8601 format (rather than localised date and time strings) for any datetime values. This is consistent with the datetimes returned in the Works API responses, and removes ambiguity regarding timezones.
   </li>
 </ol>
 

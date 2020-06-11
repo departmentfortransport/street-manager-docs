@@ -316,8 +316,10 @@ Contractors can use the Data Export API to extract data from the service in CSV 
 Street Manager maintains a number of hourly scheduled jobs for data exporting. Currently, these retrieve data of permits and activities across all organisations that have been added, changed, or deleted in the past hour, which is then stored in CSV format.
 {: .govuk-body}
 
-For example, a CSV file named <code>Works_data_export_2020-01-01_13-00.csv</code> will contain data of permits across all organisations that have been added, changed, or deleted between <code>2020-01-01T12:00:00.000Z</code> and <code>2020-01-01T13:00:00.000Z</code>.
-This data is only available to data export users.
+For example, a CSV file named <code>Works_data_export_2020-01-01_13-00.csv</code> will contain data of permits across all organisations that have been added, changed, or deleted between <code>2020-01-01T12:00:00.000Z</code> and <code>2020-01-01T12:59:59.999Z</code>.
+{: .govuk-body}
+
+Note: The timing in the CSV file names are in British Summer Time (BST), similarly to the async data extraction CSV files. So during BST, a CSV file named <code>Works_data_export_2020-04-15_13-00.csv</code> will contain data of permits across all organisations that have been added, changed, or deleted between <code>2020-04-15T11:00:00.000Z</code> (<code>2020-04-15T12:00:00.000+0100</code>) and <code>2020-04-15T11:59:59.999Z</code> (<code>2020-04-15T12:59:59.999+0100</code>).
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">

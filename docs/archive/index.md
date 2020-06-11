@@ -131,3 +131,9 @@ title: Archive of newsletters and communication
       Street Manager Newsletter - 2020 - 23
       </a>
   </li>
+   <li>
+    <a class="govuk-link" href="{{ site.baseurl 
+}}/assets/files/archive/API-versioning-note.pdf">
+      Street Manager Newsletter - 2020 - 23 additional API note
+      </a>
+  </li>

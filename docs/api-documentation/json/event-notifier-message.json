@@ -12,7 +12,7 @@
     "event_type": {
       "description": "The type of event",
       "type": "string",
-      "enum": ["work-start", "work-end"]
+      "enum": ["WORK_START", "WORK_STOP"]
     },
     "object_data": {
       "description": "The data of the object reference",
@@ -66,11 +66,11 @@
             "type": "string",
             "format": "date-time"
           },
-          "actual_start_date": {
+          "actual_start_date_time": {
             "type": "string",
             "format": "date-time"
           },
-          "actual_end_date": {
+          "actual_end_date_time": {
             "type": "string",
             "format": "date-time"
           },
@@ -91,13 +91,19 @@
           },
           "work_status_ref": {
             "type": "string"
+          },
+          "is_covid_19_response": {
+            "type": "string"
+          },
+          "works_location_type": {
+            "type": "string"
           }
         },
         "required": [
           "work_reference_number", "permit_reference_number", "promoter_swa_code", "promoter_organisation",
           "highway_authority", "works_location_coordinates", "street_name", "work_category", "traffic_management_type",
           "proposed_start_date", "proposed_end_date", "work_status", "usrn", "highway_authority_swa_code",
-          "work_category_ref", "traffic_management_type_ref", "work_status_ref"
+          "work_category_ref", "traffic_management_type_ref", "work_status_ref", "works_location_type"
         ]
       }
     },

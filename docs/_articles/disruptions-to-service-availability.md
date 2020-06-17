@@ -18,6 +18,10 @@ To see the current status of Production and Sandbox environments visit the [stat
 
 **Sandbox environment**
 
+* 17/06/2020 15:32 to 15:41: Sandbox environment unavailable for 9 mins due to unexpected outage.
+
+* 17/06/2020 15:26 to 15:27: Sandbox environment unavailable for 1 min due to unexpected outage.
+
 * 03/06/2020 10:48 to 11:08: Sandbox environment partially unavailable for 20 mins due to planned release.
 
 

@@ -17,7 +17,7 @@ Users subscribing to the service will be required to host a POST endpoint capabl
 HTTP requests from [Amazon's source IP range](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html).
 {: .govuk-body}
 
-Once this host endpoint is configured a verification message will be sent to subscribers containing a confirmation link.
+Once this endpoint is configured a verification message will be sent to subscribers containing a confirmation link.
 This link must be called by the subscriber in order to confirm their subscription.
 {: .govuk-body}
 
@@ -125,3 +125,8 @@ This section outlines the proposed onboarding approach which is to be confirmed.
   <li>Subscriber verify message contents using the signature before processing</li>
   <li>Subscriber processess messages</li>
 </ol>
+
+
+### Support
+{: .govuk-heading-s}
+If you need support using the Open Data Streaming Service, please raise a request using the [service desk](https://streetmanager.atlassian.net/servicedesk/customer/portal/1/group/-1).

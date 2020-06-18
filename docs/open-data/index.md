@@ -127,6 +127,7 @@ This section outlines the proposed onboarding approach which is to be confirmed.
 </ol>
 
 
-### Support
-{: .govuk-heading-s}
+## Support
+{: .govuk-heading-m}
 If you need support using the Open Data Streaming Service, please raise a request using the [service desk](https://streetmanager.atlassian.net/servicedesk/customer/portal/1/group/-1).
+{: .govuk-body}

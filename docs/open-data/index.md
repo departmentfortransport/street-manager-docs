@@ -129,10 +129,10 @@ This section outlines the proposed onboarding approach which is to be confirmed.
 
 ## Support
 {: .govuk-heading-m}
-If you need support using the Open Data Streaming Service, please raise a request using the [service desk](https://streetmanager.atlassian.net/servicedesk/customer/portal/1/group/-1).
+If you need support using the Open Data Streaming Service, please raise a request using the [service desk](https://streetmanager.atlassian.net/servicedesk/customer/portal/1).
 {: .govuk-body}
 
 ## Stopping open data streaming
 {: .govuk-heading-m}
-If you would like to stop recieving Open Data Streaming notifications, pelase raise a request using the [service desk](https://streetmanager.atlassian.net/servicedesk/customer/portal/1/group/-1).
+If you would like to stop recieving Open Data Streaming notifications, pelase raise a request using the [service desk](https://streetmanager.atlassian.net/servicedesk/customer/portal/1).
 {: .govuk-body}

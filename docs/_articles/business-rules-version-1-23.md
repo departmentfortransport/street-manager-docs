@@ -55,7 +55,7 @@ status: publish
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.8. [PAA & PA response periods](#348-paa--pa-response-periods)<br />
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.9. [Cancelling PAA & PA](#349-cancelling-paa--pa)<br />
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.10. [PAA & PA statuses](#3410-paa--pa-statuses)<br />
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.11. [Re-submitting a PA following refusal](#3411-resubmitting--pa-following-refusal)<br />
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.11. [Re-submitting a PA following refusal](#3411-resubmitting-pa-following-refusal)<br />
 4. [Change requests (CR)](#4-change-requests-cr)<br />
    4.1. [Change request reference number](#41-change-request-reference-number)<br />
    4.2. [Change request types](#42-change-request-types)<br />

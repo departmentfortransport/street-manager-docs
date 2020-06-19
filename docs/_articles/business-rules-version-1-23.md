@@ -55,7 +55,7 @@ status: publish
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.8. [PAA & PA response periods](#348-paa--pa-response-periods)<br />
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.9. [Cancelling PAA & PA](#349-cancelling-paa--pa)<br />
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.10. [PAA & PA statuses](#3410-paa--pa-statuses)<br />
-       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.11. [Re-submitting a PA following refusal](#3411-resubmitting-pa-following-refusal)<br />
+       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3.4.11. [Resubmitting PA following refusal](#3411-resubmitting-pa-following-refusal)<br />
 4. [Change requests (CR)](#4-change-requests-cr)<br />
    4.1. [Change request reference number](#41-change-request-reference-number)<br />
    4.2. [Change request types](#42-change-request-types)<br />
@@ -446,7 +446,7 @@ A diagram of PA statuses</div>
 
 <br />
 
-#### 3.4.11. Re-submitting a PA following refusal
+#### 3.4.11. Resubmitting PA following refusal
 
 * If permit has been refused and the user wishes to resubmit, they can submit a revised permit on the work record - 'Apply for works' next to the Applications table. 
 * All the information from the previous permit - except timings, is collaboration involved and conditions - are defaulted in the new permit
@@ -1202,7 +1202,7 @@ A diagram of S81 statuses</div>
 
 | Section                            | Change comment                                           |
 | ---------------------------------- | -------------------------------------------------------- |
-| 3.4.11. Re-submitting a PA following refusal | New section added  |
+| 3.4.11. Resubmitting PA following refusal | New section added  |
 | 7.1. Commenting on a works record | Additional comment topics added  |
 | 7.7.1. Marking comment as read | New section added |
 | 7.1.2. Marking comment as internal | New section added  |

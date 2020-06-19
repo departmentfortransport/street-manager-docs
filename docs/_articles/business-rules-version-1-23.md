@@ -437,10 +437,19 @@ _(Previously section 1.5 & 10 in Business rules v0.1 draft)_
 <div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PAA%20statuses.jpg" alt="Street Manager - PAA statuses" width="100%" />
 A diagram of PAA statuses</div>
 
+
 ##### 3.4.10.2. PA statuses
 
 <div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PA%20statuses.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PA%20statuses.jpg" alt="Street Manager - PA statuses" width="100%" /></a>
 A diagram of PA statuses</div>
+
+<br />
+
+#### 3.4.11. Re-submitting a PA following refusal
+
+* If permit has been refused and the user wishes to resubmit, they can submit a revised permit on the work record - 'Apply for works' next to the Applications table. 
+* All the information from the previous permit - except timings, is collaboration involved and conditions - are defaulted in the new permit
+* A new permit can only be raised if the existing one has been refused, closed, cancelled or revoked.
 
 <br />
 
@@ -1192,6 +1201,7 @@ A diagram of S81 statuses</div>
 
 | Section                            | Change comment                                           |
 | ---------------------------------- | -------------------------------------------------------- |
+| 3.4.11. Re-submitting a PA following refusal | New section added  |
 | 7.1. Commenting on a works record | Additional comment topics added  |
 | 7.7.1. Marking comment as read | New section added |
 | 7.1.2. Marking comment as internal | New section added  |

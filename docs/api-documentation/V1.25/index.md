@@ -2820,7 +2820,7 @@ Updated Reporting API with the following changes:
       <li><code>SECTION_81</code></li>
     </ol>
   </li>
-  <li>Response from <code>GET /comments</code> endpoint updated to include the following properties:</li>
+  <li>Response from <code>GET /comments</code> endpoint updated to include the following properties:
     <ol class="govuk-list govuk-list--bullet">
       <li><code>comment_reference_number</code></li>
       <li><code>is_internal</code> (boolean)</li>

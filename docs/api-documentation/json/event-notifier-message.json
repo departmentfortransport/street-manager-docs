@@ -21,81 +21,105 @@
       "then": {
         "properties": {
           "work_reference_number": {
+            "description": "Reference number unique to a Work",
             "type": "string"
           },
           "permit_reference_number": {
+            "description": "Reference number unique to a Permit",
             "type": "string"
           },
           "promoter_swa_code": {
+            "description": "Street Works Act (SWA) code of the organisation carrying out the work",
             "type": "string"
           },
           "promoter_organisation": {
+            "description": "Name of the organisation carrying out the work",
             "type": "string"
           },
           "highway_authority": {
+            "description": "Name of the organisation responsible for the area where the work is taking place",
             "type": "string"
           },
           "works_location_coordinates": {
+            "description": "Location of the work in GeoJSON format using BNG (British National Grid EPSG:27700)",
             "type": "string"
           },
           "street_name": {
+            "description": "Name of the street where the work is taking place as per NSG (National Street Gazetteer)",
             "type": "string"
           },
           "area_name": {
+            "description": "Name of the area where the work is taking place as per NSG (National Street Gazetteer)",
             "type": "string"
           },
           "work_category": {
+            "description": "Category of the work. Categories: Minor, Standard, Major, Major(PAA), Immediate - urgent, Immediate - emergency, HS2 (Highway)",
             "type": "string"
           },
           "traffic_management_type": {
+            "description": "How traffic will be managed while work is taking place. Types: Road closure, Contra-flow, Lane closure, Multi-way signals, Two-way signals, Convoy workings, Stop/go boards, Priority working, Give and take, Some carriageway incursion, No carriageway incursion",
             "type": "string"
           },
           "proposed_start_date": {
+            "description": "The date the work is proposed to start",
             "type": "string",
             "format": "date-time"
           },
           "proposed_end_date": {
+            "description": "The date the work is proposed to end",
             "type": "string",
             "format": "date-time"
           },
           "proposed_start_time": {
+            "description": "The time the work is proposed to start. Undefined if not provided by the promoter.",
             "type": "string",
             "format": "date-time"
           },
           "proposed_end_time": {
+            "description": "The time the work is proposed to end. Undefined if not provided by the promoter.",
             "type": "string",
             "format": "date-time"
           },
           "actual_start_date_time": {
+            "description": "The date & time the work started",
             "type": "string",
             "format": "date-time"
           },
           "actual_end_date_time": {
+            "description": "The date & time the work ended",
             "type": "string",
             "format": "date-time"
           },
           "work_status": {
+            "description": "Status of the work. Statuses: Works planned, Works in progress, Works completed, Works cancelled, Unattributable works, Historical works, Non notifiable works, Section 81 works",
             "type": "string"
           },
           "usrn": {
+            "description": "Unique Street Reference Number (USRN)",
             "type": "string"
           },
           "highway_authority_swa_code": {
+            "description": "Street Works Act (SWA) code of the organisation responsible for the area where the Work is taking place",
             "type": "string"
           },
           "work_category_ref": {
+            "description": "(API Reference) Category of the work: Category References: minor, standard, major, immedaite_urgent, immediate_emergency, paa, hs2_highway",
             "type": "string"
           },
           "traffic_management_type_ref": {
+            "description": "(API Reference) How traffic will be managed while work is taking place. Reference Types: road_closure, contra_flow, lane_closure, multi_way_signals, two_way_signals, convoy_workings, stop_go_boards, priority_working, give_and_take, some_carriageway_incursion, no_carriageway_incursion",
             "type": "string"
           },
           "work_status_ref": {
+            "description": "(API Reference) Status of the work. Status References: planned, in_progress, completed, cancelled, unattributable, historical, non_notifiable, section_81",
             "type": "string"
           },
           "is_covid_19_response": {
+            "description": "Is the work in response to Covid 19",
             "type": "string"
           },
           "works_location_type": {
+            "description": "Type of location where the work is taking place. Types: Footway, Carriageway, Verge, Cycleway, Footpath, Parking place, Bus stop or stand, Cycle hire docking station, Taxi rank",
             "type": "string"
           }
         },

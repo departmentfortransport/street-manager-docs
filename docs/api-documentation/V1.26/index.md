@@ -288,17 +288,14 @@ The reporting API exposes a `/works/updates` endpoint for polling. See the resou
 **Notifications**
 {: .govuk-body}
 
-*Note: Notifications are currently in roadmap for future release (post April 2020).*
-{: .govuk-body}
-
-Street Manager will offer a Notification service which will send Push
+Street Manager offers a Notification service which will send Push
 notifications to organisations for updates to their Works to subscribed
 systems. Organisations who wish to receive notifications need to expose
 an HTTPS endpoint capable of receiving POST requests from the
 Notification service containing the update event data as JSON.
 {: .govuk-body}
 
-You can see the event data format in the <a href="/street-manager-docs/api-documentation/json/event-notifier-message.json">Event Notifier Message JSON Schema</a>.
+You can find out more about Notifications, including how to access them, on the <a href="https://departmentfortransport.github.io/street-manager-docs/open-data/">Open Data Overview page</a>.
 {: .govuk-body}
 
 Notifications cannot offer guaranteed delivery (network issues, service
@@ -2742,9 +2739,6 @@ The Reporting API continuous polling will be updated to allow the use of Transac
 {: .govuk-heading-s}
 
 See **Technical Overview - Getting data from Street Manager - Notifications** for details.
-{: .govuk-body}
-
-*Note: Notifications are currently in roadmap for future release (post April 2020).*
 {: .govuk-body}
 
 ### User and organisation self registration

@@ -27,9 +27,10 @@ notification specification represented below.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5ObhfGEQUu0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-
-## Events available
+## Events
 {: .govuk-heading-m}
+### Events available
+{: .govuk-heading-s}
 
 The open data offering operates using an event driven model, this section describes the events which trigger an open
 data notification.
@@ -43,7 +44,7 @@ data notification.
   <li>Work stop</li>
 </ul>
 
-### Events to be available
+### Upcoming Events
 {: .govuk-heading-s}
 
 <ul class="govuk-list">
@@ -53,10 +54,23 @@ data notification.
   <li>Activity planned</li>
 </ul>
 
-## Sample data
+## Messages
 {: .govuk-heading-m}
-### Confirmation message format
+
+You can see the event data message format in the <a href="/street-manager-docs/api-documentation/json/event-notifier-message.json">Event Notifier Message JSON Schema</a>.
+{: .govuk-body}
+
+NOTE: This messagage specification is subject to extenstion with no prior notice. We recommend that subscribers do not use a serialisier for the JSON message and instead only extract properties they require for forward compatibility.
+{: .govuk-body}
+
+### Subscription Confirmation message
 {: .govuk-heading-s}
+<ul class="govuk-list">
+  <li>Received when subscription is set up for each topic (event type) E.g. Work start.</li>
+  <li>Subscription URL will stay valid for 3 days, after which you will need to re-register your interest in Open Data with DFT</li>
+  <li>We strongly recommend that you set up your endpoint to automically confirm subscriptions. For an example of how to set up your HTTPS endpoint to confirm a subscription, see <a href="https://github.com/departmentfortransport/street-manager-event-subscriber/tree/master/httpSubscriber">Example HTTP subscriber</a></li>
+</ul>
+
 ```
 {
   "Type": "SubscriptionConfirmation",
@@ -72,8 +86,15 @@ data notification.
 }
 ```
 
-### Permit notification message format
+### Permit notification message
 {: .govuk-heading-s}
+
+Events: Work start, Work stop
+Upcoming events: Work start reverted, Work stop reverted, Work planned
+{: .govuk-body}
+
+Example:
+{: .govuk-body}
 ```
 {
   "event_reference": 529770,
@@ -84,17 +105,17 @@ data notification.
     "promoter_swa_code": "STPR",
     "promoter_organisation": "Smoke Test Promoter",
     "highway_authority": "CITY OF WESTMINSTER",
-    "works_location_coordinates": "Point: 527914.64,181739.78",
-    "street_name": "Fake Street",
-    "area_name": "London",
+    "works_location_coordinates": "LINESTRING(501251.53 222574.64,501305.92 222506.65)",
+    "street_name": "HIGH STREET NORTH",
+    "area_name": "LONDON",
     "work_category": "Standard",
     "traffic_management_type": "Road closure",
-    "proposed_start_date": "03-06-2020",
+    "proposed_start_date": "2020-06-10T00:00:00.000Z",
     "proposed_start_time": "13:50",
-    "proposed_end_date": "17-06-2020",
+    "proposed_end_date": "2020-06-12T00:00:00.000Z",
     "proposed_end_time": null,
-    "actual_start_date": "04-06-2020 09:00",
-    "actual_end_date": null,
+    "actual_start_date_time": "2020-06-11T10:11:00.000Z",
+    "actual_end_date_time": null,
     "work_status": "Works in progress",
     "usrn": "8401426",
     "highway_authority_swa_code": "5990",
@@ -102,7 +123,46 @@ data notification.
     "traffic_management_type_ref": "road_closure",
     "work_status_ref": "in_progress",
     "activity_type": "Remedial works",
-    "is_ttro_required": "No"
+    "is_ttro_required": "No",
+    "is_covid_19_response" : "No",
+    "works_location_type": "Cycleway, Footpath"
+  },
+  "event_time": "2020-06-04T08:00:00.000Z",
+  "object_type": "PERMIT",
+  "object_reference": "TSR1591199404915-01",
+  "version": 1
+}
+```
+
+### Activity notification message (Upcoming release)
+Upcoming events: Activity planned
+{: .govuk-body}
+
+Example:
+{: .govuk-body}
+```
+{
+  "event_reference": 529771,
+  "event_type": "activity-planned",
+  "object_data": {
+    "activity_reference_number": "TSR1591199404915",
+    "usrn": "8401426",
+    "street_name": "Fake Street",
+    "town": "London",
+    "area_name": "MARYLEBONE HIGH STREET",
+    "activity_coordinates": "LINESTRING(501251.53 222574.64,501305.92 222506.65)",
+    "activity_name": "London Marathon",
+    "activity_type": "Event",
+    "start_date": "2020-06-10T00:00:00.000Z",
+    "start_time": "2020-06-10T14:30:00.000Z",
+    "end_date": "2020-06-11T00:00:00.000Z",
+    "end_time": "2020-06-11T09:00:00.000Z",
+    "traffic_management_type": "Road closure",
+    "cancelled": "Yes"
+    "highway_authority": "CITY OF WESTMINSTER",
+    "highway_authority_swa_code": "5990",
+    "activity_type_ref": "event",
+    "traffic_management_type_ref": "road_closure"
   },
   "event_time": "2020-06-04T08:00:00.000Z",
   "object_type": "PERMIT",
@@ -117,7 +177,7 @@ This section outlines the proposed onboarding approach which is to be confirmed.
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--number">
-  <li>Configure a POST endpoint which is accessible by AWS's Simple Notification Service (SNS)</li>
+  <li>Configure a POST endpoint which is accessible by AWS's Simple Notification Service (SNS). See <a href="https://github.com/departmentfortransport/street-manager-event-subscriber/tree/master/httpSubscriber"> Example HTTP subscriber </a></li>
   <li>Contact DFT using data.gov.uk landing page to register interest in Open Data, supplying address of POST endpoint</li>
   <li>Accept applicable terms and conditions</li>
   <li>DFT adds a new subscriber to the relevant topics</li>
@@ -125,7 +185,6 @@ This section outlines the proposed onboarding approach which is to be confirmed.
   <li>Subscriber verify message contents using the signature before processing</li>
   <li>Subscriber processess messages</li>
 </ol>
-
 
 ## Support
 {: .govuk-heading-m}

@@ -27,6 +27,8 @@ notification specification represented below.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5ObhfGEQUu0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
 ## Events
 {: .govuk-heading-m}
 ### Events available
@@ -53,6 +55,8 @@ data notification.
   <li>Work planned</li>
   <li>Activity planned</li>
 </ul>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
 ## Messages
 {: .govuk-heading-m}
@@ -85,6 +89,7 @@ NOTE: This messagage specification is subject to extenstion with no prior notice
   "SigningCertURL": "https://sns.eu-west-2.amazonaws.com/SimpleNotificationService-a86cb10b4e1f29c941702d737128f7b6.pem"
 }
 ```
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
 ### Permit notification message
 {: .govuk-heading-s}
@@ -134,7 +139,11 @@ Example:
 }
 ```
 
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
 ### Activity notification message (Upcoming release)
+{: .govuk-heading-s}
+
 Upcoming events: Activity planned
 {: .govuk-body}
 
@@ -171,6 +180,8 @@ Example:
 }
 ```
 
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
 ## Onboarding approach
 {: .govuk-heading-m}
 This section outlines the proposed onboarding approach which is to be confirmed.
@@ -186,10 +197,14 @@ This section outlines the proposed onboarding approach which is to be confirmed.
   <li>Subscriber processess messages</li>
 </ol>
 
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
 ## Support
 {: .govuk-heading-m}
 If you need support using the Open Data Streaming Service, please raise a request using the [service desk](https://streetmanager.atlassian.net/servicedesk/customer/portal/1/group/8/create/30).
 {: .govuk-body}
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
 ## Stopping open data streaming
 {: .govuk-heading-m}

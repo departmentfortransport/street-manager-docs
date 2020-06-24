@@ -184,13 +184,13 @@ Example:
 
 ## Onboarding approach
 {: .govuk-heading-m}
-This section outlines the proposed onboarding approach which is to be confirmed.
+This section outlines the onboarding approach.
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--number">
   <li>Configure a POST endpoint which is accessible by AWS's Simple Notification Service (SNS). See <a href="https://github.com/departmentfortransport/street-manager-event-subscriber/tree/master/httpSubscriber"> Example HTTP subscriber </a></li>
   <li>Contact DFT using data.gov.uk landing page to register interest in Open Data, supplying address of POST endpoint</li>
-  <li>Accept applicable terms and conditions</li>
+  <li>Accept Terms of Use</li>
   <li>DFT adds a new subscriber to the relevant topics</li>
   <li>Subscriber makes a GET request to the <code>SubscribeURL</code> in the confirmation message from SNS</li>
   <li>Subscriber verify message contents using the signature before processing</li>
@@ -201,12 +201,12 @@ This section outlines the proposed onboarding approach which is to be confirmed.
 
 ## Support
 {: .govuk-heading-m}
-If you need support using the Open Data Streaming Service, please raise a request using the [service desk](https://streetmanager.atlassian.net/servicedesk/customer/portal/1/group/8/create/30).
+If you need support using the Open Data API, please raise a request using the [service desk](https://streetmanager.atlassian.net/servicedesk/customer/portal/1/group/8/create/30).
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
 ## Stopping open data streaming
 {: .govuk-heading-m}
-If you would like to stop recieving Open Data Streaming notifications, please raise a request using the [service desk](https://streetmanager.atlassian.net/servicedesk/customer/portal/1/create/31).
+If you would like to stop recieving Open Data, please raise a request using the [service desk](https://streetmanager.atlassian.net/servicedesk/customer/portal/1/create/31).
 {: .govuk-body}

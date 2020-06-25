@@ -25,6 +25,9 @@ Once the subscriber is verified any event will trigger a POST request to the spe
 notification specification represented below.
 {: .govuk-body}
 
+Subscribers can filter messages on their consuming service,  e.g. Filter by `highway_authority_swa_code ` or `area` property.
+{: .govuk-body}
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/5ObhfGEQUu0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
@@ -89,6 +92,37 @@ NOTE: This messagage specification is subject to extenstion with no prior notice
   "SigningCertURL": "https://sns.eu-west-2.amazonaws.com/SimpleNotificationService-a86cb10b4e1f29c941702d737128f7b6.pem"
 }
 ```
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+### Notification messages
+{: .govuk-heading-s}
+<ul class="govuk-list">
+  <li>Received when an event occurs.</li>
+  <li>The `Message` property can be of type Permit/Activity notification message. Examples of these can be found in the sections below.</li>
+  <li>The `MessageAttributes` property can be used to filter messages by the following fields: `area`, `ha_org`, `activity_type`, `promoter_org`, `usrn`. These fields will also exist on the `Message` property and descriptions of each can be found in the <a href="/street-manager-docs/api-documentation/json/event-notifier-message.json">Event Notifier Message JSON Schema</a>.</li>
+</ul>
+
+```
+{
+  "Type" : "Notification",
+  "MessageId" : "GUID",
+  "TopicArn" : "TOPIC ARN",
+  "Message" : "{\"event_reference\":678,\"event_type\":\"WORK_START\",\"object_data\":{\"work_reference_number\":\"0000218889274\",\"permit_reference_number\":\"0000218889274-01\",\"promoter_swa_code\":\"STPR\",\"promoter_organisation\":\"Smoke Test Promoter\",\"highway_authority\":\"CITY OF WESTMINSTER\",\"works_location_coordinates\":\"POINT(527155.3328125 182227.946386719)\",\"street_name\":\"CHURCH STREET\",\"area_name\":\"CHURCH STREET\",\"work_category\":\"Minor\",\"traffic_management_type\":\"Road closure\",\"proposed_start_date\":\"2020-06-23T23:00:00.000Z\",\"proposed_start_time\":null,\"proposed_end_date\":\"2020-06-27T23:00:00.000Z\",\"proposed_end_time\":null,\"actual_start_date_time\":\"2020-06-24T10:11:00.000Z\",\"actual_end_date_time\":null,\"work_status\":\"Works in progress\",\"usrn\":\"8400794\",\"highway_authority_swa_code\":\"5990\",\"work_category_ref\":\"minor\",\"traffic_management_type_ref\":\"road_closure\",\"work_status_ref\":\"in_progress\",\"activity_type\":\"Section 58\",\"is_ttro_required\":\"No\",\"is_covid_19_response\":\"No\",\"works_location_type\":\"Footpath\"},\"event_time\":\"2020-06-24T14:21:44.091Z\",\"object_type\":\"PERMIT\",\"object_reference\":\"0000218889274-01\",\"version\":1}",
+  "Timestamp" : "2020-06-24T14:22:01.847Z",
+  "SignatureVersion" : "1",
+  "Signature" : "MESSAGE SIGNATURE",
+  "SigningCertURL" : "https://sns.eu-west-2.amazonaws.com/SimpleNotificationService-a86cb10b4e1f29c941702d737128f7b6.pem",
+  "UnsubscribeURL" : "https://sns.eu-west-2.amazonaws.com/?Action=Unsubscribe&SubscriptionArn=arn:aws:sns:<TOPIC-ARN>:0d59a03a-d105-4da1-ae5f-875b99b3472e",
+  "MessageAttributes" : {
+    "area" : {"Type":"String","Value":"CHURCH STREET"},
+    "ha_org" : {"Type":"String","Value":"5990"},
+    "activity_type" : {"Type":"String","Value":"Section 58"},
+    "promoter_org" : {"Type":"String","Value":"STPR"},
+    "usrn" : {"Type":"Number","Value":"8400794"}
+  }
+}
+```
+
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
 ### Permit notification message
@@ -196,6 +230,13 @@ This section outlines the onboarding approach.
   <li>Subscriber verify message contents using the signature before processing</li>
   <li>Subscriber processess messages</li>
 </ol>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+## Testing
+{: .govuk-heading-m}
+All subscriptions use production environment events from the live service. To test your service you may subscribe your test environment URL to the feed.
+{: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 

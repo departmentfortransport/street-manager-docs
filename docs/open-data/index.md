@@ -228,7 +228,7 @@ This section outlines the onboarding approach.
   <li>DFT adds a new subscriber to the relevant topics</li>
   <li>Subscriber makes a GET request to the <code>SubscribeURL</code> in the confirmation message from SNS</li>
   <li>Subscriber verify message contents using the signature before processing</li>
-  <li>Subscriber processess messages</li>
+  <li>Subscriber processes messages</li>
 </ol>
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">

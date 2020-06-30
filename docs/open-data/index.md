@@ -9,12 +9,12 @@ Street Manager is offering near real-time notification of events which occur in 
 
 ## Approach
 {: .govuk-heading-m}
-A publisher/subscriber model using Amazon's [Simple Notification Service](https://aws.amazon.com/sns/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc)
+A publisher/subscriber model using Amazon Web Service's (AWS) [Simple Notification Service](https://aws.amazon.com/sns/?whats-new-cards.sort-by=item.additionalFields.postDateTime&whats-new-cards.sort-order=desc)
 sending notifications to subscribers when an applicable event occurs in Street Manager.
 {: .govuk-body}
 
 Users subscribing to the service will be required to host a POST endpoint capable of recieving
-HTTP requests from [Amazon's source IP range](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html).
+HTTP requests from [AWS's source IP range](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html).
 {: .govuk-body}
 
 Once this endpoint is configured a verification message will be sent to subscribers containing a confirmation link.
@@ -216,16 +216,16 @@ Example:
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
-## Onboarding approach
+## Registration and onboarding approach
 {: .govuk-heading-m}
 This section outlines the onboarding approach.
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--number">
-  <li>Configure a POST endpoint which is accessible by AWS's Simple Notification Service (SNS). See <a href="https://github.com/departmentfortransport/street-manager-event-subscriber/tree/master/httpSubscriber"> Example HTTP subscriber </a></li>
-  <li>Contact DFT using data.gov.uk landing page to register interest in Open Data, supplying address of POST endpoint</li>
+  <li>Configure a POST endpoint which is accessible by AWS's Simple Notification Service (SNS). See <a href="https://github.com/departmentfortransport/street-manager-event-subscriber/tree/master/httpSubscriber">Example HTTP subscriber</a></li>
+  <li>Register to Open Data by providing an endpoint following the instructions on the <a href="https://www.gov.uk/guidance/plan-and-manage-roadworks">Open Data registration page</a></li>
   <li>Accept Terms of Use</li>
-  <li>DFT adds a new subscriber to the relevant topics</li>
+  <li>A subscriber is added to the relevant topics</li>
   <li>Subscriber makes a GET request to the <code>SubscribeURL</code> in the confirmation message from SNS</li>
   <li>Subscriber verify message contents using the signature before processing</li>
   <li>Subscriber processes messages</li>

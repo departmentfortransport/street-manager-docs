@@ -223,7 +223,7 @@ This section outlines the onboarding approach.
 
 <ol class="govuk-list govuk-list--number">
   <li>Configure a POST endpoint which is accessible by AWS's Simple Notification Service (SNS). See <a href="https://github.com/departmentfortransport/street-manager-event-subscriber/tree/master/httpSubscriber">Example HTTP subscriber</a></li>
-  <li>Register to Open Data by providing an endpoint following the instructions on the <a href="https://www.gov.uk/guidance/plan-and-manage-roadworks">Open Data registration page</a></li>
+  <li>Register to Open Data by providing an endpoint following the instructions on the <a href="https://www.gov.uk/guidance/find-and-use-roadworks-data">Open Data registration page</a></li>
   <li>Accept Terms of Use</li>
   <li>A subscriber is added to the relevant topics</li>
   <li>Subscriber makes a GET request to the <code>SubscribeURL</code> in the confirmation message from SNS</li>

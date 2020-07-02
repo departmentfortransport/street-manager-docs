@@ -1,11 +1,11 @@
 ---
 layout: default
-title: API specification V1.26
+title: API specification V1.25.1
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.26
+Version 1.25.1
 {: .govuk-body-l}
 
 As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of V1 for the API will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for details on previous versions.
@@ -2778,7 +2778,7 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Version 1.26 (09/07/2020):
+Version 1.25.1 - Stable (09/07/2020):
 {: .govuk-heading-s}
 
 Updated Works API with the following changes:
@@ -2793,7 +2793,7 @@ Updated Street Lookup API with the following changes:
   <li>AdditionalSpecialDesignationsResponse model has been updated to make <code>special_desig_description</code> optional.</li>
 </ol>
 
-Version 1.25 - Stable (18/06/2020):
+Version 1.25 (18/06/2020):
 {: .govuk-heading-m}
 
 Updated Works API with the following changes:

@@ -2798,6 +2798,12 @@ Updated Street Lookup API with the following changes:
   <li>AdditionalSpecialDesignationsResponse model has been updated to make <code>special_desig_description</code> optional.</li>
 </ol>
 
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>New <code>GET /sample-inspection-targets</code> endpoint added to return Sample Inspection Targets for a Highway Authority organisation.</li>
+</ol>
+
 Version 1.25 - Stable (18/06/2020):
 {: .govuk-heading-m}
 

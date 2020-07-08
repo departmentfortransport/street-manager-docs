@@ -10,19 +10,25 @@ This page lists all known occurrences of Street Manager service being unavailabl
 
 To see the current status of Production and Sandbox environments visit the [status page here ](http://stats.pingdom.com/uyxey83hvki0)
 
-## June 2020
+## July 2020
 
 **Production environment**
 
 * 07/07/2020 18:55 to 19:44: Production environment partially unavailable for 49 mins due to NSG data update.
+
+**Sandbox environment**
+
+* 06/07/2020 12:51 to 13:13: Sandbox environment partially unavailable for 22 mins due to NSG data update.
+
+## June 2020
+
+**Production environment**
 
 * 25/06/2020 09:26 to 09:28: Production environment partially unavailable for 2 mins due to planned release.
 
 * 04/06/2020 12:30 to 13:10: Production environment partially unavailable for 40 mins due to planned release.
 
 **Sandbox environment**
-
-* 06/07/2020 12:51 to 13:13: Sandbox environment partially unavailable for 22 mins due to NSG data update.
 
 * 26/06/2020 8:21 to 8:23: Sandbox environment unavailable for 2 mins due to unexpected outage.
 

@@ -8,7 +8,7 @@ title: API specification V2.0
 Version 2.0
 {: .govuk-body-l}
 
-As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of V1 for the API will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for details on previous versions.
+This document details all the functions for integrating with Street Manager via the latest version of the API. See the 'Versions and Changes' section for more details on previous versions. The documentation for the stable version of the API is available <a class="govuk-link" href="{{ site.baseurl }}/api-documentation/">here</a>. 
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -337,7 +337,7 @@ This section aims to describe the approach taken by the Street Manager team in o
 ### API Versioning Approach
 {: .govuk-heading-m}
 
-The Street Manager API services will be versioned via the URL path, for example <code>api.sandbox.domain.com/v1/works/.../</code> versus <code>api.sandbox.domain.com/v2/works/.../</code>.  Initially, the Public Beta will focus on the <code>v1</code> major version of the codebase, with new major versions being introduced at a later date.
+The Street Manager API services are versioned via the URL path, for example <code>api.sandbox.domain.com/v1/work/.../</code> versus <code>api.sandbox.domain.com/latest/work/.../</code>. The UI will point at the <code>latest</code> version of the code base, while API users will be able to use <code>v1</code> or <code>latest</code>.
 {: .govuk-body}
 
 

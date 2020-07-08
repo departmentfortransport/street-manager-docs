@@ -82,12 +82,12 @@ You can see the Swagger definitions rendered as HTML on the SANDBOX environment:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><a href="https://api.sandbox.stwrks-dev.net/v1/work/docs/">Work API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/v1/reporting/docs/">Reporting API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/v1/lookup/docs/">Street Lookup API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/v1/geojson/docs/">GeoJSON API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/v1/party/docs/">Party API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/v1/export/docs/">Data Export API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/latest/work/docs/">Work API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/latest/reporting/docs/">Reporting API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/latest/lookup/docs/">Street Lookup API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/latest/geojson/docs/">GeoJSON API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/latest/party/docs/">Party API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/latest/export/docs/">Data Export API</a></li>
 </ol>
 
 **Please be aware of the following:**

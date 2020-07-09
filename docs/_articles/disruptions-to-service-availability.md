@@ -10,6 +10,17 @@ This page lists all known occurrences of Street Manager service being unavailabl
 
 To see the current status of Production and Sandbox environments visit the [status page here ](http://stats.pingdom.com/uyxey83hvki0)
 
+## July 2020
+
+**Production environment**
+
+* No disruptions to availability
+
+**Sandbox environment**
+
+* 09/07/2020 14:36 to 14:37: Sandbox environment partially unavailable for 1 mins due to unexpected outage.
+
+
 ## June 2020
 
 **Production environment**

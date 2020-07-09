@@ -368,7 +368,7 @@
 		}
 	},
 	"info": {
-		"title": "street-lookup-api-stable",
+		"title": "street-lookup-api",
 		"version": "1.0.0",
 		"description": "See API specification Resource Guide > Street Lookup API for more information on endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
 		"license": {

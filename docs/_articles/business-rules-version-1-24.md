@@ -12,7 +12,7 @@ status: publish
 
 <!-- ==================================================== -->
 
-<span class="govuk-body-l" style="float:left">Version 1.24 (Due for release to sandbox 09/07/20)</span>
+<span class="govuk-body-l" style="float:left">Version 1.24 (Released to sandbox 09/07/20)</span>
 
 <span style="float:right;text-align:right;">[User roles & permissions table [PDF]](https://departmentfortransport.github.io/street-manager-docs/business-rules/Street%20Manager%20user%20role%20permissions%20table.pdf)<br />
 [Previous versions](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-home.html)</span>
@@ -386,6 +386,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
 
 * The assessment decision may be changed to grant or refuse on PAs that have a status of 'modification requested' and no change requests awaiting assessment.
   * Modification requested PAs will not deem as the action is with the promoter.
+* A modification request assessment decision can only be given once on a PA. Once an updated permit is submitted, only a grant or refuse assessment decision will be available
 * Street Manager will automatically set a record's assessment decision under the following circumstances:
   * Immediate works that are started and completed before an assessment decision has been manually submitted will have the assessment decision of "Granted (auto)".
   * When a major PA is assessed, the associated PAA will take on the matching assessment decision if the an assessment decision has not been manually submitted for the PAA. e.g. if a major PA is refused, the PAA will have the assessment decision of "Refused (auto)".
@@ -1204,6 +1205,7 @@ A diagram of S81 statuses</div>
 | Section                            | Change comment                                           |
 | ---------------------------------- | -------------------------------------------------------- |
 | 15.1. Adding records for historical works | Required format for historical permit references added  |
+| 3.4.7. PAA & PA assessment decision options | Updated to include restriction around only one modification request assessment decision per PA  |
 
 <!-- ==================================================== -->
 

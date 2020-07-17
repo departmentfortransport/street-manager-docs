@@ -2778,7 +2778,7 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Version 1.25.2 - Stable (25/07/2020):
+Version 1.25.2 - Stable (23/07/2020):
 {: .govuk-heading-s}
 
 Updated Works API with the following changes:

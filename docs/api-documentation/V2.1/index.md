@@ -2778,6 +2778,21 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 2.1 (23/07/2020):
+{: .govuk-heading-s}
+
+Updated Works API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Updated the following endpoints to save optional comments for PermitConditionTypes NCT01a, NCT01b and NCT11a:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>POST /works​/{workReferenceNumber}​/permits</code></li>
+      <li><code>POST /works​</code></li>
+      <li><code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code></li>
+    </ol>
+  </li>
+</ol>
+
 Version 2.0 (09/07/2020):
 {: .govuk-heading-s}
 

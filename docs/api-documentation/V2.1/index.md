@@ -2792,6 +2792,14 @@ Updated Works API with the following changes:
     </ol>
   </li>
   <li>Reasonable period end date can now be set as a date in the past when granting an immediate permit with a duration challenge.</li>
+  <li>BREAKING CHANGE: Added the following mandatory properties to the <code>FPNCreateRequest</code> and the <code>HistoricFPNCreateRequest</code> interfaces for the <code>POST /works/{workReferenceNumber}/fixed-penalty-notices</code> and <code>POST /historic-works/fixed-penalty-notices</code> endpoints. These were also added as optional properties to the <code>FPNResponse</code> interface.
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>officer_address</code></li>
+      <li><code>representations_contact</code></li>
+      <li><code>representations_contact_address</code></li>
+      <li><code>payment_methods</code></li>
+    </ol>
+  </li>
 </ol>
 
 Version 2.0 (09/07/2020):

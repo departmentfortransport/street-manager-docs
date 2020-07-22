@@ -2791,6 +2791,7 @@ Updated Works API with the following changes:
       <li><code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code></li>
     </ol>
   </li>
+  <li>Reasonable period end date can now be set as a date in the past when granting an immediate permit with a duration challenge.</li>
 </ol>
 
 Version 2.0 (09/07/2020):

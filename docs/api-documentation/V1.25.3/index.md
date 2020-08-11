@@ -1,14 +1,14 @@
 ---
 layout: default
-title: API specification V2.3
+title: API specification V1.25.3
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 2.3
+Version 1.25.3
 {: .govuk-body-l}
 
-This document details all the functions for integrating with Street Manager via the latest version of the API. See the 'Versions and Changes' section for more details on previous versions. The documentation for the stable version of the API is available <a class="govuk-link" href="{{ site.baseurl }}/api-documentation/">here</a>.
+As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of V1 for the API will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for details on previous versions.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -82,12 +82,12 @@ You can see the Swagger definitions rendered as HTML on the SANDBOX environment:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><a href="https://api.sandbox.stwrks-dev.net/latest/work/docs/">Work API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/latest/reporting/docs/">Reporting API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/latest/lookup/docs/">Street Lookup API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/latest/geojson/docs/">GeoJSON API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/latest/party/docs/">Party API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/latest/export/docs/">Data Export API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/v1/work/docs/">Work API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/v1/reporting/docs/">Reporting API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/v1/lookup/docs/">Street Lookup API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/v1/geojson/docs/">GeoJSON API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/v1/party/docs/">Party API</a></li>
+  <li><a href="https://api.sandbox.stwrks-dev.net/v1/export/docs/">Data Export API</a></li>
 </ol>
 
 **Please be aware of the following:**
@@ -337,7 +337,7 @@ This section aims to describe the approach taken by the Street Manager team in o
 ### API Versioning Approach
 {: .govuk-heading-m}
 
-The Street Manager API services are versioned via the URL path, for example <code>api.sandbox.domain.com/v1/work/.../</code> versus <code>api.sandbox.domain.com/latest/work/.../</code>. The UI will point at the <code>latest</code> version of the code base, while API users will be able to use <code>v1</code> or <code>latest</code>.
+The Street Manager API services will be versioned via the URL path, for example <code>api.sandbox.domain.com/v1/works/.../</code> versus <code>api.sandbox.domain.com/v2/works/.../</code>.  Initially, the Public Beta will focus on the <code>v1</code> major version of the codebase, with new major versions being introduced at a later date.
 {: .govuk-body}
 
 
@@ -2778,7 +2778,7 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Version 2.3 (20/08/2020):
+Version 1.25.3 - Stable (20/08/2020):
 {: .govuk-heading-s}
 
 Updated Works API with the following changes:
@@ -2799,45 +2799,22 @@ Updated Works API with the following changes:
   </li>
 </ol>
 
-Version 2.2 (06/08/2020):
-{: .govuk-heading-s}
-
-Version 2.1 (23/07/2020):
+Version 1.25.2 - Stable (23/07/2020):
 {: .govuk-heading-s}
 
 Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>Updated the following endpoints to save optional comments for PermitConditionTypes NCT01a, NCT01b and NCT11a:
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>POST /works​/{workReferenceNumber}​/permits</code></li>
-      <li><code>POST /works​</code></li>
-      <li><code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code></li>
-    </ol>
-  </li>
   <li>Reasonable period end date can now be set as a date in the past when granting an immediate permit with a duration challenge.</li>
-  <li>BREAKING CHANGE: Added the following mandatory properties to the <code>FPNCreateRequest</code> and the <code>HistoricFPNCreateRequest</code> interfaces for the <code>POST /works/{workReferenceNumber}/fixed-penalty-notices</code> and <code>POST /historic-works/fixed-penalty-notices</code> endpoints. These were also added as optional properties to the <code>FPNResponse</code> interface.
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>officer_address</code></li>
-      <li><code>representations_contact</code></li>
-      <li><code>representations_contact_address</code></li>
-      <li><code>payment_methods</code></li>
-    </ol>
-  </li>
 </ol>
 
-Version 2.0 (09/07/2020):
+Version 1.25.1 - Stable (09/07/2020):
 {: .govuk-heading-s}
 
 Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>PermitASD model has been updated to make <code>special_desig_description</code> optional.</li>
-  <li>New <code>POST /sample-inspection-targets</code> endpoint added to allow Sample Inspection Targets to be created.</li>
-  <li>New <code>PUT /sample-inspection-targets/{sampleInspectionTargetReferenceNumber}</code> endpoint added allowing the agreed targets and max number of works to sample to be updated.
-  </li>
-  <li>New <code>POST /sample-inspection</code> endpoint added which will start the process of selecting work records that will contribute to inspection targets as defined by <code>POST /sample-inspection-targets</code>. The selection of work records will be implemented in a future release.
-  </li>
 </ol>
 
 Updated Street Lookup API with the following changes:
@@ -2846,13 +2823,7 @@ Updated Street Lookup API with the following changes:
   <li>AdditionalSpecialDesignationsResponse model has been updated to make <code>special_desig_description</code> optional.</li>
 </ol>
 
-Updated Reporting API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>New <code>GET /sample-inspection-targets</code> endpoint added to return Sample Inspection Targets for a Highway Authority organisation.</li>
-</ol>
-
-Version 1.25 - Stable (18/06/2020):
+Version 1.25 (18/06/2020):
 {: .govuk-heading-m}
 
 Updated Works API with the following changes:

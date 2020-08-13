@@ -12,7 +12,7 @@
     "event_type": {
       "description": "The type of event",
       "type": "string",
-      "enum": ["WORK_START", "WORK_STOP"]
+      "enum": ["WORK_START", "WORK_STOP", "WORK_START_REVERTED", "WORK_STOP_REVERTED"]
     },
     "object_data": {
       "description": "The data of the object reference",

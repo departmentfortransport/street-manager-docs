@@ -47,14 +47,14 @@ data notification.
 <ul class="govuk-list">
   <li>Work start</li>
   <li>Work stop</li>
+  <li>Work start reverted</li>
+  <li>Work stop reverted</li>
 </ul>
 
 ### Upcoming Events
 {: .govuk-heading-s}
 
 <ul class="govuk-list">
-  <li>Work start reverted</li>
-  <li>Work stop reverted</li>
   <li>Work planned</li>
   <li>Activity planned</li>
 </ul>
@@ -67,7 +67,7 @@ data notification.
 You can see the event data message format in the <a href="/street-manager-docs/api-documentation/json/event-notifier-message.json">Event Notifier Message JSON Schema</a>.
 {: .govuk-body}
 
-NOTE: This messagage specification is subject to extenstion with no prior notice. We recommend that subscribers do not use a serialisier for the JSON message and instead only extract properties they require for forward compatibility.
+NOTE: This message specification is subject to extension with no prior notice. We recommend that subscribers do not use a serialisier for the JSON message and instead only extract properties they require for forward compatibility.
 {: .govuk-body}
 
 ### Subscription Confirmation message
@@ -128,8 +128,10 @@ NOTE: This messagage specification is subject to extenstion with no prior notice
 ### Permit notification message
 {: .govuk-heading-s}
 
-Events: Work start, Work stop
-Upcoming events: Work start reverted, Work stop reverted, Work planned
+Events: Work start, Work stop, Work start reverted, Work stop reverted
+{: .govuk-body}
+
+Upcoming events: Work planned
 {: .govuk-body}
 
 Example:

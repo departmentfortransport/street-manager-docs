@@ -2784,9 +2784,9 @@ Version 2.3 (20/08/2020):
 Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>Updated the following endpoint to allow for submmission of HS2 Forward plans:
+  <li>Updated the following endpoint to allow for submmission of HS2 Forward plans:</li>
     <ol class="govuk-list govuk-list--bullet">
-      <li><code>POST /forward-plans/</li>
+      <li><code>POST /forward-plans/</code></li>
     </ol>
   </li>
   <li>BREAKING CHANGE: Added the following mandatory (only for HS2 Promoters) properties to the <code>ForwardPlanCreateRequest</code> interface for the <code>POST /forward-plans/</code> endpoint. These were also added as optional properties to the <code>ForwardPlanResponse</code> interface.

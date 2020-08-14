@@ -2784,7 +2784,7 @@ Version 1.25.3 - Stable (20/08/2020):
 Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>Updated the following endpoint to allow for submmission of HS2 Forward plans:</li>
+  <li>Updated the following endpoint to allow for submmission of HS2 Forward plans:
     <ol class="govuk-list govuk-list--bullet">
       <li><code>POST /forward-plans/</code></li>
     </ol>

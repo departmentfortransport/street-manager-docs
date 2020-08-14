@@ -12,7 +12,7 @@
     "event_type": {
       "description": "The type of event",
       "type": "string",
-      "enum": ["WORK_START", "WORK_STOP", "WORK_START_REVERTED", "WORK_STOP_REVERTED"]
+      "enum": ["WORK_START", "WORK_STOP", "WORK_START_REVERTED", "WORK_STOP_REVERTED", "PERMIT_GRANTED", "PERMIT_ALTERATION_GRANTED", "PERMIT_CANCELLED", "PERMIT_REVOKED", "PERMIT_SUBMITTED", "PERMIT_REFUSED"]
     },
     "object_data": {
       "description": "The data of the object reference",

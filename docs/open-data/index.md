@@ -49,13 +49,18 @@ data notification.
   <li>Work stop</li>
   <li>Work start reverted</li>
   <li>Work stop reverted</li>
+  <li>Permit submitted</li>
+  <li>Permit granted</li>
+  <li>Permit refused</li>
+  <li>Permit revoked</li>
+  <li>Permit cancelled</li>
+  <li>Permit alteration granted</li>
 </ul>
 
 ### Upcoming Events
 {: .govuk-heading-s}
 
 <ul class="govuk-list">
-  <li>Work planned</li>
   <li>Activity planned</li>
 </ul>
 
@@ -128,10 +133,7 @@ NOTE: This message specification is subject to extension with no prior notice. W
 ### Permit notification message
 {: .govuk-heading-s}
 
-Events: Work start, Work stop, Work start reverted, Work stop reverted
-{: .govuk-body}
-
-Upcoming events: Work planned
+Events: Work start, Work stop, Work start reverted, Work stop reverted, Permit submitted, Permit granted, Permit refused, Permit revoked, Permit cancelled, Permit alteration granted
 {: .govuk-body}
 
 Example:

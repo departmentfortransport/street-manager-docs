@@ -2797,6 +2797,13 @@ Updated Works API with the following changes:
       <li><code>hs2_works_type</code></li>
     </ol>
   </li>
+  <li>Updated <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> endpoint to allow HS2 fields to be altered when creating an alteration.</li>
+  <li>Added the following optional properties (only for HS2 Promoters) to the <code>PermitAlterationCreateRequest</code> interface for the <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> endpoint.
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>hs2_consultation_requested_response_date</code></li>
+      <li><code>hs2_highway_emails</code></li>
+    </ol>
+  </li>
 </ol>
 
 Version 1.25.2 - Stable (23/07/2020):

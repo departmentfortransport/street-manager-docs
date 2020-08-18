@@ -539,15 +539,15 @@ A diagram of Change request statuses</div>
 
 <!-- ==================================================== -->
 
-## 5. Revoking a PA
+## 5. Revoking a PA & PAA
 
 <!-- ==================================================== -->
 
-* A PA may be revoked if the PA has been granted and before works stop has been logged.
+* Both a PA & PAA may be revoked if they have been granted and for a PA, before works stop has been logged.
 * If a PA is revoked 
-  * before works start has been logged, the PA will remain in the final status of 'Revoked' where no further actions can be performed on the PA by the promoter.
+  * before works start has been logged, it will remain in the final status of 'Revoked' where no further actions can be performed on it by the promoter.
   * after works start has been logged, the promoter may request a change, log works stop and add reinstatements.
-  * with a change request awaiting assessment on a PA, the change request will be revoked automatically.
+  * with a change request awaiting assessment, the change request will be revoked automatically.
 
 _(Previously section 6.1 in Business rules v0.1 draft)_ 
 
@@ -1207,6 +1207,8 @@ A diagram of S81 statuses</div>
 | ---------------------------------- | -------------------------------------------------------- |
 | 3..4.9. Cancelling PAA & PA | Updated to reflect fact that can now cancel a refused permit  |
 | 3.4.11. Resubmitting PA following refusal | Updated to include fact that location can't be changed when raising a new permit following a refusal   |
+| 5. Revoking a PA & PAA | Updated to reflect fact that PAA can also be revoked   |
+
 
 <!-- ==================================================== -->
 

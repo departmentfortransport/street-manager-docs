@@ -12,7 +12,7 @@ status: publish
 
 <!-- ==================================================== -->
 
-<span class="govuk-body-l" style="float:left">Version 1.25 (Due for release to sandbox 06/08/20)</span>
+<span class="govuk-body-l" style="float:left">Version 1.25 (Released to sandbox 06/08/20)</span>
 
 <span style="float:right;text-align:right;">[User roles & permissions table [PDF]](https://departmentfortransport.github.io/street-manager-docs/business-rules/Street%20Manager%20user%20role%20permissions%20table.pdf)<br />
 [Previous versions](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-home.html)</span>

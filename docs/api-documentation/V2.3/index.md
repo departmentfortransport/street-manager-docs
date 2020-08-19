@@ -507,6 +507,9 @@ This will not always be possible and organisations may need to test using accoun
     <p class="govuk-body">
     Request an HA account for a HA which you normally interact with and submit permits using a specific Workstream which identifies your test permits from the HA's own test data. This allows the HA to differentiate between your test data and their own. Use your HA account to respond to your Workstream permits and test your scenarios. You will need permission from the HA to do this and must liaise with the HA to ensure your testing does not interfere with their testing.
     </p>
+    <p class="govuk-body">
+    If you can not find an appropriate HA to test with you can request a HA test account for Isles of Scilly HA ("COUNCIL OF THE ISLES OF SCILLY", 835, HJ) via the service desk. This will allow you to independently test scenarios for a limited set of streets.
+    </p>
   </li>
   <li>
     <p class="govuk-body govuk-!-font-weight-bold">Contractors</p>

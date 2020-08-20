@@ -22,16 +22,6 @@ title: Release Calendar
       <td class="govuk-table__cell">Application</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">02/09/2020</td>
-      <td class="govuk-table__cell">Sandbox</td>
-      <td class="govuk-table__cell">NSG</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">03/09/2020</td>
-      <td class="govuk-table__cell">Production</td>
-      <td class="govuk-table__cell">NSG</td>
-    </tr>
-    <tr class="govuk-table__row">
       <td class="govuk-table__cell">03/09/2020</td>
       <td class="govuk-table__cell">Sandbox</td>
       <td class="govuk-table__cell">Application</td>
@@ -57,16 +47,6 @@ title: Release Calendar
       <td class="govuk-table__cell">Application</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">02/10/2020</td>
-      <td class="govuk-table__cell">Sandbox</td>
-      <td class="govuk-table__cell">NSG</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">03/10/2020</td>
-      <td class="govuk-table__cell">Production</td>
-      <td class="govuk-table__cell">NSG</td>
-    </tr>
-    <tr class="govuk-table__row">
       <td class="govuk-table__cell">08/10/2020</td>
       <td class="govuk-table__cell">Production</td>
       <td class="govuk-table__cell">Application</td>
@@ -78,6 +58,46 @@ title: Release Calendar
     </tr>
     <tr class="govuk-table__row">
       <td class="govuk-table__cell">22/10/2020</td>
+      <td class="govuk-table__cell">Production</td>
+      <td class="govuk-table__cell">Application</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">29/10/2020</td>
+      <td class="govuk-table__cell">Sandbox</td>
+      <td class="govuk-table__cell">Application</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">05/11/2020</td>
+      <td class="govuk-table__cell">Production</td>
+      <td class="govuk-table__cell">Application</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">12/11/2020</td>
+      <td class="govuk-table__cell">Sandbox</td>
+      <td class="govuk-table__cell">Application</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">19/11/2020</td>
+      <td class="govuk-table__cell">Production</td>
+      <td class="govuk-table__cell">Application</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">26/11/2020</td>
+      <td class="govuk-table__cell">Sandbox</td>
+      <td class="govuk-table__cell">Application</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">03/12/2020</td>
+      <td class="govuk-table__cell">Production</td>
+      <td class="govuk-table__cell">Application</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">10/12/2020</td>
+      <td class="govuk-table__cell">Sandbox</td>
+      <td class="govuk-table__cell">Application</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell">17/12/2020</td>
       <td class="govuk-table__cell">Production</td>
       <td class="govuk-table__cell">Application</td>
     </tr>

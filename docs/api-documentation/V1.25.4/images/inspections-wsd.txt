@@ -1,0 +1,10 @@
+title Inspections\n
+note left of HAOfficer: An inspection can be created while\na work is "In Progess" or "Completed"
+loop foreach inspection evidence file
+opt
+HAOfficer->Works API: POST /files
+Works API->HAOfficer: {file_id}
+end
+end
+HAOfficer->Works API: POST /works/{referenceNumber}/inspections\n(with list of optional file_ids)
+Works API->HAOfficer: {created inspeciton}

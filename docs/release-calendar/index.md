@@ -2,9 +2,11 @@
 layout: default
 title: Release Calendar
 ---
- 
+
 # Release Calendar
 {: .govuk-heading-xl}
+
+**NOTE:** From the 01/09/2020 the Sandbox release refers to the new Sandbox environment (UI URL: https://www.sandbox.manage-roadworks.service.gov.uk and API URL: https://api.sandbox.manage-roadworks.service.gov.uk) and going forward this is the only sandbox environment that will receive updates.
 
 <table class="govuk-table">
   <caption class="govuk-table__caption">Street Manager Releases</caption>

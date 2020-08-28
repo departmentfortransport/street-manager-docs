@@ -121,13 +121,38 @@
           "works_location_type": {
             "description": "Type of location where the work is taking place. Types: Footway, Carriageway, Verge, Cycleway, Footpath, Parking place, Bus stop or stand, Cycle hire docking station, Taxi rank",
             "type": "string"
+          },
+          "permit_conditions": {
+            "description": "Comma separated list of the Condition codes which are applicable to the work. Condition codes: NCT01a, NCT01b, NCT02a, NCT02b, NCT04a, NCT04b, NCT05a, NCT06a, NCT07a, NCT08a, NCT08b, NCT09a, NCT09b, NCT09c, NCT10a, NCT11a, NCT11b, NCT12a",
+            "type": "string"
+          },
+          "road_category": {
+            "description": "The category of the road where the work is taking place.",
+            "type": "string"
+          },
+          "is_traffic_sensitive": {
+            "description": "Is work happening during traffic sensitive times.",
+            "type": "string"
+          },
+          "is_deemed": {
+            "description": "Did the work deem? (deadline date of the application passed before an assessment decision was submitted)",
+            "type": "string"
+          },
+          "permit_status": {
+            "description": "(API Reference) Status of the permit. Status References: submitted, granted, permit_modification_request, refused, closed, cancelled, revoked, progressed",
+            "type": "string"
+          },
+          "town": {
+            "description": "Name of the town where the work is taking place as per NSG (National Street Gazetteer)",
+            "type": "string"
           }
         },
         "required": [
           "work_reference_number", "permit_reference_number", "promoter_swa_code", "promoter_organisation",
           "highway_authority", "works_location_coordinates", "street_name", "work_category", "traffic_management_type",
           "proposed_start_date", "proposed_end_date", "work_status", "usrn", "highway_authority_swa_code",
-          "work_category_ref", "traffic_management_type_ref", "work_status_ref", "works_location_type"
+          "work_category_ref", "traffic_management_type_ref", "work_status_ref", "works_location_type", "road_category",
+          "is_traffic_sensitive", "is_deemed", "permit_status"
         ]
       }
     },

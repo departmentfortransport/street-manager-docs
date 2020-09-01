@@ -2781,6 +2781,15 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 1.25.4 - Stable (03/09/2020):
+{: .govuk-heading-s}
+Updated Works API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Updated <code>GET permits/category</code> endpoint to return minor/standard <code>work_type</code> if the work only contains a forward-plan and the work does not have major works duration. Works with only a forward-plan and major timings will continue to return a <code>work_type</code> of <code>PAA</code></li>
+  <li>Updated <code>POST /works/{workReferenceNumber}/permits</code> to use the updated category result described above. Forward plans will now progress directly to Permits when they do not have major timing duration.</li>
+</ol>
+
 Version 1.25.3 - Stable (20/08/2020):
 {: .govuk-heading-s}
 

@@ -77,11 +77,26 @@ NOTE: This message specification is subject to extension with no prior notice. W
 
 ### Subscription Confirmation message
 {: .govuk-heading-s}
+
+Received when subscription is set up for each topic (event type) E.g. Permit.
+{: .govuk-body}
+
+We strongly recommend that you set up your endpoint to automically confirm subscriptions, by calling the `SubscribeURL`. For an example of how to set up your HTTPS endpoint to confirm a subscription, see <a href="https://github.com/departmentfortransport/street-manager-event-subscriber/tree/master/httpSubscriber">Example HTTP subscriber</a>
+{: .govuk-body}
+
+The `SubscribeURL` will stay active for 3 days, if the subscriber does not call it within that period they will need to re-register their interest in Open Data with DFT
+{: .govuk-body}
+
+In order to ensure only authorised messages are confirmed validate that the topic ARN (Amazon Resource Name) matches one of the following, before calling the `SubscribeURL`:
+{: .govuk-body}
+
 <ul class="govuk-list">
-  <li>Received when subscription is set up for each topic (event type) E.g. Work start.</li>
-  <li>Subscription URL will stay valid for 3 days, after which you will need to re-register your interest in Open Data with DFT</li>
-  <li>We strongly recommend that you set up your endpoint to automically confirm subscriptions. For an example of how to set up your HTTPS endpoint to confirm a subscription, see <a href="https://github.com/departmentfortransport/street-manager-event-subscriber/tree/master/httpSubscriber">Example HTTP subscriber</a></li>
+  <li><code>arn:aws:sns:eu-west-2:287813576808:prod-activity-topic</code> for activities</li>
+  <li><code>arn:aws:sns:eu-west-2:287813576808:prod-permit-topic</code> for permits</li>
 </ul>
+
+If the subscriber only wishes to recieve notifications from one of the topics simply ignore the confirmation message from the undesired topic and no additional messages will be recieved for that event stream.
+{: .govuk-body}
 
 ```
 {
@@ -103,8 +118,8 @@ NOTE: This message specification is subject to extension with no prior notice. W
 {: .govuk-heading-s}
 <ul class="govuk-list">
   <li>Received when an event occurs.</li>
-  <li>The `Message` property can be of type Permit/Activity notification message. Examples of these can be found in the sections below.</li>
-  <li>The `MessageAttributes` property can be used to filter messages by the following fields: `area`, `ha_org`, `activity_type`, `promoter_org`, `usrn`. These fields will also exist on the `Message` property and descriptions of each can be found in the <a href="/street-manager-docs/api-documentation/json/event-notifier-message.json">Event Notifier Message JSON Schema</a>.</li>
+  <li>The <code>Message</code> property can be of type Permit/Activity notification message. Examples of these can be found in the sections below.</li>
+  <li>The <code>MessageAttributes</code> property can be used to filter messages by the following fields: <code>area</code>, <code>ha_org</code>, <code>activity_type</code>, <code>promoter_org</code>, <code>usrn</code>. These fields will also exist on the <code>Message</code> property and descriptions of each can be found in the <a href="/street-manager-docs/api-documentation/json/event-notifier-message.json">Event Notifier Message JSON Schema</a>.</li>
 </ul>
 
 ```

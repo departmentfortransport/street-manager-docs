@@ -82,12 +82,12 @@ You can see the Swagger definitions rendered as HTML on the SANDBOX environment:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><a href="https://api.sandbox.stwrks-dev.net/latest/work/docs/">Work API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/latest/reporting/docs/">Reporting API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/latest/lookup/docs/">Street Lookup API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/latest/geojson/docs/">GeoJSON API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/latest/party/docs/">Party API</a></li>
-  <li><a href="https://api.sandbox.stwrks-dev.net/latest/export/docs/">Data Export API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/latest/work/docs/">Work API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/latest/reporting/docs/">Reporting API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/latest/lookup/docs/">Street Lookup API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/latest/geojson/docs/">GeoJSON API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/latest/party/docs/">Party API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/latest/export/docs/">Data Export API</a></li>
 </ol>
 
 **Please be aware of the following:**
@@ -118,7 +118,7 @@ The Street Manager service provides two separate isolated application service en
 ### SANDBOX environment
 {: .govuk-heading-m  #sandbox-env}
 
-API URL: https://api.sandbox.stwrks-dev.net
+API URL: https://api.sandbox.manage-roadworks.service.gov.uk
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">

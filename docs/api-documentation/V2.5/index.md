@@ -1947,6 +1947,7 @@ permit_asds for the provided USRN can be found at Street Lookup API endpoint /ns
 This endpoint is used to add a new permit to an existing works. There are two main journeys that this endpoint can be used for:
 
 ##### Raise an additional permit on a works
+{: .govuk-heading-s}
 
 A work can have multiple permits associated with it so it possible to add a new permit to an existing works. This endpoint requires some of the same fields as the create work request but much of the information from the first permit will be used as the value for additional permits, and so only a subset of information is required.
 {: .govuk-body}
@@ -1954,12 +1955,13 @@ A work can have multiple permits associated with it so it possible to add a new 
 It's not possible to add an additional permit to an existing works, unless the work is in an inactive state. The state of the work is derived by the status of the most recently added permit. So in short, an additional permit can only be added to a work if the most recently added permit on the existing works record has a status of closed, cancelled, refused or revoked.
 {: .govuk-body}
 
-##### Progress a forward plan to a PAA
+##### Progress a forward plan to a PAA or Permit
+{: .govuk-heading-s}
 
-When a forward plan is created, a works is created with no permits. In this scenario, this endpoint is used to raise the first permit on the works. This permit will always be a PAA. This endpoint requires some of the same fields as the create forward plan request but much of the information from the forward plan will be used as the value for the PAA, and so only a subset of information is required.
+When a forward plan is created, a works is created with no permits. In this scenario, this endpoint is used to raise the first permit on the works. This permit will be a PAA or Permit depending on the type of work and the duration. A forward plan with minor or standard duration, or any highway works will progress straight to a permit. A forward plan will progress to a PAA if the duration falls under the major category or if ttro is required. This endpoint requires some of the same fields as the create forward plan request but much of the information from the forward plan will be used as the value for the PAA/permit, and so only a subset of information is required.
 {: .govuk-body}
 
-In order to progress a forward plan to a PAA, the forward plan must have a status of "raised". Upon successful progression, the forward plan's status will be updated to "closed".
+In order to progress a forward plan, the forward plan must have a status of "raised". Upon successful progression, the forward plan's status will be updated to "closed".
 {: .govuk-body}
 
 #### Update status endpoint

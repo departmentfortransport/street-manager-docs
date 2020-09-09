@@ -1212,6 +1212,7 @@ A diagram of S81 statuses</div>
 
 | Section                            | Change comment                                           |
 | ---------------------------------- | -------------------------------------------------------- |
+| 3.3. Forward plans | Updated to include fact that forward plans for highway works can be progressed to a PA   |
 | 7.5. Advanced filtering | Updated to include fact some filters are now remembered in the users session  |
 | 17.6. Forward plans | Added to reflect that HS2 users can raise and submit forward plans  |
 

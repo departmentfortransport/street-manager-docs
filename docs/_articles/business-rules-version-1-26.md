@@ -12,7 +12,7 @@ status: publish
 
 <!-- ==================================================== -->
 
-<span class="govuk-body-l" style="float:left">Version 1.26 (Due for release to sandbox 03/09/20)</span>
+<span class="govuk-body-l" style="float:left">Version 1.26 (Released to sandbox 03/09/20)</span>
 
 <span style="float:right;text-align:right;">[User roles & permissions table [PDF]](https://departmentfortransport.github.io/street-manager-docs/business-rules/Street%20Manager%20user%20role%20permissions%20table.pdf)<br />
 [Previous versions](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-home.html)</span>
@@ -271,9 +271,9 @@ A diagram of works statuses</div>
 
 * Forward plans are for giving advance notice of major works only.
 * It is only possible to add forward plans for a start date in the present or future, and with an end date in the future.
-* Forward plans can be progressed to PAA, edited or cancelled while in the ‘Raised’ status. 
+* Forward plans can be progressed to PAA or PAs (specifically for highway works, see section 17.6), edited or cancelled while in the ‘Raised’ status. 
 * All forward plan details can be edited with the exception of namely the workstream, the highway authority and the USRN.
-* When progressed to a PAA, the forward plan's status automatically gets set to 'Progressed'. 
+* When progressed, the forward plan's status automatically gets set to 'Progressed'. 
 
 <div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Forward%20plan%20statuses.jpg" alt="Street Manager Forward plan statuses" width="100%" />
 A diagram of forward plan statuses</div>
@@ -1212,6 +1212,7 @@ A diagram of S81 statuses</div>
 
 | Section                            | Change comment                                           |
 | ---------------------------------- | -------------------------------------------------------- |
+| 3.3. Forward plans | Updated to include fact that forward plans for highway works can be progressed to a PA   |
 | 7.5. Advanced filtering | Updated to include fact some filters are now remembered in the users session  |
 | 17.6. Forward plans | Added to reflect that HS2 users can raise and submit forward plans  |
 

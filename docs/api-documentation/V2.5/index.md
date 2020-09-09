@@ -2784,6 +2784,32 @@ This section lists any significant changes made to this document (and by extensi
 Version 2.5 (17/09/2020):
 {: .govuk-heading-s}
 
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Added additional optional filtering to the <code>GET /inspections</code> endpoint. New filter params include:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>inspection_type</code></li>
+      <li><code>inspection_outcome</code></li>
+      <li><code>start_date_created</code></li>
+      <li><code>end_date_created</code></li>
+    </ol>
+  </li>
+</ol>
+
+Updated Data Export API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Added additional optional filter properties to the <code>InspectionCSVExportRequest</code> model used by the <code>POST /inspections/csv</code> endpoint. New filter properties include:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>inspection_type</code></li>
+      <li><code>inspection_outcome</code></li>
+      <li><code>start_date_created</code></li>
+      <li><code>end_date_created</code></li>
+    </ol>
+  </li>
+</ol>
+
 Version 2.4 (03/09/2020):
 {: .govuk-heading-s}
 

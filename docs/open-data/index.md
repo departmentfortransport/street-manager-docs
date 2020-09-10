@@ -127,7 +127,7 @@ If the subscriber only wishes to recieve notifications from one of the topics si
   "Type" : "Notification",
   "MessageId" : "GUID",
   "TopicArn" : "TOPIC ARN",
-  "Message" : "{\"event_reference\":678,\"event_type\":\"WORK_START\",\"object_data\":{\"work_reference_number\":\"0000218889274\",\"permit_reference_number\":\"0000218889274-01\",\"promoter_swa_code\":\"STPR\",\"promoter_organisation\":\"Smoke Test Promoter\",\"highway_authority\":\"CITY OF WESTMINSTER\",\"works_location_coordinates\":\"POINT(527155.3328125 182227.946386719)\",\"street_name\":\"CHURCH STREET\",\"area_name\":\"CHURCH STREET\",\"work_category\":\"Minor\",\"traffic_management_type\":\"Road closure\",\"proposed_start_date\":\"2020-06-23T23:00:00.000Z\",\"proposed_start_time\":null,\"proposed_end_date\":\"2020-06-27T23:00:00.000Z\",\"proposed_end_time\":null,\"actual_start_date_time\":\"2020-06-24T10:11:00.000Z\",\"actual_end_date_time\":null,\"work_status\":\"Works in progress\",\"usrn\":\"8400794\",\"highway_authority_swa_code\":\"5990\",\"work_category_ref\":\"minor\",\"traffic_management_type_ref\":\"road_closure\",\"work_status_ref\":\"in_progress\",\"activity_type\":\"Section 58\",\"is_ttro_required\":\"No\",\"is_covid_19_response\":\"No\",\"works_location_type\":\"Footpath\"},\"event_time\":\"2020-06-24T14:21:44.091Z\",\"object_type\":\"PERMIT\",\"object_reference\":\"0000218889274-01\",\"version\":1}",
+  "Message" : "{\"event_reference\":678,\"event_type\":\"WORK_START\",\"object_data\":{\"work_reference_number\":\"0000218889274\",\"permit_reference_number\":\"0000218889274-01\",\"promoter_swa_code\":\"STPR\",\"promoter_organisation\":\"Smoke Test Promoter\",\"highway_authority\":\"CITY OF WESTMINSTER\",\"works_location_coordinates\":\"POINT(527155.3328125 182227.946386719)\",\"street_name\":\"CHURCH STREET\",\"area_name\":\"CHURCH STREET\",\"work_category\":\"Minor\",\"traffic_management_type\":\"Road closure\",\"proposed_start_date\":\"2020-06-23T23:00:00.000Z\",\"proposed_start_time\":null,\"proposed_end_date\":\"2020-06-27T23:00:00.000Z\",\"proposed_end_time\":null,\"actual_start_date_time\":\"2020-06-24T10:11:00.000Z\",\"actual_end_date_time\":null,\"work_status\":\"Works in progress\",\"usrn\":\"8400794\",\"highway_authority_swa_code\":\"5990\",\"work_category_ref\":\"minor\",\"traffic_management_type_ref\":\"road_closure\",\"work_status_ref\":\"in_progress\",\"activity_type\":\"Section 58\",\"is_ttro_required\":\"No\",\"is_covid_19_response\":\"No\",\"works_location_type\":\"Cycleway, Footpath\",\"permit_conditions\":\"NCT01a, NCT01b, NCT11a\",\"road_category\":\"3\",\"is_traffic_sensitive\":\"Yes\",\"is_deemed\":\"No\",\"permit_status\":\"permit_modification_request\",\"town\":\"LONDON\"},\"event_time\":\"2020-06-24T14:21:44.091Z\",\"object_type\":\"PERMIT\",\"object_reference\":\"0000218889274-01\",\"version\":1}",
   "Timestamp" : "2020-06-24T14:22:01.847Z",
   "SignatureVersion" : "1",
   "Signature" : "MESSAGE SIGNATURE",
@@ -183,7 +183,13 @@ Example:
     "activity_type": "Remedial works",
     "is_ttro_required": "No",
     "is_covid_19_response" : "No",
-    "works_location_type": "Cycleway, Footpath"
+    "works_location_type": "Cycleway, Footpath",
+    "permit_conditions": "NCT01a, NCT01b, NCT11a",
+    "road_category": "3",
+    "is_traffic_sensitive": "Yes",
+    "is_deemed": "No",
+    "permit_status": "permit_modification_request",
+    "town": "LONDON"
   },
   "event_time": "2020-06-04T08:00:00.000Z",
   "object_type": "PERMIT",

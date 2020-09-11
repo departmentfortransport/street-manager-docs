@@ -2786,6 +2786,12 @@ This section lists any significant changes made to this document (and by extensi
 Version 1.25.5 - Stable (17/09/2020):
 {: .govuk-heading-s}
 
+Updated Works API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>New optional <code>hs2_additional_usrns</code> property added to <code>WorkCreateRequest</code>, <code>PermitCreateRequest</code> and <code>PermitResponse</code> objects. This allows HS2 users to provide additional USRNs for permits. The property will be ignored for non-HS2 users.</li>
+</ol>
+
 Version 1.25.4 - Stable (03/09/2020):
 {: .govuk-heading-s}
 Updated Works API with the following changes:

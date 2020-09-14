@@ -999,7 +999,7 @@ The authenticate endpoint takes a case sensitive username (email
 address) and password, returning JWT ID, Access and Refresh tokens if successful.
 **The JWT ID and Access tokens are valid for one hour, meanwhile the Refresh token
 is valid for 1 day.** Once the ID token has been acquired it can be added to all
-protected resource requests made via swagger using the Authorize button. Users who have had their account disabled will not be able to successfully authenticate.
+protected resource requests made via swagger using the Authorize button. Users who have had their account disabled will not be able to successfully authenticate. User accounts that have 5 failed login attempts within a 5 minute period will be locked, and will return a <code>423</code> status code when attempting to authenticate. Locked accounts are automatically unlocked after 5 minutes.
 {: .govuk-body}
 
 Example response:
@@ -2790,10 +2790,12 @@ Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>New optional <code>hs2_additional_usrns</code> property added to <code>WorkCreateRequest</code>, <code>PermitCreateRequest</code> and <code>PermitResponse</code> objects. This allows HS2 users to provide additional USRNs for permits. The property will be ignored for non-HS2 users.</li>
+  <li>Updated the login endpoint, <code>POST /authenticate</code>, to lock out user accounts that have 5 failed login attempts within a 5 minute period. A <code>423</code> status code will be returned when locked accounts attempt to authenticate. Accounts are automatically unlocked after 5 minutes.</li>
 </ol>
 
 Version 1.25.4 - Stable (03/09/2020):
 {: .govuk-heading-s}
+
 Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">

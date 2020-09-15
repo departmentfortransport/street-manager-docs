@@ -24,6 +24,8 @@ To see the current status of Production and Sandbox environments visit the [stat
 
 **Production environment**
 
+* 25/08/2020 10:20 to 10:26: Production environment partially unavailable for 6 mins due to unexpected outage.
+
 * 13/08/2020 20:41 to 20:47: Production environment degraded performance for 6 mins due to planned release.
 
 * 13/08/2020 11:08 to 11:56: Production environment degraded performance for 48 mins due to planned release.

@@ -2791,6 +2791,9 @@ Updated Works API with the following changes:
 <ol class="govuk-list govuk-list--bullet">
   <li>New optional <code>hs2_additional_usrns</code> property added to <code>WorkCreateRequest</code>, <code>PermitCreateRequest</code> and <code>PermitResponse</code> objects. This allows HS2 users to provide additional USRNs for permits. The property will be ignored for non-HS2 users.</li>
   <li>Updated the login endpoint, <code>POST /authenticate</code>, to lock out user accounts that have 5 failed login attempts within a 5 minute period. A <code>423</code> status code will be returned when locked accounts attempt to authenticate. Accounts are automatically unlocked after 5 minutes.</li>
+  <li>New <code>PUT /works/${workReferenceNumber}/excavation-carried-out</code> endpoint added. If excavation has been requested in the permit application,
+  this endpoint can be used to update the works record to reflect if an excavation took place. The works must be started before this endpoint can be used.
+  </li>
 </ol>
 
 Updated Reporting API with the following changes:

@@ -210,8 +210,8 @@ All other text areas are limited to 500 characters. These include:
 * Collaboration details
 * Description of collaborative works
 * Early start pre approval details
-* Early start pre approval reason 
-* Additional info (apply for works) / comments (revoke) / details (lane rental assessment / collaborative working) 
+* Early start pre approval reason
+* Additional info (apply for works) / comments (revoke) / details (lane rental assessment / collaborative working)
 * Revoke reason
 * Permit discount reason
 * Reinstatement location description
@@ -256,7 +256,7 @@ _(Previously section 15 & 15.1 in Business rules v0.1 draft)_
 * WRNs can only include the following special characters: dashes (-) or underscores (_) to separate characters
 * Works records and WRNs are created automatically alongside other records such as forward plans and permit applications.
 
-_(Previously section 1.1 in Business rules v0.1 draft)_  
+_(Previously section 1.1 in Business rules v0.1 draft)_
 
 <br />
 
@@ -271,14 +271,14 @@ A diagram of works statuses</div>
 
 * Forward plans are for giving advance notice of major works only.
 * It is only possible to add forward plans for a start date in the present or future, and with an end date in the future.
-* Forward plans can be progressed to PAA or PAs (specifically for highway works, see section 17.6), edited or cancelled while in the ‘Raised’ status. 
+* Forward plans can be progressed to PAA or PAs (specifically for highway works, see section 17.6), edited or cancelled while in the ‘Raised’ status.
 * All forward plan details can be edited with the exception of namely the workstream, the highway authority and the USRN.
-* When progressed, the forward plan's status automatically gets set to 'Progressed'. 
+* When progressed, the forward plan's status automatically gets set to 'Progressed'.
 
 <div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Forward%20plan%20statuses.jpg" alt="Street Manager Forward plan statuses" width="100%" />
 A diagram of forward plan statuses</div>
 
-_(Previously section 22 in Business rules v0.1 draft)_  
+_(Previously section 22 in Business rules v0.1 draft)_
 
 <br /><br />
 
@@ -292,7 +292,7 @@ _(Previously section 22 in Business rules v0.1 draft)_
 * A permit reference number is automatically generated when a PAA or permit application has been submitted.
 * The permit reference number is the reference number that promoters needs to display on on-site permit boards.
 
-_(Previously section 1.2 in Business rules v0.1 draft)_  
+_(Previously section 1.2 in Business rules v0.1 draft)_
 
 <br />
 
@@ -302,7 +302,7 @@ _(Previously section 1.2 in Business rules v0.1 draft)_
   * **Planned** - Minor, Standard, and Major works and are not Immediate
   * **Immediate** - See the [NRSWA (link available from SM Glossary)](https://departmentfortransport.github.io/street-manager-docs/articles/glossary.html) for more details on immediate works.  The immediate works type (i.e. immediate urgent and immediate emergency) will be determined based on the answer to "Is there a risk of damage to people or property?"
 
-_(Previously section 1.3 in Business rules v0.1 draft)_  
+_(Previously section 1.3 in Business rules v0.1 draft)_
 
 <br />
 
@@ -320,25 +320,25 @@ See the [NRSWA (link available from SM Glossary)](https://departmentfortransport
 <div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Works%20category%20logic.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Works%20category%20logic.jpg" alt="Street Manager - Works category logic" width="100%" /></a>
 A diagram of Works category logic</div>
 
-_(Previously section 1.4 in Business rules v0.1 draft)_  
+_(Previously section 1.4 in Business rules v0.1 draft)_
 
 <br />
 
 #### 3.4.4. Works activity types
 
 * Works activity types available are as follows:
-  * **Core sampling:** Coring is the method of testing by removing a sample of the reinstatement (a core) finished/completed reinstatement and is part of the inspection process.  
+  * **Core sampling:** Coring is the method of testing by removing a sample of the reinstatement (a core) finished/completed reinstatement and is part of the inspection process. 
   * **Disconnection or alteration of supply:** Work type that involves the disconnection or re-routing of supplies.
-  * **Diversionary works:** Works undertaken by a Works Promoter to move or divert its existing apparatus to enable 3rd party works to be happen.  
+  * **Diversionary works:** Works undertaken by a Works Promoter to move or divert its existing apparatus to enable 3rd party works to be happen. 
   * **Highway improvement works**
-  * **Highway repair and maintenance works**  
+  * **Highway repair and maintenance works** 
   * **New service connection:** Works type undertaken to connect new supplies usually for individual customers.
   * **Optional permit (no fee):** e.g. for traffic management. HA may add discount to permit fee if applicable.
-  * **Permanent reinstatement:** Works undertaken by a works promoter to replace interim reinstatement with a permanent reinstatement. 
-  * **Remedial works:** Works undertaken by a works promoter where the initial reinstatement was not compliant with the specification. 
+  * **Permanent reinstatement:** Works undertaken by a works promoter to replace interim reinstatement with a permanent reinstatement.
+  * **Remedial works:** Works undertaken by a works promoter where the initial reinstatement was not compliant with the specification.
   * **Section 50**
   * **Statutory infrastructure works**
-  * **Utility asset works:** Works undertaken by a Utility Works Promoter as part of a rehabilitation or replacement scheme. These are usually planned works. 
+  * **Utility asset works:** Works undertaken by a Utility Works Promoter as part of a rehabilitation or replacement scheme. These are usually planned works.
   * **Utility repair and maintenance works:** Works undertaken by a Utility Works Promoter in repairing or maintaining its asset. These works are usually short duration works or works that are not planned.
   * **Works for rail purposes**
   * **Works for road purposes:** As defined in section 86(2) of NRSWA, "works for road purposes means works of any of the following descriptions executed in relation to a highway: (a) works for the maintenance of the highway; (b) any works under powers conferred by Part V of the Highways Act 1980 (improvement); (c) the erection, maintenance, alteration or removal of traffic signs on or near the highway; or (d) the construction of a crossing for vehicles across a footway or grass verge or the strengthening or adaptation of a footway for use as a crossing for vehicles"
@@ -352,7 +352,7 @@ _(Previously section 1.14 in Business rules v0.1 draft)_
 * Major PAA must be the first application on a works record i.e. cannot be added as a second application on an existing works record.
 * A major PAA may be progressed to PA if it is in 'submitted' or 'granted' status.
 
-_(Previously section 1.12 in Business rules v0.1 draft)_ 
+_(Previously section 1.12 in Business rules v0.1 draft)_
 
 #### 3.4.6. Early start
 
@@ -369,7 +369,7 @@ _(Previously section 1.12 in Business rules v0.1 draft)_
 | Minor          | 3 working days                                         |
 | Immediate      | Not applicable                                         |
 
-_(Previously section 1.9 in Business rules v0.1 draft)_ 
+_(Previously section 1.9 in Business rules v0.1 draft)_
 
 <br />
 
@@ -391,7 +391,7 @@ _(Previously section 1.9 in Business rules v0.1 draft)_
   * Immediate works that are started and completed before an assessment decision has been manually submitted will have the assessment decision of "Granted (auto)".
   * When a major PA is assessed, the associated PAA will take on the matching assessment decision if the an assessment decision has not been manually submitted for the PAA. e.g. if a major PA is refused, the PAA will have the assessment decision of "Refused (auto)".
 
-_(Previously section 25.3 in Business rules v0.1 draft)_ 
+_(Previously section 25.3 in Business rules v0.1 draft)_
 
 <div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PA%20assessment%20decision%20options.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PA%20assessment%20decision%20options.jpg" alt="Street Manager - PAA/PA assessment decision options" width="100%" /></a>
 A diagram of PAA/PA assessment decision options</div>
@@ -411,7 +411,7 @@ A diagram of PAA/PA assessment decision options</div>
 | Immediate                                           | 2 working days   |
 | Modified PA (response to HA's modification request) | 2 working days   |
 
-_(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_ 
+_(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 
 <br />
 
@@ -426,13 +426,13 @@ _(Previously section 1.8 & 1.10 in Business rules v0.1 draft)_
 * If a PA with a change request awaiting assessment is cancelled, the outstanding change request will also be cancelled automatically.
 * The PAA/PA status and works status will be set to 'Cancelled'.
 
-_(Previously section 7 in Business rules v0.1 draft)_ 
+_(Previously section 7 in Business rules v0.1 draft)_
 
 <br />
 
 #### 3.4.10. PAA & PA statuses
 
-_(Previously section 1.5 & 10 in Business rules v0.1 draft)_ 
+_(Previously section 1.5 & 10 in Business rules v0.1 draft)_
 
 ##### 3.4.10.1. PAA statuses
 
@@ -449,7 +449,7 @@ A diagram of PA statuses</div>
 
 #### 3.4.11. Resubmitting PA following refusal
 
-* If permit has been refused and the user wishes to resubmit, they can submit a revised permit on the work record - 'Apply for works' next to the Applications table. 
+* If permit has been refused and the user wishes to resubmit, they can submit a revised permit on the work record - 'Apply for works' next to the Applications table.
 * All the information from the previous permit - except timings, is collaboration involved and conditions - are defaulted in the new permit
 * Location can't be changed when raising a new permit on the same works following a refusal
 * A new permit can only be raised if the existing one has been refused, closed, cancelled or revoked.
@@ -488,15 +488,15 @@ A diagram of PA statuses</div>
 * A works extension change request may include other changes in addition to a change to the proposed end date.
 * HA imposed change is currently limited to adding or removing conditions.
 
-_(Previously section 5.1, 5.3, 5.4, 5.8 & 26 in Business rules v0.1 draft)_ 
+_(Previously section 5.1, 5.3, 5.4, 5.8 & 26 in Business rules v0.1 draft)_
 
 ### 4.3. Adding change requests
 
-* Each PA may have only one change request awaiting assessment. 
+* Each PA may have only one change request awaiting assessment.
 * A change request may be added to PAs that are not 'Refused', 'Revoked' or 'Closed'.
 * The works category may be updated if the works duration is changed.
 * Change requests may not be added to a PAA.
-* All fields apart from the following can be changed on a PA: 
+* All fields apart from the following can be changed on a PA:
   * Permit reference number or works reference number
   * USRN
   * USRN address e.g. road/street
@@ -505,7 +505,7 @@ _(Previously section 5.1, 5.3, 5.4, 5.8 & 26 in Business rules v0.1 draft)_
 * Proposed start date may not be changed if works start has been logged.
 * All change requests show the original details and changed values.
 
-_(Previously section 5.2, 5.3, 5.4 & 5.6 in Business rules v0.1 draft)_ 
+_(Previously section 5.2, 5.3, 5.4 & 5.6 in Business rules v0.1 draft)_
 
 ### 4.4. Change request assessment decision options
 
@@ -517,13 +517,13 @@ _(Previously section 5.2, 5.3, 5.4 & 5.6 in Business rules v0.1 draft)_
 | Refuse                        | Promoter change request & works extension | Changes will not be applied to the PA. Original PA will remain unchanged in status and contents i.e. the PA is not refused as a result of a change request assessment.                                |
 | Grant with duration challenge | Works extension                           | A reasonable period end date and reason for the duration challenge must be provided. The new proposed end date, reasonable period end date and any other changes requested will be applied to the PA. |
 
-_(Previously section 5.1, 5.4, 5.5 & 25.3 in Business rules v0.1 draft)_ 
+_(Previously section 5.1, 5.4, 5.5 & 25.3 in Business rules v0.1 draft)_
 
 ### 4.5. Change request response period
 
 * The response period for change requests is 2 working days. The change request will deem after this period and the changes will be applied to the PA.
 
-_(Previously section 5.7 in Business rules v0.1 draft)_ 
+_(Previously section 5.7 in Business rules v0.1 draft)_
 
 ### 4.6. Cancelling change requests
 
@@ -544,12 +544,12 @@ A diagram of Change request statuses</div>
 <!-- ==================================================== -->
 
 * Both a PA & PAA may be revoked if they have been granted and for a PA, before works stop has been logged.
-* If a PA is revoked 
+* If a PA is revoked
   * before works start has been logged, it will remain in the final status of 'Revoked' where no further actions can be performed on it by the promoter.
   * after works start has been logged, the promoter may request a change, log works stop and add reinstatements.
   * with a change request awaiting assessment, the change request will be revoked automatically.
 
-_(Previously section 6.1 in Business rules v0.1 draft)_ 
+_(Previously section 6.1 in Business rules v0.1 draft)_
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -566,7 +566,7 @@ _(Previously section 6.1 in Business rules v0.1 draft)_
   * date and time must be provided, and
   * works cannot be started in the future.
 
-_(Previously section 11.1 in Business rules v0.1 draft)_ 
+_(Previously section 11.1 in Business rules v0.1 draft)_
 
 ### 6.2. Reverting works start
 
@@ -576,7 +576,7 @@ _(Previously section 11.1 in Business rules v0.1 draft)_
   * for planned works (i.e. not immediate works)
   * the PA has not been revoked.
 
-_(Previously section 21.1 in Business rules v0.1 draft)_ 
+_(Previously section 21.1 in Business rules v0.1 draft)_
 
 ### 6.3. Logging works stop
 
@@ -586,21 +586,21 @@ _(Previously section 21.1 in Business rules v0.1 draft)_
   * date must occur on or after the actual start date
   * date must occur today or a date in the past
 
-_(Previously section 11.2 in Business rules v0.1 draft)_ 
+_(Previously section 11.2 in Business rules v0.1 draft)_
 
 ### 6.4. Reverting works stop
 
 * Works stop may be reverted if
   * a PA has not been added on the same works record after the works stop was logged.
 
-_(Previously section 21.2 in Business rules v0.1 draft)_ 
+_(Previously section 21.2 in Business rules v0.1 draft)_
 
 ### 6.5. Validity periods
 
 * Only applicable for works on non-traffic sensitive category 3 or 4 roads.
   * Non-traffic sensitivity is determined either by there being no traffic-sensitive designations for the works' USRN or if there are, none were selected by the promoter as applicable to the works.
 * If a works' actual start date is later than the proposed start date and within validity period, Street Manager will shift the proposed end date accordingly maintaining the same works duration as originally proposed starting from the actual start date.
-* The validity periods for each works category are as follows (includes original start date unless start date is on a non-working day, in which case it's the next working day):
+* Below are the validity periods for each works category. Note that the validity period is inclusive of the original start date unless the start date is on a non-working day, in which case it’s the next working day.
 
 | Works category | Validity period        |
 | -------------- | ---------------------- |
@@ -611,12 +611,15 @@ _(Previously section 21.2 in Business rules v0.1 draft)_
 | Immediate      | Not applicable         |
 | Any HS2 works  | Not applicable         |
 
-_(Previously section 13 in Business rules v0.1 draft)_ 
+<div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Validity%20periods.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Validity%20periods.jpg" alt="Street Manager - Validity periods" width="100%" /></a>
+A diagram of Validity periods</div>
+
+_(Previously section 13 in Business rules v0.1 draft)_
 
 ### 6.6. Changing the number of inspection units
 
 * The number of inspection units will be added when the first reinstatement is submitted and may be changed at any point thereafter on the works record level.
-  * The number of inspection units is defaulted to 1 (one) 
+  * The number of inspection units is defaulted to 1 (one)
   * The number of units may be changed to 0 (zero) if all sites have been subsumed/combined.
 
 ### 6.7. Updating excavation answer after works completed
@@ -626,7 +629,7 @@ _(Previously section 13 in Business rules v0.1 draft)_
 * If an excavation reinstatement has been added field will automatically change to "Yes". Unable to change answer to "No" if excavation reinstatements have been added for that permit
 * Answer can be updated from when the work has been started up to the point a new permit has been added to the work record
 
-_(Previously section 11.4 in Business rules v0.1 draft)_ 
+_(Previously section 11.4 in Business rules v0.1 draft)_
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -647,7 +650,7 @@ _(Previously section 11.4 in Business rules v0.1 draft)_
   * Overrun warning (only available to HA)
   * Forward plan
   * Change requests
-  * Imposed variation 
+  * Imposed variation
   * Duration challenge
   * Section 81
 
@@ -685,7 +688,7 @@ _(Previously section 8 in Business rules v0.1 draft)_
 ### 7.3. Map application
 
 * The date filter is automatically defaulted with the current date in the 'From' field and 14 days after the current date in the 'To' field.
-* For performance reasons, the map application is limited to 
+* For performance reasons, the map application is limited to
   * displaying a maximum of 500 results, and
   * displaying results within three zoom levels higher than the default
 
@@ -870,7 +873,7 @@ _(Previously section 4.3 in Business rules v0.1 draft)_
 <div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20Activity%20statuses.jpg" alt="Street Manager - Activity statuses" width="100%" />
 A diagram of activity statuses</div>
 
-_(Previously section 23.2 in Business rules v0.1 draft)_ 
+_(Previously section 23.2 in Business rules v0.1 draft)_
 
 ### 9.3. Managing activities
 
@@ -902,7 +905,7 @@ _(Previously section 23.2 in Business rules v0.1 draft)_
   * **WRN** - See the works reference number section for more details.
   * **Numerical suffix** - A minimum of two numbers starting from 01 for the first inspection created on the works record and counts up consecutively for each additional inspection (i.e. -01, -02, -03 etc).
 
-_(Previously section 3.1 in Business rules v0.1 draft)_ 
+_(Previously section 3.1 in Business rules v0.1 draft)_
 
 ### 10.2. Inspection types and categories
 
@@ -915,7 +918,7 @@ _(Previously section 3.1 in Business rules v0.1 draft)_
 | Non-compliance follow up | Joint site visit<br />Follow up<br />Follow up completion                    |
 | Section 81               | Not applicable                                                               |
 
-_(Previously section 3.2 & 3.5 in Business rules v0.1 draft)_ 
+_(Previously section 3.2 & 3.5 in Business rules v0.1 draft)_
 
 ### 10.3. Inspection outcomes
 
@@ -934,7 +937,7 @@ _(Previously section 3.2 & 3.5 in Business rules v0.1 draft)_
 | Live Site type with Conditions category                                                                            | Passed<br />Non compliant (with conditions)<br />Unable to complete inspection                                                                                     |
 | Non-compliance follow up with Joint site visit category                                                            | Further inspections required<br />Agreed site compliance<br />Unable to complete inspection                                                                        |
 
-_(Previously section 3.3, 3.4 & 3.5 in Business rules v0.1 draft)_ 
+_(Previously section 3.3, 3.4 & 3.5 in Business rules v0.1 draft)_
 
 ### 10.4. Scheduling inspections
 
@@ -946,7 +949,7 @@ _(Previously section 3.3, 3.4 & 3.5 in Business rules v0.1 draft)_
 * A scheduled inspection will remain on the works record until it is cancelled or an inspection is added regardless of the date and time the inspection was scheduled for.
 * A new scheduled inspection may be created as part of any add an inspection process. Alternatively, A new scheduled inspection may be created directly on the works record level.
 
-_(Previously section 3.6 in Business rules v0.1 draft)_ 
+_(Previously section 3.6 in Business rules v0.1 draft)_
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -962,7 +965,7 @@ _(Previously section 3.6 in Business rules v0.1 draft)_
   * **WRN** - See the works reference number section for more details.
   * **Numerical suffix** - A minimum of two numbers starting from 01 for the first FPN created on the works record and counts up consecutively for each additional FPN (i.e. -01, -02, -03 etc).
 
-_(Previously section 2.2 in Business rules v0.1 draft)_ 
+_(Previously section 2.2 in Business rules v0.1 draft)_
 
 ### 11.2. FPN statuses
 
@@ -977,7 +980,7 @@ _(Previously section 2.2 in Business rules v0.1 draft)_
 <div class="center polaroid50 container"><a href="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20FPN%20statuses.jpg"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20FPN%20statuses.jpg" alt="Street Manager - FPN statuses" width="100%" /></a>
 A diagram of FPN statuses</div>
 
-_(Previously section 2.1 in Business rules v0.1 draft)_ 
+_(Previously section 2.1 in Business rules v0.1 draft)_
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -999,14 +1002,14 @@ _(Previously section 2.1 in Business rules v0.1 draft)_
 | Exempt                          | Works fall outside the lane rental scheme                      |
 | Charges not applicable to works | Not applicable                                                 |
 
-_(Previously section 18.1 in Business rules v0.1 draft)_ 
+_(Previously section 18.1 in Business rules v0.1 draft)_
 
 ### 12.2. Adding a lane rental assessment to a PA
 
 * A lane rental assessment or charge may be added on any PA at any time.
 * If chargeable, the charge band/tier and number of chargeable days may be optionally provided. Chargeable days must be greater than or equal to 1 and in whole numbers.
 
-_(Previously section 18.1 in Business rules v0.1 draft)_ 
+_(Previously section 18.1 in Business rules v0.1 draft)_
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -1031,12 +1034,12 @@ _(Previously section 18.1 in Business rules v0.1 draft)_
 * Note: The works category field will be populated with the PAA/PA's current works category at the time the report is run as opposed to showing the works category of the PAA/PA at the time the chargeable transaction took place.
 * For example, if a PA is granted then soon after a works extension was also granted changing it from a standard to a major PA, there would be three transactions for this PA in the fee report:
   * granting of a PA
-  * granting of a change request 
+  * granting of a change request
   * change in works category
   * The works category field for all three of these transactions will be 'major'
 * Not included: inspection chargeable transactions; fee amounts
 
-_(Previously section 14.1 in Business rules v0.1 draft)_ 
+_(Previously section 14.1 in Business rules v0.1 draft)_
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -1149,20 +1152,20 @@ A diagram of S81 statuses</div>
 
 ### 17.1. Act limits
 
-* Geographical limits of the High Speed Rail Act are visible in the Map application for HS2 promoters and HS2 impacted highways authorities. 
-* Identifying a works as in-act limits or outside act limits will determine whether the application requires consultation or consent from the highways authority 
+* Geographical limits of the High Speed Rail Act are visible in the Map application for HS2 promoters and HS2 impacted highways authorities.
+* Identifying a works as in-act limits or outside act limits will determine whether the application requires consultation or consent from the highways authority
 
 ### 17.2. HS2 applications
 
-* HS2 promoters have the ability to submit both highways and street work applications. 
-* Additional fields are available for HS2 promoters when submitting applications to capture additional information relevant to HS2 works. 
+* HS2 promoters have the ability to submit both highways and street work applications.
+* Additional fields are available for HS2 promoters when submitting applications to capture additional information relevant to HS2 works.
 * HS2 promoter and HS2-impacted highways authorities have additional filters to manage HS2 specific works available in the Applications and Works lists
   .
 
 ### 17.2.1. Highway applications
 
 * Highways applications submitted have a Works Category of HS2 (Highway)
-* Applications In-Act limits are automatically granted. Highways authority can Acknowledge receipt but cannot grant or refuse the application. 
+* Applications In-Act limits are automatically granted. Highways authority can Acknowledge receipt but cannot grant or refuse the application.
 * If protective provisions are selected (other than ‘none applicable’), then the Highways Authority will need to consent to the application, and grant or refuse as applicable.
 * Application Out of Act limits must be granted or refused by highways authority. Out of act limits applications will deem after 28 days (or after 42 days for TfL)
   .
@@ -1178,7 +1181,7 @@ A diagram of S81 statuses</div>
 
 ### 17.2.2. Street works applications
 
-* Applications In-Act limits are automatically granted. Highways authority can Acknowledge receipt but cannot grant or refuse the application. 
+* Applications In-Act limits are automatically granted. Highways authority can Acknowledge receipt but cannot grant or refuse the application.
 * Designations and Conditions are not applicable for In-Act limit street works applications
 * The highways authority cannot impose any changes on the HS2 promoter for street  works within act limits, or apply any lane rental charges or permit discounts
 * Additional works location area options are available for HS2 Applications
@@ -1204,9 +1207,9 @@ A diagram of S81 statuses</div>
 
 ### 17.6 Forward plans
 
-* Forward plans can be raised for HS2 works - both highway and streetworks. 
-* For highway works the forward plan will be progressed straight into a permit. 
-* For streetworks they will progress to a PAA if it is a major works and/or TTRO is required. For anything else it will progress to a permit 
+* Forward plans can be raised for HS2 works - both highway and streetworks.
+* For highway works the forward plan will be progressed straight into a permit.
+* For streetworks they will progress to a PAA if it is a major works and/or TTRO is required. For anything else it will progress to a permit
 
 <br /><br /><br />
 
@@ -1277,7 +1280,7 @@ Useful resources containing Street-works-related glossary sections below:
 <!-- Use the word doc from SharePoint. To convert from Word doc to HTML, use https://wordhtml.com/ -> click Delete attributes.
 Copy glossary table and paste the HTML below.
 
-\*\*\*\* PASTE BELOW THIS SECTION \*\*\*\* 
+\*\*\*\* PASTE BELOW THIS SECTION \*\*\*\*
 <!-- ==================================================== -->
 
 <table>

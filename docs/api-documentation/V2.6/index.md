@@ -1742,10 +1742,17 @@ Query params:
 
 <ol class="govuk-list govuk-list--bullet">
   <li><strong>inspection_response_type</strong>: inspection or reinspection</li>
+  <li><strong>start_date</strong>: The inspection_start_date for inspections and reinspection_date_time for reinspections</li>
+  <li><strong>end_date</strong>: The inspection_start_date for inspections and reinspection_date_time for reinspections</li>
+  <li><strong>inspection_type</strong>: The inspection type i.e. live_site, reinstatement etc.</li>
+  <li><strong>inspection_outcome</strong>: The inspection outcome i.e. passed, failed_low etc.</li>
+  <li><strong>start_date_created</strong>: The date the inspection was created</li>
+  <li><strong>end_date_created</strong>: The date the inspection was created</li>
   <li><strong>sort_column</strong>: The property of the inspection to order results by</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
   <li><strong>geographical_area_reference_number</strong>: An optional array of Geographical Areas that you would like to filter your list by as a HA user</li>
+  <li><strong>query</strong>: A string search returning results with a match on the inspections work_reference_number, street_name, USRN or promoter/HA organisation name</li>
 </ol>
 
 #### Get FPNs
@@ -2782,6 +2789,37 @@ Future releases will include new features relating to Comments. These include:
 
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
+
+Version 2.6 (01/10/2020):
+{: .govuk-heading-s}
+
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Added additional optional <code>query</code> param to the <code>GET /inspections</code> endpoint. This provided query will search against the following properties:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>work_reference_number</code></li>
+      <li><code>street_name</code></li>
+      <li><code>USRN</code></li>
+      <li><code>promoter_organisation_name</code></li>
+      <li><code>ha_organisation_name</code></li>
+    </ol>
+  </li>
+</ol>
+
+Updated Data Export API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Updated the <code>POST /inspections/csv</code> to use the optional <code>query</code> property. The provided query will search against the following properties:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>work_reference_number</code></li>
+      <li><code>street_name</code></li>
+      <li><code>USRN</code></li>
+      <li><code>promoter_organisation_name</code></li>
+      <li><code>ha_organisation_name</code></li>
+    </ol>
+  </li>
+</ol>
 
 Version 2.5 (17/09/2020):
 {: .govuk-heading-s}

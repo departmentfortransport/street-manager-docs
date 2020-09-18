@@ -600,7 +600,7 @@ _(Previously section 21.2 in Business rules v0.1 draft)_
 * Only applicable for works on non-traffic sensitive category 3 or 4 roads.
   * Non-traffic sensitivity is determined either by there being no traffic-sensitive designations for the works' USRN or if there are, none were selected by the promoter as applicable to the works.
 * If a works' actual start date is later than the proposed start date and within validity period, Street Manager will shift the proposed end date accordingly maintaining the same works duration as originally proposed starting from the actual start date.
-* The validity periods for each works category are as follows (includes original start date unless start date is on a non-working day, in which case it's the next working day):
+* Below are the validity periods for each works category. Please be aware that the validity period is inclusive of the original start date unless the start date is on a non-working day, in which case it’s the next working day. E.g. for a minor works if the start date was a Wednesday the validity period would be Wednesday and Thursday.
 
 | Works category | Validity period        |
 | -------------- | ---------------------- |
@@ -1221,6 +1221,7 @@ A diagram of S81 statuses</div>
 | Section                            | Change comment                                           |
 | ---------------------------------- | -------------------------------------------------------- |
 | 3.4.8. PAA & PA response periods | Updated to clarify that for Major PAAs the response period starts the next day, as it's calculated in calendar days   |
+| 6.5. Validity periods | Updated to clarify that validity period is inclusive of the start date |
 | 6.7. Updating excavation answer after works completed | New functionality to allow excavation answer to be updated after works have been completed  |
 | 17.2.1. Highway applications | Updated to include new ability to specify additional USRNs. Note this is API only currently. Front end will be implemented in the next sprint  |
 

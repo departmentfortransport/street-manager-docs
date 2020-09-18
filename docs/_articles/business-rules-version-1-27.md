@@ -12,7 +12,7 @@ status: publish
 
 <!-- ==================================================== -->
 
-<span class="govuk-body-l" style="float:left">Version 1.27 (Due to be released to sandbox 17/09/20)</span>
+<span class="govuk-body-l" style="float:left">Version 1.27 (Released to sandbox 17/09/20)</span>
 
 <span style="float:right;text-alxign:right;">[User roles & permissions table [PDF]](https://departmentfortransport.github.io/street-manager-docs/business-rules/Street%20Manager%20user%20role%20permissions%20table.pdf)<br />
 [Previous versions](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-home.html)</span>
@@ -600,7 +600,7 @@ _(Previously section 21.2 in Business rules v0.1 draft)_
 * Only applicable for works on non-traffic sensitive category 3 or 4 roads.
   * Non-traffic sensitivity is determined either by there being no traffic-sensitive designations for the works' USRN or if there are, none were selected by the promoter as applicable to the works.
 * If a works' actual start date is later than the proposed start date and within validity period, Street Manager will shift the proposed end date accordingly maintaining the same works duration as originally proposed starting from the actual start date.
-* Below are the validity periods for each works category. Please be aware that the validity period is inclusive of the original start date unless the start date is on a non-working day, in which case it’s the next working day. E.g. if the proposed start date for a minor works was a Wednesday, the validity period would be two working days - Wednesday and Thursday
+* The validity periods for each works category are as follows (includes original start date unless start date is on a non-working day, in which case it's the next working day):
 
 | Works category | Validity period        |
 | -------------- | ---------------------- |
@@ -1221,7 +1221,6 @@ A diagram of S81 statuses</div>
 | Section                            | Change comment                                           |
 | ---------------------------------- | -------------------------------------------------------- |
 | 3.4.8. PAA & PA response periods | Updated to clarify that for Major PAAs the response period starts the next day, as it's calculated in calendar days   |
-| 6.5. Validity periods | Updated to clarify that validity period is inclusive of the proposed start date | 
 | 6.7. Updating excavation answer after works completed | New functionality to allow excavation answer to be updated after works have been completed  |
 | 17.2.1. Highway applications | Updated to include new ability to specify additional USRNs. Note this is API only currently. Front end will be implemented in the next sprint  |
 

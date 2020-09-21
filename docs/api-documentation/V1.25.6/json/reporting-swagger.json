@@ -1469,94 +1469,10 @@
 			],
 			"type": "object",
 			"additionalProperties": false
-		},
-		"SampleInspectionTargetSummaryResponse": {
-			"properties": {
-				"sample_inspection_target_reference_number": {
-					"type": "string"
-				},
-				"promoter_name": {
-					"type": "string"
-				},
-				"promoter_org_ref": {
-					"type": "string"
-				},
-				"agreed_category_a": {
-					"type": "number",
-					"format": "double"
-				},
-				"agreed_category_b": {
-					"type": "number",
-					"format": "double"
-				},
-				"agreed_category_c": {
-					"type": "number",
-					"format": "double"
-				},
-				"cap_category_a": {
-					"type": "number",
-					"format": "double"
-				},
-				"cap_category_b": {
-					"type": "number",
-					"format": "double"
-				},
-				"cap_category_c": {
-					"type": "number",
-					"format": "double"
-				},
-				"actual_category_a": {
-					"type": "number",
-					"format": "double"
-				},
-				"actual_category_b": {
-					"type": "number",
-					"format": "double"
-				},
-				"actual_category_c": {
-					"type": "number",
-					"format": "double"
-				}
-			},
-			"required": [
-				"sample_inspection_target_reference_number",
-				"promoter_name",
-				"promoter_org_ref",
-				"agreed_category_a",
-				"agreed_category_b",
-				"agreed_category_c",
-				"cap_category_a",
-				"cap_category_b",
-				"cap_category_c",
-				"actual_category_a",
-				"actual_category_b",
-				"actual_category_c"
-			],
-			"type": "object",
-			"additionalProperties": false
-		},
-		"SampleInspectionTargetReportingResponse": {
-			"properties": {
-				"pagination": {
-					"$ref": "#/definitions/PaginationResponse"
-				},
-				"rows": {
-					"items": {
-						"$ref": "#/definitions/SampleInspectionTargetSummaryResponse"
-					},
-					"type": "array"
-				}
-			},
-			"required": [
-				"pagination",
-				"rows"
-			],
-			"type": "object",
-			"additionalProperties": false
 		}
 	},
 	"info": {
-		"title": "reporting-api",
+		"title": "reporting-api-stable",
 		"version": "1.0.0",
 		"description": "See API specification Resource Guide > Reporting API for more information on paging and endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
 		"license": {
@@ -2232,11 +2148,7 @@
 					"200": {
 						"description": "Ok",
 						"schema": {
-							"$ref": "#/definitions/InspectionReportingResponse",
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/InspectionReportingResponse"
-							}
+							"$ref": "#/definitions/InspectionReportingResponse"
 						}
 					}
 				},
@@ -2245,8 +2157,8 @@
 					{
 						"token": [
 							"Planner",
-							"HighwayAuthority",
-							"Contractor"
+							"Contractor",
+							"HighwayAuthority"
 						]
 					}
 				],
@@ -2255,10 +2167,10 @@
 						"in": "query",
 						"name": "inspection_response_type",
 						"required": false,
-						"type": "array",
 						"collectionFormat": "multi",
+						"type": "array",
 						"items": {
-							"$ref": "#/definitions/InspectionResponseType"
+							"type": "string"
 						}
 					},
 					{
@@ -2277,62 +2189,29 @@
 					},
 					{
 						"in": "query",
-						"name": "inspection_type",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"$ref": "#/definitions/InspectionType"
-						}
-					},
-					{
-						"in": "query",
-						"name": "inspection_outcome",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"$ref": "#/definitions/InspectionOutcome"
-						}
-					},
-					{
-						"in": "query",
-						"name": "start_date_created",
-						"required": false,
-						"format": "date-time",
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "end_date_created",
-						"required": false,
-						"format": "date-time",
-						"type": "string"
-					},
-					{
-						"in": "query",
 						"name": "offset",
 						"required": false,
-						"type": "integer"
+						"format": "double",
+						"type": "number"
 					},
 					{
 						"in": "query",
 						"name": "sort_column",
 						"required": false,
+						"type": "string",
 						"enum": [
 							"inspection_date"
-						],
-						"type": "string"
+						]
 					},
 					{
 						"in": "query",
 						"name": "sort_direction",
 						"required": false,
+						"type": "string",
 						"enum": [
 							"asc",
 							"desc"
-						],
-						"type": "string"
+						]
 					},
 					{
 						"in": "query",
@@ -2344,8 +2223,8 @@
 						"in": "query",
 						"name": "geographical_area_reference_number",
 						"required": false,
-						"type": "array",
 						"collectionFormat": "multi",
+						"type": "array",
 						"items": {
 							"type": "string"
 						}
@@ -2832,40 +2711,6 @@
 					}
 				],
 				"parameters": []
-			}
-		},
-		"/sample-inspection-targets": {
-			"get": {
-				"operationId": "GetSampleInspectionTargets",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"$ref": "#/definitions/SampleInspectionTargetReportingResponse"
-						}
-					}
-				},
-				"description": "Returns all sample inspection targets associated with the logged in user's organisation\nAuthenticated user must have one of the following roles: Admin, HighwayAuthority",
-				"security": [
-					{
-						"token": [
-							"Admin",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "query",
-						"name": "offset",
-						"required": false,
-						"format": "double",
-						"type": "number"
-					}
-				]
 			}
 		}
 	},

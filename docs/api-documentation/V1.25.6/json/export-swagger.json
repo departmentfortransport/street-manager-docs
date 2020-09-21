@@ -403,31 +403,6 @@
 			],
 			"type": "string"
 		},
-		"InspectionType": {
-			"enum": [
-				"live_site",
-				"reinstatement",
-				"non_compliance_follow_up",
-				"section_81"
-			],
-			"type": "string"
-		},
-		"InspectionOutcome": {
-			"enum": [
-				"passed",
-				"unable_to_complete_inspection",
-				"failed_low",
-				"failed_high",
-				"further_inspections_required",
-				"agreed_site_compliance",
-				"non_compliant_with_conditions",
-				"works_stopped_apparatus_remaining",
-				"works_in_progress_no_carriageway_incursion",
-				"works_in_progress",
-				"works_stopped"
-			],
-			"type": "string"
-		},
 		"InspectionCSVExportRequest": {
 			"properties": {
 				"swa_code": {
@@ -459,30 +434,6 @@
 					"x-nullable": true
 				},
 				"end_date": {
-					"type": "string",
-					"format": "date-time",
-					"x-nullable": true
-				},
-				"inspection_type": {
-					"items": {
-						"$ref": "#/definitions/InspectionType"
-					},
-					"type": "array",
-					"x-nullable": true
-				},
-				"inspection_outcome": {
-					"items": {
-						"$ref": "#/definitions/InspectionOutcome"
-					},
-					"type": "array",
-					"x-nullable": true
-				},
-				"start_date_created": {
-					"type": "string",
-					"format": "date-time",
-					"x-nullable": true
-				},
-				"end_date_created": {
 					"type": "string",
 					"format": "date-time",
 					"x-nullable": true
@@ -774,7 +725,7 @@
 		}
 	},
 	"info": {
-		"title": "data-export-api",
+		"title": "data-export-api-stable",
 		"version": "1.0.0",
 		"description": "See API specification Resource Guide > Data Export API for more information on endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
 		"license": {

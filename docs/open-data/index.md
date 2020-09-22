@@ -55,13 +55,9 @@ data notification.
   <li>Permit revoked</li>
   <li>Permit cancelled</li>
   <li>Permit alteration granted</li>
-</ul>
-
-### Upcoming Events
-{: .govuk-heading-s}
-
-<ul class="govuk-list">
-  <li>Activity planned</li>
+  <li>Activity created</li>
+  <li>Activity cancelled</li>
+  <li>Activity updated</li>
 </ul>
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
@@ -169,7 +165,7 @@ Example:
     "work_category": "Standard",
     "traffic_management_type": "Road closure",
     "proposed_start_date": "2020-06-10T00:00:00.000Z",
-    "proposed_start_time": "13:50",
+    "proposed_start_time": "2020-06-10T13:50:00.000Z",
     "proposed_end_date": "2020-06-12T00:00:00.000Z",
     "proposed_end_time": null,
     "actual_start_date_time": "2020-06-11T10:11:00.000Z",
@@ -200,10 +196,10 @@ Example:
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 
-### Activity notification message (Upcoming release)
+### Activity notification message
 {: .govuk-heading-s}
 
-Upcoming events: Activity planned
+Events: Activity created, Activity cancelled, Activity updated
 {: .govuk-body}
 
 Example:
@@ -211,30 +207,32 @@ Example:
 ```
 {
   "event_reference": 529771,
-  "event_type": "activity-planned",
+  "event_type": "ACTIVITY_CREATED",
   "object_data": {
-    "activity_reference_number": "TSR1591199404915",
+    "activity_reference_number": "ARN-5990-85775436",
     "usrn": "8401426",
     "street_name": "Fake Street",
     "town": "London",
     "area_name": "MARYLEBONE HIGH STREET",
+    "road_category": "4",
     "activity_coordinates": "LINESTRING(501251.53 222574.64,501305.92 222506.65)",
     "activity_name": "London Marathon",
-    "activity_type": "Event",
+    "activity_type": "event",
     "start_date": "2020-06-10T00:00:00.000Z",
     "start_time": "2020-06-10T14:30:00.000Z",
     "end_date": "2020-06-11T00:00:00.000Z",
     "end_time": "2020-06-11T09:00:00.000Z",
-    "traffic_management_type": "Road closure",
+    "activity_location_type": "Cycleway, Footpath"
+    "traffic_management_type": "road_closure",
+    "traffic_management_required": "Yes",
+    "collaborative_working": "Yes"
     "cancelled": "Yes"
     "highway_authority": "CITY OF WESTMINSTER",
     "highway_authority_swa_code": "5990",
-    "activity_type_ref": "event",
-    "traffic_management_type_ref": "road_closure"
   },
   "event_time": "2020-06-04T08:00:00.000Z",
-  "object_type": "PERMIT",
-  "object_reference": "TSR1591199404915-01",
+  "object_type": "ACTIVITY",
+  "object_reference": "ARN-5990-85775436",
   "version": 1
 }
 ```

@@ -2805,6 +2805,11 @@ Updated Reporting API with the following changes:
       <li><code>ha_organisation_name</code></li>
     </ol>
   </li>
+  <li>Added additional optional filtering to the <code>GET /fixed-penelty-notices</code> endpoint. New filter params include:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>offence_code</code></li>
+    </ol>
+  </li>
 </ol>
 
 Updated Data Export API with the following changes:
@@ -2817,6 +2822,11 @@ Updated Data Export API with the following changes:
       <li><code>USRN</code></li>
       <li><code>promoter_organisation_name</code></li>
       <li><code>ha_organisation_name</code></li>
+    </ol>
+  </li>
+  <li>Added additional optional filter properties to the <code>FPNCSVExportRequest</code> model used by the <code>POST /fixed-penalty-notices/csv</code> endpoint. New filter properties include:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>offence_code</code></li>
     </ol>
   </li>
 </ol>

@@ -399,7 +399,8 @@ A diagram of PAA/PA assessment decision options</div>
 #### 3.4.8. PAA & PA response periods
 
 * The response period is the time period that a Highway Authority (HA) has to assess and evaluate a PAA/PA (or any other promoter request) prior to the PAA/PA deeming.
-* The response period will begin from the next working day after application submission where it is calculated in working days. For Major PAAs calculated in calendar days it will start the next day.
+* The response period will begin from the day of the application submission if received before 16:30 on a working day. Any applications received after 16:30 on any working day (or at any time on a non-working day) is deemed to have been given on the next working day, and that is when the response period will begin from
+* Note that for response periods calculated in calendar days i.e. Major PAAs, the end date of the response period could be a weekend/public holiday since the calculation is in calendar days and not working days
 * The response period for each works category are as follows:
 
 | Works category                                      | Response period  |
@@ -1220,7 +1221,7 @@ A diagram of S81 statuses</div>
 
 | Section                            | Change comment                                           |
 | ---------------------------------- | -------------------------------------------------------- |
-| 3.4.8. PAA & PA response periods | Updated to clarify that for Major PAAs the response period starts the next day, as it's calculated in calendar days   |
+| 3.4.8. PAA & PA response periods | Updated to clarify the rules around response periods and when they start   |
 | 6.5. Validity periods | Updated to clarify that validity period is inclusive of the start date |
 | 6.7. Updating excavation answer after works completed | New functionality to allow excavation answer to be updated after works have been completed  |
 | 17.2.1. Highway applications | Updated to include new ability to specify additional USRNs. Note this is API only currently. Front end will be implemented in the next sprint  |

@@ -1221,7 +1221,7 @@ A diagram of S81 statuses</div>
 
 | Section                            | Change comment                                           |
 | ---------------------------------- | -------------------------------------------------------- |
-| 7.1.1. Marking comment as read | Updated to as now only users from organisations that have received a comment can mark it as read. Previously all users able to view the comment were able to  |
+| 7.1.1. Marking comment as read | Updated as now only users from organisations that have received a comment can mark it as read. Previously all users able to view a comment were able to mark it as read |
 | 17.2.1. Highway applications | Updated to remove note that only API as front end functionality has now been added  |
 
 

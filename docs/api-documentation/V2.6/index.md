@@ -82,12 +82,12 @@ You can see the Swagger definitions rendered as HTML on the SANDBOX environment:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/latest/work/docs/">Work API</a></li>
-  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/latest/reporting/docs/">Reporting API</a></li>
-  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/latest/lookup/docs/">Street Lookup API</a></li>
-  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/latest/geojson/docs/">GeoJSON API</a></li>
-  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/latest/party/docs/">Party API</a></li>
-  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/latest/export/docs/">Data Export API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/work/docs/">Work API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/reporting/docs/">Reporting API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/lookup/docs/">Street Lookup API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/geojson/docs/">GeoJSON API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/party/docs/">Party API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/export/docs/">Data Export API</a></li>
 </ol>
 
 **Please be aware of the following:**
@@ -2792,6 +2792,21 @@ This section lists any significant changes made to this document (and by extensi
 
 Version 2.6 (01/10/2020):
 {: .govuk-heading-s}
+
+Released V2 API Routes:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+<li>All API services now have a <code>v2</code> route available in addition to <code>v1</code> and <code>latest</code>. <code>latest</code> routes point to the lastest version of the code which is currently <code>v2</code>. </li>
+  <ol class="govuk-list govuk-list--bullet">
+    <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/work/docs/">https://api.sandbox.manage-roadworks.service.gov.uk/v2/work/docs/ (Work API)</a></li>
+    <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/reporting/docs/">https://api.sandbox.manage-roadworks.service.gov.uk/v2/reporting/docs/ (Reporting API)</a></li>
+    <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/lookup/docs/">https://api.sandbox.manage-roadworks.service.gov.uk/v2/lookup/docs/ (Street Lookup API)</a></li>
+    <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/geojson/docs/">https://api.sandbox.manage-roadworks.service.gov.uk/v2/geojson/docs/ (GeoJSON API)</a></li>
+    <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/party/docs/">https://api.sandbox.manage-roadworks.service.gov.uk/v2/party/docs/ (Party API)</a></li>
+    <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/export/docs/">https://api.sandbox.manage-roadworks.service.gov.uk/v2/export/docs/ (Data Export API)</a></li>
+  </ol>
+</ol>
 
 Updated Reporting API with the following changes:
 {: .govuk-body}

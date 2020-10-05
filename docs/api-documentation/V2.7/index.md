@@ -2790,6 +2790,17 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 2.7 (15/10/2020):
+{: .govuk-heading-s}
+
+Added upcoming enum value:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>GeoJSON API, Street Lookup API and Party API response enums have been updated to include a new <code>upcoming_enum</code> value. This value is currently a placeholder. Once V2 of the API is stabilised, <code>upcoming_enum</code> will be returned in responses where the latest version of
+  the API will return a new enum value. This prevents the need for breaking changes on the stabilised API to add new enum values. This <code>upcoming_enum</code> value will be added to Works API and Reporting API response enums in a future release.</li>
+</ol>
+
 Version 2.6 (01/10/2020):
 {: .govuk-heading-s}
 

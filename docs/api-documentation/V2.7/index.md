@@ -2824,6 +2824,11 @@ Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>Updated the <code>POST ​/geographical-areas</code> and <code>PUT ​/geographical-areas​/{geographicalAreaReferenceNumber}</code> endpoints to accept optional <code>internalUserIdentifier</code> and <code>internalUserName</code> query params.</li>
+
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>New <code>GET /sample-inspections</code> endpoint added to fetch issued Sample Inspections for a Highway Authority organisation.</li>
 </ol>
 
 Version 2.6 (01/10/2020):

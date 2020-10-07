@@ -2801,6 +2801,19 @@ Added upcoming enum value:
   the API will return a new enum value. This prevents the need for breaking changes on the stabilised API to add new enum values. This <code>upcoming_enum</code> value will be added to Works API and Reporting API response enums in a future release.</li>
 </ol>
 
+Added enum string properties:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>Reporting API, GeoJSON API, Street Lookup API and Party API service responses have been updated to return a string version of each enum property previously returned. For example, <code>PermitResonse</code> now contains <code>permit_status</code> property which remains as type PermitStatus and a new <code>permit_status_string</code> property which will be populated with the string equivalent of the enum value. These will contain the same text in most circumstances but in the future when we stabilise the API and no longer add new enum values we will use the string property to provide more information.</li>
+</ol>
+
+Updated Geojson API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Added <code>hs2_highway</code> to the <code>WorkCategory</code> enum. This can be returned by the <code>WorkResponse</code></li>
+</ol>
+
 Version 2.6 (01/10/2020):
 {: .govuk-heading-s}
 

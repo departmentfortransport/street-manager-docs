@@ -167,6 +167,10 @@
           "description": "Type of the activity being carried out during the work/activity",
           "type": "string"
         },
+        "activity_type_details": {
+          "description": "Details of event or licensed activity entered when activity type is 'Other'",
+          "type": "string"
+        },
         "start_date": {
           "description": "The date the activity will start",
           "type": "string",
@@ -189,6 +193,10 @@
         },
         "activity_location_type": {
           "description": "Type of location where the activity is taking place. Types: Footway, Carriageway, Verge, Cycleway, Footpath, Parking place, Bus stop or stand, Cycle hire docking station, Taxi rank",
+          "type": "string"
+        },
+        "activity_location_description": {
+          "description": "Free text description of the activity location",
           "type": "string"
         },
         "traffic_management_required": {
@@ -281,7 +289,7 @@
           "object_data": {
             "required": [
               "activity_reference_number", "activity_coordinates", "activity_name", "start_date", "end_date", "activity_location_type",
-              "traffic_management_required", "collaborative_working", "cancelled"
+              "activity_location_description", "traffic_management_required", "collaborative_working", "cancelled"
             ],
             "properties": {
               "activity_type": {

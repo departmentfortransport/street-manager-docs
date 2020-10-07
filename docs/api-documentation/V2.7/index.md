@@ -2814,6 +2814,18 @@ Updated Geojson API with the following changes:
   <li>Added <code>hs2_highway</code> to the <code>WorkCategory</code> enum. This can be returned by the <code>WorkResponse</code></li>
 </ol>
 
+Updated Party API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Updated the <code>POST ​/organisations​/{organisationReference}​/workstreams</code> and <code>PUT ​/organisations​/{organisationReference}​/workstreams​/{workstreamPrefix}</code> endpoints to accept optional <code>internal_user_identifier</code> and <code>internal_user_name</code> properties.</li>
+</ol>
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Updated the <code>POST ​/geographical-areas</code> and <code>PUT ​/geographical-areas​/{geographicalAreaReferenceNumber}</code> endpoints to accept optional <code>internalUserIdentifier</code> and <code>internalUserName</code> query params.</li>
+</ol>
+
 Version 2.6 (01/10/2020):
 {: .govuk-heading-s}
 

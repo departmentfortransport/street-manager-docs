@@ -2824,6 +2824,8 @@ Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>Updated the <code>POST ​/geographical-areas</code> and <code>PUT ​/geographical-areas​/{geographicalAreaReferenceNumber}</code> endpoints to accept optional <code>internalUserIdentifier</code> and <code>internalUserName</code> query params.</li>
+  <li>Removed the <code>is_progressable_paa</code> field from the <code>PermitResponse</code> object. This field was never intended to be returned and was never populated in the response object.</li>
+</ol>
 
 Updated Reporting API with the following changes:
 {: .govuk-body}

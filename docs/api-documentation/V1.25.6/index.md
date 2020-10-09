@@ -2783,6 +2783,15 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 1.25.6 - Stable (15/10/2020):
+{: .govuk-heading-s}
+
+Updated Works API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Removed the <code>is_progressable_paa</code> field from the <code>PermitResponse</code> object. This field was never intended to be returned and was never populated in the response object.</li>
+</ol>
+
 Version 1.25.5 - Stable (17/09/2020):
 {: .govuk-heading-s}
 

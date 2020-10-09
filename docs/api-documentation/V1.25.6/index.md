@@ -2790,6 +2790,7 @@ Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>Removed the <code>is_progressable_paa</code> field from the <code>PermitResponse</code> object. This field was never intended to be returned and was never populated in the response object.</li>
+  <li>Updated the <code>POST /activity</code> and <code>PUT /activity​/{activityReferenceNumber}</code> endpoints to accept <code>start_date</code> and <code>start_time</code> values in the past.</li>
 </ol>
 
 Version 1.25.5 - Stable (17/09/2020):

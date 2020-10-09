@@ -218,11 +218,13 @@ Example:
     "activity_coordinates": "LINESTRING(501251.53 222574.64,501305.92 222506.65)",
     "activity_name": "London Marathon",
     "activity_type": "event",
+    "activity_type_details": "Activity type details",
     "start_date": "2020-06-10T00:00:00.000Z",
     "start_time": "2020-06-10T14:30:00.000Z",
     "end_date": "2020-06-11T00:00:00.000Z",
     "end_time": "2020-06-11T09:00:00.000Z",
-    "activity_location_type": "Cycleway, Footpath"
+    "activity_location_type": "Cycleway, Footpath",
+    "activity_location_description": "Description of activity location",
     "traffic_management_type": "road_closure",
     "traffic_management_required": "Yes",
     "collaborative_working": "Yes"

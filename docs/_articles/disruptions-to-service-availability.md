@@ -14,6 +14,10 @@ To see the current status of Production and Sandbox environments visit the [stat
 
 **Production environment**
 
+* 08/10/2020 18:56 to 19:20: Production environment partially unavailable for 24 mins due to NSG data update.
+
+* 07/10/2020 01:19 to 01:20: Production environment was unavailable for 20 seconds due to an unexpected outage.
+
 * 05/10/2020 16:13 to 16:15: Production environment service degraded for 1 min 30 seconds due to a known issue.
 
 ## September 2020

@@ -2826,6 +2826,7 @@ Updated Work API with the following changes:
   <li>Updated the <code>POST ​/geographical-areas</code> and <code>PUT ​/geographical-areas​/{geographicalAreaReferenceNumber}</code> endpoints to accept optional <code>internalUserIdentifier</code> and <code>internalUserName</code> query params.</li>
   <li>Removed the <code>is_progressable_paa</code> field from the <code>PermitResponse</code> object. This field was never intended to be returned and was never populated in the response object.</li>
   <li>Updated the <code>POST /activity</code> and <code>PUT /activity​/{activityReferenceNumber}</code> endpoints to accept <code>start_date</code> and <code>start_time</code> values in the past.</li>
+  <li>Updated the <code>POST /works/${workReferenceNumber}/comments</code> endpoint to return a <code>CommentCreateResponse</code> containing the <code>comment_reference_number</code>.</li>
 </ol>
 
 Updated Reporting API with the following changes:

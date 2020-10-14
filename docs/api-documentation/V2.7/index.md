@@ -2823,10 +2823,20 @@ Updated Party API with the following changes:
 Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>Updated the <code>POST ​/geographical-areas</code> and <code>PUT ​/geographical-areas​/{geographicalAreaReferenceNumber}</code> endpoints to accept optional <code>internalUserIdentifier</code> and <code>internalUserName</code> query params.</li>
+  <li>Updated the <code>POST /geographical-areas</code> and <code>PUT /geographical-areas/{geographicalAreaReferenceNumber}</code> endpoints to accept optional <code>internalUserIdentifier</code> and <code>internalUserName</code> query params.</li>
   <li>Removed the <code>is_progressable_paa</code> field from the <code>PermitResponse</code> object. This field was never intended to be returned and was never populated in the response object.</li>
-  <li>Updated the <code>POST /activity</code> and <code>PUT /activity​/{activityReferenceNumber}</code> endpoints to accept <code>start_date</code> and <code>start_time</code> values in the past.</li>
+  <li>Updated the <code>POST /activity</code> and <code>PUT /activity/{activityReferenceNumber}</code> endpoints to accept <code>start_date</code> and <code>start_time</code> values in the past.</li>
   <li>Updated the <code>POST /works/${workReferenceNumber}/comments</code> endpoint to return a <code>CommentCreateResponse</code> containing the <code>comment_reference_number</code>.</li>
+  <li>New <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/link-section-81</code> endpoint added to enable linking a Section 81 with a permit.</li>
+  <li>Updated the <code>PermitResponse</code> interface to include an optional <code>linked_section_81</code> property, which contains the <code>work_reference_number</code> and <code>section_81_reference_number</code> properties of a linked Section 81.</li>
+  <li>Updated the <code>Section81Response</code> interface to include an optional <code>linked_permit</code> property, which contains the <code>work_reference_number</code> and <code>permit_reference_number</code> properties of a linked permit.</li>
+  <li>The following audit event types have been added, to be used when linking, unlinking and re-assigning Section 81s:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>section_81_linked_to_permit</code></li>
+      <li><code>section_81_unlinked_from_permit</code></li>
+      <li><code>section_81_reassigned</code></li>
+    </ol>
+  </li>
 </ol>
 
 Updated Reporting API with the following changes:

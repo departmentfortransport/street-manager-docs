@@ -4,7 +4,7 @@
 		"application/json"
 	],
 	"definitions": {
-		"ReinstatementTypeCodeResponse": {
+		"ReinstatementTypeCode": {
 			"enum": [
 				1,
 				2,
@@ -15,18 +15,14 @@
 				7,
 				8,
 				9,
-				10,
-				999
+				10
 			],
 			"type": "integer"
 		},
 		"ReinstatementTypeDetails": {
 			"properties": {
 				"reinstatement_type_code": {
-					"$ref": "#/definitions/ReinstatementTypeCodeResponse"
-				},
-				"reinstatement_type_code_string": {
-					"type": "string"
+					"$ref": "#/definitions/ReinstatementTypeCode"
 				},
 				"reinstatement_type_location_text": {
 					"type": "string",
@@ -34,8 +30,7 @@
 				}
 			},
 			"required": [
-				"reinstatement_type_code",
-				"reinstatement_type_code_string"
+				"reinstatement_type_code"
 			],
 			"type": "object",
 			"additionalProperties": false
@@ -76,7 +71,7 @@
 			"type": "object",
 			"additionalProperties": false
 		},
-		"AdditionalSpecialDesignationCodeResponse": {
+		"AdditionalSpecialDesignationCode": {
 			"enum": [
 				1,
 				2,
@@ -101,12 +96,11 @@
 				27,
 				28,
 				29,
-				30,
-				999
+				30
 			],
 			"type": "integer"
 		},
-		"AdditionalSpecialDesignationsPeriodicityCodeResponse": {
+		"AdditionalSpecialDesignationsPeriodicityCode": {
 			"enum": [
 				1,
 				2,
@@ -120,28 +114,23 @@
 				13,
 				14,
 				15,
-				16,
-				999
+				16
 			],
 			"type": "integer"
 		},
-		"GeoJSONFeatureTypeResponse": {
+		"GeoJSONFeatureType": {
 			"enum": [
 				"Point",
 				"LineString",
 				"Polygon",
-				"MultiLineString",
-				"upcoming_enum"
+				"MultiLineString"
 			],
 			"type": "string"
 		},
 		"GeoJSONGeometry": {
 			"properties": {
 				"type": {
-					"$ref": "#/definitions/GeoJSONFeatureTypeResponse"
-				},
-				"type_string": {
-					"type": "string"
+					"$ref": "#/definitions/GeoJSONFeatureType"
 				},
 				"coordinates": {
 					"additionalProperties": true,
@@ -150,7 +139,6 @@
 			},
 			"required": [
 				"type",
-				"type_string",
 				"coordinates"
 			],
 			"type": "object",
@@ -159,11 +147,7 @@
 		"AdditionalSpecialDesignationsResponse": {
 			"properties": {
 				"street_special_desig_code": {
-					"$ref": "#/definitions/AdditionalSpecialDesignationCodeResponse"
-				},
-				"street_special_desig_code_string": {
-					"type": "string",
-					"x-nullable": true
+					"$ref": "#/definitions/AdditionalSpecialDesignationCode"
 				},
 				"special_desig_location_text": {
 					"type": "string",
@@ -184,11 +168,7 @@
 					"x-nullable": true
 				},
 				"special_desig_periodicity_code": {
-					"$ref": "#/definitions/AdditionalSpecialDesignationsPeriodicityCodeResponse",
-					"x-nullable": true
-				},
-				"special_desig_periodicity_code_string": {
-					"type": "string",
+					"$ref": "#/definitions/AdditionalSpecialDesignationsPeriodicityCode",
 					"x-nullable": true
 				},
 				"asd_coordinate_geometry": {
@@ -388,7 +368,7 @@
 		}
 	},
 	"info": {
-		"title": "street-lookup-api",
+		"title": "street-lookup-api-stable",
 		"version": "1.0.0",
 		"description": "See API specification Resource Guide > Street Lookup API for more information on endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
 		"license": {

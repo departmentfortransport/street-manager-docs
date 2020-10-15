@@ -96,9 +96,6 @@
 				"work_status": {
 					"$ref": "#/definitions/WorkStatus"
 				},
-				"work_status_string": {
-					"type": "string"
-				},
 				"proposed_start_date": {
 					"type": "string",
 					"format": "date-time"
@@ -120,20 +117,11 @@
 				"work_category": {
 					"$ref": "#/definitions/WorkCategory"
 				},
-				"work_category_string": {
-					"type": "string"
-				},
 				"alteration_status": {
 					"$ref": "#/definitions/AlterationStatus"
 				},
-				"alteration_status_string": {
-					"type": "string"
-				},
 				"alteration_type": {
 					"$ref": "#/definitions/AlterationType"
-				},
-				"alteration_type_string": {
-					"type": "string"
 				},
 				"date_created": {
 					"type": "string",
@@ -149,10 +137,6 @@
 				},
 				"lane_rental_assessment_outcome": {
 					"$ref": "#/definitions/LaneRentalAssessmentOutcome",
-					"x-nullable": true
-				},
-				"lane_rental_assessment_outcome_string": {
-					"type": "string",
 					"x-nullable": true
 				},
 				"lane_rental_charges_not_agreed": {
@@ -173,15 +157,11 @@
 				"highway_authority",
 				"promoter",
 				"work_status",
-				"work_status_string",
 				"proposed_start_date",
 				"proposed_end_date",
 				"work_category",
-				"work_category_string",
 				"alteration_status",
-				"alteration_status_string",
 				"alteration_type",
-				"alteration_type_string",
 				"date_created",
 				"deadline_date",
 				"status_changed_date",
@@ -295,17 +275,13 @@
 				"condition": {
 					"$ref": "#/definitions/PermitConditionType"
 				},
-				"condition_string": {
-					"type": "string"
-				},
 				"comment": {
 					"type": "string",
 					"x-nullable": true
 				}
 			},
 			"required": [
-				"condition",
-				"condition_string"
+				"condition"
 			],
 			"type": "object",
 			"additionalProperties": false
@@ -346,24 +322,14 @@
 				"work_category": {
 					"$ref": "#/definitions/WorkCategory"
 				},
-				"work_category_string": {
-					"type": "string"
-				},
 				"description_of_work": {
 					"type": "string"
 				},
 				"traffic_management_type": {
 					"$ref": "#/definitions/TrafficManagementType"
 				},
-				"traffic_management_type_string": {
-					"type": "string"
-				},
 				"assessment_status": {
 					"$ref": "#/definitions/AssessmentStatus",
-					"x-nullable": true
-				},
-				"assessment_status_string": {
-					"type": "string",
 					"x-nullable": true
 				},
 				"proposed_start_date": {
@@ -397,14 +363,8 @@
 				"status": {
 					"$ref": "#/definitions/PermitStatus"
 				},
-				"status_string": {
-					"type": "string"
-				},
 				"work_status": {
 					"$ref": "#/definitions/WorkStatus"
-				},
-				"work_status_string": {
-					"type": "string"
 				},
 				"deadline_date": {
 					"type": "string",
@@ -461,10 +421,6 @@
 					"$ref": "#/definitions/LaneRentalAssessmentOutcome",
 					"x-nullable": true
 				},
-				"lane_rental_assessment_outcome_string": {
-					"type": "string",
-					"x-nullable": true
-				},
 				"lane_rental_charges_not_agreed": {
 					"type": "boolean"
 				},
@@ -484,16 +440,12 @@
 				"town",
 				"area",
 				"work_category",
-				"work_category_string",
 				"description_of_work",
 				"traffic_management_type",
-				"traffic_management_type_string",
 				"proposed_start_date",
 				"proposed_end_date",
 				"status",
-				"status_string",
 				"work_status",
-				"work_status_string",
 				"deadline_date",
 				"date_created",
 				"status_changed_date",
@@ -583,9 +535,6 @@
 				"offence_code": {
 					"$ref": "#/definitions/OffenceCode"
 				},
-				"offence_code_string": {
-					"type": "string"
-				},
 				"street_name": {
 					"type": "string"
 				},
@@ -595,9 +544,6 @@
 				},
 				"status": {
 					"$ref": "#/definitions/FPNStatus"
-				},
-				"status_string": {
-					"type": "string"
 				}
 			},
 			"required": [
@@ -606,11 +552,9 @@
 				"promoter",
 				"highway_authority",
 				"offence_code",
-				"offence_code_string",
 				"street_name",
 				"issue_date",
-				"status",
-				"status_string"
+				"status"
 			],
 			"type": "object",
 			"additionalProperties": false
@@ -657,13 +601,7 @@
 				"topic": {
 					"$ref": "#/definitions/CommentTopic"
 				},
-				"topic_string": {
-					"type": "string"
-				},
 				"author_email_address": {
-					"type": "string"
-				},
-				"author_organisation_reference": {
 					"type": "string"
 				},
 				"detail": {
@@ -695,9 +633,7 @@
 			"required": [
 				"work_reference_number",
 				"topic",
-				"topic_string",
 				"author_email_address",
-				"author_organisation_reference",
 				"detail",
 				"date_created",
 				"comment_reference_number",
@@ -782,9 +718,6 @@
 				"inspection_response_type": {
 					"$ref": "#/definitions/InspectionResponseType"
 				},
-				"inspection_response_type_string": {
-					"type": "string"
-				},
 				"work_reference_number": {
 					"type": "string"
 				},
@@ -807,23 +740,12 @@
 				"inspection_type": {
 					"$ref": "#/definitions/InspectionType"
 				},
-				"inspection_type_string": {
-					"type": "string"
-				},
 				"inspection_category": {
 					"$ref": "#/definitions/InspectionCategory",
 					"x-nullable": true
 				},
-				"inspection_category_string": {
-					"type": "string",
-					"x-nullable": true
-				},
 				"inspection_outcome": {
 					"$ref": "#/definitions/InspectionOutcome",
-					"x-nullable": true
-				},
-				"inspection_outcome_string": {
-					"type": "string",
 					"x-nullable": true
 				},
 				"reinspection_date_time": {
@@ -849,14 +771,12 @@
 			"required": [
 				"inspection_date",
 				"inspection_response_type",
-				"inspection_response_type_string",
 				"work_reference_number",
 				"location_description",
 				"street",
 				"town",
 				"area",
 				"inspection_type",
-				"inspection_type_string",
 				"highway_authority",
 				"promoter_organisation",
 				"date_created"
@@ -978,11 +898,7 @@
 				"sample_inspection_removed",
 				"sample_inspection_expired",
 				"internal_comment_submitted",
-				"comment_read",
-				"excavation_carried_out_updated",
-				"section_81_linked_to_permit",
-				"section_81_unlinked_from_permit",
-				"section_81_reassigned"
+				"comment_read"
 			],
 			"type": "string"
 		},
@@ -1024,14 +940,8 @@
 				"event_type": {
 					"$ref": "#/definitions/AuditEventType"
 				},
-				"event_type_string": {
-					"type": "string"
-				},
 				"object_type": {
 					"$ref": "#/definitions/AuditObjectType"
-				},
-				"object_type_string": {
-					"type": "string"
 				}
 			},
 			"required": [
@@ -1039,9 +949,7 @@
 				"update_date_time",
 				"update_id",
 				"event_type",
-				"event_type_string",
-				"object_type",
-				"object_type_string"
+				"object_type"
 			],
 			"type": "object",
 			"additionalProperties": false
@@ -1068,9 +976,6 @@
 				"status": {
 					"$ref": "#/definitions/WorkstreamStatus"
 				},
-				"status_string": {
-					"type": "string"
-				},
 				"swa_code": {
 					"type": "string"
 				}
@@ -1079,7 +984,6 @@
 				"prefix",
 				"name",
 				"status",
-				"status_string",
 				"swa_code"
 			],
 			"type": "object",
@@ -1160,14 +1064,8 @@
 				"reinstatement_type": {
 					"$ref": "#/definitions/ReinstatementType"
 				},
-				"reinstatement_type_string": {
-					"type": "string"
-				},
 				"reinstatement_status": {
 					"$ref": "#/definitions/ReinstatementStatus"
-				},
-				"reinstatement_status_string": {
-					"type": "string"
 				},
 				"end_date": {
 					"type": "string",
@@ -1184,9 +1082,7 @@
 				"registration_date",
 				"reinstatement_date",
 				"reinstatement_type",
-				"reinstatement_type_string",
 				"reinstatement_status",
-				"reinstatement_status_string",
 				"end_date"
 			],
 			"type": "object",
@@ -1256,9 +1152,6 @@
 				"forward_plan_status": {
 					"$ref": "#/definitions/ForwardPlanStatus"
 				},
-				"forward_plan_status_string": {
-					"type": "string"
-				},
 				"date_created": {
 					"type": "string",
 					"format": "date-time"
@@ -1276,7 +1169,6 @@
 				"proposed_start_date",
 				"proposed_end_date",
 				"forward_plan_status",
-				"forward_plan_status_string",
 				"date_created"
 			],
 			"type": "object",
@@ -1355,17 +1247,11 @@
 				"section_81_severity": {
 					"$ref": "#/definitions/Section81Severity"
 				},
-				"section_81_severity_string": {
-					"type": "string"
-				},
 				"made_safe_by_ha": {
 					"type": "boolean"
 				},
 				"section_81_status": {
 					"$ref": "#/definitions/Section81Status"
-				},
-				"section_81_status_string": {
-					"type": "string"
 				},
 				"status_changed_date": {
 					"type": "string",
@@ -1381,10 +1267,8 @@
 				"location_description",
 				"street",
 				"section_81_severity",
-				"section_81_severity_string",
 				"made_safe_by_ha",
 				"section_81_status",
-				"section_81_status_string",
 				"status_changed_date"
 			],
 			"type": "object",
@@ -1435,15 +1319,11 @@
 				},
 				"access_level": {
 					"$ref": "#/definitions/WorkstreamAccessLevel"
-				},
-				"access_level_string": {
-					"type": "string"
 				}
 			},
 			"required": [
 				"workstream_prefix",
-				"access_level",
-				"access_level_string"
+				"access_level"
 			],
 			"type": "object",
 			"additionalProperties": false
@@ -1464,13 +1344,6 @@
 				"roles": {
 					"items": {
 						"$ref": "#/definitions/Role"
-					},
-					"type": "array",
-					"x-nullable": true
-				},
-				"roles_string": {
-					"items": {
-						"type": "string"
 					},
 					"type": "array",
 					"x-nullable": true
@@ -1533,9 +1406,6 @@
 				"csv_export_status": {
 					"$ref": "#/definitions/CSVExportStatus"
 				},
-				"csv_export_status_string": {
-					"type": "string"
-				},
 				"username": {
 					"type": "string"
 				}
@@ -1545,7 +1415,6 @@
 				"filename",
 				"date_created",
 				"csv_export_status",
-				"csv_export_status_string",
 				"username"
 			],
 			"type": "object",
@@ -1600,162 +1469,10 @@
 			],
 			"type": "object",
 			"additionalProperties": false
-		},
-		"SampleInspectionTargetSummaryResponse": {
-			"properties": {
-				"sample_inspection_target_reference_number": {
-					"type": "string"
-				},
-				"promoter_name": {
-					"type": "string"
-				},
-				"promoter_org_ref": {
-					"type": "string"
-				},
-				"agreed_category_a": {
-					"type": "number",
-					"format": "double"
-				},
-				"agreed_category_b": {
-					"type": "number",
-					"format": "double"
-				},
-				"agreed_category_c": {
-					"type": "number",
-					"format": "double"
-				},
-				"cap_category_a": {
-					"type": "number",
-					"format": "double"
-				},
-				"cap_category_b": {
-					"type": "number",
-					"format": "double"
-				},
-				"cap_category_c": {
-					"type": "number",
-					"format": "double"
-				},
-				"actual_category_a": {
-					"type": "number",
-					"format": "double"
-				},
-				"actual_category_b": {
-					"type": "number",
-					"format": "double"
-				},
-				"actual_category_c": {
-					"type": "number",
-					"format": "double"
-				}
-			},
-			"required": [
-				"sample_inspection_target_reference_number",
-				"promoter_name",
-				"promoter_org_ref",
-				"agreed_category_a",
-				"agreed_category_b",
-				"agreed_category_c",
-				"cap_category_a",
-				"cap_category_b",
-				"cap_category_c",
-				"actual_category_a",
-				"actual_category_b",
-				"actual_category_c"
-			],
-			"type": "object",
-			"additionalProperties": false
-		},
-		"SampleInspectionTargetReportingResponse": {
-			"properties": {
-				"pagination": {
-					"$ref": "#/definitions/PaginationResponse"
-				},
-				"rows": {
-					"items": {
-						"$ref": "#/definitions/SampleInspectionTargetSummaryResponse"
-					},
-					"type": "array"
-				}
-			},
-			"required": [
-				"pagination",
-				"rows"
-			],
-			"type": "object",
-			"additionalProperties": false
-		},
-		"SampleInspectionSummaryResponse": {
-			"properties": {
-				"sample_inspection_reference_number": {
-					"type": "string"
-				},
-				"work_reference_number": {
-					"type": "string"
-				},
-				"street": {
-					"type": "string"
-				},
-				"town": {
-					"type": "string",
-					"x-nullable": true
-				},
-				"area": {
-					"type": "string",
-					"x-nullable": true
-				},
-				"location_description": {
-					"type": "string"
-				},
-				"promoter_organisation": {
-					"type": "string"
-				},
-				"inspection_category": {
-					"$ref": "#/definitions/InspectionCategory"
-				},
-				"inspection_category_string": {
-					"type": "string"
-				},
-				"expiry_date": {
-					"type": "string",
-					"format": "date-time"
-				}
-			},
-			"required": [
-				"sample_inspection_reference_number",
-				"work_reference_number",
-				"street",
-				"location_description",
-				"promoter_organisation",
-				"inspection_category",
-				"inspection_category_string",
-				"expiry_date"
-			],
-			"type": "object",
-			"additionalProperties": false
-		},
-		"SampleInspectionReportingResponse": {
-			"properties": {
-				"pagination": {
-					"$ref": "#/definitions/PaginationResponse"
-				},
-				"rows": {
-					"items": {
-						"$ref": "#/definitions/SampleInspectionSummaryResponse"
-					},
-					"type": "array"
-				}
-			},
-			"required": [
-				"pagination",
-				"rows"
-			],
-			"type": "object",
-			"additionalProperties": false
 		}
 	},
 	"info": {
-		"title": "reporting-api",
+		"title": "reporting-api-stable",
 		"version": "1.0.0",
 		"description": "See API specification Resource Guide > Reporting API for more information on paging and endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
 		"license": {
@@ -2291,16 +2008,6 @@
 					},
 					{
 						"in": "query",
-						"name": "offence_code",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"$ref": "#/definitions/OffenceCode"
-						}
-					},
-					{
-						"in": "query",
 						"name": "offset",
 						"required": false,
 						"type": "integer"
@@ -2441,11 +2148,7 @@
 					"200": {
 						"description": "Ok",
 						"schema": {
-							"$ref": "#/definitions/InspectionReportingResponse",
-							"type": "array",
-							"items": {
-								"$ref": "#/definitions/InspectionReportingResponse"
-							}
+							"$ref": "#/definitions/InspectionReportingResponse"
 						}
 					}
 				},
@@ -2454,8 +2157,8 @@
 					{
 						"token": [
 							"Planner",
-							"HighwayAuthority",
-							"Contractor"
+							"Contractor",
+							"HighwayAuthority"
 						]
 					}
 				],
@@ -2464,10 +2167,10 @@
 						"in": "query",
 						"name": "inspection_response_type",
 						"required": false,
-						"type": "array",
 						"collectionFormat": "multi",
+						"type": "array",
 						"items": {
-							"$ref": "#/definitions/InspectionResponseType"
+							"type": "string"
 						}
 					},
 					{
@@ -2486,62 +2189,29 @@
 					},
 					{
 						"in": "query",
-						"name": "inspection_type",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"$ref": "#/definitions/InspectionType"
-						}
-					},
-					{
-						"in": "query",
-						"name": "inspection_outcome",
-						"required": false,
-						"type": "array",
-						"collectionFormat": "multi",
-						"items": {
-							"$ref": "#/definitions/InspectionOutcome"
-						}
-					},
-					{
-						"in": "query",
-						"name": "start_date_created",
-						"required": false,
-						"format": "date-time",
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "end_date_created",
-						"required": false,
-						"format": "date-time",
-						"type": "string"
-					},
-					{
-						"in": "query",
 						"name": "offset",
 						"required": false,
-						"type": "integer"
+						"format": "double",
+						"type": "number"
 					},
 					{
 						"in": "query",
 						"name": "sort_column",
 						"required": false,
+						"type": "string",
 						"enum": [
 							"inspection_date"
-						],
-						"type": "string"
+						]
 					},
 					{
 						"in": "query",
 						"name": "sort_direction",
 						"required": false,
+						"type": "string",
 						"enum": [
 							"asc",
 							"desc"
-						],
-						"type": "string"
+						]
 					},
 					{
 						"in": "query",
@@ -2553,17 +2223,11 @@
 						"in": "query",
 						"name": "geographical_area_reference_number",
 						"required": false,
-						"type": "array",
 						"collectionFormat": "multi",
+						"type": "array",
 						"items": {
 							"type": "string"
 						}
-					},
-					{
-						"in": "query",
-						"name": "query",
-						"required": false,
-						"type": "string"
 					}
 				]
 			}
@@ -3047,105 +2711,6 @@
 					}
 				],
 				"parameters": []
-			}
-		},
-		"/sample-inspection-targets": {
-			"get": {
-				"operationId": "GetSampleInspectionTargets",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"$ref": "#/definitions/SampleInspectionTargetReportingResponse"
-						}
-					}
-				},
-				"description": "Returns all sample inspection targets associated with the logged in user's organisation\nAuthenticated user must have one of the following roles: Admin, HighwayAuthority",
-				"security": [
-					{
-						"token": [
-							"Admin",
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "query",
-						"name": "offset",
-						"required": false,
-						"format": "double",
-						"type": "number"
-					}
-				]
-			}
-		},
-		"/sample-inspections": {
-			"get": {
-				"operationId": "GetSampleInspections",
-				"produces": [
-					"application/json"
-				],
-				"responses": {
-					"200": {
-						"description": "Ok",
-						"schema": {
-							"$ref": "#/definitions/SampleInspectionReportingResponse"
-						}
-					}
-				},
-				"description": "Authenticated user must have one of the following roles: HighwayAuthority",
-				"security": [
-					{
-						"token": [
-							"HighwayAuthority"
-						]
-					}
-				],
-				"parameters": [
-					{
-						"in": "query",
-						"name": "offset",
-						"required": false,
-						"format": "double",
-						"type": "number"
-					},
-					{
-						"in": "query",
-						"name": "swa_code",
-						"required": false,
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "geographical_area_reference_number",
-						"required": false,
-						"collectionFormat": "multi",
-						"type": "array",
-						"items": {
-							"type": "string"
-						}
-					},
-					{
-						"in": "query",
-						"name": "query",
-						"required": false,
-						"type": "string"
-					},
-					{
-						"in": "query",
-						"name": "sort_direction",
-						"required": false,
-						"type": "string",
-						"enum": [
-							"asc",
-							"desc"
-						]
-					}
-				]
 			}
 		}
 	},

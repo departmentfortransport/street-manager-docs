@@ -4,20 +4,18 @@
 		"application/json"
 	],
 	"definitions": {
-		"WorkCategoryResponse": {
+		"WorkCategory": {
 			"enum": [
 				"minor",
 				"standard",
 				"major",
 				"immediate_urgent",
 				"immediate_emergency",
-				"paa",
-				"hs2_highway",
-				"upcoming_enum"
+				"paa"
 			],
 			"type": "string"
 		},
-		"TrafficManagementTypeResponse": {
+		"TrafficManagementType": {
 			"enum": [
 				"road_closure",
 				"contra_flow",
@@ -29,8 +27,7 @@
 				"priority_working",
 				"give_and_take",
 				"some_carriageway_incursion",
-				"no_carriageway_incursion",
-				"upcoming_enum"
+				"no_carriageway_incursion"
 			],
 			"type": "string"
 		},
@@ -60,7 +57,7 @@
 			"type": "object",
 			"additionalProperties": false
 		},
-		"PermitStatusResponse": {
+		"PermitStatus": {
 			"enum": [
 				"submitted",
 				"granted",
@@ -69,8 +66,7 @@
 				"closed",
 				"cancelled",
 				"revoked",
-				"progressed",
-				"upcoming_enum"
+				"progressed"
 			],
 			"type": "string"
 		},
@@ -89,10 +85,7 @@
 					"type": "string"
 				},
 				"work_category": {
-					"$ref": "#/definitions/WorkCategoryResponse"
-				},
-				"work_category_string": {
-					"type": "string"
+					"$ref": "#/definitions/WorkCategory"
 				},
 				"start_date": {
 					"type": "string",
@@ -103,20 +96,14 @@
 					"format": "date-time"
 				},
 				"traffic_management_type": {
-					"$ref": "#/definitions/TrafficManagementTypeResponse"
-				},
-				"traffic_management_type_string": {
-					"type": "string"
+					"$ref": "#/definitions/TrafficManagementType"
 				},
 				"work_centre_point": {
 					"$ref": "#/definitions/GeoJSONCentrePoint",
 					"description": "GeoJSON Point Geometry"
 				},
 				"permit_status": {
-					"$ref": "#/definitions/PermitStatusResponse"
-				},
-				"permit_status_string": {
-					"type": "string"
+					"$ref": "#/definitions/PermitStatus"
 				}
 			},
 			"required": [
@@ -125,14 +112,11 @@
 				"promoter_organisation",
 				"promoter_swa_code",
 				"work_category",
-				"work_category_string",
 				"start_date",
 				"end_date",
 				"traffic_management_type",
-				"traffic_management_type_string",
 				"work_centre_point",
-				"permit_status",
-				"permit_status_string"
+				"permit_status"
 			],
 			"type": "object",
 			"additionalProperties": false
@@ -143,22 +127,18 @@
 			],
 			"type": "string"
 		},
-		"GeoJSONFeatureTypeResponse": {
+		"GeoJSONFeatureType": {
 			"enum": [
 				"Point",
 				"LineString",
-				"Polygon",
-				"upcoming_enum"
+				"Polygon"
 			],
 			"type": "string"
 		},
 		"GeoJSONGeometry": {
 			"properties": {
 				"type": {
-					"$ref": "#/definitions/GeoJSONFeatureTypeResponse"
-				},
-				"type_string": {
-					"type": "string"
+					"$ref": "#/definitions/GeoJSONFeatureType"
 				},
 				"coordinates": {
 					"items": {
@@ -170,7 +150,6 @@
 			},
 			"required": [
 				"type",
-				"type_string",
 				"coordinates"
 			],
 			"type": "object",
@@ -222,7 +201,7 @@
 			"type": "object",
 			"additionalProperties": false
 		},
-		"ActivityActivityTypeResponse": {
+		"ActivityActivityType": {
 			"enum": [
 				"skips",
 				"scaffolding",
@@ -232,8 +211,7 @@
 				"section50",
 				"section58",
 				"compound",
-				"other",
-				"upcoming_enum"
+				"other"
 			],
 			"type": "string"
 		},
@@ -253,10 +231,7 @@
 					"type": "string"
 				},
 				"activity_type": {
-					"$ref": "#/definitions/ActivityActivityTypeResponse"
-				},
-				"activity_type_string": {
-					"type": "string"
+					"$ref": "#/definitions/ActivityActivityType"
 				},
 				"area_name": {
 					"type": "string"
@@ -282,7 +257,6 @@
 				"activity_location_description",
 				"activity_reference_number",
 				"activity_type",
-				"activity_type_string",
 				"area_name",
 				"cancelled",
 				"end_date",
@@ -332,12 +306,11 @@
 			"type": "object",
 			"additionalProperties": false
 		},
-		"ForwardPlanStatusResponse": {
+		"ForwardPlanStatus": {
 			"enum": [
 				"raised",
 				"cancelled",
-				"progressed",
-				"upcoming_enum"
+				"progressed"
 			],
 			"type": "string"
 		},
@@ -350,10 +323,7 @@
 					"type": "string"
 				},
 				"forward_plan_status": {
-					"$ref": "#/definitions/ForwardPlanStatusResponse"
-				},
-				"forward_plan_status_string": {
-					"type": "string"
+					"$ref": "#/definitions/ForwardPlanStatus"
 				},
 				"work_centre_point": {
 					"$ref": "#/definitions/GeoJSONCentrePoint",
@@ -388,7 +358,6 @@
 				"forward_plan_reference_number",
 				"work_reference_number",
 				"forward_plan_status",
-				"forward_plan_status_string",
 				"work_centre_point",
 				"street",
 				"start_date",
@@ -478,7 +447,7 @@
 		}
 	},
 	"info": {
-		"title": "geojson-api",
+		"title": "geojson-api-stable",
 		"version": "1.0.0",
 		"description": "See API specification Resource Guide > GeoJSON API for more information on endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
 		"license": {

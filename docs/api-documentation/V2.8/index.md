@@ -2800,6 +2800,38 @@ Updated Work API with the following changes:
   <li>SM-6198: New <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/unlink-section-81</code> endpoint added to enable unlinking a Section 81 from a permit.</li>
 </ol>
 
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>SM-5925: Added additional optional params to the <code>GET /fixed-penelty-notices</code> endpoint.
+    <ol>
+      <li>New filter params include:
+        <ol class="govuk-list govuk-list--bullet">
+          <li><code>status_changed_date_from</code></li>
+          <li><code>status_changed_date_to</code></li>
+        </ol>
+      </li>
+      <li>New sorting params include:
+        <ol class="govuk-list govuk-list--bullet">
+          <li><code>sort_column</code> values: <code>issue_date_time</code> (default), <code>status_changed_date</code> </li>
+          <li><code>sort_direction</code> values: <code>asc</code>, <code>desc</code> (default)</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+Updated Data Export API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>SM-5925: Added additional optional filter params to the <code>GET /fixed-penalty-notices/csv</code> endpoint. New filter params include:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>status_changed_date_from</code></li>
+      <li><code>status_changed_date_to</code></li>
+    </ol>
+  </li>
+</ol>
+
 Version 2.7 (15/10/2020):
 {: .govuk-heading-s}
 

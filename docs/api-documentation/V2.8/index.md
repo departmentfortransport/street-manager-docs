@@ -2796,7 +2796,8 @@ Version 2.8 (29/10/2020):
 Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>New <code>permit_granted_with_duration_challenge</code> audit event type has been added, used when an immediate permit is granted with a duration challenge.</li>
+  <li>SM-5455: New <code>permit_granted_with_duration_challenge</code> audit event type has been added, used when an immediate permit is granted with a duration challenge.</li>
+  <li>SM-6198: New <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/unlink-section-81</code> endpoint added to enable unlinking a Section 81 from a permit.</li>
 </ol>
 
 Version 2.7 (15/10/2020):

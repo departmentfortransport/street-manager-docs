@@ -2790,6 +2790,15 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 2.8 (29/10/2020):
+{: .govuk-heading-s}
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>New <code>permit_granted_with_duration_challenge</code> audit event type has been added, used when an immediate permit is granted with a duration challenge.</li>
+</ol>
+
 Version 2.7 (15/10/2020):
 {: .govuk-heading-s}
 

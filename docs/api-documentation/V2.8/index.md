@@ -2798,6 +2798,24 @@ Updated Work API with the following changes:
 <ol class="govuk-list govuk-list--bullet">
   <li>SM-5455: New <code>permit_granted_with_duration_challenge</code> audit event type has been added, used when an immediate permit is granted with a duration challenge.</li>
   <li>SM-6198: New <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/unlink-section-81</code> endpoint added to enable unlinking a Section 81 from a permit.</li>
+  <li> SM-6315:
+    <ol>
+      <li>Added the following additional properties to <code>InspectionResponse</code>:
+        <ol class="govuk-list govuk-list--bullet">
+          <li><code>inspection_status</code> (required)</li>
+          <li><code>inspection_reason_for_withdrawal</code> (optional)</li>
+          <li><code>withdrawal_details</code> (optional)</li>
+        </ol>
+      </li>
+      <li>Added the following additional required properties to <code>InspectionSummaryResponse</code>:
+        <ol class="govuk-list govuk-list--bullet">
+          <li><code>inspection_status</code></li>
+        </ol>
+      </li>
+      <li>Updated the <code>POST ​/works/{workReferenceNumber}/inspections</code> endpoint to set <code>inspection_status = recorded</code>.</li>
+      <li>New <code>inspection_withdrawn</code> audit event type has been added, to be used in upcoming functionality for withdrawing inspections.</li>
+    </ol>
+  </li>
 </ol>
 
 Updated Reporting API with the following changes:
@@ -2817,6 +2835,17 @@ Updated Reporting API with the following changes:
           <li><code>sort_direction</code> values: <code>asc</code>, <code>desc</code> (default)</li>
         </ol>
       </li>
+    </ol>
+  </li>
+  <li> SM-6315:
+    <ol>
+      <li>Added the following additional required properties to <code>InspectionSummaryResponse</code>:
+        <ol class="govuk-list govuk-list--bullet">
+          <li><code>inspection_status</code></li>
+          <li><code>date_modified</code></li>
+        </ol>
+      </li>
+      <li>New <code>inspection_withdrawn</code> audit event type has been added, to be used in upcoming functionality for withdrawing inspections.</li>
     </ol>
   </li>
 </ol>

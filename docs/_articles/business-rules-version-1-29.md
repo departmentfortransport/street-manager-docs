@@ -72,7 +72,7 @@ status: publish
    6.4. [Reverting works stop](#64-reverting-works-stop)<br />
    6.5. [Validity periods](#65-validity-periods)<br />
    6.6. [Changing the number of inspection units](#66-changing-the-number-of-inspection-units)<br />
-   6.7. [Updating excavation answer after works completed](#67-changing-the-number-of-inspection-units)<br />
+   6.7. [Updating excavation answer after works completed](#67-updating-excavation-answer-after-works-completed)<br />
 7. [Viewing and managing records](#7-viewing-and-managing-records)<br />
    7.1. [Commenting on a works record](#71-commenting-on-a-works-record)<br />
    7.2. [Works history](#72-works-history)<br />

@@ -2798,7 +2798,7 @@ Updated Work API with the following changes:
 <ol class="govuk-list govuk-list--bullet">
   <li>SM-5455: New <code>permit_granted_with_duration_challenge</code> audit event type has been added, used when an immediate permit is granted with a duration challenge.</li>
   <li>SM-6198: New <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/unlink-section-81</code> endpoint added to enable unlinking a Section 81 from a permit.</li>
-  <li> SM-6315:
+  <li>SM-6315:
     <ol>
       <li>Added the following additional properties to <code>InspectionResponse</code>:
         <ol class="govuk-list govuk-list--bullet">
@@ -2816,12 +2816,13 @@ Updated Work API with the following changes:
       <li>New <code>inspection_withdrawn</code> audit event type has been added, to be used in upcoming functionality for withdrawing inspections.</li>
     </ol>
   </li>
+  <li>SM-6284: Responses in the Work API have been updated to return a string version of each enum property previously returned. For example, <code>PermitResonse</code> now contains the <code>permit_status</code> property which remains as type PermitStatus and a new <code>permit_status_string</code> property which will be populated with the string equivalent of the enum value. These will contain the same text in most circumstances but in the future when we stabilise the API and no longer add new enum values we will use the string property to provide more information.</li>
 </ol>
 
 Updated Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>SM-5925: Added additional optional params to the <code>GET /fixed-penelty-notices</code> endpoint.
+  <li>SM-5925: Added additional optional params to the <code>GET /fixed-penalty-notices</code> endpoint.
     <ol>
       <li>New filter params include:
         <ol class="govuk-list govuk-list--bullet">
@@ -2837,7 +2838,7 @@ Updated Reporting API with the following changes:
       </li>
     </ol>
   </li>
-  <li> SM-6315:
+  <li>SM-6315:
     <ol>
       <li>Added the following additional required properties to <code>InspectionSummaryResponse</code>:
         <ol class="govuk-list govuk-list--bullet">

@@ -2861,6 +2861,12 @@ Updated Data Export API with the following changes:
   </li>
 </ol>
 
+Updated Party API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>SM-6214: Updated the <code>type</code> query param for the <code>GET /organisations</code> endpoint to allow a list, instead of a single organisation type.</li>
+</ol>
+
 Version 2.7 (15/10/2020):
 {: .govuk-heading-s}
 

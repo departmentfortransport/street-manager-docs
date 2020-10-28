@@ -2848,6 +2848,10 @@ Updated Reporting API with the following changes:
       <li>New <code>inspection_withdrawn</code> audit event type has been added, to be used in upcoming functionality for withdrawing inspections.</li>
     </ol>
   </li>
+  <li>
+    SM-6283: Reporting API response enums have been updated to include a new <code>upcoming_enum</code> value. This value is currently a placeholder. Once V2 of the API is stabilised, <code>upcoming_enum</code> will be returned in responses where the latest version of
+    the API will return a new enum value. This prevents the need for breaking changes on the stabilised API to add new enum values. This <code>upcoming_enum</code> value will be added to Works API in a future release and has been added to all other APIs in a previous release.
+  </li>
 </ol>
 
 Updated Data Export API with the following changes:

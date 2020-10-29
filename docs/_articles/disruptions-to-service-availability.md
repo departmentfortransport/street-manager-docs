@@ -14,6 +14,10 @@ To see the current status of Production and Sandbox environments visit the [stat
 
 **Production environment**
 
+* 27/10/2020 09:14 to 09:18: Production environment degraded performance. Investigation into root cause ongoing.
+
+* 26/10/2020 14:32 to 14:39: Production environment degraded performance. Investigation into root cause ongoing.
+
 * 08/10/2020 18:56 to 19:20: Production environment partially unavailable for 24 mins due to NSG data update.
 
 * 07/10/2020 01:19 to 01:20: Production environment was unavailable for 20 seconds due to an unexpected outage.

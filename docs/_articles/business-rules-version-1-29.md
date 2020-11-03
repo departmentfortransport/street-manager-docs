@@ -12,7 +12,7 @@ status: publish
 
 <!-- ==================================================== -->
 
-<span class="govuk-body-l" style="float:left">Version 1.29 (Due to be released to sandbox 29/10/20)</span>
+<span class="govuk-body-l" style="float:left">Version 1.29 (Released to sandbox 29/10/20)</span>
 
 <span style="float:right;text-alxign:right;">[User roles & permissions table [PDF]](https://departmentfortransport.github.io/street-manager-docs/business-rules/Street%20Manager%20user%20role%20permissions%20table.pdf)<br />
 [Previous versions](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-home.html)</span>
@@ -454,7 +454,7 @@ A diagram of PA statuses</div>
 * If permit has been refused and the user wishes to resubmit, they can submit a revised permit on the work record - 'Apply for works' next to the Applications table. 
 * All the information from the previous permit - except timings, is collaboration involved and conditions - are defaulted in the new permit
 * Location can't be changed when raising a new permit on the same works following a refusal
-* A new permit can only be raised if the existing one has been refused, closed, cancelled or revoked.
+* A new permit can only be raised if the existing one has been refused, closed, or cancelled. If a permit has been revoked, user needs to first cancel that permit in order to raise a new one
 
 <br />
 
@@ -495,7 +495,7 @@ _(Previously section 5.1, 5.3, 5.4, 5.8 & 26 in Business rules v0.1 draft)_
 ### 4.3. Adding change requests
 
 * Each PA may have only one change request awaiting assessment. 
-* A change request may be added to PAs that are not 'Refused', 'Revoked' or 'Closed'.
+* A change request may be added to PAs that are not 'Refused', 'Closed' or 'Revoked' (as long as the work hasn't been started. If work was started and then revoked, a change request can be added).
 * The works category may be updated if the works duration is changed.
 * Change requests may not be added to a PAA.
 * All fields apart from the following can be changed on a PA: 
@@ -1222,7 +1222,9 @@ A diagram of S81 statuses</div>
 
 | Section                            | Change comment                                           |
 | ---------------------------------- | -------------------------------------------------------- |
+| 3.4.11. Resubmitting PA following refusal | Updated to reflect the fact that user can't resubmit a PA on a revoked permit. Permit needs to be cancelled before a new PA can be submitted|
 | 4.2. Change request types | Updated to more accurately reflect the fact that a work needs to be in progress for a work extension change request type to be applied|
+| 4.3. Adding change requests | Updated to reflect the fact that user submit a change request on a revoked permit IF it has been started|
 | 6.7. Updating excavation answer after works completed | Updated to clarify the the excavation answer can be updated up until a new permit is added unless an excavation reinstatement is added. In this case, can't change answer from "Yes" to "No"  |
 
 

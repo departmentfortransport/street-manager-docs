@@ -1224,7 +1224,7 @@ A diagram of S81 statuses</div>
 | ---------------------------------- | -------------------------------------------------------- |
 | 3.4.11. Resubmitting PA following refusal | Updated to reflect the fact that user can't resubmit a PA on a revoked permit. Permit needs to be cancelled before a new PA can be submitted|
 | 4.2. Change request types | Updated to more accurately reflect the fact that a work needs to be in progress for a work extension change request type to be applied|
-| 4.3. Adding change requests | Updated to reflect the fact that user submit a change request on a revoked permit IF it has been started|
+| 4.3. Adding change requests | Updated to reflect the fact that user can submit a change request on a revoked permit IF it has been started|
 | 6.7. Updating excavation answer after works completed | Updated to clarify the the excavation answer can be updated up until a new permit is added unless an excavation reinstatement is added. In this case, can't change answer from "Yes" to "No"  |
 
 

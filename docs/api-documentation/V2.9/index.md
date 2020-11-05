@@ -2797,6 +2797,21 @@ Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>SM-6314: New <code>PUT /works​/{workReferenceNumber}​/inspections​/{inspectionReferenceNumber}​/withdraw</code> endpoint added to enable the withdrawing of an inspection.</li>
+  <li>SM-4273:
+    <ol class="govuk-list govuk-list--bullet">
+      <li>Added the following properties to <code>Section81CreateRequest</code>:
+        <ol class="govuk-list govuk-list--bullet">
+          <li><code>section_81_evidence</code> (required)</li>
+          <li><code>file_ids</code> (optional)</li>
+        </ol>
+      </li>
+      <li>Added the following properties to <code>Section81Response</code>:
+        <ol class="govuk-list govuk-list--bullet">
+          <li><code>files</code> (required)</li>
+        </ol>
+      </li>
+    </ol>
+  </li>
 </ol>
 
 Version 2.8 (29/10/2020):

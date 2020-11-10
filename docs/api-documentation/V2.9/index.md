@@ -2814,6 +2814,13 @@ Updated Work API with the following changes:
   </li>
 </ol>
 
+Added upcoming enum value:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>Work API response enums have been updated to include a new <code>upcoming_enum</code> value. This value is currently a placeholder. Once V2 of the API is stabilised, <code>upcoming_enum</code> will be returned in responses where the latest version of the API will return a new enum value. This prevents the need for breaking changes on the stabilised API to add new enum values.</li>
+</ol>
+
 Version 2.8 (29/10/2020):
 {: .govuk-heading-s}
 

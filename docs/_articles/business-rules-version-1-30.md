@@ -350,7 +350,12 @@ _(Previously section 1.14 in Business rules v0.1 draft)_
 
 * PAs may be added resulting in a new works record or added to an existing works record.
 * PAs can only be added to an existing works record if the works record does not contain a Minor/Standard/Major PA that is 'in progress' or 'submitted'.
-* Major PAA must be the first application on a works record i.e. cannot be added as a second application on an existing works record.
+* If a Major works is being added, a PAA must be the first application on the works record i.e. cannot be added as a second application on an existing works record unless the first permit has been cancelled, revoked or refused.
+* Some example scenarios:
+  * Minor permit added and seen right through to completion. Major works can then be added to the works without adding a PAA
+  * Minor permit added but then is cancelled. PAA then must be added for a major works as it's now technically the first permit on the works
+  * Standard permit added and then refused by the HA. PAA then must be added for a major works as it's now technically the first permit on the works
+  * Major permit added as first permit on the works record - PAA required in this instance
 * A major PAA may be progressed to PA if it is in 'submitted' or 'granted' status.
 
 _(Previously section 1.12 in Business rules v0.1 draft)_ 

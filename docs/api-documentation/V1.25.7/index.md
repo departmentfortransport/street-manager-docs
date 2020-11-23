@@ -2783,6 +2783,17 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 1.25.7 - Stable (26/11/2020):
+{: .govuk-heading-s}
+
+Updated Works API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+    <li>
+    SM-6213: New endpoint <code>PUT ​/works​/{workReferenceNumber}​/section-81s​/{section81ReferenceNumber}​/reassign-section-81</code> added to V2 Work API uses a new Audit Event. Any history items of this type will return <code>upcoming_event</code> as the <code>event</code>.
+  </li>
+</ol>
+
 Version 1.25.6 - Stable (15/10/2020):
 {: .govuk-heading-s}
 

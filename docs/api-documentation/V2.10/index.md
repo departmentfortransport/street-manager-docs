@@ -2790,6 +2790,28 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 2.10 (26/11/2020):
+{: .govuk-heading-s}
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6368: <code>GET /works​/{workReferenceNumber}​/history</code> endpoint updated to enable pagination. This works similarly to the paginated endpoints found in the Reporting API:
+    <ol class="govuk-list govuk-list--bullet">
+      <li>Optional query param <code>offset</code> added to enable moving through the pages.</li>
+      <li>
+        Response model updated with new properties:
+          <ol class="govuk-list govuk-list--bullet">
+            <li><code>pagination</code>: This object contains pagination information; <code>has_next_page</code> and <code>total_rows</code></li>
+            <li><code>rows</code>: This is an array of work history items. The detail returned here remains unchanged. There is a limit of 25 history items per page.</li>
+          </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+
 Version 2.9 (12/11/2020):
 {: .govuk-heading-s}
 

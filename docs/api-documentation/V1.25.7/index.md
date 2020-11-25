@@ -2789,8 +2789,13 @@ Version 1.25.7 - Stable (26/11/2020):
 Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-    <li>
+  <li>
     SM-6213: New endpoint <code>PUT ​/works​/{workReferenceNumber}​/section-81s​/{section81ReferenceNumber}​/reassign-section-81</code> added to V2 Work API uses a new Audit Event. Any history items of this type will return <code>upcoming_event</code> as the <code>event</code>.
+  </li>
+  <li>The following business rule change introduced on 12/11/2020 is included:
+    <ol class="govuk-list govuk-list--bullet">
+      <li>SM-6263: The <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> endpoint has been updated to prevent alterations being raised on Immediate permits that have been refused.</li>
+    </ol>
   </li>
 </ol>
 

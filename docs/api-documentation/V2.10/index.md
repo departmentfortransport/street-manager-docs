@@ -2809,6 +2809,9 @@ Updated Work API with the following changes:
       </li>
     </ol>
   </li>
+  <li>
+    SM-6213: New endpoint <code>PUT ​/works​/{workReferenceNumber}​/section-81s​/{section81ReferenceNumber}​/reassign-section-81</code> added to enable a HA to change the promoter organisation that a Section 81 is associated with.
+  </li>
 </ol>
 
 

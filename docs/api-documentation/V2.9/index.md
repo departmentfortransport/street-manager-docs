@@ -2812,6 +2812,7 @@ Updated Work API with the following changes:
       </li>
     </ol>
   </li>
+  <li>SM-6263: The <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> endpoint has been updated to prevent alterations being raised on Immediate permits that have been refused.</li>
 </ol>
 
 Added upcoming enum value:

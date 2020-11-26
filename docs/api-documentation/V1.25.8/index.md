@@ -1,14 +1,14 @@
 ---
 layout: default
-title: API specification V2.10.1
+title: API specification V1.25.8
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 2.10.1
+Version 1.25.8
 {: .govuk-body-l}
 
-This document details all the functions for integrating with Street Manager via the latest version of the API. See the 'Versions and Changes' section for more details on previous versions. The documentation for the stable version of the API is available <a class="govuk-link" href="{{ site.baseurl }}/api-documentation/">here</a>.
+As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of V1 for the API will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for details on previous versions.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -82,12 +82,12 @@ You can see the Swagger definitions rendered as HTML on the SANDBOX environment:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/work/docs/">Work API</a></li>
-  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/reporting/docs/">Reporting API</a></li>
-  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/lookup/docs/">Street Lookup API</a></li>
-  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/geojson/docs/">GeoJSON API</a></li>
-  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/party/docs/">Party API</a></li>
-  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/export/docs/">Data Export API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v1/work/docs/">Work API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v1/reporting/docs/">Reporting API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v1/lookup/docs/">Street Lookup API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v1/geojson/docs/">GeoJSON API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v1/party/docs/">Party API</a></li>
+  <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v1/export/docs/">Data Export API</a></li>
 </ol>
 
 **Please be aware of the following:**
@@ -337,7 +337,7 @@ This section aims to describe the approach taken by the Street Manager team in o
 ### API Versioning Approach
 {: .govuk-heading-m}
 
-The Street Manager API services are versioned via the URL path, for example <code>api.sandbox.domain.com/v1/work/.../</code> versus <code>api.sandbox.domain.com/latest/work/.../</code>. The UI will point at the <code>latest</code> version of the code base, while API users will be able to use <code>v1</code> or <code>latest</code>.
+The Street Manager API services will be versioned via the URL path, for example <code>api.sandbox.domain.com/v1/works/.../</code> versus <code>api.sandbox.domain.com/v2/works/.../</code>.  Initially, the Public Beta will focus on the <code>v1</code> major version of the codebase, with new major versions being introduced at a later date.
 {: .govuk-body}
 
 
@@ -1742,17 +1742,10 @@ Query params:
 
 <ol class="govuk-list govuk-list--bullet">
   <li><strong>inspection_response_type</strong>: inspection or reinspection</li>
-  <li><strong>start_date</strong>: The inspection_start_date for inspections and reinspection_date_time for reinspections</li>
-  <li><strong>end_date</strong>: The inspection_start_date for inspections and reinspection_date_time for reinspections</li>
-  <li><strong>inspection_type</strong>: The inspection type i.e. live_site, reinstatement etc.</li>
-  <li><strong>inspection_outcome</strong>: The inspection outcome i.e. passed, failed_low etc.</li>
-  <li><strong>start_date_created</strong>: The date the inspection was created</li>
-  <li><strong>end_date_created</strong>: The date the inspection was created</li>
   <li><strong>sort_column</strong>: The property of the inspection to order results by</li>
   <li><strong>sort_direction</strong>: Ascending/descending</li>
   <li><strong>swa_code</strong>: Optional parameter to be used by contractors only. Used to provide the swa code of the promoter the contractor is working on behalf of</li>
   <li><strong>geographical_area_reference_number</strong>: An optional array of Geographical Areas that you would like to filter your list by as a HA user</li>
-  <li><strong>query</strong>: A string search returning results with a match on the inspections work_reference_number, street_name, USRN or promoter/HA organisation name</li>
 </ol>
 
 #### Get FPNs
@@ -2790,253 +2783,33 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Version 2.10.1 (26/11/2020):
+Version 1.25.7 - Stable (26/11/2020):
 {: .govuk-heading-s}
 
-Updated Work API with the following changes:
+Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>
-    SM-6368: <code>GET /works​/{workReferenceNumber}​/history</code> endpoint updated to enable pagination. This works similarly to the paginated endpoints found in the Reporting API:
-    <ol class="govuk-list govuk-list--bullet">
-      <li>Optional query param <code>offset</code> added to enable moving through the pages.</li>
-      <li>
-        Response model updated with new properties:
-          <ol class="govuk-list govuk-list--bullet">
-            <li><code>pagination</code>: This object contains pagination information; <code>has_next_page</code> and <code>total_rows</code></li>
-            <li><code>rows</code>: This is an array of work history items. The detail returned here remains unchanged. There is a limit of 25 history items per page.</li>
-          </ol>
-      </li>
-    </ol>
+    SM-6213: New endpoint <code>PUT ​/works​/{workReferenceNumber}​/section-81s​/{section81ReferenceNumber}​/reassign-section-81</code> added to V2 Work API uses a new Audit Event. Any history items of this type will return <code>upcoming_event</code> as the <code>event</code>.
   </li>
-  <li>
-    SM-6213: New endpoint <code>PUT ​/works​/{workReferenceNumber}​/section-81s​/{section81ReferenceNumber}​/reassign-section-81</code> added to enable a HA to change the promoter organisation that a Section 81 is associated with.
+  <li>The following business rule change introduced on 12/11/2020 is included:
+    <ol class="govuk-list govuk-list--bullet">
+      <li>SM-6263: The <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> endpoint has been updated to prevent alterations being raised on Immediate permits that have been refused.</li>
+    </ol>
   </li>
 </ol>
 
-
-Version 2.9 (12/11/2020):
+Version 1.25.6 - Stable (15/10/2020):
 {: .govuk-heading-s}
 
-Updated Work API with the following changes:
+Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>SM-6314: New <code>PUT /works​/{workReferenceNumber}​/inspections​/{inspectionReferenceNumber}​/withdraw</code> endpoint added to enable the withdrawing of an inspection.</li>
-  <li>SM-4273:
-    <ol class="govuk-list govuk-list--bullet">
-      <li>Added the following properties to <code>Section81CreateRequest</code>:
-        <ol class="govuk-list govuk-list--bullet">
-          <li><code>section_81_evidence</code> (required)</li>
-          <li><code>file_ids</code> (optional)</li>
-        </ol>
-      </li>
-      <li>Added the following properties to <code>Section81Response</code>:
-        <ol class="govuk-list govuk-list--bullet">
-          <li><code>files</code> (required)</li>
-        </ol>
-      </li>
-    </ol>
-  </li>
-  <li>SM-6263: The <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> endpoint has been updated to prevent alterations being raised on Immediate permits that have been refused.</li>
-</ol>
-
-Added upcoming enum value:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>SM-6282: Work API response enums have been updated to include a new <code>upcoming_enum</code> value. This value is currently a placeholder. Once V2 of the API is stabilised, <code>upcoming_enum</code> will be returned in responses where the latest version of the API will return a new enum value. This prevents the need for breaking changes on the stabilised API to add new enum values.</li>
-</ol>
-
-Version 2.8 (29/10/2020):
-{: .govuk-heading-s}
-
-Updated Work API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>SM-5455: New <code>permit_granted_with_duration_challenge</code> audit event type has been added, used when an immediate permit is granted with a duration challenge.</li>
-  <li>SM-6198: New <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/unlink-section-81</code> endpoint added to enable unlinking a Section 81 from a permit.</li>
-  <li>SM-6315:
-    <ol>
-      <li>Added the following additional properties to <code>InspectionResponse</code>:
-        <ol class="govuk-list govuk-list--bullet">
-          <li><code>inspection_status</code> (required)</li>
-          <li><code>inspection_reason_for_withdrawal</code> (optional)</li>
-          <li><code>withdrawal_details</code> (optional)</li>
-        </ol>
-      </li>
-      <li>Added the following additional required properties to <code>InspectionSummaryResponse</code>:
-        <ol class="govuk-list govuk-list--bullet">
-          <li><code>inspection_status</code></li>
-        </ol>
-      </li>
-      <li>Updated the <code>POST ​/works/{workReferenceNumber}/inspections</code> endpoint to set <code>inspection_status = recorded</code>.</li>
-      <li>New <code>inspection_withdrawn</code> audit event type has been added, to be used in upcoming functionality for withdrawing inspections.</li>
-    </ol>
-  </li>
-  <li>SM-6284: Responses in the Work API have been updated to return a string version of each enum property previously returned. For example, <code>PermitResonse</code> now contains the <code>permit_status</code> property which remains as type PermitStatus and a new <code>permit_status_string</code> property which will be populated with the string equivalent of the enum value. These will contain the same text in most circumstances but in the future when we stabilise the API and no longer add new enum values we will use the string property to provide more information.</li>
-</ol>
-
-Updated Reporting API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>SM-5925: Added additional optional params to the <code>GET /fixed-penalty-notices</code> endpoint.
-    <ol>
-      <li>New filter params include:
-        <ol class="govuk-list govuk-list--bullet">
-          <li><code>status_changed_date_from</code></li>
-          <li><code>status_changed_date_to</code></li>
-        </ol>
-      </li>
-      <li>New sorting params include:
-        <ol class="govuk-list govuk-list--bullet">
-          <li><code>sort_column</code> values: <code>issue_date_time</code> (default), <code>status_changed_date</code> </li>
-          <li><code>sort_direction</code> values: <code>asc</code>, <code>desc</code> (default)</li>
-        </ol>
-      </li>
-    </ol>
-  </li>
-  <li>SM-6315:
-    <ol>
-      <li>Added the following additional required properties to <code>InspectionSummaryResponse</code>:
-        <ol class="govuk-list govuk-list--bullet">
-          <li><code>inspection_status</code></li>
-          <li><code>date_modified</code></li>
-        </ol>
-      </li>
-      <li>New <code>inspection_withdrawn</code> audit event type has been added, to be used in upcoming functionality for withdrawing inspections.</li>
-    </ol>
-  </li>
-</ol>
-
-Updated Data Export API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>SM-5925: Added additional optional filter params to the <code>GET /fixed-penalty-notices/csv</code> endpoint. New filter params include:
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>status_changed_date_from</code></li>
-      <li><code>status_changed_date_to</code></li>
-    </ol>
-  </li>
-</ol>
-
-Updated Party API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>SM-6214: Updated the <code>type</code> query param for the <code>GET /organisations</code> endpoint to allow a list, instead of a single organisation type.</li>
-</ol>
-
-Version 2.7 (15/10/2020):
-{: .govuk-heading-s}
-
-Added upcoming enum value:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>GeoJSON API, Street Lookup API and Party API response enums have been updated to include a new <code>upcoming_enum</code> value. This value is currently a placeholder. Once V2 of the API is stabilised, <code>upcoming_enum</code> will be returned in responses where the latest version of
-  the API will return a new enum value. This prevents the need for breaking changes on the stabilised API to add new enum values. This <code>upcoming_enum</code> value will be added to Works API and Reporting API response enums in a future release.</li>
-</ol>
-
-Added enum string properties:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>Reporting API, GeoJSON API, Street Lookup API and Party API service responses have been updated to return a string version of each enum property previously returned. For example, <code>PermitResonse</code> now contains <code>permit_status</code> property which remains as type PermitStatus and a new <code>permit_status_string</code> property which will be populated with the string equivalent of the enum value. These will contain the same text in most circumstances but in the future when we stabilise the API and no longer add new enum values we will use the string property to provide more information.</li>
-</ol>
-
-Updated Geojson API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>Added <code>hs2_highway</code> to the <code>WorkCategory</code> enum. This can be returned by the <code>WorkResponse</code></li>
-</ol>
-
-Updated Party API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>Updated the <code>POST ​/organisations​/{organisationReference}​/workstreams</code> and <code>PUT ​/organisations​/{organisationReference}​/workstreams​/{workstreamPrefix}</code> endpoints to accept optional <code>internal_user_identifier</code> and <code>internal_user_name</code> properties.</li>
-</ol>
-
-Updated Work API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>Updated the <code>POST /geographical-areas</code> and <code>PUT /geographical-areas/{geographicalAreaReferenceNumber}</code> endpoints to accept optional <code>internalUserIdentifier</code> and <code>internalUserName</code> query params.</li>
   <li>Removed the <code>is_progressable_paa</code> field from the <code>PermitResponse</code> object. This field was never intended to be returned and was never populated in the response object.</li>
-  <li>Updated the <code>POST /activity</code> and <code>PUT /activity/{activityReferenceNumber}</code> endpoints to accept <code>start_date</code> and <code>start_time</code> values in the past.</li>
-  <li>Updated the <code>POST /works/${workReferenceNumber}/comments</code> endpoint to return a <code>CommentCreateResponse</code> containing the <code>comment_reference_number</code>.</li>
-  <li>New <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/link-section-81</code> endpoint added to enable linking a Section 81 with a permit.</li>
-  <li>Updated the <code>PermitResponse</code> interface to include an optional <code>linked_section_81</code> property, which contains the <code>work_reference_number</code> and <code>section_81_reference_number</code> properties of a linked Section 81.</li>
-  <li>Updated the <code>Section81Response</code> interface to include an optional <code>linked_permit</code> property, which contains the <code>work_reference_number</code> and <code>permit_reference_number</code> properties of a linked permit.</li>
-  <li>The following audit event types have been added, to be used when linking, unlinking and re-assigning Section 81s:
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>section_81_linked_to_permit</code></li>
-      <li><code>section_81_unlinked_from_permit</code></li>
-      <li><code>section_81_reassigned</code></li>
-    </ol>
-  </li>
+  <li>Updated the <code>POST /activity</code> and <code>PUT /activity​/{activityReferenceNumber}</code> endpoints to accept <code>start_date</code> and <code>start_time</code> values in the past.</li>
 </ol>
 
-Updated Reporting API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>New <code>GET /sample-inspections</code> endpoint added to fetch issued Sample Inspections for a Highway Authority organisation.</li>
-</ol>
-
-Version 2.6 (01/10/2020):
-{: .govuk-heading-s}
-
-Released V2 API Routes:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-<li>All API services now have a <code>v2</code> route available in addition to <code>v1</code> and <code>latest</code>. <code>latest</code> routes point to the lastest version of the code which is currently <code>v2</code>. </li>
-  <ol class="govuk-list govuk-list--bullet">
-    <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/work/docs/">https://api.sandbox.manage-roadworks.service.gov.uk/v2/work/docs/ (Work API)</a></li>
-    <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/reporting/docs/">https://api.sandbox.manage-roadworks.service.gov.uk/v2/reporting/docs/ (Reporting API)</a></li>
-    <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/lookup/docs/">https://api.sandbox.manage-roadworks.service.gov.uk/v2/lookup/docs/ (Street Lookup API)</a></li>
-    <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/geojson/docs/">https://api.sandbox.manage-roadworks.service.gov.uk/v2/geojson/docs/ (GeoJSON API)</a></li>
-    <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/party/docs/">https://api.sandbox.manage-roadworks.service.gov.uk/v2/party/docs/ (Party API)</a></li>
-    <li><a href="https://api.sandbox.manage-roadworks.service.gov.uk/v2/export/docs/">https://api.sandbox.manage-roadworks.service.gov.uk/v2/export/docs/ (Data Export API)</a></li>
-  </ol>
-</ol>
-
-Updated Reporting API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>Added additional optional <code>query</code> param to the <code>GET /inspections</code> endpoint. This provided query will search against the following properties:
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>work_reference_number</code></li>
-      <li><code>street_name</code></li>
-      <li><code>USRN</code></li>
-      <li><code>promoter_organisation_name</code></li>
-      <li><code>ha_organisation_name</code></li>
-    </ol>
-  </li>
-  <li>Added additional optional filtering to the <code>GET /fixed-penelty-notices</code> endpoint. New filter params include:
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>offence_code</code></li>
-    </ol>
-  </li>
-</ol>
-
-Updated Data Export API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>Updated the <code>POST /inspections/csv</code> to use the optional <code>query</code> property. The provided query will search against the following properties:
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>work_reference_number</code></li>
-      <li><code>street_name</code></li>
-      <li><code>USRN</code></li>
-      <li><code>promoter_organisation_name</code></li>
-      <li><code>ha_organisation_name</code></li>
-    </ol>
-  </li>
-  <li>Added additional optional filter properties to the <code>FPNCSVExportRequest</code> model used by the <code>POST /fixed-penalty-notices/csv</code> endpoint. New filter properties include:
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>offence_code</code></li>
-    </ol>
-  </li>
-</ol>
-
-Version 2.5 (17/09/2020):
+Version 1.25.5 - Stable (17/09/2020):
 {: .govuk-heading-s}
 
 Updated Works API with the following changes:
@@ -3044,38 +2817,9 @@ Updated Works API with the following changes:
 <ol class="govuk-list govuk-list--bullet">
   <li>New optional <code>hs2_additional_usrns</code> property added to <code>WorkCreateRequest</code>, <code>PermitCreateRequest</code> and <code>PermitResponse</code> objects. This allows HS2 users to provide additional USRNs for permits. The property will be ignored for non-HS2 users.</li>
   <li>Updated the login endpoint, <code>POST /authenticate</code>, to lock out user accounts that have 5 failed login attempts within a 5 minute period. A <code>423</code> status code will be returned when locked accounts attempt to authenticate. Accounts are automatically unlocked after 5 minutes.</li>
-  <li>New <code>PUT /works/${workReferenceNumber}/excavation-carried-out</code> endpoint added. If excavation has been requested in the permit application,
-  this endpoint can be used to update the works record to reflect if an excavation took place. The works must be started before this endpoint can be used.
-  </li>
 </ol>
 
-Updated Reporting API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>Added additional optional filtering to the <code>GET /inspections</code> endpoint. New filter params include:
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>inspection_type</code></li>
-      <li><code>inspection_outcome</code></li>
-      <li><code>start_date_created</code></li>
-      <li><code>end_date_created</code></li>
-    </ol>
-  </li>
-</ol>
-
-Updated Data Export API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>Added additional optional filter properties to the <code>InspectionCSVExportRequest</code> model used by the <code>POST /inspections/csv</code> endpoint. New filter properties include:
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>inspection_type</code></li>
-      <li><code>inspection_outcome</code></li>
-      <li><code>start_date_created</code></li>
-      <li><code>end_date_created</code></li>
-    </ol>
-  </li>
-</ol>
-
-Version 2.4 (03/09/2020):
+Version 1.25.4 - Stable (03/09/2020):
 {: .govuk-heading-s}
 
 Updated Works API with the following changes:
@@ -3086,7 +2830,7 @@ Updated Works API with the following changes:
   <li>Query optimisations</li>
 </ol>
 
-Version 2.3 (20/08/2020):
+Version 1.25.3 - Stable (20/08/2020):
 {: .govuk-heading-s}
 
 Updated Works API with the following changes:
@@ -3114,45 +2858,22 @@ Updated Works API with the following changes:
   </li>
 </ol>
 
-Version 2.2 (06/08/2020):
-{: .govuk-heading-s}
-
-Version 2.1 (23/07/2020):
+Version 1.25.2 - Stable (23/07/2020):
 {: .govuk-heading-s}
 
 Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>Updated the following endpoints to save optional comments for PermitConditionTypes NCT01a, NCT01b and NCT11a:
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>POST /works​/{workReferenceNumber}​/permits</code></li>
-      <li><code>POST /works​</code></li>
-      <li><code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code></li>
-    </ol>
-  </li>
   <li>Reasonable period end date can now be set as a date in the past when granting an immediate permit with a duration challenge.</li>
-  <li>BREAKING CHANGE: Added the following mandatory properties to the <code>FPNCreateRequest</code> and the <code>HistoricFPNCreateRequest</code> interfaces for the <code>POST /works/{workReferenceNumber}/fixed-penalty-notices</code> and <code>POST /historic-works/fixed-penalty-notices</code> endpoints. These were also added as optional properties to the <code>FPNResponse</code> interface.
-    <ol class="govuk-list govuk-list--bullet">
-      <li><code>officer_address</code></li>
-      <li><code>representations_contact</code></li>
-      <li><code>representations_contact_address</code></li>
-      <li><code>payment_methods</code></li>
-    </ol>
-  </li>
 </ol>
 
-Version 2.0 (09/07/2020):
+Version 1.25.1 - Stable (09/07/2020):
 {: .govuk-heading-s}
 
 Updated Works API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>PermitASD model has been updated to make <code>special_desig_description</code> optional.</li>
-  <li>New <code>POST /sample-inspection-targets</code> endpoint added to allow Sample Inspection Targets to be created.</li>
-  <li>New <code>PUT /sample-inspection-targets/{sampleInspectionTargetReferenceNumber}</code> endpoint added allowing the agreed targets and max number of works to sample to be updated.
-  </li>
-  <li>New <code>POST /sample-inspection</code> endpoint added which will start the process of selecting work records that will contribute to inspection targets as defined by <code>POST /sample-inspection-targets</code>. The selection of work records will be implemented in a future release.
-  </li>
 </ol>
 
 Updated Street Lookup API with the following changes:
@@ -3161,13 +2882,7 @@ Updated Street Lookup API with the following changes:
   <li>AdditionalSpecialDesignationsResponse model has been updated to make <code>special_desig_description</code> optional.</li>
 </ol>
 
-Updated Reporting API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>New <code>GET /sample-inspection-targets</code> endpoint added to return Sample Inspection Targets for a Highway Authority organisation.</li>
-</ol>
-
-Version 1.25 - Stable (18/06/2020):
+Version 1.25 (18/06/2020):
 {: .govuk-heading-m}
 
 Updated Works API with the following changes:

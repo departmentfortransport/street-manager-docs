@@ -2815,6 +2815,9 @@ Updated Work API with the following changes:
   <li>
     SM-6213: New endpoint <code>PUT ​/works​/{workReferenceNumber}​/section-81s​/{section81ReferenceNumber}​/reassign-section-81</code> added to enable a HA to change the promoter organisation that a Section 81 is associated with.
   </li>
+  <li>
+    SM-6568: Updated logic used by the <code>POST ​​/works​/{workReferenceNumber}​/permit​/{permitReferenceNumber}​/alterations</code> endpoint to ensure a permit will not be update to a PAA if the work has started.
+  </li>
 </ol>
 
 

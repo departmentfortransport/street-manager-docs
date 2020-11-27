@@ -2797,6 +2797,9 @@ Updated Works API with the following changes:
       <li>SM-6263: The <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> endpoint has been updated to prevent alterations being raised on Immediate permits that have been refused.</li>
     </ol>
   </li>
+  <li>
+    SM-6568: Updated logic used by the <code>POST ​​/works​/{workReferenceNumber}​/permit​/{permitReferenceNumber}​/alterations</code> endpoint to ensure a permit will not be update to a PAA if the work has started.
+  </li>
 </ol>
 
 Version 1.25.6 - Stable (15/10/2020):

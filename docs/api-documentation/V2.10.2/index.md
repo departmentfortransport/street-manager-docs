@@ -2809,6 +2809,16 @@ Updated Reporting API with the following changes:
   </li>
 </ol>
 
+<ol class="govuk-list govuk-list--bullet">
+  <li>SM-5420: A new job was created to expire sample inspections. This job will run at 17:00 during GMT and 18:00 during BST. The expiry dates are calculated when the sample inspection is issued. The calculation is as follows:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>Category A</code>: expires from eligibility on the proposed end date of the work record</li>
+      <li><code>Category B</code>: expires from eligibility when the latest reinstatement at the time of creation is 6 months old</li>
+      <li><code>Category C</code>: the work contains a reinstatement with an <code>end_date</code> coming up within the next 3 months. Expires from eligibility when the reinstatement end date is reached</li>
+    </ol>
+  </li>
+</ol>
+
 Version 2.10.1 (26/11/2020):
 {: .govuk-heading-s}
 

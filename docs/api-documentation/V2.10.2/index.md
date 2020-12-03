@@ -2793,6 +2793,22 @@ This section lists any significant changes made to this document (and by extensi
 Version 2.10.2 (10/12/2020):
 {: .govuk-heading-s}
 
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-5733: <code>GET /works/updates</code> has been updated with two optional query parameters:
+    <ol class="govuk-list govuk-list--bullet">
+      <li>
+        <code>workstream_prefix</code>: Updates will be restricted to works with one of the given prefixes, if provided. It is not required to have permissions for the provided workstreams.
+      </li>
+      <li>
+        <code>update_id</code>: Only results with update ids above the given id will be returned, if provided.
+      </li>
+    </ol>
+  </li>
+</ol>
+
 Version 2.10.1 (26/11/2020):
 {: .govuk-heading-s}
 

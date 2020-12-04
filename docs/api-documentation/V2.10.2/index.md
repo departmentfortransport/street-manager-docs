@@ -2793,6 +2793,14 @@ This section lists any significant changes made to this document (and by extensi
 Version 2.10.2 (10/12/2020):
 {: .govuk-heading-s}
 
+Updated Data Export API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6508: <code>GET /csv/{csvId}</code> has been updated to add validation to <code>csvId</code>. This means that a bad request error will be returned a where an invalid value has been provided as <code>csvId</code>. Prior to this change an internal server error would be returned. <code>csvId</code> must be a positive integer.
+  </li>
+</ol>
+
 Updated Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">

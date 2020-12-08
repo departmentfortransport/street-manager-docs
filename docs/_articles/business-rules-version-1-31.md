@@ -12,7 +12,7 @@ status: publish
 
 <!-- ==================================================== -->
 
-<span class="govuk-body-l" style="float:left">Version 1.31 (Due to be released w/c 14th December)</span>
+<span class="govuk-body-l" style="float:left">Version 1.31 (Due to be released w/c 14/12/20)</span>
 
 <span style="float:right;text-alxign:right;">[User roles & permissions table [PDF]](https://departmentfortransport.github.io/street-manager-docs/business-rules/Street%20Manager%20user%20role%20permissions%20table.pdf)<br />
 [Previous versions](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-home.html)</span>

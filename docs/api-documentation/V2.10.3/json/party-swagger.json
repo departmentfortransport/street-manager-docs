@@ -1,0 +1,1216 @@
+{
+	"basePath": "/",
+	"consumes": [
+		"application/json"
+	],
+	"definitions": {
+		"WorkstreamStatusResponse": {
+			"enum": [
+				"active",
+				"deactivated",
+				"upcoming_enum"
+			],
+			"type": "string"
+		},
+		"WorkstreamResponse": {
+			"properties": {
+				"status": {
+					"$ref": "#/definitions/WorkstreamStatusResponse"
+				},
+				"status_string": {
+					"type": "string"
+				},
+				"prefix": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"description": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"contact_name": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"contact_number": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"contact_email": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"organisation_reference": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"status",
+				"status_string",
+				"prefix",
+				"name",
+				"organisation_reference"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"WorkstreamCreateResponse": {
+			"properties": {
+				"prefix": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"prefix"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"WorkstreamCreateRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"prefix": {
+					"type": "string",
+					"description": "Must consist of 3 positive whole numbers"
+				},
+				"name": {
+					"type": "string",
+					"description": "Max length 60 characters"
+				},
+				"description": {
+					"type": "string",
+					"description": "Max length 500 characters",
+					"x-nullable": true
+				},
+				"contact_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"contact_number": {
+					"type": "string",
+					"description": "Max length 20 characters",
+					"x-nullable": true
+				},
+				"contact_email": {
+					"type": "string",
+					"description": "Max length 320 characters",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"prefix",
+				"name"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"WorkstreamUpdateRequest": {
+			"properties": {
+				"internal_user_identifier": {
+					"type": "string",
+					"description": "Max length 100 characters",
+					"x-nullable": true
+				},
+				"internal_user_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"name": {
+					"type": "string",
+					"description": "Max length 60 characters"
+				},
+				"description": {
+					"type": "string",
+					"description": "Max length 500 characters",
+					"x-nullable": true
+				},
+				"contact_name": {
+					"type": "string",
+					"description": "Max length 50 characters",
+					"x-nullable": true
+				},
+				"contact_number": {
+					"type": "string",
+					"description": "Max length 20 characters",
+					"x-nullable": true
+				},
+				"contact_email": {
+					"type": "string",
+					"description": "Max length 320 characters",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"name"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"OrganisationTypeResponse": {
+			"enum": [
+				"PROMOTER",
+				"HA",
+				"CONTRACTOR",
+				"upcoming_enum"
+			],
+			"type": "string"
+		},
+		"OrganisationSummaryResponse": {
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"organisation_reference": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"name",
+				"organisation_reference"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"OrganisationResponse": {
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"organisation_reference": {
+					"type": "string"
+				},
+				"address_line_one": {
+					"type": "string"
+				},
+				"address_line_two": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"email": {
+					"type": "string"
+				},
+				"locality": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"phone_number": {
+					"type": "string"
+				},
+				"postcode": {
+					"type": "string"
+				},
+				"town": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"prefix": {
+					"type": "string"
+				},
+				"organisation_type": {
+					"$ref": "#/definitions/OrganisationTypeResponse"
+				},
+				"organisation_type_string": {
+					"type": "string"
+				},
+				"contractors": {
+					"items": {
+						"$ref": "#/definitions/OrganisationSummaryResponse"
+					},
+					"type": "array",
+					"x-nullable": true
+				},
+				"is_hs2_applicable": {
+					"type": "boolean"
+				}
+			},
+			"required": [
+				"name",
+				"organisation_reference",
+				"address_line_one",
+				"email",
+				"phone_number",
+				"postcode",
+				"prefix",
+				"organisation_type",
+				"organisation_type_string",
+				"is_hs2_applicable"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"OrganisationUpdateRequest": {
+			"properties": {
+				"address_line_one": {
+					"type": "string",
+					"description": "Max length 255 characters\nAlphanumeric characters only"
+				},
+				"address_line_two": {
+					"type": "string",
+					"description": "Max length 255 characters\nAlphanumeric characters only",
+					"x-nullable": true
+				},
+				"locality": {
+					"type": "string",
+					"description": "Max length 255 characters\nAlphanumeric characters only",
+					"x-nullable": true
+				},
+				"town": {
+					"type": "string",
+					"description": "Max length 255 characters\nAlphanumeric characters only",
+					"x-nullable": true
+				},
+				"postcode": {
+					"type": "string",
+					"description": "Max length 8 characters\nAlphanumeric characters only"
+				},
+				"email": {
+					"type": "string",
+					"description": "Max length 320 characters\nMust be valid email"
+				},
+				"phone_number": {
+					"type": "string",
+					"description": "Max length 20 characters"
+				}
+			},
+			"required": [
+				"address_line_one",
+				"postcode",
+				"email",
+				"phone_number"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"RoleResponse": {
+			"enum": [
+				"Planner",
+				"HighwayAuthority",
+				"Admin",
+				"Contractor",
+				"API",
+				"UI",
+				"DataExport",
+				"upcoming_enum"
+			],
+			"type": "string"
+		},
+		"WorkstreamAccessLevelResponse": {
+			"enum": [
+				"full_write",
+				"read_only",
+				"upcoming_enum"
+			],
+			"type": "string"
+		},
+		"UserWorkstreamAccessDetails": {
+			"properties": {
+				"workstream_prefix": {
+					"type": "string"
+				},
+				"access_level": {
+					"$ref": "#/definitions/WorkstreamAccessLevelResponse"
+				},
+				"workstream_name": {
+					"type": "string"
+				},
+				"access_level_string": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"workstream_prefix",
+				"access_level",
+				"workstream_name",
+				"access_level_string"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"UserResponse": {
+			"properties": {
+				"first_name": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"last_name": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"organisation_name": {
+					"type": "string"
+				},
+				"roles": {
+					"items": {
+						"$ref": "#/definitions/RoleResponse"
+					},
+					"type": "array",
+					"x-nullable": true
+				},
+				"roles_string": {
+					"items": {
+						"type": "string"
+					},
+					"type": "array",
+					"x-nullable": true
+				},
+				"organisation_reference": {
+					"type": "string"
+				},
+				"contracts": {
+					"items": {
+						"$ref": "#/definitions/OrganisationSummaryResponse"
+					},
+					"type": "array",
+					"x-nullable": true
+				},
+				"workstreams": {
+					"items": {
+						"$ref": "#/definitions/UserWorkstreamAccessDetails"
+					},
+					"type": "array",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"organisation_name",
+				"organisation_reference"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"UpdateUserDetailsRequest": {
+			"properties": {
+				"first_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"last_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				}
+			},
+			"required": [
+				"first_name",
+				"last_name"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"WorkstreamAccessLevel": {
+			"enum": [
+				"full_write",
+				"read_only"
+			],
+			"type": "string"
+		},
+		"UserWorkstreamAccess": {
+			"properties": {
+				"workstream_prefix": {
+					"type": "string"
+				},
+				"access_level": {
+					"$ref": "#/definitions/WorkstreamAccessLevel"
+				}
+			},
+			"required": [
+				"workstream_prefix",
+				"access_level"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"UserWorkstreamAccessUpdateRequest": {
+			"properties": {
+				"user_workstream_access": {
+					"items": {
+						"$ref": "#/definitions/UserWorkstreamAccess"
+					},
+					"type": "array"
+				}
+			},
+			"required": [
+				"user_workstream_access"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"UserForgotPasswordRequest": {
+			"properties": {
+				"email": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"email"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"UserResetPasswordRequest": {
+			"properties": {
+				"email": {
+					"type": "string"
+				},
+				"verification_code": {
+					"type": "string"
+				},
+				"password": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"email",
+				"verification_code",
+				"password"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"OrganisationContractsCreateRequest": {
+			"properties": {
+				"contractor_organisation_references": {
+					"items": {
+						"type": "string"
+					},
+					"type": "array",
+					"description": "Must be organisation references of contractors"
+				}
+			},
+			"required": [
+				"contractor_organisation_references"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"TokenRefreshResponse": {
+			"properties": {
+				"id_token": {
+					"type": "string"
+				},
+				"access_token": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"id_token",
+				"access_token"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"TokenRefreshRequest": {
+			"properties": {
+				"refresh_token": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"refresh_token"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"LogoutRequest": {
+			"properties": {
+				"access_token": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"access_token"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"Role": {
+			"enum": [
+				"Planner",
+				"HighwayAuthority",
+				"Admin",
+				"Contractor",
+				"API",
+				"UI",
+				"DataExport"
+			],
+			"type": "string"
+		},
+		"InviteUserRequest": {
+			"properties": {
+				"email": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"first_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"last_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"role": {
+					"$ref": "#/definitions/Role",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"email",
+				"first_name",
+				"last_name"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"SetPasswordResponse": {
+			"properties": {
+				"idToken": {
+					"type": "string"
+				},
+				"organisationReference": {
+					"type": "string"
+				},
+				"accessToken": {
+					"type": "string"
+				},
+				"refreshToken": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"idToken",
+				"organisationReference",
+				"accessToken",
+				"refreshToken"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"SetPasswordRequest": {
+			"properties": {
+				"email": {
+					"type": "string"
+				},
+				"password": {
+					"type": "string"
+				},
+				"token": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"email",
+				"password",
+				"token"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"RemoveUserRequest": {
+			"properties": {
+				"email": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"email"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"OnboardUserRequest": {
+			"properties": {
+				"email": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"first_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"last_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"organisation_reference": {
+					"type": "string",
+					"description": "Max length 20 characters"
+				},
+				"roles": {
+					"items": {
+						"$ref": "#/definitions/Role"
+					},
+					"type": "array"
+				}
+			},
+			"required": [
+				"email",
+				"first_name",
+				"last_name",
+				"organisation_reference",
+				"roles"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"ReOnboardUserRequest": {
+			"properties": {
+				"email": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"password": {
+					"type": "string",
+					"description": "Max length 99 characters",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"email"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"InternalUpdateUserRolesRequest": {
+			"properties": {
+				"roles": {
+					"items": {
+						"$ref": "#/definitions/Role"
+					},
+					"type": "array"
+				}
+			},
+			"required": [
+				"roles"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"AdminUpdateUserRolesRequest": {
+			"properties": {
+				"roles": {
+					"items": {
+						"$ref": "#/definitions/Role"
+					},
+					"type": "array"
+				}
+			},
+			"required": [
+				"roles"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"UserCreateRequest": {
+			"properties": {
+				"email": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"first_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"last_name": {
+					"type": "string",
+					"description": "Max length 50 characters"
+				},
+				"password": {
+					"type": "string",
+					"description": "Max length 99 characters"
+				},
+				"organisation_reference": {
+					"type": "string",
+					"description": "If provided, this must match a registered organisation reference",
+					"x-nullable": true
+				},
+				"roles": {
+					"items": {
+						"$ref": "#/definitions/Role"
+					},
+					"type": "array"
+				}
+			},
+			"required": [
+				"email",
+				"first_name",
+				"last_name",
+				"password",
+				"roles"
+			],
+			"type": "object",
+			"additionalProperties": false
+		}
+	},
+	"info": {
+		"title": "party-api",
+		"version": "1.0.0",
+		"description": "See API specification Resource Guide > Party API for more information on endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
+		"license": {
+			"name": "MIT"
+		}
+	},
+	"paths": {
+		"/organisations/{organisationReference}/workstreams/{workstreamPrefix}": {
+			"get": {
+				"operationId": "GetWorkstream",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/WorkstreamResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Party API > Get workstream for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority",
+							"Admin",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "organisationReference",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "workstreamPrefix",
+						"required": true,
+						"type": "string"
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateWorkstream",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": ""
+					}
+				},
+				"description": "See API specification Resource Guide > Party API > Put workstream for more information\nAuthenticated user must have one of the following roles: Planner, Admin",
+				"security": [
+					{
+						"token": [
+							"Admin",
+							"Planner"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "organisationReference",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "path",
+						"name": "workstreamPrefix",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/WorkstreamUpdateRequest"
+						}
+					}
+				]
+			}
+		},
+		"/organisations/{organisationReference}/workstreams": {
+			"get": {
+				"operationId": "GetWorkstreams",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"items": {
+								"$ref": "#/definitions/WorkstreamResponse"
+							},
+							"type": "array"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Party API > Get workstreams for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, Admin",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Admin",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "organisationReference",
+						"required": true,
+						"type": "string"
+					}
+				]
+			},
+			"post": {
+				"operationId": "CreateWorkstream",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"201": {
+						"description": "Created",
+						"schema": {
+							"$ref": "#/definitions/WorkstreamCreateResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Party API > Post workstreams for more information\nAuthenticated user must have one of the following roles: Planner, Admin",
+				"security": [
+					{
+						"token": [
+							"Admin",
+							"Planner"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "organisationReference",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/WorkstreamCreateRequest"
+						}
+					}
+				]
+			}
+		},
+		"/organisations/{organisationReference}": {
+			"get": {
+				"operationId": "GetOrganisation",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/OrganisationResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Party API > Get organisation for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
+				"security": [
+					{
+						"token": [
+							"Admin",
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "organisationReference",
+						"required": true,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/organisations": {
+			"get": {
+				"operationId": "GetOrganisations",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"items": {
+								"$ref": "#/definitions/OrganisationSummaryResponse"
+							},
+							"type": "array"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Party API > Get organisations for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
+				"security": [
+					{
+						"token": [
+							"Admin",
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "type",
+						"required": false,
+						"collectionFormat": "multi",
+						"type": "array",
+						"items": {
+							"type": "string",
+							"enum": [
+								"PROMOTER",
+								"HA",
+								"CONTRACTOR"
+							]
+						}
+					},
+					{
+						"in": "query",
+						"name": "query",
+						"required": false,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/users/{email}": {
+			"get": {
+				"operationId": "GetUser",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/UserResponse"
+						}
+					}
+				},
+				"description": "Authenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
+				"security": [
+					{
+						"token": [
+							"Admin",
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "email",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "swaCode",
+						"required": false,
+						"type": "string"
+					}
+				]
+			},
+			"put": {
+				"operationId": "UpdateUserDetails",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"description": "Authenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority, Admin",
+				"security": [
+					{
+						"token": [
+							"Admin",
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "email",
+						"required": true,
+						"type": "string"
+					},
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/UpdateUserDetailsRequest"
+						}
+					}
+				]
+			}
+		},
+		"/forgot-password": {
+			"post": {
+				"operationId": "ForgotPassword",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/UserForgotPasswordRequest"
+						}
+					}
+				]
+			}
+		},
+		"/reset-password": {
+			"post": {
+				"operationId": "ResetPassword",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/UserResetPasswordRequest"
+						}
+					}
+				]
+			}
+		},
+		"/refresh": {
+			"post": {
+				"operationId": "Refresh",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/TokenRefreshResponse"
+						}
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/TokenRefreshRequest"
+						}
+					}
+				]
+			}
+		},
+		"/logout": {
+			"post": {
+				"operationId": "Logout",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"204": {
+						"description": "No content"
+					}
+				},
+				"security": [],
+				"parameters": [
+					{
+						"in": "body",
+						"name": "body",
+						"required": true,
+						"schema": {
+							"$ref": "#/definitions/LogoutRequest"
+						}
+					}
+				]
+			}
+		}
+	},
+	"produces": [
+		"application/json"
+	],
+	"swagger": "2.0",
+	"securityDefinitions": {
+		"token": {
+			"type": "apiKey",
+			"name": "token",
+			"in": "header",
+			"scopes": {
+				"Planner": "Planner",
+				"HighwayAuthority": "HighwayAuthority"
+			}
+		},
+		"systemToken": {
+			"type": "apiKey",
+			"name": "token",
+			"in": "header"
+		}
+	},
+	"schemes": [
+		"https",
+		"http"
+	]
+}

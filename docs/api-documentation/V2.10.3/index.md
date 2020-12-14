@@ -2790,6 +2790,57 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 2.10.3 (07/01/2021):
+{: .govuk-heading-s}
+
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-4820: The fields which can be searched with using the <code>query</code> query paramater has been extended to include:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>usrn</code></li>
+      <li><code>street_name</code></li>
+      <li><code>town</code></li>
+      <li><code>promoter_organisation_name</code> where the authenticated user is a HA</li>
+      <li><code>ha_organisation_name</code> where the authenticated user is a promoter</li>
+    </ol>
+    Partial searching is supported for each of the above fields. This change has been applied to the following endpoints:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>GET ​/permits</code></li>
+      <li><code>GET ​/alterations</code></li>
+      <li><code>GET ​/forward-plans</code></li>
+    </ol>
+  </li>
+  <li>
+    SM-6640: Fixed a bug with <code>GET ​/inspections</code> endpoint where including leading 0s in <code>query</code> excluded valid search results when using <code>query</code> param to filter by USRN.
+  </li>
+</ol>
+
+Updated Data Export API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-4820: The fields which can be searched with using the <code>query</code> query paramater has been extended to include:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>usrn</code></li>
+      <li><code>street_name</code></li>
+      <li><code>town</code></li>
+      <li><code>promoter_organisation_name</code> where the authenticated user is a HA</li>
+      <li><code>ha_organisation_name</code> where the authenticated user is a promoter</li>
+    </ol>
+    Partial searching is supported for each of the above fields. This change has been applied to the following endpoints:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>POST ​/permits/csv</code></li>
+      <li><code>POST ​/alterations/csv</code></li>
+      <li><code>POST ​/forward-plans/csv</code></li>
+    </ol>
+  </li>
+  <li>
+    SM-6640: Fixed a bug with <code>POST ​/inspections/csv</code> endpoint where including leading 0s in <code>query</code> excluded valid search results when using <code>query</code> param to filter by USRN.
+  </li>
+</ol>
+
 Version 2.10.2 (10/12/2020):
 {: .govuk-heading-s}
 

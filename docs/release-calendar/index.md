@@ -106,12 +106,12 @@ title: Release Calendar
       <td class="govuk-table__cell">Application</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">07/01/2021</td>
+      <td class="govuk-table__cell">08/01/2021</td>
       <td class="govuk-table__cell">Sandbox</td>
       <td class="govuk-table__cell">Application</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">11/01/2021</td>
+      <td class="govuk-table__cell">12/01/2021</td>
       <td class="govuk-table__cell">Production</td>
       <td class="govuk-table__cell">Application</td>
     </tr>

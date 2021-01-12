@@ -2789,8 +2789,12 @@ Version 1.25.9 - Stable (21/01/2021):
 Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>
-    SM-6114: Updated permit cancel logic to only allow active permits to be cancelled, making it consistent with the options available on the UI.
+  <li>The following business rule change introduced on 21/01/2021 is included:
+    <ol class="govuk-list govuk-list--bullet">
+      <li>
+        SM-6114: Updated permit cancel logic to only allow active permits to be cancelled, making it consistent with the options available on the UI.
+      </li>
+    </ol>
   </li>
 </ol>
 

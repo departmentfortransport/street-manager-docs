@@ -1262,7 +1262,7 @@ A diagram of S81 statuses</div>
 | ---------------------------------- | -------------------------------------------------------- |
 | 3.4.9. Cancelling PAA & PA | Updated to reflect fact that only active permits can be cancelled
 | 4.4. Change request assessment decision options | Updated to clarify that only the reasonable period end date can update following a duration challenge
-| 13. Sample inspections | New section added as new functionality released
+| 18. Sample inspections | New section added as new functionality released
 
 
 <!-- ==================================================== -->

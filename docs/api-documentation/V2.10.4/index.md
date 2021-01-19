@@ -2790,13 +2790,13 @@ Future releases will include new features relating to Comments. These include:
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Version 2.10.4 (21/01/2021):
+Version 2.10.4 (25/01/2021):
 {: .govuk-heading-s}
 
 Updated Work API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
-  <li>The following business rule change introduced on 21/01/2021 is included:
+  <li>The following business rule change introduced on 25/01/2021 is included:
     <ol class="govuk-list govuk-list--bullet">
       <li>
         SM-6114: Updated permit cancel logic to only allow active permits to be cancelled, making it consistent with the options available on the UI.

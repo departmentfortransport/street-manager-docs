@@ -26,6 +26,12 @@ Updated Work API with the following changes:
   </li>
 </ol>
 
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>SM-5178: Extended the search functionality available through the optional <code>query</code> param on the <code>GET /sample-inspections</code> endpoint to support searching by street name and promoter organisation name, in addition to searching by the work reference number and USRN which were already supported.</li>
+</ol>
+
 Version 2.10.3 (07/01/2021):
 {: .govuk-heading-s}
 

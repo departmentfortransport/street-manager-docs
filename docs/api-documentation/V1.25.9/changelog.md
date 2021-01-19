@@ -17,6 +17,13 @@ Updated Work API with the following changes:
   <li>
     SM-3570: Fixed a bug with <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/assessment</code> endpoint,  <code>revoke_reason</code> now included in work history entry when a permit is revoked.
   </li>
+  <li>The following business rule change introduced on 25/01/2021 is included:
+    <ol class="govuk-list govuk-list--bullet">
+      <li>
+        SM-6114: Updated permit cancel logic to only allow active permits to be cancelled, making it consistent with the options available on the UI.
+      </li>
+    </ol>
+  </li>
 </ol>
 
 Version 1.25.8 - Stable (10/12/2020):

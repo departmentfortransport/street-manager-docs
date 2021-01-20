@@ -24,6 +24,9 @@ Updated Work API with the following changes:
       </li>
     </ol>
   </li>
+  <li>
+    BREAKING CHANGE SM-6605: Updated the format of <code>GET ​/files​/{fileId}</code> error response body to be in line with error responses throughout Street Manager. An error response body will now contain an object where previously it contained only the string title of the error code. No further error scenarios have been introduced as part of this change.
+  </li>
 </ol>
 
 Version 1.25.8 - Stable (10/12/2020):

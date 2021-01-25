@@ -8,6 +8,39 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 2.10.5 (04/02/2021):
+{: .govuk-heading-s}
+
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-4032: Added additional filter and sorting params to the <code>GET /reinstatements</code> endpoint
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>registration_date_from</code>: filter reinstatements to those created on or after this date</li>
+      <li><code>registration_date_to</code>: filter reinstatements to those created on or before this date</li>
+      <li><code>end_date_from</code>: filter reinstatements to those with an expiry date on or after this date</li>
+      <li><code>end_date_to</code>: filter reinstatements to those with an expiry date on or before this date</li>
+      <li><code>sort_direction</code>: change the sort order. This can be either <code>asc</code> or <code>desc</code></li>
+      <li><code>sort_column</code>: change the column results are sorted on. Currently limited to <code>end_date</code></li>
+    </ol>
+  </li>
+</ol>
+
+Updated Data Export API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-4032: Added additional filter params to the <code>GET /reinstatements/csv</code> endpoint
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>registration_date_from</code>: filter reinstatements to those created on or after this date</li>
+      <li><code>registration_date_to</code>: filter reinstatements to those created on or before this date</li>
+      <li><code>end_date_from</code>: filter reinstatements to those with an expiry date on or after this date</li>
+      <li><code>end_date_to</code>: filter reinstatements to those with an expiry date on or before this date</li>
+    </ol>
+  </li>
+</ol>
+
 Version 2.10.4 (21/01/2021):
 {: .govuk-heading-s}
 

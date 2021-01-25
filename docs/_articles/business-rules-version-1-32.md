@@ -108,6 +108,7 @@ status: publish
 15. [Historical works](#15-historical-works)<br />
 16. [Non-notifiable works](#16-non-notifiable-works)<br />
 17. [HS2](#17-hs2)<br />
+18. [Sample Inspections](#18-sample-inspections)<br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -1231,7 +1232,7 @@ A diagram of S81 statuses</div>
 ### 18.2. Eligible inspections
 
 * The following are the criteria for an inspection to be included in the sample list, per category:
-  * Category A - undertaken during the progress of the works. Therefore, works that are live/in-progress. They would expire from sampling on the proposed end date of the work record, or actual stop, if it was available
+  * Category A - undertaken during the progress of the works. Therefore, works that are live/in-progress. They would expire from sampling on the proposed end date of the work record, or actual stop, if it was available at the time of generating the sample
   * Category B - Undertaken within the six months following interim or permanent reinstatement date i.e. the reinstatement date specified when added. Work records eligible for this category would be those with a reinstatement carried out less than than six months ago and would expire from sampling when the latest reinstatement was six months old or greater. Only applies to excavation reinstatements
   * Category C - Undertaken within the three months preceding the end of the guarantee period for permanent reinstatement only. Work records eligible for this category would be those with a guarantee end date coming up within the next 3 months and would expire when the end date is reached. Only applies to excavation reinstatements
 

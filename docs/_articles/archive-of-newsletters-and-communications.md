@@ -6,6 +6,8 @@ type: article
 published: 'true'
 status: publish
 ---
+<h1 class="govuk-heading-xl">Archive of newsletters and communication</h1>
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 <h2 id="documentation" class="govuk-heading-l">Newsletters</h2>

@@ -11,6 +11,14 @@ This section lists any significant changes made to this document (and by extensi
 Version 1.25.10 - Stable (04/02/2021):
 {: .govuk-heading-s}
 
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6647: Fixed a bug with <code>PUT /works​/{workReferenceNumber}​/permits​/{permitReferenceNumber}​/alterations​/{permitAlterationReferenceNumber}​/status</code> endpoint, <code>reasonable_period_end_date</code> now used in date validation when <code>granted_with_duration_challenge<code> so that when multiple alterations exist a HA user can enter the original reasonable period end date again.
+  </li>
+</ol>
+
 Updated Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">

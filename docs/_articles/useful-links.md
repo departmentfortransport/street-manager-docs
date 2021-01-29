@@ -18,4 +18,7 @@ status: publish
   <li>
     <a class="govuk-link" href="https://streetmanager.atlassian.net/servicedesk/customer/portal/1">Service desk for submitting issues</a>
   </li>
+<li>
+ <a class="govuk-link" href="{{ site.url }}/assets/files/third_party_framework.pdf">Framework for agreeing third party access to SM data</a>
+</li>
 </ul>

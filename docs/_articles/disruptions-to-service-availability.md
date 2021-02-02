@@ -10,7 +10,15 @@ This page lists all known occurrences of Street Manager service being unavailabl
 
 To see the current status of Production and Sandbox environments visit the [status page here ](http://stats.pingdom.com/uyxey83hvki0)
 
+## February 2021
+
+**Sandbox environment**
+
+* 01/02/2021 12:01 to 12:03: Sandbox environment was unavailable for 2 mins due to a widespread AWS outage.
+
 ## January 2021
+
+**Production environment**
 
 * 07/01/2021 09:40 to 11:50: Production environment map functionality was partially unavailable for 2 hours 10 mins due to incorrect 3rd party configuration.
 

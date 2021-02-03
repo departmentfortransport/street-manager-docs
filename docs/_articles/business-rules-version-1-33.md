@@ -1,7 +1,7 @@
 ---
 layout: article
 title: Business rules - version 1.33
-date: 2021-02-17T12:27:08.494Z
+date: 2021-02-03T12:27:08.494Z
 type: article
 published: 'true'
 status: publish
@@ -12,9 +12,9 @@ status: publish
 
 <!-- ==================================================== -->
 
-<span class="govuk-body-l" style="float:left">Version 1.33 (Due to be released w/c 02/17/21)</span>
+<span class="govuk-body-l" style="float:left">Version 1.33 (Due to be released w/c 02/03/2021)</span>
 
-<span style="float:right;text-alxign:right;">[User roles & permissions table [PDF]](https://departmentfortransport.github.io/street-manager-docs/business-rules/Street%20Manager%20user%20role%20permissions%20table.pdf)<br />
+<span style="float:right;text-align:right;">[User roles & permissions table [PDF]](https://departmentfortransport.github.io/street-manager-docs/business-rules/Street%20Manager%20user%20role%20permissions%20table.pdf)<br />
 [Previous versions](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-home.html)</span>
 
 <span style="float:left;clear:both;">_&copy; Crown copyright 2020, except where otherwise stated._</span>

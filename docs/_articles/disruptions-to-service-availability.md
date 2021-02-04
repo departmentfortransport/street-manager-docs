@@ -12,6 +12,10 @@ To see the current status of Production and Sandbox environments visit the [stat
 
 ## February 2021
 
+**Production environment**
+
+* 03/02/2021 00:15 to 12:42: Production environment degraded performance for 12 hours 27 mins due to incorrect 3rd party configuration.
+
 **Sandbox environment**
 
 * 01/02/2021 12:01 to 12:03: Sandbox environment was unavailable for 2 mins due to a widespread AWS outage.

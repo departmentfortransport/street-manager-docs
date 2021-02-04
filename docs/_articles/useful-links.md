@@ -21,4 +21,10 @@ status: publish
 <li>
  <a class="govuk-link" href="{{ site.url }}/street-manager-docs/assets/files/third_party_framework.pdf">Framework for agreeing third party access to SM data</a>
 </li>
+<li>
+ <a class="govuk-link" href="{{ site.url }}/street-manager-docs/assets/files/business-change/Tips & tricks v9.pdf">Tips & Tricks User Guide</a>
+</li>
+<li>
+ <a class="govuk-link" href="{{ site.url }}/street-manager-docs/assets/files/business-change/Street Manager - Talking Points - Feb 21.pdf">Street Manager Talking Points</a>
+</li>
 </ul>

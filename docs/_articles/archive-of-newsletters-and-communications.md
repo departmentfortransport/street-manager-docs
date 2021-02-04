@@ -148,3 +148,23 @@ status: publish
       Street Manager Newsletter - 2020 - 26
       </a>
   </li>
+  <li>
+    <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Newsletter%2027.pdf">
+      Street Manager Newsletter - 2020 - 27
+      </a>
+  </li>
+ <li>
+    <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Newsletter%2028.pdf">
+      Street Manager Newsletter - 2020 - 28
+      </a>
+  </li>
+<li>
+    <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Newsletter%2029.pdf">
+      Street Manager Newsletter - 2020 - 29
+      </a>
+  </li>
+<li>
+    <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Newsletter%2030.pdf">
+      Street Manager Newsletter - 2020 - 30
+      </a>
+  </li>

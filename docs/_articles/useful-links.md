@@ -13,7 +13,7 @@ status: publish
     <a class="govuk-link" href="https://www.manage-roadworks.service.gov.uk/">Street Manager service</a>
   </li>
   <li>
-    <a class="govuk-link" href="https://www.sandbox.stwrks-dev.net/">Sandbox testing environment</a>
+    <a class="govuk-link" href="https://www.sandbox.manage-roadworks.service.gov.uk/">Sandbox testing environment</a>
   </li>
   <li>
     <a class="govuk-link" href="https://streetmanager.atlassian.net/servicedesk/customer/portal/1">Service desk for submitting issues</a>

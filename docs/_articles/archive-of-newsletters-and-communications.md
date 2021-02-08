@@ -168,3 +168,8 @@ status: publish
       Street Manager Newsletter - 2020 - 30
       </a>
   </li>
+<li>
+    <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Newsletter%2031-%20Feb%202021.pdf">
+      Street Manager Newsletter - 2021 - 31
+      </a>
+  </li>

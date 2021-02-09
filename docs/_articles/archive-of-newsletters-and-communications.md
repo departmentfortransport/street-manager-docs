@@ -3,9 +3,10 @@ layout: article
 title: Archive of newsletters and communications
 date: 2021-01-26T11:12:38.374Z
 type: article
-published: 'true'
+published: "true"
 status: publish
 ---
+
 <h1 class="govuk-heading-xl">Archive of newsletters and communication</h1>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -121,50 +122,55 @@ status: publish
   <li>
     <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Street-Manager-Newsletter-23-April-2020.pdf">
       Street Manager Newsletter - 2020 - 22
-      </a>
+    </a>
   </li>
-       <li>
+  <li>
     <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Street-Manager-Newsletter-05-June-2020.pdf">
       Street Manager Newsletter - 2020 - 23
-      </a>
+    </a>
   </li>
    <li>
     <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/API-versioning-note.pdf">
       Street Manager Newsletter - 2020 - 23 (additional API note)
-      </a>
+    </a>
   </li>
   <li>
     <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Newsletter%2024.pdf">
       Street Manager Newsletter - 2020 - 24
-      </a>
+    </a>
   </li>
   <li>
     <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Newsletter%2025.pdf">
       Street Manager Newsletter - 2020 - 25
-      </a>
+    </a>
   </li>
   <li>
     <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Newsletter%2026.pdf">
       Street Manager Newsletter - 2020 - 26
-      </a>
+    </a>
   </li>
   <li>
     <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Newsletter%2027.pdf">
       Street Manager Newsletter - 2020 - 27
-      </a>
+    </a>
   </li>
- <li>
+  <li>
     <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Newsletter%2028.pdf">
       Street Manager Newsletter - 2020 - 28
-      </a>
+    </a>
   </li>
-<li>
+  <li>
     <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Newsletter%2029.pdf">
       Street Manager Newsletter - 2020 - 29
-      </a>
+    </a>
   </li>
-<li>
+  <li>
     <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Newsletter%2030.pdf">
       Street Manager Newsletter - 2020 - 30
-      </a>
+    </a>
+  </li>
+  <li>
+    <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/assets/files/archive/Newsletter%2031.pdf">
+      Street Manager Newsletter - 2021 - 31
+    </a>
   </li>

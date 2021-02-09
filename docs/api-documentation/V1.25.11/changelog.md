@@ -8,6 +8,17 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 1.25.11 (18/02/2021):
+{: .govuk-heading-s}
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6659: Updated the validation on the <code>PUT /works/{workReferenceNumber}/start</code> endpoint to prevent a works start being more than 5 years in the past from the proposed start date.
+  </li>
+</ol>
+
 Version 1.25.10 - Stable (04/02/2021):
 {: .govuk-heading-s}
 

@@ -17,6 +17,9 @@ Updated Work API with the following changes:
   <li>
     SM-6659: Updated the validation on the <code>PUT /works/{workReferenceNumber}/start</code> endpoint to prevent a works start being more than 5 years in the past from the proposed start date.
   </li>
+  <li>
+    SM-6107: Updated the validation on <code>POST works/{workReferenceNumber}/sites</code> and <code>POST works/{workReferenceNumber}/sites/{siteNumber}/reinstatements</code> to use the earliest actual_start_date across all permits associated with a work.
+  </li>
 </ol>
 
 Version 1.25.10 - Stable (04/02/2021):

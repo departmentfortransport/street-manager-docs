@@ -828,7 +828,7 @@ _(Previously section 4.7 in Business rules v0.1 draft)_
 * To add a reinstatement, the latest PA must be in 'In progress or 'Closed' status and require excavation.
 * Reinstatement date must be:
   * the current date or in the past
-  * on or after the actual start date
+  * on or after the earliest actual start date for all permits on the work
   * on or before the actual end date if works stop has been logged
 * To update a site with a new reinstatement, select 'Update reinstatement' on the 'site record' level.
 * This functionality may be used to correct a mistake on the previous reinstatement.

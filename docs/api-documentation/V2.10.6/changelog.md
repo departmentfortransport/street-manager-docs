@@ -19,6 +19,14 @@ Updated Work API with the following changes:
   </li>
 </ol>
 
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6791: Updated the <code>GET /works/updates</code> endpoint to allow the <code>update_id</code> parameter to be used without needing to provide either the <code>start_date</code> and <code>end_date</code>, or <code>previous_minutes</code>. When the <code>update_id</code> parameter is provided without time range filtering, a maximum of 500 results will be returned.
+  </li>
+</ol>
+
 Version 2.10.5 (04/02/2021):
 {: .govuk-heading-s}
 

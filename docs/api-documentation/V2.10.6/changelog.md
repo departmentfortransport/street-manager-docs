@@ -20,6 +20,9 @@ Updated Work API with the following changes:
   <li>
     SM-6795: Added new validation rules to Work API that prevent users belonging to suspended organisations from logging in and to prevent contractor orgs from performing any read/write actions on suspended organisations records
   </li>
+  <li>
+    SM-6107: Updated the validation on <code>POST /works/{workReferenceNumber}/sites</code> and <code>POST /works/{workReferenceNumber}/sites/{siteNumber}/reinstatements</code> to use the earliest <code>actual_start_date</code> across all permits associated with a work when validating <code>reinstatement_date</code>. The reinstatement date cannot be before the earliest <code>actual_start_date</code>.
+  </li>
 </ol>
 
 Updated Reporting API with the following changes:

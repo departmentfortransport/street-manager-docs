@@ -39,6 +39,7 @@ Updated Work API with the following changes:
   <li>
     SM-3950: Updated the <code>PUT /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}/reassign-section-81</code> endpoint to record the organisation names rather than organisation references in the works history entries when Section 81s are reassigned.
   </li>
+  <li>SM-5176: New <code>GET /sample-inspection-targets/{sampleInspectionTargetReferenceNumber}</code> endpoint added to retrieve sample inspection target details.</li>
 </ol>
 
 Updated Reporting API with the following changes:

@@ -30,6 +30,20 @@ Updated Reporting API with the following changes:
   </li>
 </ol>
 
+Updated GeoJSON API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6679 (BREAKING CHANGE): A limit of 100 results has been added to the endpoints listed below. If this limit is exceeded, an error will be returned with status code <code>403</code>, indicating that the search area and/or date range should be refined.
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>GET /works</code></li>
+      <li><code>GET /activities</code></li>
+      <li><code>GET /forward-plans</code></li>
+      <li><code>GET /hs2-act-limits</code></li>
+    </ol>
+  </li>
+</ol>
+
 Version 2.10.5 (04/02/2021):
 {: .govuk-heading-s}
 
@@ -89,7 +103,7 @@ Updated Work API with the following changes:
     </ol>
   </li>
   <li>
-    BREAKING CHANGE SM-6605: Updated the format of <code>GET ​/files​/{fileId}</code> error response body to be in line with error responses throughout Street Manager. An error response body will now contain an object, where previously it contained only the string title of the error code. No further error scenarios have been introduced as part of this change.
+    SM-6605 (BREAKING CHANGE): Updated the format of <code>GET /files/{fileId}</code> error response body to be in line with error responses throughout Street Manager. An error response body will now contain an object, where previously it contained only the string title of the error code. No further error scenarios have been introduced as part of this change.
   </li>
 </ol>
 
@@ -343,7 +357,7 @@ Added enum string properties:
   <li>Reporting API, GeoJSON API, Street Lookup API and Party API service responses have been updated to return a string version of each enum property previously returned. For example, <code>PermitResponse</code> now contains <code>permit_status</code> property which remains as type PermitStatus and a new <code>permit_status_string</code> property which will be populated with the string equivalent of the enum value. These will contain the same text in most circumstances but in the future when we stabilise the API and no longer add new enum values we will use the string property to provide more information.</li>
 </ol>
 
-Updated Geojson API with the following changes:
+Updated GeoJSON API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>Added <code>hs2_highway</code> to the <code>WorkCategory</code> enum. This can be returned by the <code>WorkResponse</code></li>
@@ -1540,7 +1554,7 @@ Version 1.3 (22/08/2019):
   <li>Audit events in the history response will include an object_reference. Where further information is required about what has changed this, object_reference can be used to find more details on the object</li>
   <li>Contractors can use the Reporting API to extract data from the service both as JSON and CSV format. These endpoints allow you to extract most works information efficiently for the organisations for which you're working. swa_code parameters are available on the endpoints which must be used by contractors to provide the SWA code of the promoter they are working for.</li>
   <li>Added lane rental assessment endpoints to Work API.</li>
-  <li>Added activities endpoint to Geojson API to find activities in a given area.</li>
+  <li>Added activities endpoint to GeoJSON API to find activities in a given area.</li>
   <li>Added forgot password and password reset endpoints to Party API.</li>
   <li>Updated WRN validation to allow underscores as a replace character for non-URL friendly characters.</li>
 </ol>

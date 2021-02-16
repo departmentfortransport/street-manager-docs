@@ -22,6 +22,20 @@ Updated Work API with the following changes:
   </li>
 </ol>
 
+Updated GeoJSON API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6679 (BREAKING CHANGE): A limit of 100 results has been added to the endpoints listed below. If this limit is exceeded, an error will be returned with status code <code>403</code>, indicating that the search area and/or date range should be refined.
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>GET /works</code></li>
+      <li><code>GET /activities</code></li>
+      <li><code>GET /forward-plans</code></li>
+      <li><code>GET /hs2-act-limits</code></li>
+    </ol>
+  </li>
+</ol>
+
 Version 1.25.10 - Stable (04/02/2021):
 {: .govuk-heading-s}
 
@@ -72,7 +86,7 @@ Updated Work API with the following changes:
     </ol>
   </li>
   <li>
-    BREAKING CHANGE SM-6605: Updated the format of <code>GET ​/files​/{fileId}</code> error response body to be in line with error responses throughout Street Manager. An error response body will now contain an object where previously it contained only the string title of the error code. No further error scenarios have been introduced as part of this change.
+    SM-6605 (BREAKING CHANGE): Updated the format of <code>GET /files/{fileId}</code> error response body to be in line with error responses throughout Street Manager. An error response body will now contain an object where previously it contained only the string title of the error code. No further error scenarios have been introduced as part of this change.
   </li>
 </ol>
 
@@ -1173,7 +1187,7 @@ Version 1.3 (22/08/2019):
   <li>Audit events in the history response will include an object_reference. Where further information is required about what has changed this, object_reference can be used to find more details on the object</li>
   <li>Contractors can use the Reporting API to extract data from the service both as JSON and CSV format. These endpoints allow you to extract most works information efficiently for the organisations for which you're working. swa_code parameters are available on the endpoints which must be used by contractors to provide the SWA code of the promoter they are working for.</li>
   <li>Added lane rental assessment endpoints to Work API.</li>
-  <li>Added activities endpoint to Geojson API to find activities in a given area.</li>
+  <li>Added activities endpoint to GeoJSON API to find activities in a given area.</li>
   <li>Added forgot password and password reset endpoints to Party API.</li>
   <li>Updated WRN validation to allow underscores as a replace character for non-URL friendly characters.</li>
 </ol>

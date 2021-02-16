@@ -17,7 +17,12 @@ Updated Work API with the following changes:
   <li>
     SM-3950: Updated the <code>PUT /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}/reassign-section-81</code> endpoint to record the organisation names rather than organisation references in the works history entries when Section 81s are reassigned.
   </li>
-  <li>SM-5176: New <code>GET /sample-inspection-targets/{sampleInspectionTargetReferenceNumber}</code> endpoint added to retrieve sample inspection target details.</li>
+  <li>
+    SM-5176: New <code>GET /sample-inspection-targets/{sampleInspectionTargetReferenceNumber}</code> endpoint added to retrieve sample inspection target details.
+  </li>
+  <li>
+    SM-6647: Fixed a bug with <code>PUT /works​/{workReferenceNumber}​/permits​/{permitReferenceNumber}​/alterations​/{permitAlterationReferenceNumber}​/status</code> endpoint, <code>reasonable_period_end_date</code> now used in date validation when <code>granted_with_duration_challenge<code> so that when multiple alterations exist a HA user can enter the original reasonable period end date again.
+  </li>
 </ol>
 
 Updated Reporting API with the following changes:

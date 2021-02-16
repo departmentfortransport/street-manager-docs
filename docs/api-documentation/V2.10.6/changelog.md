@@ -17,6 +17,9 @@ Updated Work API with the following changes:
   <li>
     SM-6659: Updated the validation on the <code>PUT /works/{workReferenceNumber}/start</code> endpoint to prevent a works start being more than 5 years in the past from the proposed start date.
   </li>
+  <li>
+    SM-6795: Added new validation rules to Work API that prevent users belonging to suspended organisations from logging in and to prevent contractor orgs from performing any read/write actions on suspended organisations records
+  </li>
 </ol>
 
 Updated Reporting API with the following changes:

@@ -650,6 +650,9 @@ operations are restricted based on a user's role and the organisation they are
 associated with.
 {: .govuk-body}
 
+If the organisation the user belongs to is suspended they will be unable to log in. If they are logged in before the organisation is suspended then they will receive 401 error responses on read/write operations and will be prevented from logging again. Contractors working on behalf of suspended organisations will receive 401 error responses on read/write operations for that organisation.
+{: .govuk-body}
+
 **Note:** *Currently systems who need to act as users associated with
 multiple organisations, i.e. submitting permits for multiple utility
 companies, **need to use separate user accounts for each organisation**.*
@@ -999,7 +1002,7 @@ The authenticate endpoint takes a case sensitive username (email
 address) and password, returning JWT ID, Access and Refresh tokens if successful.
 **The JWT ID and Access tokens are valid for one hour, meanwhile the Refresh token
 is valid for 1 day.** Once the ID token has been acquired it can be added to all
-protected resource requests made via swagger using the Authorize button. Users who have had their account disabled will not be able to successfully authenticate. User accounts that have 5 failed login attempts within a 5 minute period will be locked, and will return a <code>423</code> status code when attempting to authenticate. Locked accounts are automatically unlocked after 5 minutes.
+protected resource requests made via swagger using the Authorize button. Users who have had their account disabled will not be able to successfully authenticate. User accounts that have 5 failed login attempts within a 5 minute period will be locked, and will return a <code>423</code> status code when attempting to authenticate. Locked accounts are automatically unlocked after 5 minutes. If the organisation the user belongs to, is suspended, then a 412 (Precondition Failed) error will be returned.
 {: .govuk-body}
 
 Example response:

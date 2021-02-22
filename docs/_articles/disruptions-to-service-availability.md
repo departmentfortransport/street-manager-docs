@@ -20,7 +20,7 @@ To see the current status of Production and Sandbox environments visit the [stat
 
 **Sandbox environment**
 
-* 07/02/2021 15:42 to 15:46: Sandbox environment had degraded performance for 4 mins due to a planned Infrastructure Upgrade.
+* 07/02/2021 15:42 to 15:46: Sandbox environment had degraded performance for 4 mins due to a planned infrastructure upgrade.
 
 * 01/02/2021 12:01 to 12:03: Sandbox environment was unavailable for 2 mins due to a widespread AWS outage.
 

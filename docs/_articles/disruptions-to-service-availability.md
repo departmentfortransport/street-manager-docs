@@ -14,6 +14,14 @@ To see the current status of Production and Sandbox environments visit the [stat
 
 **Production environment**
 
+* 17/02/2021 18:58 to 19:01: Production environment had degraded performance for 2 mins due to a planned Infrastructure Upgrade.
+
+**Sandbox environment**
+
+* 07/02/2021 15:42 to 15:46: Sandbox environment had degraded performance for 4 mins due to a planned Infrastructure Upgrade.
+
+**Production environment**
+
 * 03/02/2021 00:15 to 12:42: Production environment degraded performance for 12 hours 27 mins due to incorrect 3rd party configuration.
 
 **Sandbox environment**

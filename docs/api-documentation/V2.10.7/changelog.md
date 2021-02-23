@@ -8,6 +8,22 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 2.10.7 (04/03/2021):
+{: .govuk-heading-s}
+
+Update the Party API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6813: <code>organisation_status</code> and <code>organisation_status_string</code> have been added as optional properties to <code>UserResponse</code>, <code>OrganisationResponse</code> and <code>OrganisationSummaryResponse</code>. These properties will now be returned by the following endpoints:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>GET /organisations</code></li>
+      <li><code>GET ​/organisations​/{organisationReference}</code></li>
+      <li><code>GET ​/users​/{email}</code></li>
+    </ol>
+  </li>
+</ol>
+
 Version 2.10.6 (18/02/2021):
 {: .govuk-heading-s}
 

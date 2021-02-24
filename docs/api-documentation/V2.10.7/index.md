@@ -1599,7 +1599,7 @@ So for example it is not possible for Admins to be API users at the same time, o
 #### Role Based Access - Contractor
 {: .govuk-heading-s}
 
-Many endpoints in our API support the ability to provide a `swaCode` query param. This is intended for `Contractor` users to assume the `Planner` role on behalf of another organisation. When assuming the role of a `Planner` for another organisation there is validation in place to ensure that the contractor's organisation is permitted to work for the target organisation. This is controlled by the target organisation's admin, as they can establish contracting relationships via the front-end application. Please note that currently Street Manager does not support contractors assuming a `HighwayAuthority` role. This is currently in the roadmap for future release (post April 2020).
+Many endpoints in our API support the ability to provide a `swaCode` query param. This is intended for `Contractor` users to assume the `Planner` role on behalf of another organisation. When assuming the role of a `Planner` for another organisation there is validation in place to ensure that the contractor's organisation is permitted to work for the target organisation. This is controlled by the target organisation's admin, as they can establish contracting relationships via the front-end application. Please note that currently Street Manager does not support contractors assuming a `HighwayAuthority` role. This is currently in the road map for future release (post April 2020).
 {: .govuk-body}
 
 If a valid contract exists for the target organisation then a contractor is bound to the same planner access controls detailed below as regular planners working for that organisation directly.
@@ -2414,7 +2414,7 @@ The PUT endpoint will update the status of a section 81 and will require a work 
 
 <code>PUT /geographical-areas/{geographicalAreaReferenceNumber}</code>
 
-Geographical Areas allow Admins of a Highway Authority orgnanistation to divide works and records geographically for HA users (such as permit officers or inspectors). Organisations can have a maximum of 100 Geographical Areas.
+Geographical Areas allow Admins of a Highway Authority organisation to divide works and records geographically for HA users (such as permit officers or inspectors). Organisations can have a maximum of 100 Geographical Areas.
 {: .govuk-body}
 
 The POST endpoint accepts a CSV file of USRNs and will create a Geographical Area containing those USRNs.
@@ -2432,6 +2432,43 @@ The file must:
   <li>Contain unique USRNs</li>
   <li>Contain valid USRNs</li>
 </ol>
+
+#### Sample Inspections Targets
+{: .govuk-heading-s}
+
+<code>POST ​/sample-inspection-targets</code>
+
+<code>GET /sample-inspection-targets​/{sampleInspectionTargetReferenceNumber}</code>
+
+<code>PUT /sample-inspection-targets​/{sampleInspectionTargetReferenceNumber}</code>
+
+<code>PUT /sample-inspection-targets​/{sampleInspectionTargetReferenceNumber}​/close</code>
+
+Sample Inspections Targets allow Admins of a Highway Authority organisation to define sample inspection targets for promoters they would like to inspect.
+{: .govuk-body}
+
+The POST endpoint will create the sample inspection targets and return a sample inspection reference number.
+{: .govuk-body}
+
+The GET endpoint will require the sample inspection reference number of the intended sample inspection target to return information.
+{: .govuk-body}
+
+The PUT endpoint will update the sample inspection targets and will require sample inspection reference number and updated targets.
+{: .govuk-body}
+
+The second PUT endpoint (labeled 'close') will close the sample inspection target and set any linked sample inspections to <code>expired</code>. This will require a sample inspection reference number.
+{: .govuk-body}
+
+#### Sample Inspections
+{: .govuk-heading-s}
+
+<code>POST /sample-inspection</code>
+
+Sample Inspections allow a HA to generate sample inspection based on their Sample Inspection Targets.
+{: .govuk-body}
+
+The POST endpoint will start a job which will generate sample inspections.
+{: .govuk-body}
 
 ### GeoJSON API
 {: .govuk-heading-m}

@@ -11,7 +11,17 @@ This section lists any significant changes made to this document (and by extensi
 Version 2.10.7 (04/03/2021):
 {: .govuk-heading-s}
 
-Update the Party API with the following changes:
+SM-6776: Added new authorisation checks that prevent users belonging to suspended organisations from performing any read/write actions, and to prevent contractor orgs from performing any read/write actions on suspended organisations records. These checks have been added to the following APIs:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Reporting API</li>
+  <li>Party API</li>
+  <li>Data Export API</li>
+  <li>Street Lookup API</li>
+  <li>GeoJSON API</li>
+</ol>
+
+Updated the Party API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>

@@ -8,6 +8,19 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 1.25.12 (04/03/2021):
+{: .govuk-heading-s}
+
+SM-6776: Added new authorisation checks that prevent users belonging to suspended organisations from performing any read/write actions, and to prevent contractor orgs from performing any read/write actions on suspended organisations records. These checks have been added to the following APIs:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>Reporting API</li>
+  <li>Party API</li>
+  <li>Data Export API</li>
+  <li>Street Lookup API</li>
+  <li>GeoJSON API</li>
+</ol>
+
 Version 1.25.11 (18/02/2021):
 {: .govuk-heading-s}
 

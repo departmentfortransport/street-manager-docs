@@ -11,6 +11,14 @@ This section lists any significant changes made to this document (and by extensi
 Version 2.10.7 (04/03/2021):
 {: .govuk-heading-s}
 
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6874: Updated the validation logic on the <code>GET /files/{fileId}</code> endpoint to allow users to download files attached to a work that they have read access to.
+  </li>
+</ol>
+
 Update the Party API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">

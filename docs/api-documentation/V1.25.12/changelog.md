@@ -8,17 +8,6 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Version 1.25.12 (04/03/2021):
-{: .govuk-heading-s}
-
-Updated Work API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>
-    SM-6874: Updated the validation logic on the <code>GET /files/{fileId}</code> endpoint to allow users to download files attached to a work that they have read access to.
-  </li>
-</ol>
-
 Version 1.25.11 (18/02/2021):
 {: .govuk-heading-s}
 
@@ -33,6 +22,9 @@ Updated Work API with the following changes:
   </li>
   <li>
     SM-6107: Updated the validation on <code>POST /works/{workReferenceNumber}/sites</code> and <code>POST /works/{workReferenceNumber}/sites/{siteNumber}/reinstatements</code> to use the earliest <code>actual_start_date</code> across all permits associated with a work when validating <code>reinstatement_date</code>. The reinstatement date cannot be before the earliest <code>actual_start_date</code>.
+  </li>
+  <li>
+    SM-6874: Updated the validation logic on the <code>GET /files/{fileId}</code> endpoint to allow users to download files attached to a work that they have read access to.
   </li>
 </ol>
 

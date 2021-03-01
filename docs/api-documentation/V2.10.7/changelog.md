@@ -21,7 +21,15 @@ SM-6776: Added new authorisation checks that prevent users belonging to suspende
   <li>GeoJSON API</li>
 </ol>
 
-Updated the Party API with the following changes:
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-5939: Added additional validation to the <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/link-section-81</code> endpoint to prevent linking a permit and section 81 that are assigned to different promoter organisations.
+  </li>
+</ol>
+
+Updated Party API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>

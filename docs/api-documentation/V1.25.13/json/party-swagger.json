@@ -4,21 +4,17 @@
 		"application/json"
 	],
 	"definitions": {
-		"WorkstreamStatusResponse": {
+		"WorkstreamStatus": {
 			"enum": [
 				"active",
-				"deactivated",
-				"upcoming_enum"
+				"deactivated"
 			],
 			"type": "string"
 		},
 		"WorkstreamResponse": {
 			"properties": {
 				"status": {
-					"$ref": "#/definitions/WorkstreamStatusResponse"
-				},
-				"status_string": {
-					"type": "string"
+					"$ref": "#/definitions/WorkstreamStatus"
 				},
 				"prefix": {
 					"type": "string"
@@ -48,7 +44,6 @@
 			},
 			"required": [
 				"status",
-				"status_string",
 				"prefix",
 				"name",
 				"organisation_reference"
@@ -70,16 +65,6 @@
 		},
 		"WorkstreamCreateRequest": {
 			"properties": {
-				"internal_user_identifier": {
-					"type": "string",
-					"description": "Max length 100 characters",
-					"x-nullable": true
-				},
-				"internal_user_name": {
-					"type": "string",
-					"description": "Max length 50 characters",
-					"x-nullable": true
-				},
 				"prefix": {
 					"type": "string",
 					"description": "Must consist of 3 positive whole numbers"
@@ -118,16 +103,6 @@
 		},
 		"WorkstreamUpdateRequest": {
 			"properties": {
-				"internal_user_identifier": {
-					"type": "string",
-					"description": "Max length 100 characters",
-					"x-nullable": true
-				},
-				"internal_user_name": {
-					"type": "string",
-					"description": "Max length 50 characters",
-					"x-nullable": true
-				},
 				"name": {
 					"type": "string",
 					"description": "Max length 60 characters"
@@ -159,21 +134,11 @@
 			"type": "object",
 			"additionalProperties": false
 		},
-		"OrganisationTypeResponse": {
+		"OrganisationType": {
 			"enum": [
 				"PROMOTER",
 				"HA",
-				"CONTRACTOR",
-				"upcoming_enum"
-			],
-			"type": "string"
-		},
-		"OrganisationStatusResponse": {
-			"enum": [
-				"active",
-				"suspended",
-				"disabled",
-				"upcoming_enum"
+				"CONTRACTOR"
 			],
 			"type": "string"
 		},
@@ -184,14 +149,6 @@
 				},
 				"organisation_reference": {
 					"type": "string"
-				},
-				"organisation_status": {
-					"$ref": "#/definitions/OrganisationStatusResponse",
-					"x-nullable": true
-				},
-				"organisation_status_string": {
-					"type": "string",
-					"x-nullable": true
 				}
 			},
 			"required": [
@@ -208,14 +165,6 @@
 				},
 				"organisation_reference": {
 					"type": "string"
-				},
-				"organisation_status": {
-					"$ref": "#/definitions/OrganisationStatusResponse",
-					"x-nullable": true
-				},
-				"organisation_status_string": {
-					"type": "string",
-					"x-nullable": true
 				},
 				"address_line_one": {
 					"type": "string"
@@ -245,10 +194,7 @@
 					"type": "string"
 				},
 				"organisation_type": {
-					"$ref": "#/definitions/OrganisationTypeResponse"
-				},
-				"organisation_type_string": {
-					"type": "string"
+					"$ref": "#/definitions/OrganisationType"
 				},
 				"contractors": {
 					"items": {
@@ -270,7 +216,6 @@
 				"postcode",
 				"prefix",
 				"organisation_type",
-				"organisation_type_string",
 				"is_hs2_applicable"
 			],
 			"type": "object",
@@ -319,7 +264,7 @@
 			"type": "object",
 			"additionalProperties": false
 		},
-		"RoleResponse": {
+		"Role": {
 			"enum": [
 				"Planner",
 				"HighwayAuthority",
@@ -327,16 +272,14 @@
 				"Contractor",
 				"API",
 				"UI",
-				"DataExport",
-				"upcoming_enum"
+				"DataExport"
 			],
 			"type": "string"
 		},
-		"WorkstreamAccessLevelResponse": {
+		"WorkstreamAccessLevel": {
 			"enum": [
 				"full_write",
-				"read_only",
-				"upcoming_enum"
+				"read_only"
 			],
 			"type": "string"
 		},
@@ -346,20 +289,16 @@
 					"type": "string"
 				},
 				"access_level": {
-					"$ref": "#/definitions/WorkstreamAccessLevelResponse"
+					"$ref": "#/definitions/WorkstreamAccessLevel"
 				},
 				"workstream_name": {
-					"type": "string"
-				},
-				"access_level_string": {
 					"type": "string"
 				}
 			},
 			"required": [
 				"workstream_prefix",
 				"access_level",
-				"workstream_name",
-				"access_level_string"
+				"workstream_name"
 			],
 			"type": "object",
 			"additionalProperties": false
@@ -379,14 +318,7 @@
 				},
 				"roles": {
 					"items": {
-						"$ref": "#/definitions/RoleResponse"
-					},
-					"type": "array",
-					"x-nullable": true
-				},
-				"roles_string": {
-					"items": {
-						"type": "string"
+						"$ref": "#/definitions/Role"
 					},
 					"type": "array",
 					"x-nullable": true
@@ -406,14 +338,6 @@
 						"$ref": "#/definitions/UserWorkstreamAccessDetails"
 					},
 					"type": "array",
-					"x-nullable": true
-				},
-				"organisation_status": {
-					"$ref": "#/definitions/OrganisationStatusResponse",
-					"x-nullable": true
-				},
-				"organisation_status_string": {
-					"type": "string",
 					"x-nullable": true
 				}
 			},
@@ -441,13 +365,6 @@
 			],
 			"type": "object",
 			"additionalProperties": false
-		},
-		"WorkstreamAccessLevel": {
-			"enum": [
-				"full_write",
-				"read_only"
-			],
-			"type": "string"
 		},
 		"UserWorkstreamAccess": {
 			"properties": {
@@ -568,18 +485,6 @@
 			"type": "object",
 			"additionalProperties": false
 		},
-		"Role": {
-			"enum": [
-				"Planner",
-				"HighwayAuthority",
-				"Admin",
-				"Contractor",
-				"API",
-				"UI",
-				"DataExport"
-			],
-			"type": "string"
-		},
 		"InviteUserRequest": {
 			"properties": {
 				"email": {
@@ -698,24 +603,6 @@
 			"type": "object",
 			"additionalProperties": false
 		},
-		"ReOnboardUserRequest": {
-			"properties": {
-				"email": {
-					"type": "string",
-					"description": "Max length 50 characters"
-				},
-				"password": {
-					"type": "string",
-					"description": "Max length 99 characters",
-					"x-nullable": true
-				}
-			},
-			"required": [
-				"email"
-			],
-			"type": "object",
-			"additionalProperties": false
-		},
 		"InternalUpdateUserRolesRequest": {
 			"properties": {
 				"roles": {
@@ -788,7 +675,7 @@
 		}
 	},
 	"info": {
-		"title": "party-api",
+		"title": "party-api-stable",
 		"version": "1.0.0",
 		"description": "See API specification Resource Guide > Party API for more information on endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
 		"license": {
@@ -1023,16 +910,12 @@
 						"in": "query",
 						"name": "type",
 						"required": false,
-						"collectionFormat": "multi",
-						"type": "array",
-						"items": {
-							"type": "string",
-							"enum": [
-								"PROMOTER",
-								"HA",
-								"CONTRACTOR"
-							]
-						}
+						"type": "string",
+						"enum": [
+							"PROMOTER",
+							"HA",
+							"CONTRACTOR"
+						]
 					},
 					{
 						"in": "query",

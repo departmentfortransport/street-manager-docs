@@ -117,7 +117,7 @@
         "is_ttro_required": {
           "description": "Is a temporary traffic regulation order required?",
           "type": "string",
-          "enum": ["Yes", "No"]
+          "enum": ["Yes", "No", "Not provided"]
         },
         "is_covid_19_response": {
           "description": "Is the work in response to Covid 19",

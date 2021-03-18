@@ -8,22 +8,6 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
-Version 2.10.8 (18/03/2021):
-{: .govuk-heading-s}
-
-Updated Data Export API with the following changes:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>
-    SM-6861: New endpoint <code>POST /performance-reporting/inspection-outcomes/csv</code> added to enable HA and promoter admin users to generate the All Inspection Outcomes performance report. The following filter params are required in the <code>InspectionOutcomesCSVExportRequest</code>:
-      <ol class="govuk-list govuk-list--bullet">
-      <li><code>date_from</code></li>
-      <li><code>date_to</code></li>
-    </ol>
-    with a max date range of 92 days.
-  </li>
-</ol>
-
 Version 2.10.7 (04/03/2021):
 {: .govuk-heading-s}
 

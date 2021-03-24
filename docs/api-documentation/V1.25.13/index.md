@@ -54,7 +54,7 @@ For supplemental details, please see the following documents:
 
 <ol class="govuk-list govuk-list--bullet">
   <li><a href="/street-manager-docs/articles/business-rules-home.html">Business rules</a>, for details on Street Managers business processes and logic</li>
-  <li><a href="/street-manager-docs/onboarding/">Onboarding</a>, for details on how to start using Street Manager with-in your organisation</li>
+  <li><a href="/street-manager-docs/registration/">Onboarding</a>, for details on how to start using Street Manager with-in your organisation</li>
 </ol>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">

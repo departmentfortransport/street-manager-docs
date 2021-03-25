@@ -4,7 +4,7 @@
 ### Available APIs
 {: .govuk-heading-m}
 
-![Getting data]({{site.baseurl}}/api-documentation/images/v1/getting-data-1.png)
+![Getting data]({{site.baseurl}}/api-documentation/images/v1/getting-data.png)
 
 Street Manager exposes a number of APIs to allow external applications
 to retrieve and submit data.

@@ -15,14 +15,26 @@ The Street Manager API services will be versioned via the URL path, for example 
 {: .govuk-body}
 
 
+### Available API Versions
+{: .govuk-heading-m}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>V1 (stable - due to be deprecated in May 2021)</li>
+  <li>V2 (stable)</li>
+  <li>V3 (upcoming in May 2021)</li>
+</ol>
+
 
 ### Release Management
 {: .govuk-heading-m}
 
-As described in the section above, initially only <code>v1</code> of the Street Manager API services will be available within the environments.  Minor version updates will be released into <code>v1</code> every two weeks - these updates may include existing feature enhancements, entirely new feature additions, as well as issue hotfixes.  Although regular releases will continue throughout Public Beta, the Street Manager development team will strive to minimise the number of breaking changes where possible.
+Minor version updates will be released to all available versions of Street Manager APIs every two weeks - these updates may include existing feature enhancements, entirely new feature additions, as well as issue hot fixes. Although regular releases will continue throughout Public Beta, the Street Manager development team will strive to minimise the number of breaking changes to stable versions where possible.
 {: .govuk-body}
 
-It should however be noted that during Public Beta development, there remains the potential that breaking changes may occasionally be required in order to release corrective hotfixes deemed to be service critical.  In such situations, the project team will notify potentially affected participant organistations in advance of the release and provide support with a view to minimising disruption.
+It should however be noted that during Public Beta development, there remains the potential that breaking changes may occasionally be required in order to release corrective hot fixes deemed to be service critical. In such situations, the project team will notify potentially affected participant organistations in advance of the release and provide support with a view to minimising disruption.
+{: .govuk-body}
+
+After an API version is deprecated this will no longer be supported or deployed. This will be communicated in advance to ensure ample notice for integrators to migrate to the new stable version.
 {: .govuk-body}
 
 The following are examples of what we consider to be breaking and non-breaking changes.

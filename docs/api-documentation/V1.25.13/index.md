@@ -1,11 +1,12 @@
 ---
 layout: default
 title: API specification V1.25.13
+version: 1.25.13
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 1.25.13
+Version {{ page.version }}
 {: .govuk-body-l}
 
 As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of V1 for the API will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for details on previous versions.
@@ -29,8 +30,7 @@ As of Version 1.12, this document details all the legally required API functions
   <li><a class="govuk-link" href="#sequencing">Sequencing</a></li>
   <li><a class="govuk-link" href="#access-and-permissions">Access and permissions</a></li>
   <li><a class="govuk-link" href="#resource-guide">Resource Guide</a></li>
-  <li><a class="govuk-link" href="#roadmap">Roadmap</a></li>
-  <li><a class="govuk-link" href="{{ site.baseurl }}/api-documentation/versions-and-changes/v1/changelog#v1-25-13">Versions and Changes</a></li>
+  <li><a class="govuk-link" href="{{ site.baseurl }}/api-documentation/versions-and-changes/v1/changelog#v#{{ page.version | replace: '.', '-' }}">Versions and Changes</a></li>
 </ul>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -75,4 +75,9 @@ As of Version 1.12, this document details all the legally required API functions
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
+{% include api-documentation/v1/access-and-permissions.md %}
+
+<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
 {% include api-documentation/v1/resource-guide.md %}
+

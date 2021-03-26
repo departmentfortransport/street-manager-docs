@@ -1,11 +1,12 @@
 ---
 layout: default
 title: API specification V2.10.9
+version: 2.10.9
 ---
 # API specification
 {: .govuk-heading-xl}
 
-Version 2.10.9
+Version {{ page.version }}
 {: .govuk-body-l}
 
 This document details all the functions for integrating with Street Manager via the latest version of the API. See the 'Versions and Changes' section for more details on previous versions. The documentation for the stable version of the API is available <a class="govuk-link" href="{{ site.baseurl }}/api-documentation/">here</a>.
@@ -29,8 +30,7 @@ This document details all the functions for integrating with Street Manager via 
   <li><a class="govuk-link" href="#sequencing">Sequencing</a></li>
   <li><a class="govuk-link" href="#access-and-permissions">Access and permissions</a></li>
   <li><a class="govuk-link" href="#resource-guide">Resource Guide</a></li>
-  <li><a class="govuk-link" href="#roadmap">Roadmap</a></li>
-  <li><a class="govuk-link" href="{{ site.baseurl }}/api-documentation/versions-and-changes/v2/changelog#v2-10-9">Versions and Changes</a></li>
+  <li><a class="govuk-link" href="{{ site.baseurl }}/api-documentation/versions-and-changes/v2/changelog#{{ page.version | replace: '.', '-' }}">Versions and Changes</a></li>
 </ul>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">

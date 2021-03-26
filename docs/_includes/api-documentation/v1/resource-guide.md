@@ -828,12 +828,43 @@ This endpoint takes min and max easting and northing values to select all HS2 ac
 ### Street Lookup API
 {: .govuk-heading-m}
 
+The Street Lookup API provides a means of querying the NSG dataset. The endpoints described below return a filtered, formatted subset of the data available within the NSG dataset.
+{: .govuk-body}
+
+USRNs which are marked as Closed (street state 4) or Addressing Purposes Only (street state 5) are excluded from results. Street Manager also filters results based on the reinstatement
+type code, as described below.
+{: .govuk-body}
+
+#### Reinstatement type codes
+{: .govuk-heading-s}
+
+Below is a list of Reinstatement type codes currently supported by Street Manager, these codes correspond to the reinstatement_type_codes found in the [NSG specification](https://s3.eu-west-1.amazonaws.com/static.geoplace.co.uk/downloads/NSG-Data-Transfer-Format-DTF-8.1.pdf):
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>0 - This is currently mapped to reinstatement type code 5 for backward compatibility purposes, but this will be removed in a future version of Street Manager so we recommend providing reinstatement type code 5 (see below)</li>
+  <li>1 - Carriageway type 1 (10 to 30 MSA)</li>
+  <li>2 - Carriageway type 2 (2.5 to 10 MSA)</li>
+  <li>3 - Carriageway type 3 (0.5 to 2.5 MSA)</li>
+  <li>4 - Carriageway type 4 (up to 0.5 MSA)</li>
+  <li>5 - Carriageway type 0 (30 to 125 MSA)</li>
+  <li>6 - High Duty Footway</li>
+  <li>7 - High Amenity Footway</li>
+  <li>8 - Other Footways</li>
+  <li>9 - Private Street – No definition information held by Street Authority</li>
+  <li>10 - Carriageway type 6 (over 125 MSA)</li>
+</ol>
+
+The remaining reinstatement type codes (11 - Street maintained by another Highway Authority and 12 Street outside scope of EToN) are **not** supported by Street Manager.
+**USRNs with these codes are not returned by the endpoints below**.
+{: .govuk-body}
+
 #### Get streets endpoint (coordinates)
 {: .govuk-heading-s}
 
 <code>GET /nsg/streets</code>
 
-Returns NSG data based on a coordinate pair point. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. For more information on the <code>reinstatement_type_code</code> property see the `Reinstatement type codes` section below. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released).
+Returns NSG data withing 25 meters a coordinate pair point. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://s3.eu-west-1.amazonaws.com/static.geoplace.co.uk/downloads/NSG-Data-Transfer-Format-DTF-8.1.pdf).
 {: .govuk-body}
 
 #### Get streets endpoint (USRN)
@@ -841,7 +872,7 @@ Returns NSG data based on a coordinate pair point. The information returned can 
 
 <code>GET /nsg/streets/{usrn}</code>
 
-Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. For more information on the <code>reinstatement_type_code</code> property see the `Reinstatement type codes` section below. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released).
+Returns NSG data based on a USRN. The information returned can be used to populate a PermitCreateRequest or a WorkCreateRequest. The <code>additional_special_designations_response</code> property values are returned in the format defined by the [NSG specification](https://s3.eu-west-1.amazonaws.com/static.geoplace.co.uk/downloads/NSG-Data-Transfer-Format-DTF-8.1.pdf).
 {: .govuk-body}
 
 #### Get nsg search (Available in public beta)
@@ -850,25 +881,6 @@ Returns NSG data based on a USRN. The information returned can be used to popula
 <code>GET /nsg/search</code>
 
 Returns street data based on a query search across the NSG street_descriptor, locality_name, town_name and administrative_area.
-{: .govuk-body}
-
-#### Reinstatement type codes
-{: .govuk-heading-s}
-
-Below is a list of Reinstatement type codes currently supported by Street Manager, these codes correspond to the reinstatement_type_codes found in the [NSG specification](https://www.geoplace.co.uk/-/national-street-gazetteer-nsg-data-transfer-format-dtf-8-1-documents-released):
-{: .govuk-body}
-
-0 - This is currently mapped to reinstatement type code 5 for backward compatibility purposes, but this will be removed in a future version of Street Manager so we recommend providing reinstatement type code 5 (see below)
-1 - Carriageway type 1 (10 to 30 MSA)
-2 - Carriageway type 2 (2.5 to 10 MSA)
-3 - Carriageway type 3 (0.5 to 2.5 MSA)
-4 - Carriageway type 4 (up to 0.5 MSA)
-5 - Carriageway type 0 (30 to 125 MSA)
-6 - High Duty Footway
-7 - High Amenity Footway
-8 - Other Footways
-9 - Private Street – No definition information held by Street Authority
-10 - Carriageway type 6 (over 125 MSA)
 {: .govuk-body}
 
 ### Party API
@@ -1072,73 +1084,3 @@ Retrieves a CSV list of comments which are associated with the authenticated use
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-## Roadmap
-{: .govuk-heading-l #roadmap}
-
-The Street Manager road map shows the things we’re working on and when we hope to have them ready for you to use. To see the full service road map refer to the DfT roadshow slides. Below are some details on planned API changes, detail on when they will be released and API changes will be available during public beta.
-{: .govuk-body}
-
-Street Manager is in public beta. This means it is still in active development and we’re regularly adding new features. The road map is a guide to what we have planned, but some things might change.
-{: .govuk-body}
-
-You can <a href="mailto:streetmanager@dft.gov.uk">contact us</a> for more detail about these features, or to suggest something else you’d like Street Manager to offer.
-{: .govuk-body}
-
-### Reporting API enhancements for search and filtering
-{: .govuk-heading-s}
-
-The Reporting API will be updated to allow additional search and filtering options, such as ability to query permit data from other organisations. The summary data returned will be increased to allow more flexible reporting and extracting data.
-{: .govuk-body}
-
-### Delegated user details fields for POST/PUT endpoints for comments/history
-{: .govuk-heading-s}
-
-The Work API will allow External systems which integrate with Street Manager to supply internal user identifer details in API calls from their own systems so that their actions in Street Manager can be distinguished from other internal users sent via API. This will be recorded and displayed in areas such as Comments and Works History.
-{: .govuk-body}
-
-The fields to be used for this have already been added to the Work API as placeholders for integration, see the **Swagger JSON** and **Resource Guide** for details.
-{: .govuk-body}
-
-### Returning transaction IDs on updates and use in polling endpoint
-{: .govuk-heading-s}
-
-The Reporting API continuous polling will be updated to allow the use of Transaction ID for filtering for easier polling.
-{: .govuk-body}
-
-### Notifications
-{: .govuk-heading-s}
-
-See **Technical Overview - Getting data from Street Manager - Notifications** for details.
-{: .govuk-body}
-
-### User and organisation self registration
-{: .govuk-heading-s}
-
-API will support user and organisation administration and registration functions, as such password reset, profile editing and user self registration. These functions will be exposed via a new Party API, which will allow API users with admin permissions to
-{: .govuk-body}
-
-### Noticing
-{: .govuk-heading-s}
-
-The Work API will be updated to allow submission of notices to noticing Highway Authorities.
-{: .govuk-body}
-
-### Error correction
-{: .govuk-heading-s}
-
-The Work API will be updated to include endpoints for correcting errors in submitted data against works.
-{: .govuk-body}
-
-### Comments V2
-{: .govuk-heading-s}
-
-Future releases will include new features relating to Comments. These include:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>Comment reference numbers will be introduced to give API users a way to identify specific comments more easily and will be used as the resource identifier</li>
-  <li>The ability to create comments flagged as internal. Internal comments can only be read by your own organisation</li>
-  <li>The ability to mark comments as read. This can be done by either the author or recipient, and will be displayed on the comments list page along with the date
-  and time the comment was marked as read</li>
-  <li>New filter options on comment list pages and exports, including filtering by comment date and topic</li>
-</ol>

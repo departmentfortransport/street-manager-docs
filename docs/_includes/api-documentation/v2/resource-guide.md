@@ -788,7 +788,19 @@ The file must:
 
 <code>PUT /sample-inspection-targets​/{sampleInspectionTargetReferenceNumber}​/close</code>
 
-Sample Inspections Targets allow Admins of a Highway Authority organisation to define sample inspection targets for promoters they would like to inspect.
+Sample Inspections Targets allow Admins of a Highway Authority organisation to targets for promoters they would like to inspect.
+{: .govuk-body}
+
+Each target consists of:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>the agreed number of inspections that the Highway Authority will carry out per inspection category</li>
+  <li>the max number (cap) of samples to generate per inspection category</li>
+  <li>the progress against each inspection category</li>
+</ol>
+
+For more information about sample inspection targets see the [Business rules]({{ page.business_rules_url }}).
 {: .govuk-body}
 
 The POST endpoint will create the sample inspection targets and return a sample inspection reference number.
@@ -802,6 +814,7 @@ The PUT endpoint will update the sample inspection targets and will require samp
 
 The second PUT endpoint (labeled 'close') will close the sample inspection target and set any linked sample inspections to <code>expired</code>. This will require a sample inspection reference number.
 {: .govuk-body}
+
 
 #### Sample Inspections
 {: .govuk-heading-s}

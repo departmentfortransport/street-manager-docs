@@ -471,3 +471,38 @@ In order to create a Highway Authority imposed change the following steps should
 </ol>
 
 ![alteration sequence diagram]({{site.baseurl}}/api-documentation/images/v2/create-and-assess-permit-alteration.png)
+
+#### Generating Sample Inspections
+{: .govuk-heading-s}
+
+In order to generate sample inspections the following steps should be followed:
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    <strong>Create sample inspection targets (Highway Authority Admin)</strong>: <code>POST /sample-inspection-target</code>
+    <p>
+      Once targets are agreed with promoter a target should be created against that promoter in Street Manager. Only promoters with an active target are included in sampling.
+    </p>
+  </li>
+  <li>
+    <strong>Request Sample Generation (Highway Authority Admin)</strong>: <code>POST /sample-inspections</code>
+    <p>
+      Samples are generated for each promoter with an active target up to the limits (caps) specified in the target.
+    </p>
+  </li>
+  <li>
+    <strong>Update Sample target (Highway Authority Admin)</strong>: <code>PUT /sample-inspection-target</code>
+    <p>
+      After a target is raised, Highway Authority Admins have the option to update the agreed counts and the max number per category to generate
+    </p>
+  </li>
+  <li>
+    <strong>Closing a Sample target (Highway Authority Admin)</strong>: <code>PUT /sample-inspection-target/close</code>
+    <p>
+      A Highway Authority may only have one target active per promoter. Targets may be closed to allow a fresh target to be created for example at the end of a financial year.
+    </p>
+  </li>
+</ol>
+
+![sample inspections sequence diagram]({{site.baseurl}}/api-documentation/images/v2/generating-sample-inspections.png)

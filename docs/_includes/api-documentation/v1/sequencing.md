@@ -444,7 +444,7 @@ In order to create a work extension the following steps should be followed:
 #### Highway Authority imposed changed
 {: .govuk-heading-s}
 
-In order to create a work extension the following steps should be followed:
+In order to create a Highway Authority imposed change the following steps should be followed:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">

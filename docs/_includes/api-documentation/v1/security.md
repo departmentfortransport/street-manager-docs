@@ -63,11 +63,6 @@ The table below shows the current permissions per endpoint.
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code>GET /*</code></td>
-      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
-      <td class="govuk-table__cell">Not Required</td>
-    </tr>
-    <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>POST /authenticate</code></td>
       <td class="govuk-table__cell">None</td>
       <td class="govuk-table__cell">Not Required</td>
@@ -113,6 +108,16 @@ The table below shows the current permissions per endpoint.
       <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/scheduled-inspections</code></td>
+      <td class="govuk-table__cell">HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>DELETE /works/{referenceNumber}/scheduled-inspections</code></td>
+      <td class="govuk-table__cell">HAOfficer</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>POST /works/{referenceNumber}/permits/{permitReferenceNumber}/alterations</code></td>
       <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer</td>
       <td class="govuk-table__cell">Required</td>
@@ -152,19 +157,49 @@ The table below shows the current permissions per endpoint.
       <td class="govuk-table__cell">Planner &amp; Contractor</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
-        <tr class="govuk-table__row">
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>GET /work/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}</code></td>
       <td class="govuk-table__cell">Planner &amp; Contractor</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
-        <tr class="govuk-table__row">
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>PUT /work/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}</code></td>
       <td class="govuk-table__cell">Planner &amp; Contractor</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
-        <tr class="govuk-table__row">
+    <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>PUT /work/{workReferenceNumber}/forward-plans/{forwardPlanReferenceNumber}/cancel</code></td>
       <td class="govuk-table__cell">Planner &amp; Contractor</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+        <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /historic-works/fixed-penalty-notices</code></td>
+      <td class="govuk-table__cell">Highway Authority</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /historic-works/inspections</code></td>
+      <td class="govuk-table__cell">Highway Authority</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /non-notifiable-works/sites</code></td>
+      <td class="govuk-table__cell">Planner &amp; Contractor</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /section-81-works/section-81s</code></td>
+      <td class="govuk-table__cell">Highway Authority</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}</code></td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; Highway Authority</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>PUT /works/{workReferenceNumber}/section-81s/{section81ReferenceNumber}/status</code></td>
+      <td class="govuk-table__cell">Highway Authority</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
     <tr class="govuk-table__row">

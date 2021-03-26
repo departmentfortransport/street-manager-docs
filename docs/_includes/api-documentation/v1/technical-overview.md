@@ -42,6 +42,7 @@ they are:
   <li>Issue an FPN</li>
   <li>Submit event and highway license activities</li>
   <li>Add comments to a works record</li>
+  <li>Issue a Section 81</li>
 </ol>
 
 In order to ensure a user has the appropriate permissions to carry out
@@ -106,7 +107,7 @@ CSV format. These endpoints allow you to extract most Work
 information efficiently for your organisation.
 {: .govuk-body}
 
-**Continuous** **Polling**
+**Continuous Polling**
 {: .govuk-body}
 
 The Reporting API exposes a `/works/updates` endpoint for polling. See the resource guide for full information.
@@ -134,13 +135,13 @@ updated works.
 **Contractors**
 {: .govuk-body}
 
-Contractors can use the Data Export API to extract data from the service in CSV format. These endpoints allow you to extract most Work information efficiently for the organisation you are working on behalf of. <code>swa_code</code> parameters are available on the endpoints which can be used by contractors to provide the SWA code of the promoter they are working on behalf of. Additionally, contractors can carry out promoter workflows via the <code>work-api</code>.
+Contractors can use the Data Export API to extract data from the service in CSV format. These endpoints allow you to extract most Work information efficiently for the organisation you are working on behalf of. <code>swa_code</code> parameters are available on the endpoints which can be used by contractors to provide the SWA code of the promoter they are working on behalf of. Additionally, contractors can carry out promoter workflows via the Work API.
 {: .govuk-body}
 
 **Open Data**
 {: .govuk-body}
 
-Street Manager maintains a number of hourly scheduled jobs for data exporting. Currently, these retrieve data of permits and activities across all organisations that have been added, changed, or deleted in the past hour, which is then stored in CSV format.
+Street Manager maintains a number of hourly scheduled jobs for data exporting. Currently, these retrieve data of permits and activities across all organisations that have been added, changed, or deleted in the past hour, which is then stored in CSV format. These files can be retrieved using the Data Export API.
 {: .govuk-body}
 
 For example, a CSV file named <code>Works_data_export_2020-01-01_13-00.csv</code> will contain data of permits across all organisations that have been added, changed, or deleted between <code>2020-01-01T12:00:00.000Z</code> and <code>2020-01-01T12:59:59.999Z</code>.

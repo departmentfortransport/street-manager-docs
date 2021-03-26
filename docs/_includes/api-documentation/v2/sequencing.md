@@ -102,9 +102,10 @@ work record, the properties of this response are:
   <li><strong>Inspections</strong>: Any inspections that have been issued on the works (none initially)</li>
   <li><strong>FPNs</strong>: Any fixed penalty notices that have been issued on the works (none initially)</li>
   <li><strong>Permits</strong>: Summary of all permits that have been associated with that works (i.e. multiple permits)</li>
-  <li><strong>Reinstatements</strong>: Summary of all reinstatements that have been associated with that works (none initially)</li>
   <li><strong>History</strong>: Summary of all history associated with that works</li>
   <li><strong>Files</strong>: Any files that have been uploaded on the works (none initially)</li>
+  <li><strong>Section 81</strong>: Summary of a Section 81 if it has been added to the works (none initially)</li>
+  <li><strong>Sample Inspections</strong>: Summary of any samples that have been raised against this work (none initially)</li>
 </ol>
 
 It's also possible to retrieve only information about the permit itself
@@ -444,7 +445,7 @@ In order to create a work extension the following steps should be followed:
 #### Highway Authority imposed changed
 {: .govuk-heading-s}
 
-In order to create a work extension the following steps should be followed:
+In order to create a Highway Authority imposed change the following steps should be followed:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">

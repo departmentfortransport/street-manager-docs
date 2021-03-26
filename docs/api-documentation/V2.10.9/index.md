@@ -2,6 +2,7 @@
 layout: default
 title: API specification V2.10.9
 version: 2.10.9
+business_rules_url: /street-manager-docs/articles/business-rules-home.html
 ---
 # API specification
 {: .govuk-heading-xl}

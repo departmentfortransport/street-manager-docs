@@ -8,6 +8,17 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 2.10.9 (01/04/2021):
+{: .govuk-heading-s}
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6950: Updated the <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> endpoint to return a precondition failed error when submitting a permit alteration on a planned work which would change the permit from minor/standard to major/PAA
+  </li>
+</ol>
+
 Version 2.10.7 (04/03/2021):
 {: .govuk-heading-s}
 

@@ -2330,6 +2330,16 @@ The file must:
 Sample Inspections Targets allow Admins of a Highway Authority organisation to define sample inspection targets for promoters they would like to inspect.
 {: .govuk-body}
 
+When any eligible inspection is raised against a work record and the highway authority has an active target for the promoter organisation conducting the works, the actual number of inspections carried out for that target will be incremented. If that work was sampled, and the category of the inspection raised matches the category of the sample, the sample will be marked as completed.
+{: .govuk-body}
+
+When any eligible inspection is withdrawn against a work record and the highway authority has an active target for the promoter organisation conducting the works, the actual number of inspections carried out for that target will be decremented. If a sample was linked to that inspection, this sample will be marked as issued.
+{: .govuk-body}
+
+For further information on what is considered an eligible inspection please refer to the business rules.
+{: .govuk-body}
+
+
 The POST endpoint will create the sample inspection targets and return a sample inspection reference number.
 {: .govuk-body}
 

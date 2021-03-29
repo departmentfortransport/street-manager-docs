@@ -17,6 +17,12 @@ Updated Work API with the following changes:
   <li>
     SM-6950: Updated the <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/alterations</code> endpoint to return a precondition failed error when submitting a permit alteration on a planned work which would change the permit from minor/standard to major/PAA
   </li>
+  <li>
+    SM-6842: Updated the <code>POST /works/{workReferenceNumber}/inspections</code> endpoint so that any eligible inspection raised will contribute to progress against a sample inspection target, if an active target exists for the HA and promoter.
+  </li>
+  <li>
+    SM-6842: Updated the <code>POST ​/works​/{workReferenceNumber}​/inspections​/{inspectionReferenceNumber}​/withdraw</code> endpoint so that progress against sample inspection targets will be decreased when any eligible inspection is withdrawn, if an active target exists.
+  </li>
 </ol>
 
 Version 2.10.7 (04/03/2021):

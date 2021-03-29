@@ -1,8 +1,17 @@
 ## Resource Guide
 {: .govuk-heading-l #resource-guide}
 
+<ol class="govuk-list govuk-list--bullet">
+  <li><a class="govuk-link" href="#reporting-api-resource-guide">Reporting API</a></li>
+  <li><a class="govuk-link" href="#work-api-resource-guide">Work API</a></li>
+  <li><a class="govuk-link" href="#geojson-api-resource-guide">Geojson API</a></li>
+  <li><a class="govuk-link" href="#lookup-api-resource-guide">Street Lookup API</a></li>
+  <li><a class="govuk-link" href="#party-api-resource-guide">Party API</a></li>
+  <li><a class="govuk-link" href="#data-export-api-resource-guide">Data Export API</a></li>
+</ol>
+
 ### Reporting API
-{: .govuk-heading-m}
+{: .govuk-heading-m #reporting-api-resource-guide}
 
 As discussed in the sequencing section, the Reporting API allows
 promoters and HAs to query resource lists for their organization,
@@ -129,7 +138,7 @@ Query params:
 
 <code>GET /fixed-penalty-notices</code>
 
-Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the work API. FPNs can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
+Retrieves a list of FPNs that have been added to any works record. The <code>POST works/{workReferenceNumber}/fixed-penalty-notices</code> endpoint which can be used to issue an FPN is part of the Work API. FPNs can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
 {: .govuk-body}
 
 #### Get reinstatements
@@ -137,7 +146,7 @@ Retrieves a list of FPNs that have been added to any works record. FPNs are issu
 
 <code>GET /reinstatements</code>
 
-Retrieves a list of Reinstatements that have been added to any works record. Reinstatements are created via the work API. Reinstatements can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
+Retrieves a list of Reinstatements that have been added to any works record. Reinstatements can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of. The <code>/works/{workReferenceNumber}/sites</code> and <code>POST ​/works​/{workReferenceNumber}​/sites​/{siteNumber}​/reinstatements</code> endpoints to create a sites and reinstatements are part of the Work API. The relationship between a site and a reinstatement is explained in more detail [here](#reinstatement-site-detail)
 {: .govuk-body}
 
 #### Get alterations
@@ -242,12 +251,12 @@ Contractors are able to provide optional <code>swa_code</code> parameter in orde
 {: .govuk-body}
 
 ### **Work API**
-{: .govuk-heading-m}
+{: .govuk-heading-m #work-api-resource-guide}
 
 #### Work records and permits
 {: .govuk-heading-s}
 
-It's important to clarify the technical relationship between a work and a permit. When creating a permit for the first time, this will in effect create a works record. A work can have multiple permits. You can create a work and a permit at the same time, or you can create a permit against an existing work depending on the work records current status. A work cannot exist without a permit.
+It's important to clarify the technical relationship between a work and a permit. When creating a permit for the first time, this will in effect create a works record. A work can have multiple permits. You can create a work and a permit at the same time, or you can create a permit against an existing work depending on the work records current status.
 {: .govuk-body}
 
 There is also a concept of a work record's active permit, that is simply the most recently added permit on that works record. In essence, a work is a representation of all the permits, reinstatements, FPNs, inspections etc. that have been added to a particular location.
@@ -256,7 +265,7 @@ There is also a concept of a work record's active permit, that is simply the mos
 ### Delegated Users
 {: .govuk-heading-s #delegated-users}
 
-All POST and PUT endpoints will contain two properties, internal_user_identifier and internal_user_name, these are intended to allow external systems to pass their internal users identifiers to Street Manager so that they are recorded against actions performed via the API (e.g. displaying the internal users name against a Street Manager comment).
+All POST and PUT endpoints will contain two properties, internal_user_identifier and internal_user_name. These are intended to allow external systems to pass their internal users identifiers to Street Manager so that they are recorded against actions performed via the API (e.g. displaying the internal users name against a Street Manager comment).
 {: .govuk-body}
 
 #### Create work endpoint
@@ -403,7 +412,7 @@ Once a permit is in progress, and an excavation site has been added to the work,
 {: .govuk-body}
 
 #### Reinstatements (Promoter)
-{: .govuk-heading-s}
+{: .govuk-heading-s #reinstatement-site-detail}
 
 As shown in the sequencing section, once a work has been started by the promoter then a promoter can add reinstatements and sites. A promoter can continue to create and view these even after the work has been stopped and completed, as they may need to do this retrospectively.
 {: .govuk-body}
@@ -673,23 +682,19 @@ This endpoint allows HAs to acknowledge a HS2 consultation application.
 
 <code>PUT /activity/{activity reference number}/cancel</code>
 
-Events or Activities allow a HA to represent different activites within Street Manager. There are 13 activity types currently supported by Street Manager:
+Events or Activities allow a HA to represent different activites within Street Manager. There are 9 activity types currently supported by Street Manager:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
- <li>Highway improvement works</li>
- <li>Highway repair and maintenance works</li>
- <li>Utility asset works</li>
- <li>Utility repair and maintenance works</li>
- <li> Diversionary Works</li>
- <li>Disconnection or alteration of supply</li>
- <li>Permanent reinstatement</li>
- <li>Remedial works</li>
- <li>Section 58</li>
+ <li>Skips</li>
+ <li>Scaffolding</li>
+ <li>Hoarding</li>
+ <li>Crane Mobile Platform</li>
+ <li>Event</li>
  <li>Section 50</li>
- <li>Core Sampling</li>
- <li>Statutory Infrastructure Works</li>
- <li>Works for Rail Purposes</li>
+ <li>Section 58</li>
+ <li>Compound</li>
+ <li>Other</li>
 </ol>
 
 Creating an activity using the POST endpoint will return an activity reference number which can be used to retrieve an individual activity via the GET endpoint provided
@@ -828,7 +833,7 @@ The POST endpoint will start a job which will generate sample inspections.
 {: .govuk-body}
 
 ### GeoJSON API
-{: .govuk-heading-m}
+{: .govuk-heading-m #geojson-api-resource-guide}
 
 This API returns data in the form of [GeoJSON](https://tools.ietf.org/html/rfc7946#section-4) using BNG (British National Grid [EPSG:27700](https://epsg.io/27700)) as the Coordinate Reference System, as per Street Works industry standard.
 {: .govuk-body}
@@ -866,7 +871,7 @@ This endpoint takes min and max easting and northing values to select all HS2 ac
 {: .govuk-body}
 
 ### Street Lookup API
-{: .govuk-heading-m}
+{: .govuk-heading-m #lookup-api-resource-guide}
 
 The Street Lookup API provides a means of querying the NSG dataset. The endpoints described below return a filtered, formatted subset of the data available within the NSG dataset.
 {: .govuk-body}
@@ -925,7 +930,7 @@ Returns street data based on a query search across the NSG street_descriptor, lo
 {: .govuk-body}
 
 ### Party API
-{: .govuk-heading-m}
+{: .govuk-heading-m #party-api-resource-guide}
 
 #### Get user
 {: .govuk-heading-s}
@@ -1028,7 +1033,7 @@ Accepts the user's email address, new password and token (returned from the Work
 {: .govuk-body}
 
 ### Data Export API
-{: .govuk-heading-m}
+{: .govuk-heading-m #data-export-api-resource-guide}
 
 #### Get Data CSV
 {: .govuk-heading-s}

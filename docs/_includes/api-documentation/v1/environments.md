@@ -4,9 +4,7 @@
 The Street Manager service provides two separate isolated application service environments.  Both of these environments contains a full stack deployment of Street Manager and are designated for specific purposes, as outlined below.
 {: .govuk-body}
 
-
 ![Service environments]({{site.baseurl}}/api-documentation/images/v1/service-environments-1.png)
-
 
 ### SANDBOX environment
 {: .govuk-heading-m  #sandbox-env}
@@ -24,7 +22,6 @@ API URL: https://api.sandbox.manage-roadworks.service.gov.uk
   <li>SANDBOX is development-grade, therefore a) is subject to higher-velocity changes and releases; b) is not guaranteed to be highly-available nor highly-performant; c) may be subject to occasional resets of the underlying databases.</li>
   <li><b>Organisations and their users of Street Manager must agree not to submit sensitive nor personally identifiable data into the SANDBOX environment under any circumstances – only use of ‘dummy’ data is permitted.</b></li>
 </ol>
-
 
 ### PRODUCTION environment
 {: .govuk-heading-m #production-env}

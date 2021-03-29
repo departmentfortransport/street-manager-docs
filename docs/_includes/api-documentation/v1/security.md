@@ -4,8 +4,7 @@
 ### HTTPS
 {: .govuk-heading-m #https}
 
-All Street Manager web and API interfaces are secured using Transport Layer Security (TLS) v1.2
-certificates issued by Amazon Web Services.  These certificates are signed by the 'Amazon Root CA 1' certificate as listed in the 'Certification Authorities' section of the [AWS Chain of Trust](https://www.amazontrust.com/repository/) document.
+All Street Manager web and API interfaces are secured using Transport Layer Security (TLS) v1.2 certificates issued by Amazon Web Services.  These certificates are signed by the 'Amazon Root CA 1' certificate as listed in the 'Certification Authorities' section of the [AWS Chain of Trust](https://www.amazontrust.com/repository/) document.
 {: .govuk-body}
 
 When sending requests to the Street Manager APIs the URL must start with <code>https://</code>. Requests sent with <code>http://</code> will result in an error.
@@ -14,11 +13,7 @@ When sending requests to the Street Manager APIs the URL must start with <code>h
 ### Authentication and Authorisation
 {: .govuk-heading-m #auth}
 
-All resource endpoints in the API, with the exception of authentication and
-status, require a [JWT](#jwt) to be passed in the \'token\' header of the
-request. The [JWT](#jwt) contains information about the user and allows them to
-access routes, services, and resources that are permitted with that token.
-Without it the request will be met with a 401 error response.
+All resource endpoints in the API, with the exception of authentication and status, require a [JWT](#jwt) to be passed in the \'token\' header of the request. The [JWT](#jwt) contains information about the user and allows them to access routes, services, and resources that are permitted with that token. Without it the request will be met with a 401 error response.
 {: .govuk-body}
 
 A <code>systemToken</code> API key is also available on the Party API, this token is for internal use only and is not required for any exposed endpoint.
@@ -27,23 +22,16 @@ A <code>systemToken</code> API key is also available on the Party API, this toke
 ### User accounts and permissions
 {: .govuk-heading-m}
 
-External systems integrating with Street Manager should use specific
-credentials setup for API users. This is to allow Street Manager to
-differentiate between Web UI user accounts and API users. User accounts
-are assigned specific roles, such as *planner* and *admin*.
+External systems integrating with Street Manager should use specific credentials setup for API users. This is to allow Street Manager to differentiate between Web UI user accounts and API users. User accounts are assigned specific roles, such as *planner* and *admin*.
 {: .govuk-body}
 
-Each user can perform read operations to every resource, however write
-operations are restricted based on a user's role and the organisation they are
-associated with.
+Each user can perform read operations to every resource, however write operations are restricted based on a user's role and the organisation they are associated with.
 {: .govuk-body}
 
 If the organisation the user belongs to is suspended they will be unable to log in. If they are logged in before the organisation is suspended then they will receive 401 error responses on read/write operations and will be prevented from logging again. Contractors working on behalf of suspended organisations will receive 401 error responses on read/write operations for that organisation.
 {: .govuk-body}
 
-**Note:** *Currently systems who need to act as users associated with
-multiple organisations, i.e. submitting permits for multiple utility
-companies, **need to use separate user accounts for each organisation**.*
+**Note:** *Currently systems who need to act as users associated with multiple organisations, i.e. submitting permits for multiple utility companies, **need to use separate user accounts for each organisation**.*
 {: .govuk-body}
 
 The table below shows the current permissions per endpoint.
@@ -384,33 +372,22 @@ The table below shows the current permissions per endpoint.
   </tbody>
 </table>
 
-\* An Organisation Member is a user with a SWA code matching the permit's
-<code>highway_authority_swa_code</code> or <code>promoter_swa_code</code>. This
-is enforced in addition to the user's role.
+\* An Organisation Member is a user with a SWA code matching the permit's <code>highway_authority_swa_code</code> or <code>promoter_swa_code</code>. This is enforced in addition to the user's role.
 {: .govuk-body}
 
 ### JWT
 {: .govuk-heading-m}
 
-Json Web Token (JWT) is an open standard for exchanging information
-securely. The entities of Street Manager exchange information using JWTs
-and resources of the Street Manager API require that a JWT ID token be provided
-as part of the request.
+Json Web Token (JWT) is an open standard for exchanging information securely. The entities of Street Manager exchange information using JWTs and resources of the Street Manager API require that a JWT ID token be provided as part of the request.
 {: .govuk-body}
 
-The JWT is validated per service per request. Every service exposed by street
-manager will attempt to validate the JWT as part of its authentication and
-authorisation function.
+The JWT is validated per service per request. Every service exposed by street manager will attempt to validate the JWT as part of its authentication and authorisation function.
 {: .govuk-body}
 
-The ID token expires 1 hour after it was generated, if an expired JWT is used in a
-request, an error with the HTTP status `401` will be returned.  In this scenario
-a new token will need to be generated using the <code>/party/refresh</code>
-endpoint by supplying a Refresh token.
+The ID token expires 1 hour after it was generated, if an expired JWT is used in a request, an error with the HTTP status `401` will be returned.  In this scenario a new token will need to be generated using the <code>/party/refresh</code> endpoint by supplying a Refresh token.
 {: .govuk-body}
 
-To invalidate all JWT tokens associated with a user, the Access token should be provided
-to the <code>/party/logout</code> endpoint.
+To invalidate all JWT tokens associated with a user, the Access token should be provided to the <code>/party/logout</code> endpoint.
 {: .govuk-body}
 
 
@@ -420,11 +397,8 @@ to the <code>/party/logout</code> endpoint.
 
 <code>POST /authenticate</code>
 
-The authenticate endpoint takes a case sensitive username (email
-address) and password, returning JWT ID, Access and Refresh tokens if successful.
-**The JWT ID and Access tokens are valid for one hour, meanwhile the Refresh token
-is valid for 1 day.** Once the ID token has been acquired it can be added to all
-protected resource requests made via swagger using the Authorize button. Users who have had their account disabled will not be able to successfully authenticate. User accounts that have 5 failed login attempts within a 5 minute period will be locked, and will return a <code>423</code> status code when attempting to authenticate. Locked accounts are automatically unlocked after 5 minutes. If the organisation the user belongs to, is suspended, then a 412 (Precondition Failed) error will be returned.
+The authenticate endpoint takes a case sensitive username (email address) and password, returning JWT ID, Access and Refresh tokens if successful.
+**The JWT ID and Access tokens are valid for one hour, meanwhile the Refresh token is valid for 1 day.** Once the ID token has been acquired it can be added to all protected resource requests made via swagger using the Authorize button. Users who have had their account disabled will not be able to successfully authenticate. User accounts that have 5 failed login attempts within a 5 minute period will be locked, and will return a <code>423</code> status code when attempting to authenticate. Locked accounts are automatically unlocked after 5 minutes. If the organisation the user belongs to, is suspended, then a 412 (Precondition Failed) error will be returned.
 {: .govuk-body}
 
 Example response:
@@ -441,30 +415,23 @@ Example response:
 
 ![authorise]({{site.baseurl}}/api-documentation/images/v1/authorise.png)
 
-When clicked this will present an input to enter the token. Once
-authorized then all protected resource requests made via swagger will
-have the token header set.
+When clicked this will present an input to enter the token. Once authorized then all protected resource requests made via swagger will have the token header set.
 {: .govuk-body}
 
 ![available authorisations]({{site.baseurl}}/api-documentation/images/v1/available-authorisations.png)
 
-If authenticating for the first time with a temporary password, a 307 Temporary
-Redirect to <code>authenticate/initial</code> will be returned, which can be called
-with the same request body.
+If authenticating for the first time with a temporary password, a 307 Temporary Redirect to <code>authenticate/initial</code> will be returned, which can be called with the same request body.
 {: .govuk-body}
 
 <code>POST /authenticate/initial</code>
 
-After a user has been invited to the system by their organisation admin, they need to set a new password. This
-endpoint can be called with a new user's email address and temporary password, and will
-return a token that should be provided to the Party API <code>/set-password</code> endpoint.
+After a user has been invited to the system by their organisation admin, they need to set a new password. This endpoint can be called with a new user's email address and temporary password, and will return a token that should be provided to the Party API <code>/set-password</code> endpoint.
 {: .govuk-body}
 
 ### Error responses
 {: .govuk-heading-m}
 
-It's important to distinguish between authentication and authorization
-error responses as it will help narrow down where an issue is occurring.
+It's important to distinguish between authentication and authorization error responses as it will help narrow down where an issue is occurring.
 {: .govuk-body}
 
 ### Authentication Failed
@@ -472,10 +439,7 @@ error responses as it will help narrow down where an issue is occurring.
 
 <code>{ "message": "Authentication failed", "error": { "status": 401 } }</code>
 
-Authentication fails when the token provided in the request is invalid.
-The ID token may have expired or the value set as the token was incorrect.
-You may also see this error when calling the POST /authenticate endpoint
-with invalid credentials i.e. wrong username or password.
+Authentication fails when the token provided in the request is invalid. The ID token may have expired or the value set as the token was incorrect. You may also see this error when calling the POST /authenticate endpoint with invalid credentials i.e. wrong username or password.
 {: .govuk-body}
 
 ### Access Restricted
@@ -483,24 +447,11 @@ with invalid credentials i.e. wrong username or password.
 
 <code>{ "message": "Access restricted", "error": { "status": 401 } }</code>
 
-The access restricted error indicates that although the token was valid,
-the user does not have permissions to perform the desired action. This
-error could arise for several reasons which will be listed in detail as
-part of the resource section, but common triggers would be attempting to
-manipulate entities (permit, reinstatement, inspection etc.) not related
-to your organization.
+The access restricted error indicates that although the token was valid, the user does not have permissions to perform the desired action. This error could arise for several reasons which will be listed in detail as part of the resource section, but common triggers would be attempting to manipulate entities (permit, reinstatement, inspection etc.) not related to your organization.
 {: .govuk-body}
 
 ### Rate limiting
 {: .govuk-heading-m}
 
-To protect the system from denial of service attacks, repeated calls
-made in a short period of time from a single IP source will receive 429
-status responses. If you are receiving 429 responses ensure you are not
-sending an excessive number of calls.
-{: .govuk-body}
-
-Note that rate limiting thresholds will be under regular review and
-refinement during the Public Beta. The final Production values
-will be confirmed prior to entering Public Beta.
+To protect the system from denial of service attacks, repeated calls made in a short period of time from a single IP source will receive 429 status responses. If you are receiving 429 responses ensure you are not sending an excessive number of calls.
 {: .govuk-body}

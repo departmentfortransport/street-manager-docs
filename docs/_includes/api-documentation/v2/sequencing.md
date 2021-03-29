@@ -1,23 +1,15 @@
 ## Sequencing
 {: .govuk-heading-l #sequencing}
 
-As detailed in the Technical Overview section, the Reporting API drives
-a large amount of data retrieval functionality whilst the Street Manager
-API drives a lot of key user workflows e.g. submit permit, assess
-permit, etc. These two APIs together form much of the common sequences a
-user is likely to perform.
+As detailed in the Technical Overview section, the Reporting API drives a large amount of data retrieval functionality whilst the Street Manager API drives a lot of key user workflows e.g. submit permit, assess permit, etc. These two APIs together form much of the common sequences a user is likely to perform.
 {: .govuk-body}
 
-Below is an example of sequence calls used to submit and respond to a
-permit application as well as how various actions affect the works
-lifecycle. These endpoints are all available as part of the street
-manager API and are discussed in more detail within the resource guide.
+Below is an example of sequence calls used to submit and respond to a permit application as well as how various actions affect the works lifecycle. These endpoints are all available as part of the street manager API and are discussed in more detail within the resource guide.
 {: .govuk-body}
 
 ![sequence diagram]({{site.baseurl}}/api-documentation/images/v2/sequence-calls-used-to-submit-and-respond-to-a-permit-application.png)
 
-The following actions can be performed at any subsequent stage in the
-sequence from the stage they are available:
+The following actions can be performed at any subsequent stage in the sequence from the stage they are available:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -40,9 +32,7 @@ Whilst the above focuses much on data manipulation via the Work API, here is an 
 ### Understanding the status of a work
 {: .govuk-heading-m}
 
-As a permit progresses through the sequence above the permit status
-changes. Knowing the various statuses of a work and a permit allows you to filter
-lists of permits related to your organization through the Reporting API.
+As a permit progresses through the sequence above the permit status changes. Knowing the various statuses of a work and a permit allows you to filter lists of permits related to your organisation through the Reporting API.
 {: .govuk-body}
 
 The statuses of a work are:
@@ -82,17 +72,12 @@ Note: PAA/Major submission will be included as part of this sequence.
 #### Work API
 {: .govuk-heading-s}
 
-When a permit has been submitted and a works record exists both
-promoters and HAs can view the works record via the GET work endpoint on
-the work API. This endpoint requires you to provide the **work
-reference number** which was supplied during the submission of the
-permit application.
+When a permit has been submitted and a works record exists both promoters and HAs can view the works record via the GET work endpoint on the work API. This endpoint requires you to provide the **work reference number** which was supplied during the submission of the permit application.
 {: .govuk-body}
 
 <code>GET /works/{work reference number}</code>
 
-This contains information about all of the entities associated with the
-work record, the properties of this response are:
+This contains information about all of the entities associated with the work record, the properties of this response are:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -108,13 +93,7 @@ work record, the properties of this response are:
   <li><strong>Sample Inspections</strong>: Summary of any samples that have been raised against this work (none initially)</li>
 </ol>
 
-It's also possible to retrieve only information about the permit itself
-using the GET permit endpoint. This endpoint requires you to provide the
-**permit reference number** which is returned in the response of the
-permit application submission. As detailed in the submit permit
-application section of the resource guide, the permit reference number
-is simply the works reference number suffixed by an incrementing number
-e.g. {WRN}-01 for the first permit added to that work.
+It's also possible to retrieve only information about the permit itself using the GET permit endpoint. This endpoint requires you to provide the **permit reference number** which is returned in the response of the permit application submission. As detailed in the submit permit application section of the resource guide, the permit reference number is simply the works reference number suffixed by an incrementing number e.g. {WRN}-01 for the first permit added to that work.
 {: .govuk-body}
 
 <code>GET /works/{work reference number}/permits/{permit reference number}</code>
@@ -122,25 +101,18 @@ e.g. {WRN}-01 for the first permit added to that work.
 #### Reporting API
 {: .govuk-heading-s}
 
-The Reporting API permits endpoint will be the most useful way to see
-all permits that are relevant to your organisation.
+The Reporting API permits endpoint will be the most useful way to see all permits that are relevant to your organisation.
 {: .govuk-body}
 
-For example, as an HA you can use the **status** property of a permit
-indicates the current state it is in, for submitted permits that are
-awaiting assessment the permit status will be "submitted".
+For example, as an HA you can use the **status** property of a permit indicates the current state it is in, for submitted permits that are awaiting assessment the permit status will be "submitted".
 {: .govuk-body}
 
 <code>GET /permits?status=submitted</code>
 
-The **status** query param can be changed to any of the values discussed
-above to retrieve permits in any stage of the sequence. This is
-discussed in more detail in the Reporting API resource guide.
+The **status** query param can be changed to any of the values discussed above to retrieve permits in any stage of the sequence. This is discussed in more detail in the Reporting API resource guide.
 {: .govuk-body}
 
-Promoters can use **status** values to find permits which the HA has
-responded to, see the Street Manager API resource guide for more details
-on Permit status values.
+Promoters can use **status** values to find permits which the HA has responded to, see the Street Manager API resource guide for more details on Permit status values.
 {: .govuk-body}
 
 ### Permits

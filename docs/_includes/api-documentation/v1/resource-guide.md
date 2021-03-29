@@ -4,10 +4,7 @@
 ### Reporting API
 {: .govuk-heading-m}
 
-As discussed in the sequencing section, the Reporting API allows
-promoters and HAs to query resource lists for their organization,
-filtering them by various properties. The Reporting API currently allows
-users to retrieve the following:
+As discussed in the sequencing section, the Reporting API allows promoters and HAs to query resource lists for their organization, filtering them by various properties. The Reporting API currently allows users to retrieve the following:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
@@ -24,9 +21,7 @@ users to retrieve the following:
 #### Pagination
 {: .govuk-heading-s}
 
-Most endpoints on the Reporting API are driven with pagination. This
-is controlled by the <strong>offset</strong> query param,
-which indicates the starting point from which to return data.
+Most endpoints on the Reporting API are driven with pagination. This is controlled by the <strong>offset</strong> query param, which indicates the starting point from which to return data.
 {: .govuk-body}
 
 Each paginated response in the Reporting API contains the following meta-data:
@@ -34,26 +29,16 @@ Each paginated response in the Reporting API contains the following meta-data:
 
 <code>{ "pagination": { "has_next_page": true, "total_rows": "50" }, "rows": [...] }</code>
 
-The <strong>has_next_page</strong> and <strong>total_rows</strong> properties indicate if
-additional pages of results are available to be returned, in the context of the total number
-of rows (records).
+The <strong>has_next_page</strong> and <strong>total_rows</strong> properties indicate if additional pages of results are available to be returned, in the context of the total number of rows (records).
 {: .govuk-body}
 
-The <strong>total_rows</strong> property can return a maximum number of <strong>501</strong>,
-if 501 is returned it indicates that there may be more rows available in the database to query.
-This is confirmed if <strong>has_next_page</strong> is <strong>true</strong>, and means that if
-there are more than 501 rows, and the offset is greater than 501, additional rows will be returned,
-but the total_rows property will still be limited to 501 rows.
+The <strong>total_rows</strong> property can return a maximum number of <strong>501</strong>, if 501 is returned it indicates that there may be more rows available in the database to query. This is confirmed if <strong>has_next_page</strong> is <strong>true</strong>, and means that if there are more than 501 rows, and the offset is greater than 501, additional rows will be returned, but the total_rows property will still be limited to 501 rows.
 {: .govuk-body}
 
-The rows property contains the records for the
-current page.
+The rows property contains the records for the current page.
 {: .govuk-body}
 
-By default, there are a maximum of 25 rows returned per page. Therefore, in the
-example above, if you have 50 items total with 25 items per page, to
-get the next page of results the offset should be set to 25.
-The next response would contain rows 26-50.
+By default, there are a maximum of 25 rows returned per page. Therefore, in the example above, if you have 50 items total with 25 items per page, to get the next page of results the offset should be set to 25. The next response would contain rows 26-50.
 {: .govuk-body}
 
 #### Organisation specific data
@@ -119,7 +104,7 @@ Query params:
 
 <code>GET /fixed-penalty-notices</code>
 
-Retrieves a list of FPNs that have been added to any works record. FPNs are issued via the work API. FPNs can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
+Retrieves a list of FPNs that have been added to any works record. The <code>POST works/{workReferenceNumber}/fixed-penalty-notices</code> endpoint which can be used to issue an FPN is part of the Work API. FPNs can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
 {: .govuk-body}
 
 #### Get reinstatements
@@ -127,7 +112,7 @@ Retrieves a list of FPNs that have been added to any works record. FPNs are issu
 
 <code>GET /reinstatements</code>
 
-Retrieves a list of Reinstatements that have been added to any works record. Reinstatements are created via the work API. Reinstatements can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
+Retrieves a list of Reinstatements that have been added to any works record. Reinstatements can be filtered by status. Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of. The <code>/works/{workReferenceNumber}/sites</code> and <code>POST ​/works​/{workReferenceNumber}​/sites​/{siteNumber}​/reinstatements</code> endpoints to create a sites and reinstatements are part of the Work API. The relationship between a site and a reinstatement is explained in more detail [here](#reinstatement-site-detail)
 {: .govuk-body}
 
 #### Get alterations
@@ -212,7 +197,7 @@ external integrators to retrieve additional information for the works returned b
 
 <code>POST /fees/csv</code>
 
-Retrieves a list of chargeable items which have had occured within a defined time period in CSV format.
+Retrieves a list of chargeable items which have had occurred within a defined time period in CSV format.
 {: .govuk-body}
 
 Chargeable activities include:
@@ -223,8 +208,6 @@ Chargeable activities include:
   <li>Granting of a change request</li>
   <li>Change in work category</li>
 </ol>
-
-{: .govuk-body}
 
 Contractors are required to provide optional swa_code parameter in order to state which promoter they are working on behalf of.
 {: .govuk-body}
@@ -252,12 +235,12 @@ Contractors are able to provide optional <code>swa_code</code> parameter in orde
 {: .govuk-body}
 
 ### **Work API**
-{: .govuk-heading-m}
+{: .govuk-heading-m }
 
 #### Work records and permits
 {: .govuk-heading-s}
 
-It's important to clarify the technical relationship between a work and a permit. When creating a permit for the first time, this will in effect create a works record. A work can have multiple permits. You can create a work and a permit at the same time, or you can create a permit against an existing work depending on the work records current status. A work cannot exist without a permit.
+It's important to clarify the technical relationship between a work and a permit. When creating a permit for the first time, this will in effect create a works record. A work can have multiple permits. You can create a work and a permit at the same time, or you can create a permit against an existing work depending on the work records current status.
 {: .govuk-body}
 
 There is also a concept of a work record's active permit, that is simply the most recently added permit on that works record. In essence, a work is a representation of all the permits, reinstatements, FPNs, inspections etc. that have been added to a particular location.
@@ -266,7 +249,7 @@ There is also a concept of a work record's active permit, that is simply the mos
 ### Delegated Users
 {: .govuk-heading-s #delegated-users}
 
-All POST and PUT endpoints will contain two properties, internal_user_identifier and internal_user_name, these are intended to allow external systems to pass their internal users identifiers to Street Manager so that they are recorded against actions performed via the API (e.g. displaying the internal users name against a Street Manager comment).
+All POST and PUT endpoints will contain two properties, internal_user_identifier and internal_user_name. These are intended to allow external systems to pass their internal users identifiers to Street Manager so that they are recorded against actions performed via the API (e.g. displaying the internal users name against a Street Manager comment).
 {: .govuk-body}
 
 #### Create work endpoint
@@ -413,7 +396,7 @@ Once a permit is in progress, and an excavation site has been added to the work,
 {: .govuk-body}
 
 #### Reinstatements (Promoter)
-{: .govuk-heading-s}
+{: .govuk-heading-s #reinstatement-site-detail }
 
 As shown in the sequencing section, once a work has been started by the promoter then a promoter can add reinstatements and sites. A promoter can continue to create and view these even after the work has been stopped and completed, as they may need to do this retrospectively.
 {: .govuk-body}
@@ -683,23 +666,19 @@ This endpoint allows HAs to acknowledge a HS2 consultation application.
 
 <code>PUT /activity/{activity reference number}/cancel</code>
 
-Events or Activities allow a HA to represent different activites within Street Manager. There are 13 activity types currently supported by Street Manager:
+Events or Activities allow a HA to represent different activites within Street Manager. There are 9 activity types currently supported by Street Manager:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
- <li>Highway improvement works</li>
- <li>Highway repair and maintenance works</li>
- <li>Utility asset works</li>
- <li>Utility repair and maintenance works</li>
- <li> Diversionary Works</li>
- <li>Disconnection or alteration of supply</li>
- <li>Permanent reinstatement</li>
- <li>Remedial works</li>
- <li>Section 58</li>
+ <li>Skips</li>
+ <li>Scaffolding</li>
+ <li>Hoarding</li>
+ <li>Crane Mobile Platform</li>
+ <li>Event</li>
  <li>Section 50</li>
- <li>Core Sampling</li>
- <li>Statutory Infrastructure Works</li>
- <li>Works for Rail Purposes</li>
+ <li>Section 58</li>
+ <li>Compound</li>
+ <li>Other</li>
 </ol>
 
 Creating an activity using the POST endpoint will return an activity reference number which can be used to retrieve an individual activity via the GET endpoint provided

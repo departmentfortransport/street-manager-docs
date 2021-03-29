@@ -7,7 +7,7 @@ The Street Manager service provides two separate isolated application service en
 
 ![Service environments]({{site.baseurl}}/api-documentation/images/v2/service-environments-1.png)
 
-{{site.base_path}}
+
 ### SANDBOX environment
 {: .govuk-heading-m  #sandbox-env}
 

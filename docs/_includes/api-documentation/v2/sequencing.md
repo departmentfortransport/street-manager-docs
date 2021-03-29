@@ -492,15 +492,15 @@ In order to generate sample inspections the following steps should be followed:
     </p>
   </li>
   <li>
-    <strong>Update Sample target (Highway Authority Admin)</strong>: <code>PUT /sample-inspection-target</code>
+    <strong>Update sample target (Highway Authority Admin)</strong>: <code>PUT /sample-inspection-target</code>
     <p>
       After a target is raised, Highway Authority Admins have the option to update the agreed counts and the max number per category to generate
     </p>
   </li>
   <li>
-    <strong>Closing a Sample target (Highway Authority Admin)</strong>: <code>PUT /sample-inspection-target/close</code>
+    <strong>Closing a sample target (Highway Authority Admin)</strong>: <code>PUT /sample-inspection-target/close</code>
     <p>
-      A Highway Authority may only have one target active per promoter. Targets may be closed to allow a fresh target to be created for example at the end of a financial year.
+      A Highway Authority may only have one active target per promoter. Targets may be closed to allow a fresh target to be created, for example at the end of a financial year.
     </p>
   </li>
 </ol>

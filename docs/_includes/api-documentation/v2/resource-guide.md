@@ -788,7 +788,7 @@ The file must:
 
 <code>PUT /sample-inspection-targets​/{sampleInspectionTargetReferenceNumber}​/close</code>
 
-Sample Inspections Targets allow Admins of a Highway Authority organisation to targets for promoters they would like to inspect.
+Sample Inspections Targets allow Admins of a Highway Authority organisation to define targets for promoters they would like to inspect.
 {: .govuk-body}
 
 Each target consists of:
@@ -821,7 +821,7 @@ The second PUT endpoint (labeled 'close') will close the sample inspection targe
 
 <code>POST /sample-inspection</code>
 
-Sample Inspections allow a HA to generate sample inspection based on their Sample Inspection Targets.
+Sample Inspections allow a HA Admin to generate sample inspection based on their Sample Inspection Targets.
 {: .govuk-body}
 
 The POST endpoint will start a job which will generate sample inspections.

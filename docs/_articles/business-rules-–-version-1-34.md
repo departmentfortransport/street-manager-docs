@@ -109,6 +109,7 @@ status: publish
 16. [Non-notifiable works](#16-non-notifiable-works)<br />
 17. [HS2](#17-hs2)<br />
 18. [Sample Inspections](#18-sample-inspections)<br />
+19. [Performance Reporting](#19-performance-reporting)<br />
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" />
 
@@ -444,6 +445,8 @@ _(Previously section 7 in Business rules v0.1 draft)_
 _(Previously section 1.5 & 10 in Business rules v0.1 draft)_ 
 
 ##### 3.4.10.1. PAA statuses
+
+* PAAs may not be set to "In Progress" or "Closed". Should someone try to progress a "Closed" PAA they will not be charged and the original permit will remain as "Closed" rather than "Progressed".
 
 <div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PAA%20statuses.jpg" alt="Street Manager - PAA statuses" width="100%" />
 A diagram of PAA statuses</div>
@@ -1085,6 +1088,14 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
   * Reinstatements
 * S81 may be cancelled or resolved at any S81 status other than at 'cancelled' or 'resolved'.
 * See works statuses for more details on how works records are differentiated.
+* Permit Applicatio (PA) can be linked to a section 81 from permit details page.
+** One PA can be linked to one section 81.
+** Linked section 81 will be displayed on the permit details page, as a hyperlink
+** Linked PA will be displayed on the section 81 details page, as a hyperlink
+** At this time, there is no way to un-link a linked section 81 and PA.
+* A Highway Authority (HA) can reassign a S81 to a rifferent promoter.
+** This can be done from  S81 details page - only if section 81 has a status of “Rejected” or “Cancelled”.
+** This will set the status of re-assigned section 81 to: "Submitted".
 
 ### 14.5. S81 statuses
 
@@ -1255,6 +1266,24 @@ A diagram of S81 statuses</div>
 
 <br /><br /><br />
 
+## 19. Performance Reporting
+
+* This funtionality is available to Admin users only.
+* Performance Reporting allows users to create and download data reports for specific activities.
+* Each report provides the number of items (eg. Inspections) of given category, type or in certain state - depending on the report.
+* Each row in the report corresponds to:
+** A Promoter, if the report was requested by a Highway Authority.
+** A Highway Authority, if the report was requested by a Promoter. 
+* A report for up to 92 days can be requested.
+* After a report is requested, the actual file can be downloaded from “CSV Exports” screen. A user is restricted to one download in progress at a time.
+
+## 19.1. Available reports
+
+* All Inspection Outcomes
+** Total number of inspections broken down by their type, category and outcome, and based on date the inspection was created
+
+<!-- ==================================================== -->
+
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible" /><br /><br />
 
 <!-- ==================================================== -->
@@ -1265,8 +1294,9 @@ A diagram of S81 statuses</div>
 
 | Section                            | Change comment                                           |
 | ---------------------------------- | -------------------------------------------------------- |
+| 3.4.10.1. PAA statuses | Described preventing PAAs from being set to "In Progress" or "Closed"
+| 14. Section 81 (S81) | Added information on linking and re-assigning
 | 18. Sample Inspections | Added section: 18.5 Updating inspection targets
-
 
 <!-- ==================================================== -->
 

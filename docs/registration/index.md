@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Onboarding
+title: Registration
 ---
-# Onboarding
+# Registration
 {: .govuk-heading-xl}
 
 <p class="govuk-body-l">Version 1.0</p>

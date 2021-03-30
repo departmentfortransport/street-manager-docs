@@ -805,7 +805,13 @@ Each target consists of:
   <li>the progress against each inspection category</li>
 </ol>
 
-For more information about sample inspection targets see the [Business rules]({{ page.business_rules_url }}).
+When any eligible inspection is raised against a work record and the highway authority has an active target for the promoter organisation conducting the works, the actual number of inspections carried out for that target will be incremented. If that work was sampled, and the category of the inspection raised matches the category of the sample, the sample will be marked as completed.
+{: .govuk-body}
+
+When any eligible inspection is withdrawn against a work record and the highway authority has an active target for the promoter organisation conducting the works, the actual number of inspections carried out for that target will be decremented. If a sample was linked to that inspection, this sample will be marked as issued.
+{: .govuk-body}
+
+For more information about sample inspection targets, including what is considered an eligible inspection, see the [Business rules]({{ page.business_rules_url }}).
 {: .govuk-body}
 
 The POST endpoint will create the sample inspection targets and return a sample inspection reference number.

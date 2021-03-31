@@ -1292,11 +1292,12 @@ A diagram of S81 statuses</div>
 
 <!-- ==================================================== -->
 
-| Section                            | Change comment                                           |
-| ---------------------------------- | -------------------------------------------------------- |
-| 3.4.10.1. PAA statuses | Described preventing PAAs from being set to "In Progress" or "Closed"
-| 14. Section 81 (S81) | Added information on linking and re-assigning
-| 18. Sample Inspections | Added section: 18.5 Updating inspection targets
+| Section                   | Change comment                                           |
+| ------------------------- | -------------------------------------------------------- |
+| 3.4.10.1. PAA statuses    | Preventing PAAs from being set to "In Progress" or "Closed"
+| 14. Section 81 (S81)      | Linking and re-assigning Section 81s
+| 18. Sample Inspections    | Added new sub-section: 18.5 Updating inspection targets
+| 19. Performance Reporting | Added new section
 
 <!-- ==================================================== -->
 

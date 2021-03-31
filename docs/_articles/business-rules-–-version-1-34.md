@@ -1087,13 +1087,12 @@ _(Previously section 14.1 in Business rules v0.1 draft)_
   * Reinstatements
 * S81 may be cancelled or resolved at any S81 status other than at 'cancelled' or 'resolved'.
 * See works statuses for more details on how works records are differentiated.
-* Permit Applicatio (PA) can be linked to a section 81 from permit details page.
+* Permit Application (PA) can be linked to a section 81.
 ** One PA can be linked to one section 81.
 ** Linked section 81 will be displayed on the permit details page, as a hyperlink
 ** Linked PA will be displayed on the section 81 details page, as a hyperlink
-** At this time, there is no way to un-link a linked section 81 and PA.
-* A Highway Authority (HA) can reassign a S81 to a rifferent promoter.
-** This can be done from  S81 details page - only if section 81 has a status of “Rejected” or “Cancelled”.
+* A Highway Authority (HA) can reassign a S81 to a different promoter.
+** Allowed only if Section 81 has a status of “Rejected” or “Cancelled”.
 ** This will set the status of re-assigned section 81 to: "Submitted".
 
 ### 14.5. S81 statuses
@@ -1258,9 +1257,9 @@ A diagram of S81 statuses</div>
 * List only shows “active” sample inspections i.e. those that are eligible and have not expired or been completed
 * The list will update as and when new sample inspections are generated and others are completed or expire
 
-### 18.5 Updating inspection targets
+### 18.5 Updating sample inspection targets
 
-* When any eligible inspection is raised and there is an active target for that promoter, progress against that target will be updated. If a sample matching the inspection category was present for that work record this will be marked as completed.
+* When any eligible inspection is raised and there is an active target for that promoter, progress against that target will be updated. If a sample inspection matching the inspection category was present for that work record this will be marked as completed.
 * When any inspection which was eligible for sampling is withdrawn and there is an active target for that promoter, progress against the target will be updated. If this inspection was linked to a sample, the sample will be marked as issued.
 
 <br /><br /><br />
@@ -1269,7 +1268,6 @@ A diagram of S81 statuses</div>
 
 * This funtionality is available to Admin users only.
 * Performance Reporting allows users to create and download data reports for specific activities.
-* Each report provides the number of items (eg. Inspections) of given category, type or in certain state - depending on the report.
 * Each row in the report corresponds to:
 ** A Promoter, if the report was requested by a Highway Authority.
 ** A Highway Authority, if the report was requested by a Promoter. 
@@ -1295,7 +1293,7 @@ A diagram of S81 statuses</div>
 | ------------------------- | -------------------------------------------------------- |
 | 3.4.10.1. PAA statuses    | Preventing PAAs from being set to "In Progress" or "Closed"
 | 14. Section 81 (S81)      | Linking and re-assigning Section 81s
-| 18. Sample Inspections    | Added new sub-section: 18.5 Updating inspection targets
+| 18. Sample Inspections    | Added new sub-section: 18.5 Updating sample inspection targets
 | 19. Performance Reporting | Added new section
 
 <!-- ==================================================== -->

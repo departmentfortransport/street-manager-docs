@@ -446,8 +446,6 @@ _(Previously section 1.5 & 10 in Business rules v0.1 draft)_
 
 ##### 3.4.10.1. PAA statuses
 
-* PAAs may not be set to "In Progress" or "Closed". Should someone try to progress a "Closed" PAA they will not be charged and the original permit will remain as "Closed" rather than "Progressed".
-
 <div class="center polaroid50 container"><img src="https://departmentfortransport.github.io/street-manager-docs/business-rules/images/Street%20Manager%20-%20PAA%20statuses.jpg" alt="Street Manager - PAA statuses" width="100%" />
 A diagram of PAA statuses</div>
 
@@ -507,6 +505,7 @@ _(Previously section 5.1, 5.3, 5.4, 5.8 & 26 in Business rules v0.1 draft)_
 * Each PA may have only one change request awaiting assessment. 
 * A change request may be added to PAs that are not 'Refused', 'Closed' or 'Revoked' (as long as the work hasn't been started. If work was started and then revoked, a change request can be added).
 * The works category may be updated if the works duration is changed.
+* A change request on a planned permit cannot change the category from Minor or Standard to Major or PAA.
 * Change requests may not be added to a PAA.
 * All fields apart from the following can be changed on a PA: 
   * Permit reference number or works reference number

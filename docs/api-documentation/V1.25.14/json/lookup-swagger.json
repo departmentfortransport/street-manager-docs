@@ -1,0 +1,521 @@
+{
+	"basePath": "/",
+	"consumes": [
+		"application/json"
+	],
+	"definitions": {
+		"ReinstatementTypeCode": {
+			"enum": [
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10
+			],
+			"type": "integer"
+		},
+		"ReinstatementTypeDetails": {
+			"properties": {
+				"reinstatement_type_code": {
+					"$ref": "#/definitions/ReinstatementTypeCode"
+				},
+				"reinstatement_type_location_text": {
+					"type": "string",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"reinstatement_type_code"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"PrimaryNoticeAuthority": {
+			"properties": {
+				"swa_code": {
+					"type": "string"
+				},
+				"name": {
+					"type": "string"
+				},
+				"location_description": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"swa_code",
+				"name",
+				"location_description"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"InterestAuthority": {
+			"properties": {
+				"name": {
+					"type": "string"
+				},
+				"location_description": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"name",
+				"location_description"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"AdditionalSpecialDesignationCode": {
+			"enum": [
+				1,
+				2,
+				3,
+				6,
+				8,
+				9,
+				10,
+				12,
+				13,
+				16,
+				17,
+				18,
+				19,
+				20,
+				21,
+				22,
+				23,
+				24,
+				25,
+				26,
+				27,
+				28,
+				29,
+				30
+			],
+			"type": "integer"
+		},
+		"AdditionalSpecialDesignationsPeriodicityCode": {
+			"enum": [
+				1,
+				2,
+				3,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16
+			],
+			"type": "integer"
+		},
+		"GeoJSONFeatureType": {
+			"enum": [
+				"Point",
+				"LineString",
+				"Polygon",
+				"MultiLineString"
+			],
+			"type": "string"
+		},
+		"GeoJSONGeometry": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/GeoJSONFeatureType"
+				},
+				"coordinates": {
+					"additionalProperties": true,
+					"type": "object"
+				}
+			},
+			"required": [
+				"type",
+				"coordinates"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"AdditionalSpecialDesignationsResponse": {
+			"properties": {
+				"street_special_desig_code": {
+					"$ref": "#/definitions/AdditionalSpecialDesignationCode"
+				},
+				"special_desig_location_text": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"special_desig_description": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"special_desig_start_time": {
+					"type": "number",
+					"format": "double",
+					"x-nullable": true
+				},
+				"special_desig_end_time": {
+					"type": "number",
+					"format": "double",
+					"x-nullable": true
+				},
+				"special_desig_periodicity_code": {
+					"$ref": "#/definitions/AdditionalSpecialDesignationsPeriodicityCode",
+					"x-nullable": true
+				},
+				"asd_coordinate_geometry": {
+					"$ref": "#/definitions/GeoJSONGeometry",
+					"x-nullable": true
+				},
+				"whole_road": {
+					"type": "boolean",
+					"x-nullable": true
+				},
+				"special_desig_start_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				},
+				"special_desig_end_date": {
+					"type": "string",
+					"format": "date-time",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"street_special_desig_code"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"GeoJSONMultiLineStringType": {
+			"enum": [
+				"MultiLineString"
+			],
+			"type": "string"
+		},
+		"GeoJSONMultiLineString": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/GeoJSONMultiLineStringType"
+				},
+				"coordinates": {
+					"items": {
+						"items": {
+							"items": {
+								"type": "number",
+								"format": "double"
+							},
+							"type": "array"
+						},
+						"type": "array"
+					},
+					"type": "array"
+				}
+			},
+			"required": [
+				"type",
+				"coordinates"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"GeoJSONCentrePointType": {
+			"enum": [
+				"Point"
+			],
+			"type": "string"
+		},
+		"GeoJSONCentrePoint": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/GeoJSONCentrePointType"
+				},
+				"coordinates": {
+					"items": {
+						"type": "number",
+						"format": "double"
+					},
+					"type": "array"
+				}
+			},
+			"required": [
+				"type",
+				"coordinates"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"StreetResponse": {
+			"properties": {
+				"usrn": {
+					"type": "number",
+					"format": "double"
+				},
+				"street_descriptor": {
+					"type": "string"
+				},
+				"area": {
+					"type": "string"
+				},
+				"town": {
+					"type": "string"
+				},
+				"authority": {
+					"type": "string"
+				},
+				"authority_swa_code": {
+					"type": "string"
+				},
+				"road_category": {
+					"type": "number",
+					"format": "double",
+					"description": "DEPRECATED"
+				},
+				"reinstatement_types": {
+					"items": {
+						"$ref": "#/definitions/ReinstatementTypeDetails"
+					},
+					"type": "array"
+				},
+				"traffic_sensitive": {
+					"type": "boolean"
+				},
+				"primary_notice_authorities": {
+					"items": {
+						"$ref": "#/definitions/PrimaryNoticeAuthority"
+					},
+					"type": "array"
+				},
+				"interest_authorities": {
+					"items": {
+						"$ref": "#/definitions/InterestAuthority"
+					},
+					"type": "array"
+				},
+				"additional_special_designations_response": {
+					"items": {
+						"$ref": "#/definitions/AdditionalSpecialDesignationsResponse"
+					},
+					"type": "array"
+				},
+				"street_line": {
+					"$ref": "#/definitions/GeoJSONMultiLineString",
+					"x-nullable": true
+				},
+				"street_centre_point": {
+					"$ref": "#/definitions/GeoJSONCentrePoint",
+					"x-nullable": true
+				}
+			},
+			"required": [
+				"usrn",
+				"street_descriptor",
+				"area",
+				"town",
+				"authority",
+				"authority_swa_code",
+				"road_category",
+				"reinstatement_types",
+				"traffic_sensitive",
+				"primary_notice_authorities",
+				"interest_authorities",
+				"additional_special_designations_response"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"StreetSummaryResponse": {
+			"properties": {
+				"street_descriptor": {
+					"type": "string"
+				},
+				"area": {
+					"type": "string"
+				},
+				"town": {
+					"type": "string"
+				},
+				"usrn": {
+					"type": "number",
+					"format": "double"
+				},
+				"administrative_area": {
+					"type": "string"
+				},
+				"street_centre_point": {
+					"$ref": "#/definitions/GeoJSONCentrePoint"
+				}
+			},
+			"required": [
+				"street_descriptor",
+				"area",
+				"town",
+				"usrn",
+				"administrative_area",
+				"street_centre_point"
+			],
+			"type": "object",
+			"additionalProperties": false
+		}
+	},
+	"info": {
+		"title": "street-lookup-api-stable",
+		"version": "1.0.0",
+		"description": "See API specification Resource Guide > Street Lookup API for more information on endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
+		"license": {
+			"name": "MIT"
+		}
+	},
+	"paths": {
+		"/nsg/streets": {
+			"get": {
+				"operationId": "GetStreets",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "NSG Street data",
+						"schema": {
+							"items": {
+								"$ref": "#/definitions/StreetResponse"
+							},
+							"type": "array"
+						}
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"description": "See API specification Resource Guide > Street Lookup API > Get streets endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "easting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "northing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					}
+				]
+			}
+		},
+		"/nsg/streets/{usrn}": {
+			"get": {
+				"operationId": "GetStreetsByUsrn",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "NSG Street data",
+						"schema": {
+							"$ref": "#/definitions/StreetResponse"
+						}
+					},
+					"404": {
+						"description": "Not Found"
+					}
+				},
+				"description": "See API specification Resource Guide > Street Lookup API > Get streets endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "usrn",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					}
+				]
+			}
+		},
+		"/nsg/search": {
+			"get": {
+				"operationId": "GetStreetsByQuery",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "",
+						"schema": {
+							"items": {
+								"$ref": "#/definitions/StreetSummaryResponse"
+							},
+							"type": "array"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Street Lookup API > Get nsg search endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "query",
+						"required": true,
+						"type": "string"
+					}
+				]
+			}
+		}
+	},
+	"produces": [
+		"application/json"
+	],
+	"swagger": "2.0",
+	"securityDefinitions": {
+		"token": {
+			"type": "apiKey",
+			"name": "token",
+			"in": "header",
+			"scopes": {
+				"Planner": "Planner",
+				"HighwayAuthority": "HighwayAuthority"
+			}
+		}
+	},
+	"schemes": [
+		"https"
+	]
+}

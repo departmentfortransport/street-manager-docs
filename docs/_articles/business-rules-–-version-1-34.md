@@ -1,6 +1,6 @@
 ---
 layout: article
-title: Business rules – version 1.34
+title: Business rules - version 1.34
 date: 2021-04-07T07:00:00.000Z
 type: article
 published: 'true'

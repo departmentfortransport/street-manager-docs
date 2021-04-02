@@ -8,6 +8,17 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 1.25.14 (15/04/2021):
+{: .govuk-heading-s #v1-25-14}
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6393: On creation of a permit following a PAA, the deadline date will be set to whichever date is further away between the permits calculated response date and what's remaining of the PAA response date.
+  </li>
+</ol>
+
 Version 1.25.13 (01/04/2021):
 {: .govuk-heading-s #v1-25-13}
 

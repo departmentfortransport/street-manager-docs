@@ -5,67 +5,66 @@ title: Registration
 # Registration
 {: .govuk-heading-xl}
 
-<p class="govuk-body-l">Version 1.0</p>
+## Street Manager account creation, types, and eligibility
+{: .govuk-heading-m}
 
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-<b>Street Manager is open to everyone from 1st November 2019!</b>
+To create a Street Manager account, you must:
 {: .govuk-body}
 
-As you know, Street Manager is a new digital service for planning and managing street and road works in one place.
-{: .govuk-body}
+<ol class="govuk-list govuk-list--number">
+  <li>work for a:
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Local Highway Authority in England</li>
+      <li>Works Promoter (also known as Utility Company)</li>
+      <li>Contractor employed by those organisations</li>
+    </ul>
+  </li>
+  <li>
+    know who the ‘primary contact’ is in your organisation – this is the person with authority to sign your organisation up to the service. If a Highway Authority or works Promoter, the primary contact has also responsibility for paying for the use of Street Manager.
+  </li>
+  <li>
+    know who the ‘admin contact’ is in your organisation – this is the person who sets up your accounts, approves Contractors and is the day-to-day contact for support issues. If already registered on Street Manager, your admin contact should be able to create a user account for you.
+  </li>
+  <li>
+    if your organisation is a Highway Authority or works Promoter, you must have a <a class="govuk-link" href="https://services.geoplace.co.uk/street/swa-codes">Street Works Act (SWA) code</a> confirming your legal right to carry out works. Alternatively you can <a class="govuk-link" href="https://services.geoplace.co.uk/street/registration">create a  SWA code</a> via Geoplace.
+  </li>
+</ol>
 
-This service is for registered users from utility companies and local authorities, and your works contractors , who are involved in the planning and management of street and road works.
-{: .govuk-body}
+## What sort of user am I?
+{: .govuk-heading-m}
 
-You can use this service to:
+Street Manager has 4 types of user for which access may or may not be charged. The user types are:
+{: .govuk-body}
+<ul class="govuk-list govuk-list--bullet">
+  <li>Highway Authorities – <a class="govuk-link" href="{{ site.baseurl }}/articles/charges">charges apply</a></li>
+  <li>Works Promoter – <a class="govuk-link" href="{{ site.baseurl }}/articles/charges">charges apply</a></li>
+  <li>Contractors working on behalf of Promoters and HAs - no charges apply</li>
+  <li>Open Data Users who can access limited information via the <a class="govuk-link" href="{{ site.baseurl }}/open-data/">Application Programming Interface</a> – no charges apply </li>
+</ul>
+
+## Registering your organisation on Street Manager
+{: .govuk-heading-m}
+
+To register your organisation on Street Manager, you must supply:
 {: .govuk-body}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li>Apply for permits</li>
-  <li>Assess permits</li>
-  <li>Start and stop works</li>
-  <li>Log inspections</li>
-  <li>Add reinstatements</li>
+  <li>your organisation name</li>
+  <li>your primary contact title, name, and email address </li>
+  <li>your admin contact name and email address</li>
+  <li>either your 4-digit SWA code, if you are a Highway Authority or Promoter, or your company house number if you are a Contractor</li>
 </ol>
 
-## When can you sign up?
-{: .govuk-heading-m}
-
-From 1st November, Street Manager enters into Public Beta phase, when the service is open to everyone to use. This means that you can access the Sandbox test environment as well as the Production environment which is where real data will live.  Everyone who registers to sign up and completes the registration process will be added to a waitlist. Access will then be granted to each organisation from in order of registration completion.
-{: .govuk-body}
-
-## How to sign up and what you will need to know
-{: .govuk-heading-m}
-
-You will need to be the person with the authority (primary contact) within your organisation to sign your organisation up to Street Manager.
-{: .govuk-body}
-
-As the primary contact, <b>your main responsibilities typically would include</b>:
-{: .govuk-body}
-
-<ol class="govuk-list govuk-list--bullet">
-  <li>Signing the terms and conditions for Street Manager</li>
-  <li>Arranging for admin users to be set up.  Admin users will then be able to set up any other users in your organisation.  There is no limit on the number of people who can use Street Manager.  Even if you plan to use an API, we will still need you to agree to the terms and conditions and you may want to set up other people in your organisation with access to the user interface (website).</li>
-</ol>
-
-You will need to start the sign-up process by emailing [register@manage-roadworks.service.gov.uk](mailto:register@manage-roadworks.service.gov.uk) using the below template.
-{: .govuk-body}
-
-## Template to request sign-up:
-{: .govuk-heading-m}
-Title: Request to sign up to Street Manager
-{: .govuk-body}
-Body:
-{: .govuk-body}
-<ol class="govuk-list govuk-list--bullet">
-  <li>Organisation name:</li>
-  <li>SWA code:</li>
-  <li>Primary contact name:</li>
-  <li>Primary contact email address:</li>
-  <li>Primary contact title:</li>
-</ol>
+via [register@manage-roadworks.service.gov.uk](mailto:register@manage-roadworks.service.gov.uk?subject=Request to sign up to Street Manager&body=Organisation name:%0D%0A
+Organisation type: Highway Authority/Promoter/Contractor%0D%0A
+SWA code (HAs and Utility Companies only):%0D%0A
+Primary contact title:%0D%0A
+Primary contact name:%0D%0A
+Primary contact email address:%0D%0A
+Admin name:%0D%0A
+Admin email address:%0D%0A%0D%0A
 I confirm that as the primary contact of (insert organisation name) I would like to sign up to obtain access to Street Manager testing (Sandbox) and real-life (Production) environments.
+)
 {: .govuk-body}
 
 <br/>

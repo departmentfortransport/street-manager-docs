@@ -31,7 +31,7 @@ As of Version 1.12, this document details all the legally required API functions
   <li><a class="govuk-link" href="#sequencing">Sequencing</a></li>
   <li><a class="govuk-link" href="#access-and-permissions">Access and permissions</a></li>
   <li><a class="govuk-link" href="#resource-guide">Resource Guide</a></li>
-  <li><a class="govuk-link" href="{{ site.baseurl }}/api-documentation/versions-and-changes/v1/changelog#v#{{ page.version | replace: '.', '-' }}">Versions and Changes</a></li>
+  <li><a class="govuk-link" href="{{ site.baseurl }}/api-documentation/versions-and-changes/v1/changelog#v{{ page.version | replace: '.', '-' }}">Versions and Changes</a></li>
 </ul>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">

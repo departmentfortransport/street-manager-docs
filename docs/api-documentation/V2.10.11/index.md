@@ -1,7 +1,7 @@
 ---
 layout: default
-title: API specification V1.25.14
-version: 1.25.14
+title: API specification V2.10.11
+version: 2.10.11
 business_rules_url: /street-manager-docs/articles/business-rules-home.html
 ---
 # API specification
@@ -10,7 +10,7 @@ business_rules_url: /street-manager-docs/articles/business-rules-home.html
 Version {{ page.version }}
 {: .govuk-body-l}
 
-As of Version 1.12, this document details all the legally required API functions for integrating with Street Manager via the API. Future releases of V1 for the API will only include non-breaking changes to the API interface for additional functionality added after this point. See the 'Versions and Changes' section for details on previous versions.
+This document details all the functions for integrating with Street Manager via the latest version of the API. See the 'Versions and Changes' section for more details on previous versions. The documentation for the stable version of the API is available <a class="govuk-link" href="{{ site.baseurl }}/api-documentation/">here</a>.
 {: .govuk-body}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -31,54 +31,53 @@ As of Version 1.12, this document details all the legally required API functions
   <li><a class="govuk-link" href="#sequencing">Sequencing</a></li>
   <li><a class="govuk-link" href="#access-and-permissions">Access and permissions</a></li>
   <li><a class="govuk-link" href="#resource-guide">Resource Guide</a></li>
-  <li><a class="govuk-link" href="{{ site.baseurl }}/api-documentation/versions-and-changes/v1/changelog#v{{ page.version | replace: '.', '-' }}">Versions and Changes</a></li>
+  <li><a class="govuk-link" href="{{ site.baseurl }}/api-documentation/versions-and-changes/v2/changelog#v{{ page.version | replace: '.', '-' }}">Versions and Changes</a></li>
 </ul>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-{% include api-documentation/v1/introduction.md %}
+{% include api-documentation/v2/introduction.md %}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-{% include api-documentation/v1/swagger-documentation.md %}
+{% include api-documentation/v2/swagger-documentation.md %}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-{% include api-documentation/v1/environments.md %}
+{% include api-documentation/v2/environments.md %}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-{% include api-documentation/v1/connecting-to-api-services.md %}
+{% include api-documentation/v2/connecting-to-api-services.md %}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-{% include api-documentation/v1/timing.md %}
+{% include api-documentation/v2/timing.md %}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-{% include api-documentation/v1/technical-overview.md %}
+{% include api-documentation/v2/technical-overview.md %}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-{% include api-documentation/v1/versioning-and-release-management.md %}
+{% include api-documentation/v2/versioning-and-release-management.md %}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-{% include api-documentation/v1/testing.md %}
+{% include api-documentation/v2/testing.md %}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-{% include api-documentation/v1/security.md %}
+{% include api-documentation/v2/security.md %}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-{% include api-documentation/v1/sequencing.md %}
+{% include api-documentation/v2/sequencing.md %}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-{% include api-documentation/v1/access-and-permissions.md %}
+{% include api-documentation/v2/access-and-permissions.md %}
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-{% include api-documentation/v1/resource-guide.md %}
-
+{% include api-documentation/v2/resource-guide.md %}

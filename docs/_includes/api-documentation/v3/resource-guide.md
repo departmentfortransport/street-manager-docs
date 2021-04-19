@@ -585,7 +585,7 @@ Audit events in the history response will also include an object_reference. Wher
 <ol class="govuk-list govuk-list--bullet">
   <li><strong>Logging an Inspections</strong>: Inspection Reference Number</li>
   <li><strong>Applying for a Permit</strong>: Permit Reference Number</li>
-  <li><strong>HA granting a permit applicaiton</strong>: Permit Reference Number</li>
+  <li><strong>HA granting a permit application</strong>: Permit Reference Number</li>
   <li><strong>Permit application deeming</strong>: Permit Reference Number</li>
   <li><strong>Requesting a change</strong>: Change Request Reference Number</li>
   <li><strong>Creating a site or reinstatement</strong>: Site Number</li>

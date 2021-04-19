@@ -19,9 +19,9 @@ The Street Manager API services are versioned via the URL path, for example <cod
 {: .govuk-heading-m}
 
 <ol class="govuk-list govuk-list--bullet">
-  <li>V1 (stable - due to be deprecated in May 2021)</li>
+  <li>V1 (stable - deprecated on 3rd May 2021)</li>
   <li>V2 (stable)</li>
-  <li>V3 (upcoming in May 2021)</li>
+  <li>V3 (under active development)</li>
 </ol>
 
 

@@ -13,7 +13,7 @@ A publisher/subscriber model using Amazon Web Service's (AWS) [Simple Notificati
 sending notifications to subscribers when an applicable event occurs in Street Manager.
 {: .govuk-body}
 
-Users subscribing to the service will be required to host a POST endpoint capable of recieving
+Users subscribing to the service will be required to host a POST endpoint capable of receiving
 HTTP requests from [AWS's source IP range](https://docs.aws.amazon.com/general/latest/gr/aws-ip-ranges.html).
 {: .govuk-body}
 

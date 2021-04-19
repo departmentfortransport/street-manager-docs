@@ -21,6 +21,17 @@ SM-6776: Added new authorisation checks that prevent users belonging to suspende
   <li>GeoJSON API</li>
 </ol>
 
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-5939: Added additional validation to the <code>POST /works/{workReferenceNumber}/permits/{permitReferenceNumber}/link-section-81</code> endpoint to prevent linking a permit and section 81 that are assigned to different promoter organisations.
+  </li>
+  <li>
+    SM-5846: Added <code>PUT sample-inspection-targets/{sampleInspectionTargetReferenceNumber}/close</code> endpoint to Work API to allow sample inspection Targets to be closed. Any sample inspections linked to the target that have not been completed will be set to `expired`. Reporting API <code>GET /sample-inspection-targets</code> will only return active targets (<code>is_active_target = true</code>)
+  </li>
+</ol>
+
 Updated the Party API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">

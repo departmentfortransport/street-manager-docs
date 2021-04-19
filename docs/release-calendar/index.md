@@ -52,7 +52,7 @@ title: Upcoming Release Calendar
       <td class="govuk-table__cell">Application</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">19/04/2021</td>
+      <td class="govuk-table__cell">21/04/2021</td>
       <td class="govuk-table__cell">Production</td>
       <td class="govuk-table__cell">Application</td>
     </tr>

@@ -10,6 +10,14 @@ This page lists all known occurrences of Street Manager service being unavailabl
 
 To see the current status of Production and Sandbox environments visit the [status page here ](http://stats.pingdom.com/uyxey83hvki0)
 
+## April 2021
+
+**Production environment**
+
+* 15/04/2021 08:38 to 15:38: Production environment had degraded performance for 7 hours due to system behaviour under an increased load of requests from a 3rd party integrator.
+
+* 14/04/2021 09:48 to 18:09: Production environment had degraded performance for 8 hours 21 mins due to system behaviour under an increased load of requests from a 3rd party integrator.
+
 ## February 2021
 
 **Production environment**

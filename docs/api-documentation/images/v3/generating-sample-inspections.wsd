@@ -1,0 +1,31 @@
+title Generating Sample Inspections
+
+loop Create targets for promoters
+    HA Admin->Works API: POST /sample-inspection-target
+    Works API->HA Admin: {Sample Inspection Target created}
+end
+
+
+HA Admin->Works API: POST /sample-inspection
+Works API->HA Admin: {sample inspection generation requested}
+
+note right of Works API: Sample inspection generation is an async task
+Works API->Works API: Generate Samples
+activate Works API
+deactivate Works API
+
+note left of HA Admin: targets updated and samples generated
+opt
+HA Admin->Works API: PUT /sample-inspection-target
+Works API->HA Admin: {Sample Inspection Target updated}
+HA Admin->Works API: POST /sample-inspection
+Works API->HA Admin: {sample inspection generation requested}
+Works API->Works API: Generate Samples
+activate Works API
+deactivate Works API
+end
+
+opt
+HA Admin->Works API: PUT /sample-inspection-target/close
+Works API->HA Admin: {sample inspection target closed}
+end

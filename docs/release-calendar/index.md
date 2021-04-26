@@ -62,7 +62,7 @@ title: Upcoming Release Calendar
       <td class="govuk-table__cell">Application</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">03/05/2021</td>
+      <td class="govuk-table__cell">04/05/2021</td>
       <td class="govuk-table__cell">Production</td>
       <td class="govuk-table__cell">Application</td>
     </tr>
@@ -82,7 +82,7 @@ title: Upcoming Release Calendar
       <td class="govuk-table__cell">Application</td>
     </tr>
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">31/05/2021</td>
+      <td class="govuk-table__cell">01/06/2021</td>
       <td class="govuk-table__cell">Production</td>
       <td class="govuk-table__cell">Application</td>
     </tr>

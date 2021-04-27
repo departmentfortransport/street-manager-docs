@@ -14,6 +14,12 @@ Use of the Street Manager API is monitored for performance and availability reas
 
 This section is a brief guide on how to design your API integration with Street Manager in order to ensure best practice adherence
 
+**Integrating**
+
+* Ensure any integration or changes are well tested and verified against the [sandbox environment](https://www.sandbox.manage-roadworks.service.gov.uk/) before deploying to production
+* Ensure sufficient error monitoring is in-place for any integration
+* Ensure technical contact information is up to date
+
 **Authentication**
 
 * You should not re-authenticate each time you make an API call. The same authentication token should be used for multiple API calls until it expires.

@@ -8,6 +8,12 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 2.10.11 (29/04/2021):
+{: .govuk-heading-s #v2-10-11}
+
+No changes have been made to the V2 API endpoints in this version.
+{: .govuk-body}
+
 Version 2.10.10 (15/04/2021):
 {: .govuk-heading-s #v2-10-10}
 

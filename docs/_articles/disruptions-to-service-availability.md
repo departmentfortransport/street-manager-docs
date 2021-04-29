@@ -8,8 +8,6 @@ status: publish
 ---
 This page lists all known occurrences of Street Manager service being unavailable.
 
-To see the current status of Production and Sandbox environments visit the [status page here ](http://stats.pingdom.com/uyxey83hvki0)
-
 ## April 2021
 
 **Production environment**

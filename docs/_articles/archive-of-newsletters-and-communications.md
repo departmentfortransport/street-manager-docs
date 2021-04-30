@@ -179,3 +179,9 @@ status: publish
       Street Manager Newsletter - 2021 - 32
     </a>
   </li>
+  <li>
+    <a class="govuk-link" href="{{ site.baseurl }}/assets/files/archive/Newsletter%2033.pdf">
+      Street Manager Newsletter - 2021 - 33
+    </a>
+  </li>
+

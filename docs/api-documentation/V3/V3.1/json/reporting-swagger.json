@@ -1810,7 +1810,7 @@
 		}
 	},
 	"info": {
-		"title": "reporting-api-stable",
+		"title": "reporting-api",
 		"version": "1.0.0",
 		"description": "See API specification Resource Guide > Reporting API for more information on paging and endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
 		"license": {

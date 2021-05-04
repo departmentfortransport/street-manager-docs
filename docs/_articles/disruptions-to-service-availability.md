@@ -8,6 +8,10 @@ status: publish
 ---
 This page lists all known occurrences of Street Manager service being unavailable.
 
+## Issue notification
+
+We are aware of a blank screen when raising permits using Internet Explorer. As a workaround we advise users to use a different browser. We are investigating this issue as a matter of priority.
+
 ## April 2021
 
 **Production environment**

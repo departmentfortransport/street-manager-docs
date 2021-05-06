@@ -3,10 +3,21 @@ layout: default
 title: API Versions and Changes
 ---
 # API Versions and Changes
-{: .govuk-heading-xl }
+{: .govuk-heading-xl}
 
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
+
+Version 2.10.12 (13/05/2021):
+{: .govuk-heading-s #v2-10-12}
+
+Updated Data Export API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6097: The <code>GET /work-data</code> endpoint which was used to retrieve permits that had been added, changed or deleted in the previous hour has now been removed.
+  </li>
+</ol>
 
 Version 2.10.11 (29/04/2021):
 {: .govuk-heading-s #v2-10-11}

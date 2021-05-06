@@ -3,7 +3,7 @@ layout: default
 title: API Versions and Changes
 ---
 # API Versions and Changes
-{: .govuk-heading-xl }
+{: .govuk-heading-xl}
 
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
@@ -38,6 +38,9 @@ Updated Data Export API with the following changes:
       <li><code>promoter_organisation_name</code> - for HA users</li>
       <li><code>ha_organisation_name</code> - for Planner and Contractor users</li>
     </ol>
+  </li>
+  <li>
+    SM-6097: The <code>GET /work-data</code> endpoint which was used to retrieve permits that had been added, changed or deleted in the previous hour has now been removed.
   </li>
 </ol>
 

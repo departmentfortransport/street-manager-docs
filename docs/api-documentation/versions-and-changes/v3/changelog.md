@@ -8,6 +8,39 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 3.1 (13/05/2021):
+{: .govuk-heading-s #v3-1}
+
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>SM-6081: Added additional optional <code>query</code> param to the <code>GET /fixed-penalty-notices</code> endpoint. This provided query will search against the following properties:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>work_reference_number</code></li>
+      <li><code>fpn_reference_number</code></li>
+      <li><code>street_name</code></li>
+      <li><code>USRN</code></li>
+      <li><code>promoter_organisation_name</code> - for HA users</li>
+      <li><code>ha_organisation_name</code> - for Planner and Contractor users</li>
+    </ol>
+  </li>
+</ol>
+
+Updated Data Export API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>SM-6081: Updated the <code>POST /fixed-penalty-notices/csv</code> to use the optional <code>query</code> property. The provided query will search against the following properties:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>work_reference_number</code></li>
+      <li><code>fpn_reference_number</code></li>
+      <li><code>street_name</code></li>
+      <li><code>USRN</code></li>
+      <li><code>promoter_organisation_name</code> - for HA users</li>
+      <li><code>ha_organisation_name</code> - for Planner and Contractor users</li>
+    </ol>
+  </li>
+</ol>
+
 Version 3.0 (29/04/2021):
 {: .govuk-heading-s #v3-0}
 

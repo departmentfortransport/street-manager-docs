@@ -822,6 +822,7 @@ A diagram of export file process</div>
   * Pole testing
 * Reinstatement measurements and whether the reinstatement is a final reinstatement must be provided for excavation reinstatement type.
   * Optionally, a second set of coordinates may be provided.
+  * However, this is mandatory for each individual site which is over 10 metres in length/width as per Section 70 NRSWA.
 * Number of holes must be provided for bar holes, core holes and pole testing reinstatement types.
 
 _(Previously section 4.7 in Business rules v0.1 draft)_
@@ -1277,6 +1278,10 @@ A diagram of S81 statuses</div>
 
 ## 19.1. Available reports
 
+* Number of PAAs and PAs sent or received
+** Total number of PAAs and PAs sent or received within a requested timeframe and based on date created
+* Number of PAAs and PAs outcomes
+** Total number of PAAs and PAs outcomes within a requested timeframe and based on date created
 * All Inspection Outcomes
 ** Total number of inspections broken down by their type, category and outcome, and based on date the inspection was created
 
@@ -1292,7 +1297,9 @@ A diagram of S81 statuses</div>
 
 | Section                   | Change comment                                           |
 | ------------------------- | -------------------------------------------------------- |
-| 3.4.5. Adding PAA & PA    | Clarification in regards to when a PAA can/can't be added 
+| 3.4.5. Adding PAA & PA    | Clarification in regards to when a PAA can/can't be added
+| 8.2. Reinstatement types  | Clarification in regards to when second set of coordinates is mandatory
+| 19. Performance Reporting | Mentioned two additional reports available
 
 <!-- ==================================================== -->
 

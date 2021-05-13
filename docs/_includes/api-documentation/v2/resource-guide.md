@@ -1044,11 +1044,9 @@ Accepts the user's email address, new password and token (returned from the Work
 #### Get Data CSV
 {: .govuk-heading-s}
 
-<code>GET /work-data</code>
-
 <code>GET /activity-data</code>
 
-Retrieves data of permits or activities across all organisations which have been added, changed, or deleted within the last hour in CSV format. See Data Export API and Open Data in the Technical Overview section for details.
+Retrieves data of activities across all organisations which have been added, changed, or deleted within the last hour in CSV format. See Data Export API and Open Data in the Technical Overview section for details.
 {: .govuk-body}
 
 An optional <code>csvExportDate</code> query parameter can be provided to retrieve a CSV (within the last two weeks) that was available for download at the datetime provided. <code>csvExportDate</code> should be an ISO 8601 Date and time format. If no datetime is provided, the current datetime is used as the default (which will retrieve the latest generated CSV).

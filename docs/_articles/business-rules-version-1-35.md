@@ -12,7 +12,7 @@ status: publish
 
 <!-- ==================================================== -->
 
-<span class="govuk-body-l" style="float:left">Version 1.35 (Due to be released w/c 05/05/2021)</span>
+<span class="govuk-body-l" style="float:left">Version 1.35 (Due to be released w/c 14/05/2021)</span>
 
 <span style="float:right;text-align:right;">[User roles & permissions table [PDF]](https://departmentfortransport.github.io/street-manager-docs/business-rules/Street%20Manager%20user%20role%20permissions%20table.pdf)<br />
 [Previous versions](https://departmentfortransport.github.io/street-manager-docs/articles/business-rules-home.html)</span>
@@ -1271,19 +1271,17 @@ A diagram of S81 statuses</div>
 * This funtionality is available to Admin users only.
 * Performance Reporting allows users to create and download data reports for specific activities.
 * Each row in the report corresponds to:
-** A Promoter, if the report was requested by a Highway Authority.
-** A Highway Authority, if the report was requested by a Promoter. 
+  * A Promoter, if the report was requested by a Highway Authority.
+  * A Highway Authority, if the report was requested by a Promoter. 
 * A report for up to 92 days can be requested.
 * After a report is requested, the actual file can be downloaded from “CSV Exports” screen. A user is restricted to one download in progress at a time.
 
 ## 19.1. Available reports
 
 * Number of PAAs and PAs sent or received
-** Total number of PAAs and PAs sent or received within a requested timeframe and based on date created
-* Number of PAAs and PAs outcomes
-** Total number of PAAs and PAs outcomes within a requested timeframe and based on date created
+  * Total number of PAAs and PAs sent or received within a requested timeframe and based on date created
 * All Inspection Outcomes
-** Total number of inspections broken down by their type, category and outcome, and based on date the inspection was created
+  * Total number of inspections broken down by their type, category and outcome, and based on date the inspection was created
 
 <!-- ==================================================== -->
 
@@ -1299,7 +1297,7 @@ A diagram of S81 statuses</div>
 | ------------------------- | -------------------------------------------------------- |
 | 3.4.5. Adding PAA & PA    | Clarification in regards to when a PAA can/can't be added
 | 8.2. Reinstatement types  | Clarification in regards to when second set of coordinates is mandatory
-| 19. Performance Reporting | Mentioned two additional reports available
+| 19. Performance Reporting | Mentioned of "Number of PAAs and PAs" report
 
 <!-- ==================================================== -->
 

@@ -401,11 +401,6 @@ The table below shows the current permissions per endpoint.
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><code>GET /work-data</code></td>
-      <td class="govuk-table__cell">Planner, Contractor, HAOfficer, DataExport and Admin</td>
-      <td class="govuk-table__cell">Not Required</td>
-    </tr>
-    <tr class="govuk-table__row">
       <td class="govuk-table__cell"><code>GET /activity-data</code></td>
       <td class="govuk-table__cell">Planner, Contractor, HAOfficer, DataExport and Admin</td>
       <td class="govuk-table__cell">Not Required</td>

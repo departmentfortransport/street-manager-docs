@@ -1,0 +1,786 @@
+{
+	"basePath": "/",
+	"consumes": [
+		"application/json"
+	],
+	"definitions": {
+		"WorkCategoryResponse": {
+			"enum": [
+				"minor",
+				"standard",
+				"major",
+				"immediate_urgent",
+				"immediate_emergency",
+				"paa",
+				"hs2_highway",
+				"upcoming_enum"
+			],
+			"type": "string"
+		},
+		"TrafficManagementTypeResponse": {
+			"enum": [
+				"road_closure",
+				"contra_flow",
+				"lane_closure",
+				"multi_way_signals",
+				"two_way_signals",
+				"convoy_workings",
+				"stop_go_boards",
+				"priority_working",
+				"give_and_take",
+				"some_carriageway_incursion",
+				"no_carriageway_incursion",
+				"upcoming_enum"
+			],
+			"type": "string"
+		},
+		"GeoJSONCentrePointType": {
+			"enum": [
+				"Point"
+			],
+			"type": "string"
+		},
+		"GeoJSONCentrePoint": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/GeoJSONCentrePointType"
+				},
+				"coordinates": {
+					"items": {
+						"type": "number",
+						"format": "double"
+					},
+					"type": "array"
+				}
+			},
+			"required": [
+				"type",
+				"coordinates"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"PermitStatusResponse": {
+			"enum": [
+				"submitted",
+				"granted",
+				"permit_modification_request",
+				"refused",
+				"closed",
+				"cancelled",
+				"revoked",
+				"progressed",
+				"upcoming_enum"
+			],
+			"type": "string"
+		},
+		"WorkProperties": {
+			"properties": {
+				"work_reference_number": {
+					"type": "string"
+				},
+				"permit_reference_number": {
+					"type": "string"
+				},
+				"promoter_organisation": {
+					"type": "string"
+				},
+				"promoter_swa_code": {
+					"type": "string"
+				},
+				"work_category": {
+					"$ref": "#/definitions/WorkCategoryResponse"
+				},
+				"work_category_string": {
+					"type": "string"
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"traffic_management_type": {
+					"$ref": "#/definitions/TrafficManagementTypeResponse"
+				},
+				"traffic_management_type_string": {
+					"type": "string"
+				},
+				"work_centre_point": {
+					"$ref": "#/definitions/GeoJSONCentrePoint",
+					"description": "GeoJSON Point Geometry"
+				},
+				"permit_status": {
+					"$ref": "#/definitions/PermitStatusResponse"
+				},
+				"permit_status_string": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"work_reference_number",
+				"permit_reference_number",
+				"promoter_organisation",
+				"promoter_swa_code",
+				"work_category",
+				"work_category_string",
+				"start_date",
+				"end_date",
+				"traffic_management_type",
+				"traffic_management_type_string",
+				"work_centre_point",
+				"permit_status",
+				"permit_status_string"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"FeatureType": {
+			"enum": [
+				"Feature"
+			],
+			"type": "string"
+		},
+		"GeoJSONFeatureTypeResponse": {
+			"enum": [
+				"Point",
+				"LineString",
+				"Polygon",
+				"upcoming_enum"
+			],
+			"type": "string"
+		},
+		"GeoJSONGeometry": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/GeoJSONFeatureTypeResponse"
+				},
+				"type_string": {
+					"type": "string"
+				},
+				"coordinates": {
+					"items": {
+						"additionalProperties": true,
+						"type": "object"
+					},
+					"type": "array"
+				}
+			},
+			"required": [
+				"type",
+				"type_string",
+				"coordinates"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"WorkFeature": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureType"
+				},
+				"geometry": {
+					"$ref": "#/definitions/GeoJSONGeometry",
+					"description": "GeoJSON Geometry"
+				},
+				"properties": {
+					"$ref": "#/definitions/WorkProperties"
+				}
+			},
+			"required": [
+				"type",
+				"geometry",
+				"properties"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"FeatureCollectionType": {
+			"enum": [
+				"FeatureCollection"
+			],
+			"type": "string"
+		},
+		"WorkResponse": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureCollectionType"
+				},
+				"features": {
+					"items": {
+						"$ref": "#/definitions/WorkFeature"
+					},
+					"type": "array"
+				}
+			},
+			"required": [
+				"type",
+				"features"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"ActivityActivityTypeResponse": {
+			"enum": [
+				"skips",
+				"scaffolding",
+				"hoarding",
+				"crane_mobile_platform",
+				"event",
+				"section50",
+				"section58",
+				"compound",
+				"other",
+				"upcoming_enum"
+			],
+			"type": "string"
+		},
+		"ActivityProperties": {
+			"properties": {
+				"activity_centre_point": {
+					"$ref": "#/definitions/GeoJSONCentrePoint",
+					"description": "GeoJSON Point Geometry"
+				},
+				"activity_name": {
+					"type": "string"
+				},
+				"activity_location_description": {
+					"type": "string"
+				},
+				"activity_reference_number": {
+					"type": "string"
+				},
+				"activity_type": {
+					"$ref": "#/definitions/ActivityActivityTypeResponse"
+				},
+				"activity_type_string": {
+					"type": "string"
+				},
+				"area_name": {
+					"type": "string"
+				},
+				"cancelled": {
+					"type": "boolean"
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"street_name": {
+					"type": "string"
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time"
+				}
+			},
+			"required": [
+				"activity_centre_point",
+				"activity_name",
+				"activity_location_description",
+				"activity_reference_number",
+				"activity_type",
+				"activity_type_string",
+				"area_name",
+				"cancelled",
+				"end_date",
+				"street_name",
+				"start_date"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"ActivityFeature": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureType"
+				},
+				"geometry": {
+					"$ref": "#/definitions/GeoJSONGeometry",
+					"description": "GeoJSON Geometry"
+				},
+				"properties": {
+					"$ref": "#/definitions/ActivityProperties"
+				}
+			},
+			"required": [
+				"type",
+				"geometry",
+				"properties"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"ActivityResponse": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureCollectionType"
+				},
+				"features": {
+					"items": {
+						"$ref": "#/definitions/ActivityFeature"
+					},
+					"type": "array"
+				}
+			},
+			"required": [
+				"type",
+				"features"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"ForwardPlanStatusResponse": {
+			"enum": [
+				"raised",
+				"cancelled",
+				"progressed",
+				"upcoming_enum"
+			],
+			"type": "string"
+		},
+		"ForwardPlanProperties": {
+			"properties": {
+				"forward_plan_reference_number": {
+					"type": "string"
+				},
+				"work_reference_number": {
+					"type": "string"
+				},
+				"forward_plan_status": {
+					"$ref": "#/definitions/ForwardPlanStatusResponse"
+				},
+				"forward_plan_status_string": {
+					"type": "string"
+				},
+				"work_centre_point": {
+					"$ref": "#/definitions/GeoJSONCentrePoint",
+					"description": "GeoJSON Point Geometry"
+				},
+				"street": {
+					"type": "string"
+				},
+				"area": {
+					"type": "string",
+					"x-nullable": true
+				},
+				"start_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"end_date": {
+					"type": "string",
+					"format": "date-time"
+				},
+				"description_of_work": {
+					"type": "string"
+				},
+				"promoter_organisation": {
+					"type": "string"
+				},
+				"location_description": {
+					"type": "string"
+				}
+			},
+			"required": [
+				"forward_plan_reference_number",
+				"work_reference_number",
+				"forward_plan_status",
+				"forward_plan_status_string",
+				"work_centre_point",
+				"street",
+				"start_date",
+				"end_date",
+				"description_of_work",
+				"promoter_organisation",
+				"location_description"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"ForwardPlanFeature": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureType"
+				},
+				"geometry": {
+					"$ref": "#/definitions/GeoJSONGeometry",
+					"description": "GeoJSON Geometry"
+				},
+				"properties": {
+					"$ref": "#/definitions/ForwardPlanProperties"
+				}
+			},
+			"required": [
+				"type",
+				"geometry",
+				"properties"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"ForwardPlanResponse": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureCollectionType"
+				},
+				"features": {
+					"items": {
+						"$ref": "#/definitions/ForwardPlanFeature"
+					},
+					"type": "array"
+				}
+			},
+			"required": [
+				"type",
+				"features"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"Hs2ActLimitsFeature": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureType"
+				},
+				"geometry": {
+					"$ref": "#/definitions/GeoJSONGeometry",
+					"description": "GeoJSON Geometry"
+				}
+			},
+			"required": [
+				"type",
+				"geometry"
+			],
+			"type": "object",
+			"additionalProperties": false
+		},
+		"Hs2ActLimitsResponse": {
+			"properties": {
+				"type": {
+					"$ref": "#/definitions/FeatureCollectionType"
+				},
+				"features": {
+					"items": {
+						"$ref": "#/definitions/Hs2ActLimitsFeature"
+					},
+					"type": "array"
+				}
+			},
+			"required": [
+				"type",
+				"features"
+			],
+			"type": "object",
+			"additionalProperties": false
+		}
+	},
+	"info": {
+		"title": "geojson-api-stable",
+		"version": "1.0.0",
+		"description": "See API specification Resource Guide > GeoJSON API for more information on endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
+		"license": {
+			"name": "MIT"
+		}
+	},
+	"paths": {
+		"/works": {
+			"get": {
+				"operationId": "GetWorksIntersectBoundingBox",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/WorkResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > GeoJSON API > Get works endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "minEasting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "minNorthing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "maxEasting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "maxNorthing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "start_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "end_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "work_reference_number",
+						"required": false,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/activities": {
+			"get": {
+				"operationId": "GetActivitiesIntersectingBounds",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/ActivityResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > GeoJSON API > Get activities endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "minEasting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "minNorthing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "maxEasting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "maxNorthing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "start_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "end_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/forward-plans": {
+			"get": {
+				"operationId": "GetForwardPlansIntersectBoundingBox",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/ForwardPlanResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > GeoJSON API > Get ForwardPlans endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "minEasting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "minNorthing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "maxEasting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "maxNorthing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "start_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "end_date",
+						"required": false,
+						"format": "date-time",
+						"type": "string"
+					},
+					{
+						"in": "query",
+						"name": "forward_plan_reference_number",
+						"required": false,
+						"type": "string"
+					}
+				]
+			}
+		},
+		"/hs2-act-limits": {
+			"get": {
+				"operationId": "GetHs2ActLimitsIntersectingBounds",
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"schema": {
+							"$ref": "#/definitions/Hs2ActLimitsResponse"
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > GeoJSON API > Get Hs2ActLimits endpoint for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"HighwayAuthority",
+							"Contractor"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "query",
+						"name": "minEasting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "minNorthing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "maxEasting",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					},
+					{
+						"in": "query",
+						"name": "maxNorthing",
+						"required": true,
+						"format": "double",
+						"type": "number"
+					}
+				]
+			}
+		}
+	},
+	"produces": [
+		"application/json"
+	],
+	"swagger": "2.0",
+	"securityDefinitions": {
+		"token": {
+			"type": "apiKey",
+			"name": "token",
+			"in": "header",
+			"scopes": {
+				"Planner": "Planner",
+				"HighwayAuthority": "HighwayAuthority"
+			}
+		}
+	},
+	"schemes": [
+		"https"
+	]
+}

@@ -8,6 +8,12 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 3.2 (27/05/2021):
+{: .govuk-heading-s #v3-2}
+
+SM-7109: Updated all APIs to be generated using OpenAPI Specification 3 in order to patch a third party dependency vulnerability. <a class="govuk-link" href="{{ site.baseurl }}/api-documentation/versions-and-changes/resources/v2-work-swagger.json">Here</a> is an example of an updated V2 Work API. This swagger.json should be used as an example and will not be the released swagger.json.
+{: .govuk-body}
+
 Version 3.1 (13/05/2021):
 {: .govuk-heading-s #v3-1}
 

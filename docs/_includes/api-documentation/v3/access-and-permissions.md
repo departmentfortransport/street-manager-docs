@@ -19,6 +19,7 @@ The following roles can be associated with users:
   <li>API</li>
   <li>UI</li>
   <li>DataExport</li>
+  <li>StreetWorksAdmin</li>
 </ul>
 
 A user can have multiple roles, but some roles are mutually exclusive in that you may only have one role in the following groups:
@@ -28,9 +29,10 @@ A user can have multiple roles, but some roles are mutually exclusive in that yo
   <li>Planner, HighwayAuthority, Contractor, DataExport</li>
   <li>UI, API</li>
   <li>Admin, API</li>
+  <li>Contractor, StreetWorksAdmin</li>
 </ul>
 
-So for example it is not possible for Admins to be API users at the same time, or to hold both UI and API access simultaneously.
+So for example it is not possible for Admins to be API users at the same time, or to hold both UI and API access simultaneously. The new Street Works Administrator must be paired with Admin, Planner or Highway Authority and is not available for contractors.
 {: .govuk-body}
 
 #### Role Based Access - Contractor
@@ -63,7 +65,19 @@ The Reporting and Data Export APIs will automatically filter data in endpoint re
 #### Role Based Access - HighwayAuthority
 {: .govuk-heading-s}
 
-`HighwayAuthority` users are not restricted to work records based upon workstreams or contract associations. Instead they are only allowed to perform write actions on resources associated with their own organisation. For example they can only assess permits for work records which have been assigned to their own organisation. In a future release we will introduce Geographical Areas, a way for `HighwayAuthority` users to filter resources based on a set list of USRNs.
+`HighwayAuthority` users are not restricted to work records based upon workstreams or contract associations. Instead they are only allowed to perform write actions on resources associated with their own organisation. For example they can only assess permits for work records which have been assigned to their own organisation. `HighwayAuthority` users can instead filter resources using Geographical Areas. For more information see the [resource guide](#geographical-areas)
+{: .govuk-body}
+
+#### Street Works Administrators
+{: .govuk-heading-s}
+
+The `Street Works Administrator` role cannot be used by itself, it must be paired with either Admin, Planner or Highway Authority. This role is not available to contractors.
+{: .govuk-body}
+
+In the future the `Street Works Administrator` role will be used to give some trusted users elevated access to sensitive information, for example financial information. This role has no effect at this time.
+{: .govuk-body}
+
+The `Street Works Administrator` role is not the same as the `User Administrator` role and does not provide access to functionality that is currently exclusive to `User Administrator`s.
 {: .govuk-body}
 
 #### Default Workstream

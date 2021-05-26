@@ -14,8 +14,21 @@ Version 3.2 (27/05/2021):
 SM-7109: Updated all APIs to be generated using OpenAPI Specification 3 in order to patch a third party dependency vulnerability. <a class="govuk-link" href="{{ site.baseurl }}/api-documentation/versions-and-changes/resources/v2-work-swagger.json">Here</a> is an example of an updated V2 Work API. This swagger.json should be used as an example and will not be the released swagger.json.
 {: .govuk-body}
 
-SM-6734: Updated the <code>GET /works/{work reference number}</code> to limit the number of FPNs returned from a work response to the latest 50.  The full list can be retrieved using the <code>GET /fixed-penalty-notices</code> endpoint.
+Updated Work API with the following changes:
 {: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6734: Updated the <code>GET /works/{work reference number}</code> to limit the number of FPNs returned from a work response to the latest 50. The full list can be retrieved using the <code>GET /fixed-penalty-notices</code> endpoint.
+  </li>
+</ol>
+
+Updated the Party API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-7071: New <code>StreetWorksAdmin</code> role added to <code>RoleResponse</code> enum, which is returned in the <code>UserResponse</code> from the <code>GET /users/{email}</code> endpoint.
+  </li>
+</ol>
 
 Version 3.1 (13/05/2021):
 {: .govuk-heading-s #v3-1}

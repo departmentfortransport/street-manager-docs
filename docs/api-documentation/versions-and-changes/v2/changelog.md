@@ -26,6 +26,14 @@ Updated the Party API with the following changes:
   </li>
 </ol>
 
+Updated Lookup API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-4954: Fixed an issue with <code>GET ​/nsg​/search</code> where streets containing apostrophe <code>'</code> and hyphen <code>-</code> characters were failing to return results
+  </li>
+</ol>
+
 Version 2.10.12 (13/05/2021):
 {: .govuk-heading-s #v2-10-12}
 

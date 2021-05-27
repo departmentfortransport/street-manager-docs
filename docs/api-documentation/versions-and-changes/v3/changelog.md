@@ -8,6 +8,17 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 3.3 (10/06/2021):
+{: .govuk-heading-s #v3-3}
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6735: Updated the <code>GET /works/{workReferenceNumber}</code> to limit the number of inspections returned from a work response to the latest 50. The full list can be retrieved using the <code>GET /inspections</code> endpoint on Reporting API.
+  </li>
+</ol>
+
 Version 3.2 (27/05/2021):
 {: .govuk-heading-s #v3-2}
 

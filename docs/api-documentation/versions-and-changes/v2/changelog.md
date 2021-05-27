@@ -8,6 +8,25 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 2.10.14 (10/06/2021):
+{: .govuk-heading-s #v2-10-14}
+
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6885:  Updated the <code>GET /alterations</code> endpoint to enable the filtering on the alteration <code>status_changed_date</code>
+ </li>
+</ol>
+
+Updated Data Export API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6885:  Updated the <code>GET /alterations/csv</code> endpoint to enable the filtering on the alteration <code>status_changed_date</code>
+ </li>
+</ol>
+
 Version 2.10.13 (27/05/2021):
 {: .govuk-heading-s #v2-10-13}
 

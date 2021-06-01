@@ -17,66 +17,6 @@ title: Upcoming Release Calendar
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">04/03/2021</td>
-      <td class="govuk-table__cell">Sandbox</td>
-      <td class="govuk-table__cell">Application</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">08/03/2021</td>
-      <td class="govuk-table__cell">Production</td>
-      <td class="govuk-table__cell">Application</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">18/03/2021</td>
-      <td class="govuk-table__cell">Sandbox</td>
-      <td class="govuk-table__cell">Application</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">22/03/2021</td>
-      <td class="govuk-table__cell">Production</td>
-      <td class="govuk-table__cell">Application</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">01/04/2021</td>
-      <td class="govuk-table__cell">Sandbox</td>
-      <td class="govuk-table__cell">Application</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">07/04/2021</td>
-      <td class="govuk-table__cell">Production</td>
-      <td class="govuk-table__cell">Application</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">15/04/2021</td>
-      <td class="govuk-table__cell">Sandbox</td>
-      <td class="govuk-table__cell">Application</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">21/04/2021</td>
-      <td class="govuk-table__cell">Production</td>
-      <td class="govuk-table__cell">Application</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">29/04/2021</td>
-      <td class="govuk-table__cell">Sandbox</td>
-      <td class="govuk-table__cell">Application</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">04/05/2021</td>
-      <td class="govuk-table__cell">Production</td>
-      <td class="govuk-table__cell">Application</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">13/05/2021</td>
-      <td class="govuk-table__cell">Sandbox</td>
-      <td class="govuk-table__cell">Application</td>
-    </tr>
-    <tr class="govuk-table__row">
-      <td class="govuk-table__cell">17/05/2021</td>
-      <td class="govuk-table__cell">Production</td>
-      <td class="govuk-table__cell">Application</td>
-    </tr>
-    <tr class="govuk-table__row">
       <td class="govuk-table__cell">27/05/2021</td>
       <td class="govuk-table__cell">Sandbox</td>
       <td class="govuk-table__cell">Application</td>

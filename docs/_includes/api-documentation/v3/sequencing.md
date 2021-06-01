@@ -84,7 +84,7 @@ This contains information about all of the entities associated with the work rec
   <li><strong>Active permit</strong>: The currently active permit associated with the works. In the sequence above this would contain the permit awaiting assessment</li>
   <li><strong>Forward plan</strong>: Summary of a forward plan if it has been added to the works (none initially)</li>
   <li><strong>Sites</strong>: Any reinstatement sites that have been added to the works (none initially)</li>
-  <li><strong>Inspections</strong>: Any inspections that have been issued on the works (none initially)</li>
+  <li><strong>Inspections</strong>: Any inspections that have been issued on the works (none initially). This is restricted to the latest 50 inspections recorded against the work.  The full list can be retrieved using the <code>GET /inspections</code> endpoint on Reporting API.</li>
   <li><strong>FPNs</strong>: Any fixed penalty notices that have been issued on the works (none initially). This is restricted to the latest 50 FPNs issued on the work.  The full list can be retrieved using the <code>GET /fixed-penalty-notices</code> endpoint.</li>
   <li><strong>Permits</strong>: Summary of all permits that have been associated with that works (i.e. multiple permits)</li>
   <li><strong>History</strong>: Summary of all history associated with that works</li>

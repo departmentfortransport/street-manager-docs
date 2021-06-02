@@ -16,7 +16,23 @@ Updated Work API with the following changes:
 <ol class="govuk-list govuk-list--bullet">
   <li>
     SM-6735: Updated the <code>GET /works/{workReferenceNumber}</code> to limit the number of inspections returned from a work response to the latest 50. The full list can be retrieved using the <code>GET /inspections</code> endpoint on Reporting API.
-  </li>
+ </li>
+</ol>
+
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6885:  Updated the <code>GET /alterations</code> endpoint to enable the filtering on the alteration <code>status_changed_date</code>
+ </li>
+</ol>
+
+Updated Data Export API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6885:  Updated the <code>GET /alterations/csv</code> endpoint to enable the filtering on the alteration <code>status_changed_date</code>
+ </li>
 </ol>
 
 Version 3.2 (27/05/2021):

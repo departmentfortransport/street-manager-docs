@@ -174,6 +174,8 @@ Query params:
   <li><strong>lane_rental_charges_not_agreed</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" and charges have not been agreed</li>
   <li><strong>lane_rental_charges_potentially_apply</strong>: When true this will return permit alterations whose associated permit has a lane rental assessment outcome of "chargeable" or "potentially chargeable", or the work is taking place on a lane rental applicable road</li>
   <li><strong>geographical_area_reference_number</strong>: An optional array of Geographical Areas that you would like to filter your list by as a HA user</li>
+  <li><strong>status_update_date_from</strong>: Date range filtering based on the status_update_date property</li>
+  <li><strong>status_update_date_to</strong>: Date range filtering based on the status_update_date property</li>
 </ol>
 
 #### Get forward plans

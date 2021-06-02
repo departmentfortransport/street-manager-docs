@@ -12,7 +12,7 @@ This page lists all known occurrences of Street Manager service being unavailabl
 
 **Production environment**
 
-* 01/06/21 13:06-13:26 Production environment intermittently unavailable for 20 mins due to planned release
+* 01/06/21 13:06-13:26 Production environment intermittently unavailable for 20 mins due to planned release.
 
 ## April 2021
 

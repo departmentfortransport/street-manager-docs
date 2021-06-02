@@ -8,9 +8,11 @@ status: publish
 ---
 This page lists all known occurrences of Street Manager service being unavailable.
 
-## Issue notification
+## June 2021
 
-We are aware of a blank screen when performing some actions involving maps using Internet Explorer. We have identified a fix which will be included in the next release. In the meantime, we advise users to use a different browser. This issue only affects Internet Explorer.
+**Production environment**
+
+* 01/06/21 13:06-13:26 Production environment intermittently unavailable for 20 mins due to planned release
 
 ## April 2021
 

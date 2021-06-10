@@ -1068,7 +1068,10 @@ In the response, the <code>Content-Disposition</code> HTTP header will contain t
 
 <code>POST /section-81s/csv</code>
 
-Retrieves a CSV list of Section 81s which are associated with the authenticated user's organisation.
+Generates a CSV list of Section 81s which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+A <code>csv_id</code> is returned in the Response body. This <code>csv_id</code> can be used with the <code>GET /csv/{csvId}</code> endpoint to retreive the CSV after generation.
 {: .govuk-body}
 
 #### Generate Reinstatements CSV
@@ -1076,7 +1079,10 @@ Retrieves a CSV list of Section 81s which are associated with the authenticated 
 
 <code>POST /reinstatements/csv</code>
 
-Retrieves a CSV list of reinstatements which are associated with the authenticated user's organisation.
+Generates a CSV list of reinstatements which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+A <code>csv_id</code> is returned in the Response body. This <code>csv_id</code> can be used with the <code>GET /csv/{csvId}</code> endpoint to retreive the CSV after generation.
 {: .govuk-body}
 
 #### Generate FPNs CSV
@@ -1084,7 +1090,10 @@ Retrieves a CSV list of reinstatements which are associated with the authenticat
 
 <code>POST /fixed-penalty-notices/csv</code>
 
-Retrieves a CSV list of FPNs which are associated with the authenticated user's organisation.
+Generates a CSV list of FPNs which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+A <code>csv_id</code> is returned in the Response body. This <code>csv_id</code> can be used with the <code>GET /csv/{csvId}</code> endpoint to retreive the CSV after generation.
 {: .govuk-body}
 
 #### Generate Fees CSV
@@ -1092,7 +1101,10 @@ Retrieves a CSV list of FPNs which are associated with the authenticated user's 
 
 <code>POST /fees/csv</code>
 
-Retrieves a CSV list of fees which are associated with the authenticated user's organisation.
+Generates a CSV list of fees which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+A <code>csv_id</code> is returned in the Response body. This <code>csv_id</code> can be used with the <code>GET /csv/{csvId}</code> endpoint to retreive the CSV after generation.
 {: .govuk-body}
 
 Chargeable activities include:
@@ -1112,7 +1124,10 @@ Contractors are required to provide optional swa_code parameter in order to stat
 
 <code>POST /permits/csv</code>
 
-Retrieves a CSV list of permits which are associated with the authenticated user's organisation.
+Generates a CSV list of permits which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+A <code>csv_id</code> is returned in the Response body. This <code>csv_id</code> can be used with the <code>GET /csv/{csvId}</code> endpoint to retreive the CSV after generation.
 {: .govuk-body}
 
 #### Generate Inspections CSV
@@ -1120,7 +1135,10 @@ Retrieves a CSV list of permits which are associated with the authenticated user
 
 <code>POST /inspections/csv</code>
 
-Retrieves a CSV list of inspections which are associated with the authenticated user's organisation.
+Generates a CSV list of inspections which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+A <code>csv_id</code> is returned in the Response body. This <code>csv_id</code> can be used with the <code>GET /csv/{csvId}</code> endpoint to retreive the CSV after generation.
 {: .govuk-body}
 
 #### Generate Comments CSV
@@ -1128,7 +1146,10 @@ Retrieves a CSV list of inspections which are associated with the authenticated 
 
 <code>POST /forward-plans/csv</code>
 
-Retrieves a CSV list of forward plans which are associated with the authenticated user's organisation.
+Generates a CSV list of forward plans which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+A <code>csv_id</code> is returned in the Response body. This <code>csv_id</code> can be used with the <code>GET /csv/{csvId}</code> endpoint to retreive the CSV after generation.
 {: .govuk-body}
 
 #### Generate Alterations CSV
@@ -1136,7 +1157,10 @@ Retrieves a CSV list of forward plans which are associated with the authenticate
 
 <code>POST /alterations/csv</code>
 
-Retrieves a CSV list of alterations which are associated with the authenticated user's organisation.
+Generates a CSV list of alterations which are associated with the authenticated user's organisation.
+{: .govuk-body}
+
+A <code>csv_id</code> is returned in the Response body. This <code>csv_id</code> can be used with the <code>GET /csv/{csvId}</code> endpoint to retreive the CSV after generation.
 {: .govuk-body}
 
 #### Generate Comments CSV
@@ -1144,7 +1168,29 @@ Retrieves a CSV list of alterations which are associated with the authenticated 
 
 <code>POST /comments/csv</code>
 
-Retrieves a CSV list of comments which are associated with the authenticated user's organisation.
+Generates a CSV list of comments which are associated with the authenticated user's organisation.
 {: .govuk-body}
+
+A <code>csv_id</code> is returned in the Response body. This <code>csv_id</code> can be used with the <code>GET /csv/{csvId}</code> endpoint to retreive the CSV after generation.
+{: .govuk-body}
+
+#### Get Generated CSV
+{: .govuk-heading-s}
+
+<code>GET /csv/{csvId}</code>
+
+Returns a CSV generated by one of the following endpoints: 
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>POST /section-81s/csv</li>
+  <li>POST /reinstatements/csv</li>
+  <li>POST /fixed-penalty-notices/csv</li>
+  <li>POST /fees/csv</li>
+  <li>POST /permits/csv</li>
+  <li>POST /inspections/csv</li>
+  <li>POST /forward-plans/csv</li>
+  <li>POST /alterations/csv</li>
+  <li>POST /comments/csv</li>
+</ol>
 
 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">

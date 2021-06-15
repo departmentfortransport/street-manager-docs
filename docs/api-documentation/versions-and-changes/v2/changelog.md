@@ -15,7 +15,11 @@ Updated Reporting API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>
-    SM-6885:  Updated the <code>GET /alterations</code> endpoint to enable the filtering on the alteration <code>status_changed_date</code>
+    SM-6885: Added the following parameters to the <code>GET /alterations/csv</code> endpoint to enable the filtering on the alteration <code>status_changed_date</code>:
+    <ol class="govuk-list govuk-list--bullet">
+      <li>status_update_date_from</li>
+      <li>status_update_date_to</li>
+    </ol>
  </li>
 </ol>
 
@@ -23,7 +27,11 @@ Updated Data Export API with the following changes:
 {: .govuk-body}
 <ol class="govuk-list govuk-list--bullet">
   <li>
-    SM-6885:  Updated the <code>GET /alterations/csv</code> endpoint to enable the filtering on the alteration <code>status_changed_date</code>
+    SM-6885: Added the following parameters to the <code>GET /alterations/csv</code> endpoint to enable the filtering on the alteration <code>status_changed_date</code>:
+    <ol class="govuk-list govuk-list--bullet">
+      <li>status_update_date_from</li>
+      <li>status_update_date_to</li>
+    </ol>
  </li>
 </ol>
 

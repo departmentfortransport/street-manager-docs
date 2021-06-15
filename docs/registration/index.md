@@ -58,6 +58,7 @@ To register your organisation on Street Manager, you must supply:
 via [register@manage-roadworks.service.gov.uk](mailto:register@manage-roadworks.service.gov.uk?subject=Request to sign up to Street Manager&body=Organisation name:%0D%0A
 Organisation type: Highway Authority/Promoter/Contractor%0D%0A
 SWA code (HAs and Utility Companies only):%0D%0A
+Company house number (Contractor only):%0D%0A
 Primary contact title:%0D%0A
 Primary contact name:%0D%0A
 Primary contact email address:%0D%0A

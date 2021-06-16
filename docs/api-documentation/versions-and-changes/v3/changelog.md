@@ -8,6 +8,17 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 3.4 (24/06/2021):
+{: .govuk-heading-s #v3-4}
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-7164: Updated <code>POST /historic-works/inspections</code> to increment the actual count of a sample inspection target where there is an active target between the Highway Authority and the Promoter.
+  </li>
+</ol>
+
 Version 3.3 (10/06/2021):
 {: .govuk-heading-s #v3-3}
 

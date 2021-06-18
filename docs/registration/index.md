@@ -26,7 +26,7 @@ To create a Street Manager account, you must:
     know who the ‘admin contact’ is in your organisation – this is the person who sets up your accounts, approves Contractors and is the day-to-day contact for support issues. If already registered on Street Manager, your admin contact should be able to create a user account for you.
   </li>
   <li>
-    if your organisation is a Highway Authority or works Promoter, you must have a <a class="govuk-link" href="https://services.geoplace.co.uk/street/swa-codes">Street Works Act (SWA) code</a> confirming your legal right to carry out works. Alternatively you can <a class="govuk-link" href="https://services.geoplace.co.uk/street/registration">create a  SWA code</a> via Geoplace.
+    if your organisation is a Highway Authority or works Promoter, you must have a <a class="govuk-link" href="https://www.geoplace.co.uk/local-authority-resources/street-works-managers/view-swa-codes">Street Works Act (SWA) code</a> confirming your legal right to carry out works. Alternatively you can <a class="govuk-link" href="https://services.geoplace.co.uk/street/registration">create a  SWA code</a> via Geoplace.
   </li>
 </ol>
 

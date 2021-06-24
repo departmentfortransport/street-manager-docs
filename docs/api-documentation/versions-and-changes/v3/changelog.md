@@ -8,6 +8,51 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 3.5 (08/07/2021):
+{: .govuk-heading-s #v3-5}
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>SM-6705: Added <code>POST /works/${workReferenceNumber}/section-74s</code> endpoint to enable a HA user to issue Section 74 warnings.
+  </li>
+  <li>SM-6705: The following audit event types have been added, to be used for Section 74 functionality:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>section_74_warning_issued</code></li>
+      <li><code>section_74_warning_acknowledged</code></li>
+      <li><code>section_74_site_visited_and_rectified</code></li>
+      <li><code>section_74_charges_ended</code></li>
+      <li><code>section_74_warning_disputed</code></li>
+      <li><code>section_74_withdrawn</code></li>
+      <li><code>section_74_draft_invoice_issued</code></li>
+      <li><code>section_74_resolved</code></li>
+      <li><code>section_74_draft_invoice_acknowledged</code></li>
+      <li><code>section_74_charge_under_review</code></li>
+      <li><code>section_74_charge_agreed</code></li>
+    </ol>
+  </li>
+</ol>
+
+Updated Reporting API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>SM-6705: The following audit event types have been added, to be used for Section 74 functionality:
+    <ol class="govuk-list govuk-list--bullet">
+      <li><code>section_74_warning_issued</code></li>
+      <li><code>section_74_warning_acknowledged</code></li>
+      <li><code>section_74_site_visited_and_rectified</code></li>
+      <li><code>section_74_charges_ended</code></li>
+      <li><code>section_74_warning_disputed</code></li>
+      <li><code>section_74_withdrawn</code></li>
+      <li><code>section_74_draft_invoice_issued</code></li>
+      <li><code>section_74_resolved</code></li>
+      <li><code>section_74_draft_invoice_acknowledged</code></li>
+      <li><code>section_74_charge_under_review</code></li>
+      <li><code>section_74_charge_agreed</code></li>
+    </ol>
+  </li>
+</ol>
+
 Version 3.4 (24/06/2021):
 {: .govuk-heading-s #v3-4}
 

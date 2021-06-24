@@ -1,0 +1,1316 @@
+{
+	"components": {
+		"examples": {},
+		"headers": {},
+		"parameters": {},
+		"requestBodies": {},
+		"responses": {},
+		"schemas": {
+			"CSVExportResponse": {
+				"properties": {
+					"csv_id": {
+						"type": "number",
+						"format": "double"
+					}
+				},
+				"required": [
+					"csv_id"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"Section81Status": {
+				"enum": [
+					"issued",
+					"acknowledged",
+					"accepted",
+					"accepted_fixed",
+					"rejected",
+					"resolved_by_ha",
+					"cancelled"
+				],
+				"type": "string"
+			},
+			"Section81Severity": {
+				"enum": [
+					"high",
+					"low"
+				],
+				"type": "string"
+			},
+			"Section81CSVExportRequest": {
+				"properties": {
+					"swa_code": {
+						"type": "string",
+						"nullable": true,
+						"description": "Must be provided if user is a contractor\nUp to four digits"
+					},
+					"query": {
+						"type": "string",
+						"nullable": true
+					},
+					"geographical_area_reference_number": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"status": {
+						"items": {
+							"$ref": "#/components/schemas/Section81Status"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"severity": {
+						"items": {
+							"$ref": "#/components/schemas/Section81Severity"
+						},
+						"type": "array",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ReinstatementStatus": {
+				"enum": [
+					"interim",
+					"permanent"
+				],
+				"type": "string"
+			},
+			"ReinstatementCSVExportRequest": {
+				"properties": {
+					"swa_code": {
+						"type": "string",
+						"nullable": true,
+						"description": "Must be provided if user is a contractor\nUp to four digits"
+					},
+					"query": {
+						"type": "string",
+						"nullable": true
+					},
+					"geographical_area_reference_number": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"status": {
+						"items": {
+							"$ref": "#/components/schemas/ReinstatementStatus"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"latest_reinstatements_only": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"registration_date_from": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"registration_date_to": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"end_date_from": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"end_date_to": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"FPNStatus": {
+				"enum": [
+					"issued",
+					"accepted",
+					"paid",
+					"paid_discounted",
+					"disputed",
+					"withdrawn"
+				],
+				"type": "string"
+			},
+			"OffenceCode": {
+				"enum": [
+					"offence_code_05",
+					"offence_code_06",
+					"offence_code_08",
+					"offence_code_09"
+				],
+				"type": "string"
+			},
+			"FPNCSVExportRequest": {
+				"properties": {
+					"swa_code": {
+						"type": "string",
+						"nullable": true,
+						"description": "Must be provided if user is a contractor\nUp to four digits"
+					},
+					"query": {
+						"type": "string",
+						"nullable": true
+					},
+					"geographical_area_reference_number": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"status": {
+						"items": {
+							"$ref": "#/components/schemas/FPNStatus"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"start_date": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true,
+						"description": "start_date must be before or the same as end_date if both are provided"
+					},
+					"end_date": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true,
+						"description": "end_date must be the same as or after start_date if both are provided"
+					},
+					"offence_code": {
+						"items": {
+							"$ref": "#/components/schemas/OffenceCode"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"status_changed_date_from": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true,
+						"description": "status_changed_date_from must be before or the same as status_changed_date_to if both are provided"
+					},
+					"status_changed_date_to": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true,
+						"description": "end_date must be the same as or after status_changed_date_from if both are provided"
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"FeesCSVExportRequest": {
+				"properties": {
+					"start_date": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"end_date": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"swa_code": {
+						"type": "string",
+						"nullable": true
+					}
+				},
+				"required": [
+					"start_date",
+					"end_date"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PermitStatus": {
+				"enum": [
+					"submitted",
+					"granted",
+					"permit_modification_request",
+					"refused",
+					"closed",
+					"cancelled",
+					"revoked",
+					"progressed"
+				],
+				"type": "string"
+			},
+			"WorkStatus": {
+				"enum": [
+					"planned",
+					"in_progress",
+					"completed",
+					"cancelled",
+					"unattributable",
+					"historical",
+					"non_notifiable",
+					"section_81"
+				],
+				"type": "string"
+			},
+			"WorkCategory": {
+				"enum": [
+					"minor",
+					"standard",
+					"major",
+					"immediate_urgent",
+					"immediate_emergency",
+					"paa",
+					"hs2_highway"
+				],
+				"type": "string"
+			},
+			"LaneRentalAssessmentOutcome": {
+				"enum": [
+					"chargeable",
+					"potentially_chargeable",
+					"charges_waived",
+					"exempt",
+					"charges_not_applicable"
+				],
+				"type": "string"
+			},
+			"PermitCsvExportPrefix": {
+				"enum": [
+					"PA",
+					"WR",
+					"PAA"
+				],
+				"type": "string"
+			},
+			"PermitCSVExportRequest": {
+				"properties": {
+					"swa_code": {
+						"type": "string",
+						"nullable": true,
+						"description": "Must be provided if user is a contractor\nUp to four digits"
+					},
+					"query": {
+						"type": "string",
+						"nullable": true
+					},
+					"geographical_area_reference_number": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"status": {
+						"items": {
+							"$ref": "#/components/schemas/PermitStatus"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"work_status": {
+						"items": {
+							"$ref": "#/components/schemas/WorkStatus"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"work_category": {
+						"items": {
+							"$ref": "#/components/schemas/WorkCategory"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"lane_rental_assessment_outcome": {
+						"items": {
+							"$ref": "#/components/schemas/LaneRentalAssessmentOutcome"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"start_date": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"end_date": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"work_start_date_from": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"work_start_date_to": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"work_end_date_from": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"work_end_date_to": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"start_date_created": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"end_date_created": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"active_permit_only": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"csv_export_prefix": {
+						"allOf": [
+							{
+								"$ref": "#/components/schemas/PermitCsvExportPrefix"
+							}
+						],
+						"nullable": true
+					},
+					"is_traffic_sensitive": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"is_high_impact_traffic_management": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"has_no_final_registration": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"has_excavation": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"is_early_start": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"is_deemed": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"lane_rental_charges_not_agreed": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"lane_rental_charges_potentially_apply": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"ever_modification_requested": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"hs2_works_only": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"consultation_works_only": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"consent_works_only": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"unacknowledged_by_ha_only": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"is_duration_challenged": {
+						"type": "boolean",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"InspectionResponseType": {
+				"enum": [
+					"inspection",
+					"reinspection"
+				],
+				"type": "string"
+			},
+			"InspectionType": {
+				"enum": [
+					"live_site",
+					"reinstatement",
+					"non_compliance_follow_up",
+					"section_81"
+				],
+				"type": "string"
+			},
+			"InspectionOutcome": {
+				"enum": [
+					"passed",
+					"unable_to_complete_inspection",
+					"failed_low",
+					"failed_high",
+					"further_inspections_required",
+					"agreed_site_compliance",
+					"non_compliant_with_conditions",
+					"works_stopped_apparatus_remaining",
+					"works_in_progress_no_carriageway_incursion",
+					"works_in_progress",
+					"works_stopped"
+				],
+				"type": "string"
+			},
+			"InspectionCSVExportRequest": {
+				"properties": {
+					"swa_code": {
+						"type": "string",
+						"nullable": true,
+						"description": "Must be provided if user is a contractor\nUp to four digits"
+					},
+					"query": {
+						"type": "string",
+						"nullable": true
+					},
+					"geographical_area_reference_number": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"inspection_response_type": {
+						"items": {
+							"$ref": "#/components/schemas/InspectionResponseType"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"start_date": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"end_date": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"inspection_type": {
+						"items": {
+							"$ref": "#/components/schemas/InspectionType"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"inspection_outcome": {
+						"items": {
+							"$ref": "#/components/schemas/InspectionOutcome"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"start_date_created": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"end_date_created": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"ForwardPlanStatus": {
+				"enum": [
+					"raised",
+					"cancelled",
+					"progressed"
+				],
+				"type": "string"
+			},
+			"ForwardPlanCSVExportRequest": {
+				"properties": {
+					"swa_code": {
+						"type": "string",
+						"nullable": true,
+						"description": "Must be provided if user is a contractor\nUp to four digits"
+					},
+					"query": {
+						"type": "string",
+						"nullable": true
+					},
+					"geographical_area_reference_number": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"forward_plan_status": {
+						"items": {
+							"$ref": "#/components/schemas/ForwardPlanStatus"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"proposed_start_date": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"proposed_end_date": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"work_start_date_from": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"work_start_date_to": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"work_end_date_from": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"work_end_date_to": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"AlterationStatus": {
+				"enum": [
+					"submitted",
+					"granted",
+					"granted_with_duration_challenge",
+					"refused",
+					"deemed",
+					"cancelled",
+					"revoked",
+					"auto_applied"
+				],
+				"type": "string"
+			},
+			"AlterationType": {
+				"enum": [
+					"PROMOTER_IMPOSED_CHANGE",
+					"PROMOTER_CHANGE_REQUEST",
+					"HA_CHANGE_REQUEST",
+					"HA_IMPOSED_CHANGE",
+					"WORK_EXTENSION",
+					"DURATION_CHALLENGE",
+					"MODIFIED_PERMIT"
+				],
+				"type": "string"
+			},
+			"PermitAlterationCSVExportRequest": {
+				"properties": {
+					"swa_code": {
+						"type": "string",
+						"nullable": true,
+						"description": "Must be provided if user is a contractor\nUp to four digits"
+					},
+					"query": {
+						"type": "string",
+						"nullable": true
+					},
+					"geographical_area_reference_number": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"alteration_status": {
+						"items": {
+							"$ref": "#/components/schemas/AlterationStatus"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"alteration_type": {
+						"items": {
+							"$ref": "#/components/schemas/AlterationType"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"work_status": {
+						"items": {
+							"$ref": "#/components/schemas/WorkStatus"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"work_category": {
+						"items": {
+							"$ref": "#/components/schemas/WorkCategory"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"lane_rental_assessment_outcome": {
+						"items": {
+							"$ref": "#/components/schemas/LaneRentalAssessmentOutcome"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"start_date_created": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"end_date_created": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"is_traffic_sensitive": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"is_high_impact_traffic_management": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"is_duration_extension": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"is_early_start": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"is_deemed": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"lane_rental_charges_not_agreed": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"lane_rental_charges_potentially_apply": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"status_update_date_from": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"status_update_date_to": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"OrganisationDataCSVExportRequest": {
+				"properties": {
+					"start_date": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"start_date_time": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"end_date": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"end_date_time": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					}
+				},
+				"required": [
+					"start_date",
+					"end_date"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"CommentTopic": {
+				"enum": [
+					"GENERAL",
+					"SECTION_74",
+					"INSPECTION",
+					"FPN",
+					"OVERRUN",
+					"FORWARD_PLAN",
+					"CHANGE_REQUEST",
+					"IMPOSED_VARIATION",
+					"DURATION_CHALLENGE",
+					"SECTION_81"
+				],
+				"type": "string"
+			},
+			"CommentCSVExportRequest": {
+				"properties": {
+					"swa_code": {
+						"type": "string",
+						"nullable": true,
+						"description": "Must be provided if user is a contractor\nUp to four digits"
+					},
+					"query": {
+						"type": "string",
+						"nullable": true
+					},
+					"geographical_area_reference_number": {
+						"items": {
+							"type": "string"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"date_created_from": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"date_created_to": {
+						"type": "string",
+						"format": "date-time",
+						"nullable": true
+					},
+					"topic": {
+						"items": {
+							"$ref": "#/components/schemas/CommentTopic"
+						},
+						"type": "array",
+						"nullable": true
+					},
+					"is_internal": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"is_read": {
+						"type": "boolean",
+						"nullable": true
+					},
+					"is_not_read": {
+						"type": "boolean",
+						"nullable": true
+					}
+				},
+				"type": "object",
+				"additionalProperties": false
+			},
+			"InspectionOutcomesCSVExportRequest": {
+				"properties": {
+					"date_from": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"date_to": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"date_from",
+					"date_to"
+				],
+				"type": "object",
+				"additionalProperties": false
+			},
+			"PermitsCreatedCSVExportRequest": {
+				"properties": {
+					"date_from": {
+						"type": "string",
+						"format": "date-time"
+					},
+					"date_to": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"date_from",
+					"date_to"
+				],
+				"type": "object",
+				"additionalProperties": false
+			}
+		},
+		"securitySchemes": {
+			"token": {
+				"type": "apiKey",
+				"name": "token",
+				"in": "header"
+			}
+		}
+	},
+	"info": {
+		"title": "Street Manager Data Export API Stable",
+		"version": "1.0.0",
+		"description": "See API specification Resource Guide > Data Export API for more information on endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
+		"license": {
+			"name": "MIT"
+		},
+		"contact": {}
+	},
+	"openapi": "3.0.0",
+	"paths": {
+		"/section-81s/csv": {
+			"post": {
+				"operationId": "GenerateSection81CSV",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CSVExportResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Generate Section 81s CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": false,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/Section81CSVExportRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/reinstatements/csv": {
+			"post": {
+				"operationId": "GenerateReinstatementsCSV",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CSVExportResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Generate Reinstatements CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": false,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ReinstatementCSVExportRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/fixed-penalty-notices/csv": {
+			"post": {
+				"operationId": "GenerateFPNsCSV",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CSVExportResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Generate FPNs CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": false,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/FPNCSVExportRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/fees/csv": {
+			"post": {
+				"operationId": "GenerateFeesCSV",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CSVExportResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Generate Fees CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": false,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/FeesCSVExportRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/permits/csv": {
+			"post": {
+				"operationId": "GeneratePermitsCSV",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CSVExportResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Generate Permits CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": false,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PermitCSVExportRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/inspections/csv": {
+			"post": {
+				"operationId": "GenerateInspectionCSV",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CSVExportResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Generate Inspections CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": false,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/InspectionCSVExportRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/forward-plans/csv": {
+			"post": {
+				"operationId": "GenerateForwardPlansCSV",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CSVExportResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Generate Forward plans CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": false,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/ForwardPlanCSVExportRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/alterations/csv": {
+			"post": {
+				"operationId": "GeneratePermitAlterationsCSV",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CSVExportResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Generate Permit alterations CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": false,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/PermitAlterationCSVExportRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/comments/csv": {
+			"post": {
+				"operationId": "GenerateCommentsCSV",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"$ref": "#/components/schemas/CSVExportResponse"
+								}
+							}
+						}
+					}
+				},
+				"description": "See API specification Resource Guide > Data Export API > Generate Comments CSV for more information\nAuthenticated user must have one of the following roles: Planner, Contractor, HighwayAuthority",
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [],
+				"requestBody": {
+					"required": false,
+					"content": {
+						"application/json": {
+							"schema": {
+								"$ref": "#/components/schemas/CommentCSVExportRequest"
+							}
+						}
+					}
+				}
+			}
+		},
+		"/activity-data": {
+			"get": {
+				"operationId": "GetActivityDataCSV",
+				"description": "See API specification Resource Guide > Data Export API > Get Data CSV for more information",
+				"parameters": [
+					{
+						"in": "query",
+						"name": "csvExportDate",
+						"description": "csvExportDate must be a date within the last two weeks. If not provided, the current date will be used as the default.\ncsvExportDate will be rounded down to the nearest time period, e.g., \"2020-01-01T11:45:00Z\" will retrieve the generated CSV at \"2020-01-01T11:00:00Z\".",
+						"required": false,
+						"schema": {
+							"type": "string",
+							"format": "date-time"
+						}
+					}
+				],
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"text/csv": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"DataExport"
+						]
+					}
+				]
+			}
+		},
+		"/csv/{csvId}": {
+			"get": {
+				"operationId": "GetCsv",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"text/csv": {
+								"schema": {
+									"type": "string"
+								}
+							}
+						}
+					}
+				},
+				"security": [
+					{
+						"token": [
+							"Planner",
+							"Contractor",
+							"HighwayAuthority"
+						]
+					}
+				],
+				"parameters": [
+					{
+						"in": "path",
+						"name": "csvId",
+						"required": true,
+						"schema": {
+							"type": "number"
+						}
+					}
+				]
+			}
+		}
+	},
+	"servers": [
+		{
+			"url": "/"
+		}
+	]
+}

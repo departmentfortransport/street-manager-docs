@@ -1984,7 +1984,6 @@
 					"internal_comment_submitted",
 					"comment_read",
 					"excavation_carried_out_updated",
-					"sample_inspection_target_closed",
 					"section_81_linked_to_permit",
 					"section_81_unlinked_from_permit",
 					"section_81_reassigned",
@@ -7110,7 +7109,7 @@
 		}
 	},
 	"info": {
-		"title": "Street Manager API",
+		"title": "Street Manager API Stable",
 		"version": "1.0.0",
 		"description": "See API specification Resource Guide > Work API for more information on endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
 		"license": {

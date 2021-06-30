@@ -256,6 +256,11 @@ The table below shows the current permissions per endpoint.
       <td class="govuk-table__cell">Admin (associated with a Highway Authority), HAOfficer</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>POST /works/${workReferenceNumber}/section-74s</code></td>
+      <td class="govuk-table__cell">Highway Authority</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
   </tbody>
 </table>
 

@@ -12,6 +12,8 @@ This page lists all known occurrences of Street Manager service being unavailabl
 
 **Production environment**
 
+* 28/06/21 18:38-19:08 Production environment unavailable for 30 mins due to planned release.
+
 * 15/06/21 18:58-19:38 Production environment unavailable for 40 mins due to planned release.
 
 * 01/06/21 13:06-13:26 Production environment intermittently unavailable for 20 mins due to planned release.

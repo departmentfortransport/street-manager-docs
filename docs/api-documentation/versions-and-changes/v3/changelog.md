@@ -31,6 +31,8 @@ Updated Work API with the following changes:
       <li><code>section_74_charge_agreed</code></li>
     </ol>
   </li>
+  <li>SM-6707: Added <code>GET /works/{workReferenceNumber}/section-74s/{section74ReferenceNumber}</code> endpoint to return a Section 74 warning relating to a work.
+</li>
 </ol>
 
 Updated Reporting API with the following changes:

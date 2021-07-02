@@ -53,7 +53,7 @@ Updated Reporting API with the following changes:
   </li>
 
   <li>
-    SM-6737: Updated the <code>GET /works/{workReferenceNumber}</code> to limit the number of sites returned from a work response to the latest 50. The full list can be retrieved using the <code>GET /reinstatements</code> endpoint on Reporting API. Also site creation is limited to 999 sites on a work.
+    SM-6737: Updated the <code>GET /works/{workReferenceNumber}</code> to limit the number of sites returned from a work response to the latest 50. The full list can be retrieved using the <code>GET /reinstatements</code> endpoint on Reporting API. Also site creation is limited to 999 sites on a work. There is also a new field `number_of_sites` which includes the total of sites on a work.
  </li>
 </ol>
 

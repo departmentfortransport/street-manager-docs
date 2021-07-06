@@ -8,6 +8,17 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 2.10.16 (08/07/2021):
+{: .govuk-heading-s #v2-10-16}
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>
+    SM-6737: Site creation on a work is now limited to 999 sites.
+  </li>
+</ol>
+
 Version 2.10.15 (24/06/2021):
 {: .govuk-heading-s #v2-10-15}
 

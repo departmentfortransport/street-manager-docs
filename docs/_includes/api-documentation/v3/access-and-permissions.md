@@ -68,16 +68,13 @@ The Reporting and Data Export APIs will automatically filter data in endpoint re
 `HighwayAuthority` users are not restricted to work records based upon workstreams or contract associations. Instead they are only allowed to perform write actions on resources associated with their own organisation. For example they can only assess permits for work records which have been assigned to their own organisation. `HighwayAuthority` users can instead filter resources using Geographical Areas. For more information see the [resource guide](#geographical-areas)
 {: .govuk-body}
 
-#### Street Works Administrators
+#### Role Based Access - StreetWorksAdmin
 {: .govuk-heading-s}
 
-The `Street Works Administrator` role cannot be used by itself, it must be paired with either Admin, Planner or Highway Authority. This role is not available to contractors.
+The `StreetWorksAdmin` role cannot be used by itself, it must be paired with either Admin, Planner or Highway Authority. This role is not available to contractors. Users who are have been granted the `StreetWorksAdmin` role are able to access additional sensitive information, for example financial information relating to Section 74s.
 {: .govuk-body}
 
-In the future the `Street Works Administrator` role will be used to give some trusted users elevated access to sensitive information, for example financial information. This role has no effect at this time.
-{: .govuk-body}
-
-The `Street Works Administrator` role is not the same as the `User Administrator` role and does not provide access to functionality that is currently exclusive to `User Administrator`s.
+The `StreetWorksAdmin` role is not the same as the `Admin` role and does not provide access to functionality that is currently exclusive to the `Admin` role.
 {: .govuk-body}
 
 #### Default Workstream

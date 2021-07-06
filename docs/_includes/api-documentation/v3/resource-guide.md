@@ -845,8 +845,20 @@ The POST endpoint will start a job which will generate sample inspections.
 
 <code>POST /works/${work reference number}/section-74s</code>
 
-This endpoint will create a section 74 and return a section 74 reference number.
+<code>GET /works/{workReferenceNumber}/section-74s/{section74ReferenceNumber}</code>
+
+The POST endpoint will create a section 74 and return a section 74 reference number.
 {: .govuk-body}
+
+The GET endpoint will require the section 74 reference number of the intended section 74 to return information. If the user has the `StreetWorksAdmin` role then additional sensitive financial information will be returned.  The additional properties are -
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li>draft_invoice_reference</li>
+  <li>draft_invoice_amount</li>
+  <li>invoice_reference (returned if <code>ha_status_id = Section74HAStatusResponse.resolved</code></li>
+  <li>final_agreed_amount (returned if <code>ha_status_id = Section74HAStatusResponse.resolved</code></li>
+</ol>
 
 ### GeoJSON API
 {: .govuk-heading-m #geojson-api-resource-guide}

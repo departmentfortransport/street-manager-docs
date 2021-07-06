@@ -261,6 +261,11 @@ The table below shows the current permissions per endpoint.
       <td class="govuk-table__cell">Highway Authority</td>
       <td class="govuk-table__cell">Required</td>
     </tr>
+     <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><code>GET /works/{workReferenceNumber}/section-74s/{section74ReferenceNumber}</code></td>
+      <td class="govuk-table__cell">Planner, Contractor &amp; HAOfficer (StreetWorksAdmin optional and if included returns additional sensitive financial information)</td>
+      <td class="govuk-table__cell">Required</td>
+    </tr>
   </tbody>
 </table>
 

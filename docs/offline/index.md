@@ -117,7 +117,7 @@ title: Offline
 
 <ul class="govuk-list govuk-list--bullet">
   <li>
-    As soon as discovered, we will acknowledge the issue on both the <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/articles/disruptions-to-service-availability.html">Disruption to Service Availability Page</a> and <a class="govuk-link" href="https://streetmanager.atlassian.net/servicedesk/customer/portal/1">Support Portal</a> and send an email to all users inthe event of a P1. In the event of a P2, a decision will be made on a case-by-case basis in agreement with DfT.
+    As soon as discovered, we will acknowledge the issue on both the <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/articles/disruptions-to-service-availability.html">Disruption to Service Availability Page</a> and <a class="govuk-link" href="https://streetmanager.atlassian.net/servicedesk/customer/portal/1">Support Portal</a> and send an email to all users in the event of a P1. In the event of a P2, a decision will be made on a case-by-case basis in agreement with DfT.
   </li>
   <li>
     Whenever possible, we will communicate the scope of the outage, who is being affected and in what ways, describing the issue in the way the customer is affected.
@@ -151,11 +151,11 @@ title: Offline
 </p>
 
 <p class="govuk-body">
-  The key information is to enable authorities to continue to fulfil their Network Management Duty or to inform promoters of a required action, and is to be submittedhourly and directly to the responsible parties either via email (assuming emails are still working) or any other way that has been agreed.  Information should be collated and spreadsheets submitted on an hourly basis, or as agreed, on a best endeavours basis until the DfT informs all users that this should stop and Street Manager is available.
+  The key information is to enable authorities to continue to fulfil their Network Management Duty or to inform promoters of a required action, and is to be submitted hourly and directly to the responsible parties either via email (assuming emails are still working) or any other way that has been agreed.  Information should be collated and spreadsheets submitted on an hourly basis, or as agreed, on a best endeavours basis until the DfT informs all users that this should stop and Street Manager is available.
 </p>
 
 <p class="govuk-body">
-  It is however accepted that submitting manual information should be a last resort andit may be preferable to wait for Street Manager to be fixed and then to submit the data retrospectively at that time.  If spreadsheets are submitted, users will need to submit permit applications, and all other relevant notifications once the full service is restored.
+  It is however accepted that submitting manual information should be a last resort and it may be preferable to wait for Street Manager to be fixed and then to submit the data retrospectively at that time.  If spreadsheets are submitted, users will need to submit permit applications, and all other relevant notifications once the full service is restored.
 </p>
 
 <p class="govuk-body">
@@ -165,7 +165,7 @@ title: Offline
 <h3 class="govuk-heading-m">Fixed Penalty Notices, Early Starts and Revocations</h3>
 
 <p class="govuk-body">
-  If, during a P1 or P2 incident, users are unable to submit works start and/or works stop notices, permit applications e.g. for immediate works, change requests and registrations within the required regulatory deadlines, highway authorities should confirm the outage or performance degradation times noted on the <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/articles/disruptions-to-service-availability.html">Disruption to Service Availability Page</a> and, if late submission was due to Street Manager being unavailable, it is the DfT’s view that Fixed Penalty Notices (FPNs) should not be issued.
+  If, during a P1 or P2 incident, users are unable to submit works start and/or works stop notices, permit applications e.g. for immediate works, change requests and registrations within the required regulatory deadlines, Highway Authorities should confirm the outage or performance degradation times noted on the <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/articles/disruptions-to-service-availability.html">Disruption to Service Availability Page</a> and, if late submission was due to Street Manager being unavailable, it is the DfT’s view that Fixed Penalty Notices (FPNs) should not be issued.
 </p>
 
 <p class="govuk-body">

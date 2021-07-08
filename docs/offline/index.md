@@ -32,7 +32,7 @@ title: Offline
   The service may have different types of outages which could include planned or unplanned ones. There are other circumstances when the Production environment is available, but performance is degraded for some or all users who might be unable to complete some tasks.
 </p>
 
-<h4 class="govuk-heading-s">Planned outages</h4>
+<h3 class="govuk-heading-s">Planned outages</h3>
 
 <p class="govuk-body">
   The release and maintenance process is usually a mixture of regular end-of-sprint and expedited releases. Expedited releases are changes outside the standard release process and could include, for example, an emergency release to fix an incident in line with the Service Level Agreements. The standard release and maintenance process will aim for updates to the service environments every 2 weeks. Users will be notified of planned service downtime at least 2 working days in advance, and  as soon as an expedited release is identified if downtime is expected only.
@@ -42,7 +42,7 @@ title: Offline
   Emergency maintenance activities, such as a security patch, may be required, and users will be notified of this as soon as it is identified.
 </p>
 
-<h4 class="govuk-heading-s">Unplanned Outages and performance degredation</h4>
+<h3 class="govuk-heading-s">Unplanned Outages and performance degredation</h3>
 
 <p class="govuk-body">
   The Service Level Agreement classifies unplanned outages or performance degradation as follows.  The DfT decides the classification of incidents as P1s, P2s etc:
@@ -109,7 +109,7 @@ title: Offline
   Works on site must continue regardless of service availability.
 </p>
 
-<h4 class="govuk-heading-s">Communications</h4>
+<h3 class="govuk-heading-s">Communications</h3>
 
 <p class="govuk-body">
   The following communications will be sent to users should there be a disruption of the service:
@@ -140,7 +140,7 @@ title: Offline
   Emails will be sent from this address: street.manager@notifications.service.gov.uk
 </p>
 
-<h4 class="govuk-heading-s">Process</h4>
+<h3 class="govuk-heading-s">Process</h3>
 
 <p class="govuk-body">
   During a P1 critical incident and P2 High incident, you can wait for the service to come back online since the target fix time is 4 working hours for a P1 and 6 working hours for a P2. The service desk will let users know at the start of an incident if it is being treated as a P1 or a P2 incident and when the target fix time will be.  The service desk will update users if the target fix time is not going to be met if initial investigations show that it is not going to be possible.
@@ -162,7 +162,7 @@ title: Offline
   Other P3-P5 incidents should not impact the Production environment to the extent that users are unable to complete tasks. If a user is unable to carry out a specific task, they should raise a ticket on the <a class="govuk-link" href="https://streetmanager.atlassian.net/servicedesk/customer/portal/1">Support Portal</a>
 </p>
 
-<h4 class="govuk-heading-s">Fixed Penalty Notices, Early Starts and Revocations</h4>
+<h3 class="govuk-heading-s">Fixed Penalty Notices, Early Starts and Revocations</h3>
 
 <p class="govuk-body">
   If, during a P1 or P2 incident, users are unable to submit works start and/or works stop notices, permit applications e.g. for immediate works, change requests and registrations within the required regulatory deadlines, highway authorities should confirm the outage or performance degradation times noted on the <a class="govuk-link" href="https://departmentfortransport.github.io/street-manager-docs/articles/disruptions-to-service-availability.html">Disruption to Service Availability Page</a> and, if late submission was due to Street Manager being unavailable, it is the DfT’s view that Fixed Penalty Notices (FPNs) should not be issued.

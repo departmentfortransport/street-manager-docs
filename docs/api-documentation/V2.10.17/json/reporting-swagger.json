@@ -1081,23 +1081,11 @@
 					"internal_comment_submitted",
 					"comment_read",
 					"excavation_carried_out_updated",
-					"sample_inspection_target_closed",
 					"section_81_linked_to_permit",
 					"section_81_unlinked_from_permit",
 					"section_81_reassigned",
 					"permit_granted_with_duration_challenge",
-					"inspection_withdrawn",
-					"section_74_warning_issued",
-					"section_74_warning_acknowledged",
-					"section_74_site_visited_and_rectified",
-					"section_74_charges_ended",
-					"section_74_warning_disputed",
-					"section_74_withdrawn",
-					"section_74_draft_invoice_issued",
-					"section_74_resolved",
-					"section_74_draft_invoice_acknowledged",
-					"section_74_charge_under_review",
-					"section_74_charge_agreed"
+					"inspection_withdrawn"
 				],
 				"type": "string"
 			},
@@ -1559,7 +1547,6 @@
 					"API",
 					"UI",
 					"DataExport",
-					"StreetWorksAdmin",
 					"upcoming_enum"
 				],
 				"type": "string"
@@ -1908,7 +1895,7 @@
 		}
 	},
 	"info": {
-		"title": "Street Manager Reporting API",
+		"title": "Street Manager Reporting API Stable",
 		"version": "1.0.0",
 		"description": "See API specification Resource Guide > Reporting API for more information on paging and endpoints\nNOTE: Swagger Editor/UI does not display all description text for enumerations and child elements, check swagger.json for full description text",
 		"license": {
@@ -2632,14 +2619,6 @@
 						"required": false,
 						"schema": {
 							"format": "date-time",
-							"type": "string"
-						}
-					},
-					{
-						"in": "query",
-						"name": "query",
-						"required": false,
-						"schema": {
 							"type": "string"
 						}
 					},

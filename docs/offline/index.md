@@ -187,6 +187,7 @@ title: Offline
 <h2 class="govuk-heading-l">Documents</h2>
 
 <ul class="govuk-list govuk-list--bullet">
+  <li>Spreadsheet for recording key information [to be added]</li>
   <li><a class="govuk-link" href="{{ site.baseurl }}/assets/files/offline/PERMIT-APPLICATION-INCLUDING-RESPONSES.pdf">Permit form</a></li>
   <li><a class="govuk-link" href="{{ site.baseurl }}/assets/files/offline/Street%20Manager%20-%20inpection%20form%20printable.pdf">Inspection form v1.0</a></li>
 </ul>

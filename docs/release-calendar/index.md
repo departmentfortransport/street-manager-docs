@@ -17,7 +17,7 @@ title: Upcoming Release Calendar
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell">12/07/2021</td>
+      <td class="govuk-table__cell">14/07/2021</td>
       <td class="govuk-table__cell">Production</td>
       <td class="govuk-table__cell">Application</td>
     </tr>

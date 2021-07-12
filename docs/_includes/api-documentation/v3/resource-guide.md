@@ -847,6 +847,8 @@ The POST endpoint will start a job which will generate sample inspections.
 
 <code>GET /works/{workReferenceNumber}/section-74s/{section74ReferenceNumber}</code>
 
+<code>PUT /works/{workReferenceNumber}/section-74s/{section74ReferenceNumber}/highway-authority-status</code>
+
 The POST endpoint will create a section 74 and return a section 74 reference number.
 {: .govuk-body}
 
@@ -858,6 +860,18 @@ The GET endpoint will require the section 74 reference number of the intended se
   <li>draft_invoice_amount</li>
   <li>invoice_reference (returned if <code>ha_status_id = Section74HAStatusResponse.resolved</code></li>
   <li>final_agreed_amount (returned if <code>ha_status_id = Section74HAStatusResponse.resolved</code></li>
+</ol>
+
+The PUT endpoint will allow the issuing Highway Authority to update the status of the Section 74. When a Highway Authority user creates a Section 74 it is considered issued. Users of the issuing organisation with the Highway Authority role are then able to progress the Section 74 by providing the information required at each stage. While the promoter is also able to update the status of the Section 74, this is not required. Highway Authority users can progress through each of the status options without any promoter interaction with Street Manager. The available statuses are -
+{: .govuk-body}
+
+<ol class="govuk-list govuk-list--bullet">
+  <li><code>warning_issued</code></li>
+  <li><code>charges_ended</code></li>
+  <li><code>warning_disputed</code></li>
+  <li><code>withdrawn</code></li>
+  <li><code>draft_invoice_issued</code></li>
+  <li><code>resolved</code></li>
 </ol>
 
 ### GeoJSON API

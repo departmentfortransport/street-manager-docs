@@ -8,6 +8,16 @@ title: API Versions and Changes
 This section lists any significant changes made to this document (and by extension, the API interfaces themselves) introduced by each recent and upcoming future release.
 {: .govuk-body}
 
+Version 3.6 (22/07/2021):
+{: .govuk-heading-s #v3-6}
+
+Updated Work API with the following changes:
+{: .govuk-body}
+<ol class="govuk-list govuk-list--bullet">
+  <li>SM-6723: Added <code>PUT /works/${workReferenceNumber}/section-74s/${section74ReferenceNumber}/highway-authority-status</code> endpoint to enable a HA user to update the status of Section 74 warnings.
+  </li>
+</ol>
+
 Version 3.5 (08/07/2021):
 {: .govuk-heading-s #v3-5}
 
